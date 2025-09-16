@@ -70,7 +70,7 @@ namespace Jewelry
 
         private void btnExitAccount_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
