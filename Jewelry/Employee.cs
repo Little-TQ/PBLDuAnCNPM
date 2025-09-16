@@ -11,9 +11,9 @@ using Jewelry.FolderEmployee;
 
 namespace Jewelry
 {
-    public partial class frmEmployee: Form
+    public partial class Employee: Form
     {
-        public frmEmployee()
+        public Employee()
         {
             InitializeComponent();
         }

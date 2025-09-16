@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class frmAddEmployee
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class frmCustomer
+    partial class Customer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExitCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReturnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mstNCustomer = new System.Windows.Forms.MenuStrip();
-            this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MembershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContainerCustomer = new System.Windows.Forms.Panel();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +44,9 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExitCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReturnCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MembershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContainerCustomer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
@@ -72,6 +72,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1436, 99);
             this.panel2.TabIndex = 4;
+            // 
+            // btnExitCustomer
+            // 
+            this.btnExitCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitCustomer.FillColor = System.Drawing.Color.White;
+            this.btnExitCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExitCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnExitCustomer.Image = global::Jewelry.Properties.Resources.Exit;
+            this.btnExitCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExitCustomer.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExitCustomer.Location = new System.Drawing.Point(1374, 3);
+            this.btnExitCustomer.Name = "btnExitCustomer";
+            this.btnExitCustomer.Size = new System.Drawing.Size(56, 41);
+            this.btnExitCustomer.TabIndex = 3;
+            this.btnExitCustomer.Click += new System.EventHandler(this.btnExitCustomer_Click);
+            // 
+            // btnReturnCustomer
+            // 
+            this.btnReturnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReturnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReturnCustomer.FillColor = System.Drawing.Color.White;
+            this.btnReturnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReturnCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnReturnCustomer.Image = global::Jewelry.Properties.Resources.Return;
+            this.btnReturnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnReturnCustomer.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReturnCustomer.Location = new System.Drawing.Point(3, 17);
+            this.btnReturnCustomer.Name = "btnReturnCustomer";
+            this.btnReturnCustomer.Size = new System.Drawing.Size(50, 36);
+            this.btnReturnCustomer.TabIndex = 2;
+            this.btnReturnCustomer.Click += new System.EventHandler(this.btnReturnCustomer_Click);
             // 
             // label1
             // 
@@ -106,31 +142,6 @@
             this.mstNCustomer.Size = new System.Drawing.Size(1442, 94);
             this.mstNCustomer.TabIndex = 5;
             this.mstNCustomer.Text = "mstNavigionAccount";
-            // 
-            // InformationToolStripMenuItem
-            // 
-            this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
-            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(558, 39);
-            this.InformationToolStripMenuItem.Text = "Information";
-            this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
-            // 
-            // MembershipToolStripMenuItem
-            // 
-            this.MembershipToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MembershipToolStripMenuItem.Name = "MembershipToolStripMenuItem";
-            this.MembershipToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
-            this.MembershipToolStripMenuItem.Size = new System.Drawing.Size(632, 39);
-            this.MembershipToolStripMenuItem.Text = "Membership Class";
-            this.MembershipToolStripMenuItem.Click += new System.EventHandler(this.MembershipToolStripMenuItem_Click);
-            // 
-            // pnlContainerCustomer
-            // 
-            this.pnlContainerCustomer.Location = new System.Drawing.Point(3, 210);
-            this.pnlContainerCustomer.Name = "pnlContainerCustomer";
-            this.pnlContainerCustomer.Size = new System.Drawing.Size(1434, 812);
-            this.pnlContainerCustomer.TabIndex = 6;
             // 
             // homeToolStripMenuItem
             // 
@@ -197,39 +208,30 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(238, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
-            // btnExitCustomer
+            // InformationToolStripMenuItem
             // 
-            this.btnExitCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitCustomer.FillColor = System.Drawing.Color.White;
-            this.btnExitCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnExitCustomer.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitCustomer.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitCustomer.Location = new System.Drawing.Point(1374, 3);
-            this.btnExitCustomer.Name = "btnExitCustomer";
-            this.btnExitCustomer.Size = new System.Drawing.Size(56, 41);
-            this.btnExitCustomer.TabIndex = 3;
+            this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
+            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
+            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(558, 39);
+            this.InformationToolStripMenuItem.Text = "Information";
+            this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
-            // btnReturnCustomer
+            // MembershipToolStripMenuItem
             // 
-            this.btnReturnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReturnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnCustomer.FillColor = System.Drawing.Color.White;
-            this.btnReturnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReturnCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnReturnCustomer.Image = global::Jewelry.Properties.Resources.Return;
-            this.btnReturnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnReturnCustomer.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReturnCustomer.Location = new System.Drawing.Point(3, 17);
-            this.btnReturnCustomer.Name = "btnReturnCustomer";
-            this.btnReturnCustomer.Size = new System.Drawing.Size(50, 36);
-            this.btnReturnCustomer.TabIndex = 2;
+            this.MembershipToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MembershipToolStripMenuItem.Name = "MembershipToolStripMenuItem";
+            this.MembershipToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
+            this.MembershipToolStripMenuItem.Size = new System.Drawing.Size(632, 39);
+            this.MembershipToolStripMenuItem.Text = "Membership Class";
+            this.MembershipToolStripMenuItem.Click += new System.EventHandler(this.MembershipToolStripMenuItem_Click);
+            // 
+            // pnlContainerCustomer
+            // 
+            this.pnlContainerCustomer.Location = new System.Drawing.Point(3, 210);
+            this.pnlContainerCustomer.Name = "pnlContainerCustomer";
+            this.pnlContainerCustomer.Size = new System.Drawing.Size(1434, 812);
+            this.pnlContainerCustomer.TabIndex = 6;
             // 
             // frmCustomer
             // 

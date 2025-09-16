@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class frmAddEmployee: Form
+    public partial class AddEmployee: Form
     {
-        public frmAddEmployee()
+        public AddEmployee()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace Jewelry
 
         private void btnReturnAddE_Click(object sender, EventArgs e)
         {
-            frmEmployee frm = new frmEmployee();
+            Employee frm = new Employee();
             this.Hide();
             frm.ShowDialog();
         }

@@ -19,7 +19,7 @@ namespace Jewelry
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            frmDashBoard dashboard = new frmDashBoard();
+            DashBoard dashboard = new DashBoard();
             this.Hide();
             dashboard.ShowDialog();
         }

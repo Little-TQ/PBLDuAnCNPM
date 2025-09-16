@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class frmUpdatePrice
+    partial class UpdatePrice
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class frmAccount
+    partial class Page_Account
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccount));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Account));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExitAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturnAddA = new Guna.UI2.WinForms.Guna2Button();

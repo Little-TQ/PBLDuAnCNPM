@@ -12,9 +12,9 @@ using Jewelry.FolderCustomer;
 
 namespace Jewelry
 {
-    public partial class frmCustomer: Form
+    public partial class Customer: Form
     {
-        public frmCustomer()
+        public Customer()
         {
             InitializeComponent();
         }
@@ -62,6 +62,18 @@ namespace Jewelry
             homeToolStripMenuItem.BackColor = Color.Transparent;
             homeToolStripMenuItem.ForeColor = Color.Red;
             LoadUserControl(new General());
+        }
+
+        private void btnExitCustomer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnReturnCustomer_Click(object sender, EventArgs e)
+        {
+            DashBoard frm = new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }

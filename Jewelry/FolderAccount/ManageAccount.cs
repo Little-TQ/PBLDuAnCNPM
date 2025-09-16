@@ -19,7 +19,7 @@ namespace Jewelry.Account
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            frmAddAccount adc = new frmAddAccount();
+            AddAccount adc = new AddAccount();
             adc.btnEditAccount.Visible = false;
             adc.ShowDialog();
         }

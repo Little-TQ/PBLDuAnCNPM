@@ -19,7 +19,7 @@ namespace Jewelry.FolderEmployee
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            frmAddEmployee frm = new frmAddEmployee();
+            AddEmployee frm = new AddEmployee();
             frm.ShowDialog();
         }
 

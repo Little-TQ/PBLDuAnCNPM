@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class frmUpdatePrice: Form
+    public partial class UpdatePrice: Form
     {
-        public frmUpdatePrice()
+        public UpdatePrice()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace Jewelry
 
         private void btnReturnUpDate_Click(object sender, EventArgs e)
         {
-            frmDashBoard frm = new frmDashBoard();
+            DashBoard frm = new DashBoard();
             this.Hide();
             frm.ShowDialog();
         }

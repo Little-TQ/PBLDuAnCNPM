@@ -94,7 +94,7 @@
             // 
             // guna2CirclePictureBox3
             // 
-            this.guna2CirclePictureBox3.Image = global::Arpels_Jewelry.Properties.Resources.Delete;
+            this.guna2CirclePictureBox3.Image = global::Jewelry.Properties.Resources.Delete;
             this.guna2CirclePictureBox3.ImageRotate = 0F;
             this.guna2CirclePictureBox3.Location = new System.Drawing.Point(4, 4);
             this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
@@ -114,7 +114,7 @@
             // 
             // guna2CirclePictureBox2
             // 
-            this.guna2CirclePictureBox2.Image = global::Arpels_Jewelry.Properties.Resources.Save;
+            this.guna2CirclePictureBox2.Image = global::Jewelry.Properties.Resources.Save;
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(4, 4);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
@@ -134,7 +134,7 @@
             // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Image = global::Arpels_Jewelry.Properties.Resources.Edit;
+            this.guna2CirclePictureBox1.Image = global::        Jewelry.Properties.Resources.Edit;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(4, 4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -168,7 +168,7 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::Arpels_Jewelry.Properties.Resources.Add;
+            this.guna2PictureBox1.Image = global::Jewelry.Properties.Resources.Add;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(11, 6);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -198,7 +198,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Image = global::Arpels_Jewelry.Properties.Resources.Search;
+            this.guna2PictureBox2.Image = global::Jewelry.Properties.Resources.Search;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(24, 24);
             this.guna2PictureBox2.Name = "guna2PictureBox2";

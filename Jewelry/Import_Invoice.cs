@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class Navigation : Form
+    public partial class Import_Invoice: Form
     {
-        public Navigation()
+        public Import_Invoice()
         {
             InitializeComponent();
         }
-
-        
     }
 }

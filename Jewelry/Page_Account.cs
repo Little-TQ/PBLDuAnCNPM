@@ -10,9 +10,9 @@ using System.ComponentModel.Design.Serialization;
 using Jewelry.Account;
 namespace Jewelry
 {
-    public partial class frmAccount: Form
+    public partial class Page_Account : Form
     {
-        public frmAccount()
+        public Page_Account()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace Jewelry
 
         private void btnReturnAddA_Click(object sender, EventArgs e)
         {
-            frmDashBoard db = new frmDashBoard();
+            DashBoard db = new DashBoard();
             this.Hide();
             db.ShowDialog();
         }

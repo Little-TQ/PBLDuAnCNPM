@@ -24,7 +24,7 @@ namespace Jewelry
 
         private void btnReturnExitEditCustomer_Click(object sender, EventArgs e)
         {
-            frmCustomer frm = new frmCustomer();
+            Customer frm = new Customer();
             this.Hide();
             frm.ShowDialog();
         }

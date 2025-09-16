@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class frmAddAccount : Form
+    public partial class AddAccount : Form
     {
-        public frmAddAccount()
+        public AddAccount()
         {
             InitializeComponent();
         }
 
         private void btnReturnAddA_Click(object sender, EventArgs e)
         {
-            frmAccount acc = new frmAccount();
+            Page_Account acc = new Page_Account();
             this.Hide();
             acc.ShowDialog();
         }

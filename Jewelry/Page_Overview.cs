@@ -12,9 +12,9 @@ using Jewelry.Overview;
 
 namespace Jewelry
 {
-    public partial class frmOverview: Form
+    public partial class Page_Overview: Form
     {
-        public frmOverview()
+        public Page_Overview()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace Jewelry
 
         private void btnReturnOverview_Click(object sender, EventArgs e)
         {
-            frmDashBoard frm = new frmDashBoard();
+            DashBoard frm = new DashBoard();
             this.Hide();
             frm.ShowDialog();
         }

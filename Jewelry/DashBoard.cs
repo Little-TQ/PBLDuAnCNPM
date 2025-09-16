@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class frmDashBoard: Form
+    public partial class DashBoard: Form
     {
-        public frmDashBoard()
+        public DashBoard()
         {
             InitializeComponent();
         }
         private void lblAccount_Click(object sender, EventArgs e)
         {
-            frmAccount frm = new frmAccount();
+            Page_Account frm = new Page_Account();
             this.Hide();
             frm.ShowDialog();
         }
@@ -29,23 +29,30 @@ namespace Jewelry
 
         private void lblOverview_Click(object sender, EventArgs e)
         {
-            frmOverview frm = new frmOverview();
+            Page_Account frm = new Page_Account();
             this.Hide();
             frm.ShowDialog();
         }
 
         private void lblUpdate_Click(object sender, EventArgs e)
         {
-            frmUpdatePrice frm = new frmUpdatePrice(); 
+            UpdatePrice frm = new UpdatePrice(); 
             this.Hide();
             frm.ShowDialog();
         }
 
         private void lblCustomer_Click(object sender, EventArgs e)
         {
-            frmCustomer frm = new frmCustomer();
+            Customer frm = new Customer();
             this.Hide();
             frm.ShowDialog();   
+        }
+
+        private void lblProduct_Click(object sender, EventArgs e)
+        {
+            Product_View frm = new Product_View();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }
