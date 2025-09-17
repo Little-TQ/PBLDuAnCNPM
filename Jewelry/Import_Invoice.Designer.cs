@@ -107,6 +107,7 @@
             this.btnReturnImportInvoice.Name = "btnReturnImportInvoice";
             this.btnReturnImportInvoice.Size = new System.Drawing.Size(50, 36);
             this.btnReturnImportInvoice.TabIndex = 2;
+            this.btnReturnImportInvoice.Click += new System.EventHandler(this.btnReturnImportInvoice_Click);
             // 
             // label1
             // 

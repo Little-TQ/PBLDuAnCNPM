@@ -16,5 +16,12 @@ namespace Jewelry
         {
             InitializeComponent();
         }
+
+        private void btnReturnImportInvoice_Click(object sender, EventArgs e)
+        {
+            DashBoard frm = new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
+        }
     }
 }
