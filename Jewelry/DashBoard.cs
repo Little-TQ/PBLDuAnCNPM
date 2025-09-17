@@ -18,9 +18,6 @@ namespace Jewelry
         }
         private void lblAccount_Click(object sender, EventArgs e)
         {
-            Page_Account frm = new Page_Account();
-            this.Hide();
-            frm.ShowDialog();
         }
         private void btnExitDashBoard_Click(object sender, EventArgs e)
         {
@@ -29,37 +26,32 @@ namespace Jewelry
 
         private void lblOverview_Click(object sender, EventArgs e)
         {
-            Page_Account frm = new Page_Account();
-            this.Hide();
-            frm.ShowDialog();
+           
         }
 
         private void lblUpdate_Click(object sender, EventArgs e)
         {
-            UpdatePrice frm = new UpdatePrice(); 
-            this.Hide();
-            frm.ShowDialog();
+           
         }
 
         private void lblCustomer_Click(object sender, EventArgs e)
         {
-            Customer frm = new Customer();
-            this.Hide();
-            frm.ShowDialog();   
+             
         }
 
         private void lblProduct_Click(object sender, EventArgs e)
         {
-            Product_View frm = new Product_View();
-            this.Hide();
-            frm.ShowDialog();
+            
         }
 
         private void lblWareHouse_Click(object sender, EventArgs e)
         {
-            Import_Invoice frm = new Import_Invoice();
-            this.Hide();
-            frm.ShowDialog();
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
