@@ -65,14 +65,17 @@ namespace Jewelry
 
         private void btnReturnAddA_Click(object sender, EventArgs e)
         {
-            DashBoard db = new DashBoard();
-            this.Hide();
-            db.ShowDialog();
+           
         }
 
         private void btnExitAccount_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
