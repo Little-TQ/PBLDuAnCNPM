@@ -54,5 +54,12 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
+
+        private void lblWareHouse_Click(object sender, EventArgs e)
+        {
+            Import_Invoice frm = new Import_Invoice();
+            this.Hide();
+            frm.ShowDialog();
+        }
     }
 }

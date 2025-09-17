@@ -173,6 +173,7 @@
             this.lblWareHouse.Size = new System.Drawing.Size(170, 30);
             this.lblWareHouse.TabIndex = 0;
             this.lblWareHouse.Text = "Import Invoice";
+            this.lblWareHouse.Click += new System.EventHandler(this.lblWareHouse_Click);
             // 
             // lblPayment
             // 

@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\dgvProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,24 @@
     </Compile>
     <Compile Include="FolderEmployee\InformationEmployee.Designer.cs">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderImportInvoice\FollowItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FolderImportInvoice\FollowItems.Designer.cs">
+      <DependentUpon>FollowItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderImportInvoice\ImportInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FolderImportInvoice\ImportInvoice.Designer.cs">
+      <DependentUpon>ImportInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderImportInvoice\Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FolderImportInvoice\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_Account.cs">
       <SubType>Form</SubType>
@@ -267,6 +291,9 @@
     <Compile Include="Import_Invoice.Designer.cs">
       <DependentUpon>Import_Invoice.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\dgvProduct.resx" />
     <EmbeddedResource Include="Component\dgvProperty.resx" />
     <EmbeddedResource Include="FolderEmployee\Salary.resx">
@@ -289,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FolderEmployee\InformationEmployee.resx">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderImportInvoice\FollowItems.resx">
+      <DependentUpon>FollowItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderImportInvoice\ImportInvoice.resx">
+      <DependentUpon>ImportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderImportInvoice\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_Account.resx">
       <DependentUpon>Page_Account.cs</DependentUpon>
