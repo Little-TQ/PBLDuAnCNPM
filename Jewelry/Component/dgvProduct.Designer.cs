@@ -1,4 +1,4 @@
-﻿namespace Jewelry.Components
+﻿namespace Jewelry
 {
     partial class dgvProduct
     {
@@ -134,7 +134,7 @@
             // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Image = global::        Jewelry.Properties.Resources.Edit;
+            this.guna2CirclePictureBox1.Image = global::Jewelry.Properties.Resources.Edit;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(4, 4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
