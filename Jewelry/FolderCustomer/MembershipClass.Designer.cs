@@ -31,7 +31,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnViewMembership = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveMembersip = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchMembershipC = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridViewMembersipC = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -76,7 +75,6 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnViewMembership);
-            this.panel4.Controls.Add(this.btnSaveMembersip);
             this.panel4.Controls.Add(this.txtSearchMembershipC);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -110,27 +108,6 @@
             this.btnViewMembership.PressedColor = System.Drawing.Color.LightGreen;
             this.btnViewMembership.Size = new System.Drawing.Size(50, 50);
             this.btnViewMembership.TabIndex = 4;
-            // 
-            // btnSaveMembersip
-            // 
-            this.btnSaveMembersip.BackColor = System.Drawing.Color.White;
-            this.btnSaveMembersip.BorderRadius = 12;
-            this.btnSaveMembersip.BorderThickness = 1;
-            this.btnSaveMembersip.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveMembersip.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveMembersip.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveMembersip.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveMembersip.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveMembersip.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveMembersip.ForeColor = System.Drawing.Color.White;
-            this.btnSaveMembersip.Image = global::Jewelry.Properties.Resources.Save;
-            this.btnSaveMembersip.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSaveMembersip.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSaveMembersip.Location = new System.Drawing.Point(1198, 21);
-            this.btnSaveMembersip.Name = "btnSaveMembersip";
-            this.btnSaveMembersip.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSaveMembersip.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveMembersip.TabIndex = 1;
             // 
             // txtSearchMembershipC
             // 
@@ -446,7 +423,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnViewMembership;
-        private Guna.UI2.WinForms.Guna2Button btnSaveMembersip;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchMembershipC;
         private System.Windows.Forms.DataGridView dataGridViewMembersipC;
         private System.Windows.Forms.Panel panel1;

@@ -18,18 +18,6 @@ namespace Jewelry
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // dgvProperty
-            // 
-            this.Name = "dgvProperty";
-            this.Load += new System.EventHandler(this.dgvProperty_Load);
-            this.ResumeLayout(false);
-
-        }
-
         private void dgvProperty_Load(object sender, EventArgs e)
         {
 

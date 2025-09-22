@@ -30,9 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExitAddAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReturnAddA = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCompleteAddA = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnEditAccount = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cbxStatusA = new System.Windows.Forms.ComboBox();
+            this.chkIsActiveA = new System.Windows.Forms.CheckBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbxRoleA = new System.Windows.Forms.ComboBox();
@@ -43,10 +47,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtUsernameA = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnCompleteAddA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnEditAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExitAddAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReturnAddA = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -78,6 +78,42 @@
             this.panel1.Size = new System.Drawing.Size(1012, 75);
             this.panel1.TabIndex = 1;
             // 
+            // btnExitAddAccount
+            // 
+            this.btnExitAddAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitAddAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitAddAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitAddAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitAddAccount.FillColor = System.Drawing.Color.White;
+            this.btnExitAddAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExitAddAccount.ForeColor = System.Drawing.Color.White;
+            this.btnExitAddAccount.Image = global::Jewelry.Properties.Resources.Exit;
+            this.btnExitAddAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExitAddAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExitAddAccount.Location = new System.Drawing.Point(950, 6);
+            this.btnExitAddAccount.Name = "btnExitAddAccount";
+            this.btnExitAddAccount.Size = new System.Drawing.Size(56, 41);
+            this.btnExitAddAccount.TabIndex = 2;
+            this.btnExitAddAccount.Click += new System.EventHandler(this.btnExitAddAccount_Click);
+            // 
+            // btnReturnAddA
+            // 
+            this.btnReturnAddA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturnAddA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReturnAddA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReturnAddA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReturnAddA.FillColor = System.Drawing.Color.White;
+            this.btnReturnAddA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReturnAddA.ForeColor = System.Drawing.Color.White;
+            this.btnReturnAddA.Image = global::Jewelry.Properties.Resources.Return;
+            this.btnReturnAddA.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnReturnAddA.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReturnAddA.Location = new System.Drawing.Point(3, 6);
+            this.btnReturnAddA.Name = "btnReturnAddA";
+            this.btnReturnAddA.Size = new System.Drawing.Size(56, 41);
+            this.btnReturnAddA.TabIndex = 1;
+            this.btnReturnAddA.Click += new System.EventHandler(this.btnReturnAddA_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -92,24 +128,67 @@
             this.panel2.Size = new System.Drawing.Size(1012, 485);
             this.panel2.TabIndex = 2;
             // 
+            // btnCompleteAddA
+            // 
+            this.btnCompleteAddA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleteAddA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleteAddA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCompleteAddA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCompleteAddA.FillColor = System.Drawing.Color.White;
+            this.btnCompleteAddA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCompleteAddA.ForeColor = System.Drawing.Color.White;
+            this.btnCompleteAddA.Image = global::Jewelry.Properties.Resources.Tick;
+            this.btnCompleteAddA.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnCompleteAddA.Location = new System.Drawing.Point(947, 428);
+            this.btnCompleteAddA.Name = "btnCompleteAddA";
+            this.btnCompleteAddA.PressedColor = System.Drawing.Color.Lime;
+            this.btnCompleteAddA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnCompleteAddA.Size = new System.Drawing.Size(40, 39);
+            this.btnCompleteAddA.TabIndex = 6;
+            this.btnCompleteAddA.Click += new System.EventHandler(this.btnCompleteAddA_Click);
+            // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.BackColor = System.Drawing.Color.White;
+            this.btnEditAccount.BorderRadius = 12;
+            this.btnEditAccount.BorderThickness = 1;
+            this.btnEditAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditAccount.FillColor = System.Drawing.Color.Yellow;
+            this.btnEditAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditAccount.ForeColor = System.Drawing.Color.White;
+            this.btnEditAccount.Image = global::Jewelry.Properties.Resources.Edit;
+            this.btnEditAccount.ImageOffset = new System.Drawing.Point(1, 0);
+            this.btnEditAccount.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnEditAccount.Location = new System.Drawing.Point(947, 15);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.PressedColor = System.Drawing.Color.LightGreen;
+            this.btnEditAccount.Size = new System.Drawing.Size(40, 39);
+            this.btnEditAccount.TabIndex = 10;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.cbxStatusA);
+            this.panel5.Controls.Add(this.chkIsActiveA);
             this.panel5.Controls.Add(this.guna2HtmlLabel4);
             this.panel5.Location = new System.Drawing.Point(551, 280);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(416, 125);
             this.panel5.TabIndex = 9;
             // 
-            // cbxStatusA
+            // chkIsActiveA
             // 
-            this.cbxStatusA.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxStatusA.FormattingEnabled = true;
-            this.cbxStatusA.Location = new System.Drawing.Point(21, 67);
-            this.cbxStatusA.Name = "cbxStatusA";
-            this.cbxStatusA.Size = new System.Drawing.Size(334, 37);
-            this.cbxStatusA.TabIndex = 2;
+            this.chkIsActiveA.AutoSize = true;
+            this.chkIsActiveA.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsActiveA.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.chkIsActiveA.Location = new System.Drawing.Point(21, 79);
+            this.chkIsActiveA.Name = "chkIsActiveA";
+            this.chkIsActiveA.Size = new System.Drawing.Size(84, 28);
+            this.chkIsActiveA.TabIndex = 1;
+            this.chkIsActiveA.Text = "Active";
+            this.chkIsActiveA.UseVisualStyleBackColor = true;
             // 
             // guna2HtmlLabel4
             // 
@@ -232,82 +311,7 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Username";
             // 
-            // btnCompleteAddA
-            // 
-            this.btnCompleteAddA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCompleteAddA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCompleteAddA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCompleteAddA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCompleteAddA.FillColor = System.Drawing.Color.White;
-            this.btnCompleteAddA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCompleteAddA.ForeColor = System.Drawing.Color.White;
-            this.btnCompleteAddA.Image = global::Jewelry.Properties.Resources.Tick;
-            this.btnCompleteAddA.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCompleteAddA.Location = new System.Drawing.Point(947, 428);
-            this.btnCompleteAddA.Name = "btnCompleteAddA";
-            this.btnCompleteAddA.PressedColor = System.Drawing.Color.Lime;
-            this.btnCompleteAddA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnCompleteAddA.Size = new System.Drawing.Size(40, 39);
-            this.btnCompleteAddA.TabIndex = 6;
-            // 
-            // btnEditAccount
-            // 
-            this.btnEditAccount.BackColor = System.Drawing.Color.White;
-            this.btnEditAccount.BorderRadius = 12;
-            this.btnEditAccount.BorderThickness = 1;
-            this.btnEditAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditAccount.FillColor = System.Drawing.Color.Yellow;
-            this.btnEditAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditAccount.ForeColor = System.Drawing.Color.White;
-            this.btnEditAccount.Image = global::Jewelry.Properties.Resources.Edit;
-            this.btnEditAccount.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnEditAccount.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnEditAccount.Location = new System.Drawing.Point(947, 15);
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnEditAccount.Size = new System.Drawing.Size(40, 39);
-            this.btnEditAccount.TabIndex = 10;
-            // 
-            // btnExitAddAccount
-            // 
-            this.btnExitAddAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitAddAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitAddAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitAddAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitAddAccount.FillColor = System.Drawing.Color.White;
-            this.btnExitAddAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitAddAccount.ForeColor = System.Drawing.Color.White;
-            this.btnExitAddAccount.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitAddAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitAddAccount.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitAddAccount.Location = new System.Drawing.Point(950, 6);
-            this.btnExitAddAccount.Name = "btnExitAddAccount";
-            this.btnExitAddAccount.Size = new System.Drawing.Size(56, 41);
-            this.btnExitAddAccount.TabIndex = 2;
-            this.btnExitAddAccount.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // btnReturnAddA
-            // 
-            this.btnReturnAddA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnAddA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnAddA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReturnAddA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnAddA.FillColor = System.Drawing.Color.White;
-            this.btnReturnAddA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReturnAddA.ForeColor = System.Drawing.Color.White;
-            this.btnReturnAddA.Image = global::Jewelry.Properties.Resources.Return;
-            this.btnReturnAddA.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnReturnAddA.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReturnAddA.Location = new System.Drawing.Point(3, 6);
-            this.btnReturnAddA.Name = "btnReturnAddA";
-            this.btnReturnAddA.Size = new System.Drawing.Size(56, 41);
-            this.btnReturnAddA.TabIndex = 1;
-            this.btnReturnAddA.Click += new System.EventHandler(this.btnReturnAddA_Click);
-            // 
-            // frmAddAccount
+            // AddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,7 +320,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAddAccount";
+            this.Name = "AddAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -343,7 +347,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnCompleteAddA;
         public Guna.UI2.WinForms.Guna2Button btnEditAccount;
         private System.Windows.Forms.Panel panel5;
-        public System.Windows.Forms.ComboBox cbxStatusA;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cbxRoleA;
@@ -354,5 +357,6 @@
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2TextBox txtUsernameA;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.CheckBox chkIsActiveA;
     }
 }

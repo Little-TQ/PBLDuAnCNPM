@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Import_Invoice));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExitImportInvoice = new Guna.UI2.WinForms.Guna2Button();
@@ -46,8 +45,8 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.followItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
@@ -114,11 +113,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(534, 17);
+            this.label1.Location = new System.Drawing.Point(661, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 72);
+            this.label1.Size = new System.Drawing.Size(183, 72);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Import Invoice";
+            this.label1.Text = " Invoice";
             // 
             // panel3
             // 
@@ -136,13 +135,12 @@
             this.mstNCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.ImportToolStripMenuItem,
-            this.SupplierToolStripMenuItem,
-            this.followItemsToolStripMenuItem});
+            this.SupplierToolStripMenuItem});
             this.mstNCustomer.Location = new System.Drawing.Point(0, 0);
             this.mstNCustomer.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.mstNCustomer.Name = "mstNCustomer";
-            this.mstNCustomer.Padding = new System.Windows.Forms.Padding(10, 25, 0, 30);
-            this.mstNCustomer.Size = new System.Drawing.Size(1438, 94);
+            this.mstNCustomer.Padding = new System.Windows.Forms.Padding(10, 20, 0, 5);
+            this.mstNCustomer.Size = new System.Drawing.Size(1438, 99);
             this.mstNCustomer.TabIndex = 6;
             this.mstNCustomer.Text = "mstNavigionAccount";
             // 
@@ -157,82 +155,76 @@
             this.customerToolStripMenuItem1,
             this.employeeToolStripMenuItem1,
             this.wareHouseToolStripMenuItem,
-            this.updateToolStripMenuItem});
+            this.updateToolStripMenuItem,
+            this.paymentToolStripMenuItem});
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
+            this.homeToolStripMenuItem.Image = global::Jewelry.Properties.Resources.Bar;
+            this.homeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.homeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.homeToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.homeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(120, 0, 120, 0);
             this.homeToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(314, 39);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(401, 74);
             this.homeToolStripMenuItem.Text = " Home";
-            this.homeToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(238, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.toolStripMenuItem1.Text = "Account";
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(238, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(238, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.productToolStripMenuItem1.Text = "Product";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(238, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(238, 40);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(238, 40);
-            this.wareHouseToolStripMenuItem.Text = "WareHouse";
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.wareHouseToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(238, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // ImportToolStripMenuItem
             // 
             this.ImportToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImportToolStripMenuItem.Name = "ImportToolStripMenuItem";
-            this.ImportToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.ImportToolStripMenuItem.Size = new System.Drawing.Size(390, 39);
-            this.ImportToolStripMenuItem.Text = "Import Invoice";
+            this.ImportToolStripMenuItem.Padding = new System.Windows.Forms.Padding(120, 0, 120, 0);
+            this.ImportToolStripMenuItem.Size = new System.Drawing.Size(344, 74);
+            this.ImportToolStripMenuItem.Text = "Import ";
             // 
             // SupplierToolStripMenuItem
             // 
             this.SupplierToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem";
-            this.SupplierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.SupplierToolStripMenuItem.Size = new System.Drawing.Size(318, 39);
-            this.SupplierToolStripMenuItem.Text = "Supplier";
-            // 
-            // followItemsToolStripMenuItem
-            // 
-            this.followItemsToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.followItemsToolStripMenuItem.Name = "followItemsToolStripMenuItem";
-            this.followItemsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.followItemsToolStripMenuItem.Size = new System.Drawing.Size(362, 39);
-            this.followItemsToolStripMenuItem.Text = "FollowItems";
+            this.SupplierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(120, 0, 120, 0);
+            this.SupplierToolStripMenuItem.Size = new System.Drawing.Size(337, 74);
+            this.SupplierToolStripMenuItem.Text = "Export";
             // 
             // pnlContainerImportInvoice
             // 
@@ -240,6 +232,12 @@
             this.pnlContainerImportInvoice.Name = "pnlContainerImportInvoice";
             this.pnlContainerImportInvoice.Size = new System.Drawing.Size(1440, 811);
             this.pnlContainerImportInvoice.TabIndex = 7;
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.paymentToolStripMenuItem.Text = "Payment";
             // 
             // Import_Invoice
             // 
@@ -281,7 +279,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ImportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SupplierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem followItemsToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContainerImportInvoice;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
     }
 }

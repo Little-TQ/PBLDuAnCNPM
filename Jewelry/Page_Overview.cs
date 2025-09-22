@@ -66,5 +66,10 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
+
+        private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

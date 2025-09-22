@@ -30,5 +30,14 @@ namespace Jewelry
 
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

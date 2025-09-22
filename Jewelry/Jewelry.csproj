@@ -59,14 +59,33 @@
     <Compile Include="AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="Component\dgvProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Component\dgvProduct.Designer.cs" />
+    <Compile Include="Component\dgvProduct.Designer.cs">
+      <DependentUpon>dgvProduct.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Component\dgvProduct.resx">
+      <DependentUpon>dgvProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Component\dgvProperty.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Component\dgvProperty.Designer.cs" />
+    <Compile Include="Component\dgvProperty.Designer.cs">
+      <DependentUpon>dgvProperty.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Component\dgvProperty.resx">
+      <DependentUpon>dgvProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\DBConnect.cs" />
+    <Compile Include="DAL\PermisstionDAL.cs" />
+    <Compile Include="DAL\RoleDAL.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\PermissionDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\RolePermissionDTO.cs" />
     <Compile Include="FolderEmployee\Salary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,22 +128,22 @@
     <Compile Include="FolderEmployee\InformationEmployee.Designer.cs">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FolderImportInvoice\FollowItems.cs">
+    <Compile Include="FolderInvoice\FollowItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FolderImportInvoice\FollowItems.Designer.cs">
+    <Compile Include="FolderInvoice\FollowItems.Designer.cs">
       <DependentUpon>FollowItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="FolderImportInvoice\ImportInvoice.cs">
+    <Compile Include="FolderInvoice\ImportInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FolderImportInvoice\ImportInvoice.Designer.cs">
+    <Compile Include="FolderInvoice\ImportInvoice.Designer.cs">
       <DependentUpon>ImportInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FolderImportInvoice\Supplier.cs">
+    <Compile Include="FolderInvoice\Supplier.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FolderImportInvoice\Supplier.Designer.cs">
+    <Compile Include="FolderInvoice\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_Account.cs">
@@ -294,8 +313,6 @@
     <EmbeddedResource Include="AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\dgvProduct.resx" />
-    <EmbeddedResource Include="Component\dgvProperty.resx" />
     <EmbeddedResource Include="FolderEmployee\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,13 +334,13 @@
     <EmbeddedResource Include="FolderEmployee\InformationEmployee.resx">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FolderImportInvoice\FollowItems.resx">
+    <EmbeddedResource Include="FolderInvoice\FollowItems.resx">
       <DependentUpon>FollowItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FolderImportInvoice\ImportInvoice.resx">
+    <EmbeddedResource Include="FolderInvoice\ImportInvoice.resx">
       <DependentUpon>ImportInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FolderImportInvoice\Supplier.resx">
+    <EmbeddedResource Include="FolderInvoice\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_Account.resx">
@@ -429,9 +446,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
     <Folder Include="FolderProduct\" />
   </ItemGroup>
   <ItemGroup>
@@ -504,7 +518,6 @@
     <None Include="Photo\Tick.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Product_General.png" />
     <Content Include="Resources\Add %281%29.png" />
     <Content Include="Resources\Add.png" />
     <Content Include="Resources\Back.png" />
@@ -524,6 +537,9 @@
     <Content Include="Resources\Search.svg" />
     <Content Include="Resources\User.png" />
     <Content Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

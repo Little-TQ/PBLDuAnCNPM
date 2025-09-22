@@ -16,5 +16,10 @@ namespace Jewelry
         {
             InitializeComponent();
         }
+
+        private void SoldProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

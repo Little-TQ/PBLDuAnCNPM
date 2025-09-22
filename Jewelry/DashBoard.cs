@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Jewelry.Account;
 
 namespace Jewelry
 {
@@ -18,6 +19,9 @@ namespace Jewelry
         }
         private void lblAccount_Click(object sender, EventArgs e)
         {
+            Page_Account frm = new Page_Account();
+            this.Hide();
+            frm.ShowDialog();
         }
         private void btnExitDashBoard_Click(object sender, EventArgs e)
         {
