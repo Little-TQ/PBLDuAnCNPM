@@ -1,6 +1,6 @@
 ﻿namespace Jewelry.FolderImportInvoice
 {
-    partial class Supplier
+    partial class ExportInvoice
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Supplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportInvoice));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddSupplier = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewSupplier = new Guna.UI2.WinForms.Guna2Button();

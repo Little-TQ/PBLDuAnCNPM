@@ -140,11 +140,11 @@
     <Compile Include="FolderInvoice\ImportInvoice.Designer.cs">
       <DependentUpon>ImportInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FolderInvoice\Supplier.cs">
+    <Compile Include="FolderInvoice\ExportInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FolderInvoice\Supplier.Designer.cs">
-      <DependentUpon>Supplier.cs</DependentUpon>
+    <Compile Include="FolderInvoice\ExportInvoice.Designer.cs">
+      <DependentUpon>ExportInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_Account.cs">
       <SubType>Form</SubType>
@@ -340,8 +340,8 @@
     <EmbeddedResource Include="FolderInvoice\ImportInvoice.resx">
       <DependentUpon>ImportInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FolderInvoice\Supplier.resx">
-      <DependentUpon>Supplier.cs</DependentUpon>
+    <EmbeddedResource Include="FolderInvoice\ExportInvoice.resx">
+      <DependentUpon>ExportInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_Account.resx">
       <DependentUpon>Page_Account.cs</DependentUpon>
@@ -445,9 +445,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FolderProduct\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Photo\Nàng tiên-Login.png" />
   </ItemGroup>

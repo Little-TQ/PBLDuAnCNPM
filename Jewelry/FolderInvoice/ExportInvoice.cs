@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jewelry.FolderImportInvoice
 {
-    public partial class Supplier: UserControl
+    public partial class ExportInvoice: UserControl
     {
-        public Supplier()
+        public ExportInvoice()
         {
             InitializeComponent();
         }
