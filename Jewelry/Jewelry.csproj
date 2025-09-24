@@ -60,30 +60,27 @@
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\Product.BLL.cs" />
     <Compile Include="Component\dgvProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Component\dgvProduct.Designer.cs">
       <DependentUpon>dgvProduct.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Component\dgvProduct.resx">
-      <DependentUpon>dgvProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Component\dgvProperty.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Component\dgvProperty.Designer.cs">
       <DependentUpon>dgvProperty.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Component\dgvProperty.resx">
-      <DependentUpon>dgvProperty.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\DBConnect.cs" />
     <Compile Include="DAL\PermisstionDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\RoleDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\RolePermissionDTO.cs" />
     <Compile Include="FolderEmployee\Salary.cs">
@@ -312,6 +309,12 @@
     </Compile>
     <EmbeddedResource Include="AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\dgvProduct.resx">
+      <DependentUpon>dgvProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\dgvProperty.resx">
+      <DependentUpon>dgvProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FolderEmployee\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>

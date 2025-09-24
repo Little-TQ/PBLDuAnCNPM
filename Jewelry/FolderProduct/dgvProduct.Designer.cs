@@ -1,4 +1,4 @@
-﻿namespace Jewelry
+﻿namespace Jewelry.Components
 {
     partial class dgvProduct
     {
