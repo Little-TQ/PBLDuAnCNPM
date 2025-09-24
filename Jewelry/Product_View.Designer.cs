@@ -100,7 +100,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.property1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.panel1.Controls.Add(this.guna2CirclePictureBox10);
@@ -154,49 +153,49 @@
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // overviewToolStripMenuItem
             // 
             this.overviewToolStripMenuItem.Name = "overviewToolStripMenuItem";
-            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.overviewToolStripMenuItem.Text = "Overview";
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.employeeToolStripMenuItem.Text = "Employee";
             // 
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.productToolStripMenuItem.Text = "Product";
             // 
             // invoiceToolStripMenuItem
             // 
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.invoiceToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // guna2CirclePictureBox1
@@ -286,6 +285,7 @@
             // 
             // panelDGV
             // 
+            this.panelDGV.Controls.Add(this.property1);
             this.panelDGV.Controls.Add(this.product1);
             this.panelDGV.Location = new System.Drawing.Point(0, 228);
             this.panelDGV.Name = "panelDGV";
@@ -303,7 +303,7 @@
             // property1
             // 
             this.property1.BackColor = System.Drawing.Color.White;
-            this.property1.Location = new System.Drawing.Point(387, -1);
+            this.property1.Location = new System.Drawing.Point(347, -100);
             this.property1.Name = "property1";
             this.property1.Size = new System.Drawing.Size(770, 620);
             this.property1.TabIndex = 1;
@@ -360,7 +360,7 @@
         private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private FolderProduct.Property property1;
         private FolderProduct.Product product1;
+        private FolderProduct.Property property1;
     }
 }
