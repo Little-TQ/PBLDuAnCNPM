@@ -32,14 +32,6 @@
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.cbGender = new System.Windows.Forms.ComboBox();
-            this.cbPrice = new System.Windows.Forms.ComboBox();
-            this.cbMaterial = new System.Windows.Forms.ComboBox();
-            this.cbColor = new System.Windows.Forms.ComboBox();
-            this.panelDGV = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +43,22 @@
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.cbMaterial = new System.Windows.Forms.ComboBox();
+            this.cbColor = new System.Windows.Forms.ComboBox();
+            this.panelDGV = new System.Windows.Forms.Panel();
+            this.product1 = new Jewelry.FolderProduct.Product();
+            this.property1 = new Jewelry.FolderProduct.Property();
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
+            this.panelDGV.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
@@ -98,12 +100,12 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.property1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.panel1.Controls.Add(this.guna2CirclePictureBox10);
             this.panel1.Controls.Add(this.cbCategory);
             this.panel1.Controls.Add(this.cbGender);
-            this.panel1.Controls.Add(this.cbPrice);
             this.panel1.Controls.Add(this.cbMaterial);
             this.panel1.Controls.Add(this.cbColor);
             this.panel1.Location = new System.Drawing.Point(0, 124);
@@ -111,119 +113,12 @@
             this.panel1.Size = new System.Drawing.Size(1440, 100);
             this.panel1.TabIndex = 2;
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::Jewelry.Properties.Resources.View;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1277, 41);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 45;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // guna2CirclePictureBox10
-            // 
-            this.guna2CirclePictureBox10.Image = global::Jewelry.Properties.Resources.Edit;
-            this.guna2CirclePictureBox10.ImageRotate = 0F;
-            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(1322, 41);
-            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
-            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox10.TabIndex = 44;
-            this.guna2CirclePictureBox10.TabStop = false;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Items.AddRange(new object[] {
-            "All",
-            "Silver",
-            "Gold 10k",
-            "Gold 18k",
-            "Gold 24k"});
-            this.cbCategory.Location = new System.Drawing.Point(257, 32);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(126, 38);
-            this.cbCategory.TabIndex = 6;
-            this.cbCategory.Text = "Category";
-            // 
-            // cbGender
-            // 
-            this.cbGender.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Items.AddRange(new object[] {
-            "All",
-            "Male",
-            "Female"});
-            this.cbGender.Location = new System.Drawing.Point(1094, 32);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(126, 38);
-            this.cbGender.TabIndex = 5;
-            this.cbGender.Text = "Gender";
-            // 
-            // cbPrice
-            // 
-            this.cbPrice.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPrice.FormattingEnabled = true;
-            this.cbPrice.Items.AddRange(new object[] {
-            "Silver",
-            "Gold 10k",
-            "Gold 18k",
-            "Gold 24k"});
-            this.cbPrice.Location = new System.Drawing.Point(890, 32);
-            this.cbPrice.Name = "cbPrice";
-            this.cbPrice.Size = new System.Drawing.Size(126, 38);
-            this.cbPrice.TabIndex = 4;
-            this.cbPrice.Text = "Price";
-            // 
-            // cbMaterial
-            // 
-            this.cbMaterial.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMaterial.FormattingEnabled = true;
-            this.cbMaterial.Items.AddRange(new object[] {
-            "All",
-            "Silver",
-            "Gold 10k",
-            "Gold 18k",
-            "Gold 24k"});
-            this.cbMaterial.Location = new System.Drawing.Point(471, 32);
-            this.cbMaterial.Name = "cbMaterial";
-            this.cbMaterial.Size = new System.Drawing.Size(126, 38);
-            this.cbMaterial.TabIndex = 2;
-            this.cbMaterial.Text = "Material";
-            // 
-            // cbColor
-            // 
-            this.cbColor.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbColor.FormattingEnabled = true;
-            this.cbColor.Items.AddRange(new object[] {
-            "All",
-            "Sliver",
-            "Gold",
-            "Pink Gold"});
-            this.cbColor.Location = new System.Drawing.Point(679, 32);
-            this.cbColor.Name = "cbColor";
-            this.cbColor.Size = new System.Drawing.Size(126, 38);
-            this.cbColor.TabIndex = 3;
-            this.cbColor.Text = "Color";
-            // 
-            // panelDGV
-            // 
-            this.panelDGV.Location = new System.Drawing.Point(0, 228);
-            this.panelDGV.Name = "panelDGV";
-            this.panelDGV.Size = new System.Drawing.Size(1440, 796);
-            this.panelDGV.TabIndex = 3;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Location = new System.Drawing.Point(11, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(159, 71);
+            this.panel2.Size = new System.Drawing.Size(159, 47);
             this.panel2.TabIndex = 46;
             // 
             // menuStrip1
@@ -259,13 +154,13 @@
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // overviewToolStripMenuItem
             // 
             this.overviewToolStripMenuItem.Name = "overviewToolStripMenuItem";
-            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.overviewToolStripMenuItem.Text = "Overview";
             // 
             // customerToolStripMenuItem
@@ -304,6 +199,115 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::Jewelry.Properties.Resources.View;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1136, 41);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(30, 29);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 45;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2CirclePictureBox10
+            // 
+            this.guna2CirclePictureBox10.Image = global::Jewelry.Properties.Resources.Edit;
+            this.guna2CirclePictureBox10.ImageRotate = 0F;
+            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(1186, 41);
+            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
+            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(30, 29);
+            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox10.TabIndex = 44;
+            this.guna2CirclePictureBox10.TabStop = false;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "All",
+            "Silver",
+            "Gold 10k",
+            "Gold 18k",
+            "Gold 24k"});
+            this.cbCategory.Location = new System.Drawing.Point(387, 32);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(126, 38);
+            this.cbCategory.TabIndex = 6;
+            this.cbCategory.Text = "Category";
+            // 
+            // cbGender
+            // 
+            this.cbGender.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "All",
+            "Male",
+            "Female"});
+            this.cbGender.Location = new System.Drawing.Point(971, 32);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(126, 38);
+            this.cbGender.TabIndex = 5;
+            this.cbGender.Text = "Gender";
+            // 
+            // cbMaterial
+            // 
+            this.cbMaterial.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterial.FormattingEnabled = true;
+            this.cbMaterial.Items.AddRange(new object[] {
+            "All",
+            "Silver",
+            "Gold 10k",
+            "Gold 18k",
+            "Gold 24k"});
+            this.cbMaterial.Location = new System.Drawing.Point(584, 32);
+            this.cbMaterial.Name = "cbMaterial";
+            this.cbMaterial.Size = new System.Drawing.Size(126, 38);
+            this.cbMaterial.TabIndex = 2;
+            this.cbMaterial.Text = "Material";
+            // 
+            // cbColor
+            // 
+            this.cbColor.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbColor.FormattingEnabled = true;
+            this.cbColor.Items.AddRange(new object[] {
+            "All",
+            "Sliver",
+            "Gold",
+            "Pink Gold"});
+            this.cbColor.Location = new System.Drawing.Point(779, 32);
+            this.cbColor.Name = "cbColor";
+            this.cbColor.Size = new System.Drawing.Size(126, 38);
+            this.cbColor.TabIndex = 3;
+            this.cbColor.Text = "Color";
+            // 
+            // panelDGV
+            // 
+            this.panelDGV.Controls.Add(this.product1);
+            this.panelDGV.Location = new System.Drawing.Point(0, 228);
+            this.panelDGV.Name = "panelDGV";
+            this.panelDGV.Size = new System.Drawing.Size(1440, 796);
+            this.panelDGV.TabIndex = 3;
+            // 
+            // product1
+            // 
+            this.product1.BackColor = System.Drawing.Color.White;
+            this.product1.Location = new System.Drawing.Point(0, 0);
+            this.product1.Name = "product1";
+            this.product1.Size = new System.Drawing.Size(1440, 802);
+            this.product1.TabIndex = 0;
+            // 
+            // property1
+            // 
+            this.property1.BackColor = System.Drawing.Color.White;
+            this.property1.Location = new System.Drawing.Point(387, -1);
+            this.property1.Name = "property1";
+            this.property1.Size = new System.Drawing.Size(770, 620);
+            this.property1.TabIndex = 1;
+            // 
             // Product_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,12 +325,13 @@
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
+            this.panelDGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,7 +343,6 @@
         private System.Windows.Forms.Panel panelDGV;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbGender;
-        private System.Windows.Forms.ComboBox cbPrice;
         private System.Windows.Forms.ComboBox cbMaterial;
         private System.Windows.Forms.ComboBox cbColor;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox10;
@@ -356,5 +360,7 @@
         private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private FolderProduct.Property property1;
+        private FolderProduct.Product product1;
     }
 }

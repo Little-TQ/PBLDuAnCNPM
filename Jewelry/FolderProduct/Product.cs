@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Jewelry.Components
+namespace Jewelry.FolderProduct
 {
-    public partial class dgvProperty : UserControl
+    public partial class Product : UserControl
     {
-        public dgvProperty()
+        public Product()
         {
             InitializeComponent();
         }
