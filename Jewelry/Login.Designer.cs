@@ -41,29 +41,27 @@
             this.cbxRole = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExitLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.88889F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.78682F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.21318F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1426, 1024);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -77,15 +75,15 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(700, 3);
+            this.panel1.Location = new System.Drawing.Point(770, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(723, 1018);
+            this.panel1.Size = new System.Drawing.Size(653, 1018);
             this.panel1.TabIndex = 1;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(109, 717);
+            this.btnSubmit.Location = new System.Drawing.Point(67, 712);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(519, 60);
             this.btnSubmit.TabIndex = 4;
@@ -97,7 +95,7 @@
             // 
             this.panel5.Controls.Add(this.txtPassword);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(76, 478);
+            this.panel5.Location = new System.Drawing.Point(37, 478);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(581, 149);
             this.panel5.TabIndex = 3;
@@ -136,7 +134,7 @@
             // 
             this.panel4.Controls.Add(this.txtUsername);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(76, 323);
+            this.panel4.Location = new System.Drawing.Point(37, 323);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(581, 149);
             this.panel4.TabIndex = 2;
@@ -175,7 +173,7 @@
             // 
             this.panel3.Controls.Add(this.cbxRole);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(76, 168);
+            this.panel3.Location = new System.Drawing.Point(37, 168);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(581, 149);
             this.panel3.TabIndex = 1;
@@ -203,22 +201,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 58);
+            this.label1.Font = new System.Drawing.Font("Inter", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(242, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 45);
+            this.label1.Size = new System.Drawing.Size(158, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOG IN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Jewelry.Properties.Resources.Nàng_tiên_Login;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(691, 1018);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // btnExitLogin
             // 
@@ -237,6 +225,15 @@
             this.btnExitLogin.Size = new System.Drawing.Size(56, 41);
             this.btnExitLogin.TabIndex = 5;
             this.btnExitLogin.Click += new System.EventHandler(this.btnExitLogin_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Jewelry.Properties.Resources.Nàng_tiên_Login;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(761, 1018);
+            this.panel2.TabIndex = 2;
             // 
             // Login
             // 
@@ -257,7 +254,6 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,7 +273,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.ComboBox cbxRole;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnExitLogin;
+        private System.Windows.Forms.Panel panel2;
     }
 }
