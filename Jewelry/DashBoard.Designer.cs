@@ -33,6 +33,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExitDashBoard = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblUpdate = new System.Windows.Forms.Label();
+            this.lblImport_Invoice = new System.Windows.Forms.Label();
+            this.lblPayment = new System.Windows.Forms.Label();
+            this.lblEmployee = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.lblOverview = new System.Windows.Forms.Label();
+            this.lblAccount = new System.Windows.Forms.Label();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,15 +60,6 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblAccount = new System.Windows.Forms.Label();
-            this.lblOverview = new System.Windows.Forms.Label();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.lblCustomer = new System.Windows.Forms.Label();
-            this.lblEmployee = new System.Windows.Forms.Label();
-            this.lblPayment = new System.Windows.Forms.Label();
-            this.lblWareHouse = new System.Windows.Forms.Label();
-            this.lblUpdate = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tlpNavigion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,6 +119,117 @@
             this.label1.Size = new System.Drawing.Size(559, 119);
             this.label1.TabIndex = 0;
             this.label1.Text = "  Arpels Jewelry";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.lblUpdate);
+            this.panel2.Controls.Add(this.lblImport_Invoice);
+            this.panel2.Controls.Add(this.lblPayment);
+            this.panel2.Controls.Add(this.lblEmployee);
+            this.panel2.Controls.Add(this.lblCustomer);
+            this.panel2.Controls.Add(this.lblProduct);
+            this.panel2.Controls.Add(this.lblOverview);
+            this.panel2.Controls.Add(this.lblAccount);
+            this.panel2.Location = new System.Drawing.Point(3, 138);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1434, 84);
+            this.panel2.TabIndex = 1;
+            // 
+            // lblUpdate
+            // 
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdate.Location = new System.Drawing.Point(1265, 31);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblUpdate.Size = new System.Drawing.Size(98, 30);
+            this.lblUpdate.TabIndex = 0;
+            this.lblUpdate.Text = "Update";
+            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
+            // 
+            // lblImport_Invoice
+            // 
+            this.lblImport_Invoice.AutoSize = true;
+            this.lblImport_Invoice.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImport_Invoice.Location = new System.Drawing.Point(1064, 31);
+            this.lblImport_Invoice.Name = "lblImport_Invoice";
+            this.lblImport_Invoice.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblImport_Invoice.Size = new System.Drawing.Size(170, 30);
+            this.lblImport_Invoice.TabIndex = 0;
+            this.lblImport_Invoice.Text = "Import Invoice";
+            this.lblImport_Invoice.Click += new System.EventHandler(this.lblWareHouse_Click);
+            // 
+            // lblPayment
+            // 
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayment.Location = new System.Drawing.Point(906, 31);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblPayment.Size = new System.Drawing.Size(110, 30);
+            this.lblPayment.TabIndex = 0;
+            this.lblPayment.Text = "Payment";
+            // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.Location = new System.Drawing.Point(736, 31);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblEmployee.Size = new System.Drawing.Size(121, 30);
+            this.lblEmployee.TabIndex = 0;
+            this.lblEmployee.Text = "Employee";
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(563, 31);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblCustomer.Size = new System.Drawing.Size(123, 30);
+            this.lblCustomer.TabIndex = 0;
+            this.lblCustomer.Text = "Customer";
+            this.lblCustomer.Click += new System.EventHandler(this.lblCustomer_Click);
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(409, 31);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblProduct.Size = new System.Drawing.Size(104, 30);
+            this.lblProduct.TabIndex = 0;
+            this.lblProduct.Text = "Product";
+            this.lblProduct.Click += new System.EventHandler(this.lblProduct_Click);
+            // 
+            // lblOverview
+            // 
+            this.lblOverview.AutoSize = true;
+            this.lblOverview.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverview.Location = new System.Drawing.Point(253, 31);
+            this.lblOverview.Name = "lblOverview";
+            this.lblOverview.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblOverview.Size = new System.Drawing.Size(115, 30);
+            this.lblOverview.TabIndex = 0;
+            this.lblOverview.Text = "Overview";
+            this.lblOverview.Click += new System.EventHandler(this.lblOverview_Click);
+            // 
+            // lblAccount
+            // 
+            this.lblAccount.AutoSize = true;
+            this.lblAccount.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccount.Location = new System.Drawing.Point(106, 31);
+            this.lblAccount.Name = "lblAccount";
+            this.lblAccount.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.lblAccount.Size = new System.Drawing.Size(109, 30);
+            this.lblAccount.TabIndex = 0;
+            this.lblAccount.Text = "Account";
+            this.lblAccount.Click += new System.EventHandler(this.lblAccount_Click);
             // 
             // accountToolStripMenuItem
             // 
@@ -269,117 +380,6 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(218, 36);
             this.updateToolStripMenuItem.Text = "Update";
             // 
-            // lblAccount
-            // 
-            this.lblAccount.AutoSize = true;
-            this.lblAccount.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccount.Location = new System.Drawing.Point(106, 31);
-            this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblAccount.Size = new System.Drawing.Size(109, 30);
-            this.lblAccount.TabIndex = 0;
-            this.lblAccount.Text = "Account";
-            this.lblAccount.Click += new System.EventHandler(this.lblAccount_Click);
-            // 
-            // lblOverview
-            // 
-            this.lblOverview.AutoSize = true;
-            this.lblOverview.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverview.Location = new System.Drawing.Point(253, 31);
-            this.lblOverview.Name = "lblOverview";
-            this.lblOverview.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblOverview.Size = new System.Drawing.Size(115, 30);
-            this.lblOverview.TabIndex = 0;
-            this.lblOverview.Text = "Overview";
-            this.lblOverview.Click += new System.EventHandler(this.lblOverview_Click);
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(409, 31);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblProduct.Size = new System.Drawing.Size(104, 30);
-            this.lblProduct.TabIndex = 0;
-            this.lblProduct.Text = "Product";
-            this.lblProduct.Click += new System.EventHandler(this.lblProduct_Click);
-            // 
-            // lblCustomer
-            // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(563, 31);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblCustomer.Size = new System.Drawing.Size(123, 30);
-            this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Customer";
-            this.lblCustomer.Click += new System.EventHandler(this.lblCustomer_Click);
-            // 
-            // lblEmployee
-            // 
-            this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(736, 31);
-            this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblEmployee.Size = new System.Drawing.Size(121, 30);
-            this.lblEmployee.TabIndex = 0;
-            this.lblEmployee.Text = "Employee";
-            // 
-            // lblPayment
-            // 
-            this.lblPayment.AutoSize = true;
-            this.lblPayment.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.Location = new System.Drawing.Point(906, 31);
-            this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblPayment.Size = new System.Drawing.Size(110, 30);
-            this.lblPayment.TabIndex = 0;
-            this.lblPayment.Text = "Payment";
-            // 
-            // lblWareHouse
-            // 
-            this.lblWareHouse.AutoSize = true;
-            this.lblWareHouse.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWareHouse.Location = new System.Drawing.Point(1064, 31);
-            this.lblWareHouse.Name = "lblWareHouse";
-            this.lblWareHouse.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblWareHouse.Size = new System.Drawing.Size(170, 30);
-            this.lblWareHouse.TabIndex = 0;
-            this.lblWareHouse.Text = "Import Invoice";
-            this.lblWareHouse.Click += new System.EventHandler(this.lblWareHouse_Click);
-            // 
-            // lblUpdate
-            // 
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdate.Location = new System.Drawing.Point(1265, 31);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblUpdate.Size = new System.Drawing.Size(98, 30);
-            this.lblUpdate.TabIndex = 0;
-            this.lblUpdate.Text = "Update";
-            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.lblUpdate);
-            this.panel2.Controls.Add(this.lblWareHouse);
-            this.panel2.Controls.Add(this.lblPayment);
-            this.panel2.Controls.Add(this.lblEmployee);
-            this.panel2.Controls.Add(this.lblCustomer);
-            this.panel2.Controls.Add(this.lblProduct);
-            this.panel2.Controls.Add(this.lblOverview);
-            this.panel2.Controls.Add(this.lblAccount);
-            this.panel2.Location = new System.Drawing.Point(3, 138);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1434, 84);
-            this.panel2.TabIndex = 1;
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -426,7 +426,7 @@
         private Guna.UI2.WinForms.Guna2Button btnExitDashBoard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblUpdate;
-        private System.Windows.Forms.Label lblWareHouse;
+        private System.Windows.Forms.Label lblImport_Invoice;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label lblCustomer;

@@ -60,17 +60,20 @@
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\Product.BLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\AccountPermissionDAL.cs" />
     <Compile Include="DAL\DBConnect.cs" />
-    <Compile Include="DAL\PermisstionDAL.cs" />
+    <Compile Include="DAL\PermissionDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\RoleDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\AccountPermissionDTO.cs" />
+    <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
-    <Compile Include="DTO\RolePermissionDTO.cs" />
     <Compile Include="FolderEmployee\Salary.cs">
       <SubType>UserControl</SubType>
     </Compile>

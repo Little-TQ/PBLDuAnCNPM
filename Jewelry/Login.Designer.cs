@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExitLogin = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.btnExitLogin);
             this.panel1.Controls.Add(this.btnSubmit);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -118,6 +120,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(516, 62);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // label4
             // 
@@ -156,6 +159,7 @@
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(516, 62);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter_1);
             // 
             // label3
             // 
@@ -178,12 +182,12 @@
             // 
             // cbxRole
             // 
-            this.cbxRole.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxRole.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbxRole.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(127)))), ((int)(((byte)(149)))));
             this.cbxRole.FormattingEnabled = true;
             this.cbxRole.Location = new System.Drawing.Point(33, 58);
             this.cbxRole.Name = "cbxRole";
-            this.cbxRole.Size = new System.Drawing.Size(516, 58);
+            this.cbxRole.Size = new System.Drawing.Size(516, 43);
             this.cbxRole.TabIndex = 1;
             // 
             // label2
@@ -215,6 +219,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnExitLogin
+            // 
+            this.btnExitLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitLogin.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExitLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExitLogin.ForeColor = System.Drawing.Color.White;
+            this.btnExitLogin.Image = global::Jewelry.Properties.Resources.Exit;
+            this.btnExitLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExitLogin.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExitLogin.Location = new System.Drawing.Point(664, 3);
+            this.btnExitLogin.Name = "btnExitLogin";
+            this.btnExitLogin.Size = new System.Drawing.Size(56, 41);
+            this.btnExitLogin.TabIndex = 5;
+            this.btnExitLogin.Click += new System.EventHandler(this.btnExitLogin_Click);
             // 
             // Login
             // 
@@ -256,5 +278,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.ComboBox cbxRole;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnExitLogin;
     }
 }

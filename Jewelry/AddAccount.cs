@@ -11,16 +11,37 @@ using Jewelry.DAL;
 using Jewelry.Account;
 using Jewelry.DTO;
 using Jewelry.BLL;
+using System.Security.Principal;
 
 namespace Jewelry
 {
     public partial class AddAccount : Form
     {
-        AccountDAL accountDAL = new AccountDAL();
+        private string currentIdAccount = null;
+        private bool isEditMode = false;
+
         public AddAccount()
         {
             InitializeComponent();
             LoadRoles();
+            btnEditAccount.Click += btnEditAccount_Click;
+        }
+        public AddAccount(string idAccount, string username, string password, string roleName, bool isActive, bool isReadOnly) : this()
+        {
+            currentIdAccount = idAccount;
+            txtUsernameA.Text = username;
+            txtPasswordA.Text = password;
+            cbxRoleA.SelectedValue = roleName;
+            chkIsActiveA.Checked = isActive;
+            SetReadOnly(isReadOnly);
+        }
+        private void SetReadOnly(bool isReadOnly)
+        {
+            txtUsernameA.ReadOnly = isReadOnly;
+            txtPasswordA.ReadOnly = isReadOnly;
+            cbxRoleA.Enabled = !isReadOnly;
+            chkIsActiveA.Enabled = !isReadOnly;
+            btnCompleteAddA.Enabled = !isReadOnly;
         }
 
         private void LoadRoles()
@@ -37,42 +58,44 @@ namespace Jewelry
         {
             try
             {
-                // Collect data from controls
                 string username = txtUsernameA.Text.Trim();
                 string password = txtPasswordA.Text;
                 string roleName = cbxRoleA.SelectedValue?.ToString();
                 bool isActive = chkIsActiveA.Checked;
 
-                // Generate new account ID
                 AccountBLL accountBLL = new AccountBLL();
-                string newId = accountBLL.GenerateNewAccountId();
+                bool success;
 
-                // Create DTO
-                AccountDTO newAccount = new AccountDTO(newId, username, password, roleName, isActive);
-
-                // Add account
-                bool success = accountBLL.AddAccount(newAccount);
-
-                if (success)
+                if (isEditMode && !string.IsNullOrEmpty(currentIdAccount))
                 {
-                    MessageBox.Show("Account added successfully!");
-
-                    // Open ManageAccount and refresh DataGridView
-                    var manageAccount = new ManageAccount();
-                    manageAccount.Show();
-                    manageAccount.LoadAccounts(); // Ensure this method reloads the DataGridView
-
-                    this.Close();
+                    // Update
+                    AccountDTO updatedAccount = new AccountDTO(currentIdAccount, username, password, roleName, isActive);
+                    success = accountBLL.UpdateAccount(updatedAccount);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add account.");
+                    // Add new
+                    string newId = accountBLL.GenerateNewAccountId();
+                    AccountDTO newAccount = new AccountDTO(newId, username, password, roleName, isActive);
+                    success = accountBLL.AddAccount(newAccount);
+                }
+
+                if (success)
+                {
+                    MessageBox.Show(isEditMode ? "Account success updated!" : "Account success added!");
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            isEditMode = true;
+            SetReadOnly(false);
         }
         private void btnReturnAddA_Click(object sender, EventArgs e)
         {

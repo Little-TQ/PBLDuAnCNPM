@@ -50,8 +50,8 @@
             this.cbMaterial = new System.Windows.Forms.ComboBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.panelDGV = new System.Windows.Forms.Panel();
-            this.product1 = new Jewelry.FolderProduct.Product();
             this.property1 = new Jewelry.FolderProduct.Property();
+            this.product1 = new Jewelry.FolderProduct.Product();
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -292,6 +292,14 @@
             this.panelDGV.Size = new System.Drawing.Size(1440, 796);
             this.panelDGV.TabIndex = 3;
             // 
+            // property1
+            // 
+            this.property1.BackColor = System.Drawing.Color.White;
+            this.property1.Location = new System.Drawing.Point(319, -80);
+            this.property1.Name = "property1";
+            this.property1.Size = new System.Drawing.Size(770, 620);
+            this.property1.TabIndex = 1;
+            // 
             // product1
             // 
             this.product1.BackColor = System.Drawing.Color.White;
@@ -299,14 +307,6 @@
             this.product1.Name = "product1";
             this.product1.Size = new System.Drawing.Size(1440, 802);
             this.product1.TabIndex = 0;
-            // 
-            // property1
-            // 
-            this.property1.BackColor = System.Drawing.Color.White;
-            this.property1.Location = new System.Drawing.Point(347, -100);
-            this.property1.Name = "property1";
-            this.property1.Size = new System.Drawing.Size(770, 620);
-            this.property1.TabIndex = 1;
             // 
             // Product_View
             // 
