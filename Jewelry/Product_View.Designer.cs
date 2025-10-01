@@ -50,10 +50,12 @@
             this.panelDGV = new System.Windows.Forms.Panel();
             this.property1 = new Jewelry.FolderProduct.Property();
             this.product1 = new Jewelry.FolderProduct.Product();
+
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -275,7 +277,9 @@
             // property1
             // 
             this.property1.BackColor = System.Drawing.Color.White;
+
             this.property1.Location = new System.Drawing.Point(347, -100);
+
             this.property1.Name = "property1";
             this.property1.Size = new System.Drawing.Size(770, 620);
             this.property1.TabIndex = 1;
@@ -288,6 +292,7 @@
             this.product1.Size = new System.Drawing.Size(1440, 802);
             this.product1.TabIndex = 0;
             // 
+
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
@@ -331,6 +336,7 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Product";
             // 
+
             // Product_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
