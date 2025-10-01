@@ -231,6 +231,7 @@
             this.picLogin.Size = new System.Drawing.Size(48, 43);
             this.picLogin.TabIndex = 9;
             this.picLogin.TabStop = false;
+            this.picLogin.Click += new System.EventHandler(this.picLogin_Click);
             // 
             // lblUpdate
             // 
@@ -244,6 +245,7 @@
             this.lblUpdate.Size = new System.Drawing.Size(129, 48);
             this.lblUpdate.TabIndex = 1;
             this.lblUpdate.Text = "Update";
+            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
             // 
             // lblInvoice
             // 
@@ -257,6 +259,7 @@
             this.lblInvoice.Size = new System.Drawing.Size(136, 48);
             this.lblInvoice.TabIndex = 2;
             this.lblInvoice.Text = " Invoice";
+            this.lblInvoice.Click += new System.EventHandler(this.lblInvoice_Click);
             // 
             // lblPayment
             // 
@@ -270,6 +273,7 @@
             this.lblPayment.Size = new System.Drawing.Size(147, 48);
             this.lblPayment.TabIndex = 3;
             this.lblPayment.Text = "Payment";
+            this.lblPayment.Click += new System.EventHandler(this.lblPayment_Click);
             // 
             // lblOverview
             // 
@@ -283,6 +287,7 @@
             this.lblOverview.Size = new System.Drawing.Size(161, 48);
             this.lblOverview.TabIndex = 4;
             this.lblOverview.Text = "Overview";
+            this.lblOverview.Click += new System.EventHandler(this.lblOverview_Click);
             // 
             // lblEmployee
             // 
@@ -296,6 +301,7 @@
             this.lblEmployee.Size = new System.Drawing.Size(159, 48);
             this.lblEmployee.TabIndex = 5;
             this.lblEmployee.Text = "Employee";
+            this.lblEmployee.Click += new System.EventHandler(this.lblEmployee_Click);
             // 
             // lblAccount
             // 
@@ -309,6 +315,7 @@
             this.lblAccount.Size = new System.Drawing.Size(144, 48);
             this.lblAccount.TabIndex = 6;
             this.lblAccount.Text = "Account";
+            this.lblAccount.Click += new System.EventHandler(this.lblAccount_Click_1);
             // 
             // lblCustomer
             // 
@@ -322,6 +329,7 @@
             this.lblCustomer.Size = new System.Drawing.Size(165, 48);
             this.lblCustomer.TabIndex = 7;
             this.lblCustomer.Text = "Customer";
+            this.lblCustomer.Click += new System.EventHandler(this.lblCustomer_Click);
             // 
             // lblProduct
             // 
@@ -335,6 +343,7 @@
             this.lblProduct.Size = new System.Drawing.Size(141, 48);
             this.lblProduct.TabIndex = 8;
             this.lblProduct.Text = "Product";
+            this.lblProduct.Click += new System.EventHandler(this.lblProduct_Click);
             // 
             // guna2PictureBox1
             // 

@@ -62,20 +62,10 @@ namespace Jewelry
             paymentToolStripMenuItem.ForeColor = Color.Red;
             LoadUserControl(new Provide_Permission());
         }
-
-        private void btnReturnAddA_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void btnExitAccount_Click(object sender, EventArgs e)
         {
             Application.Exit();  
-        }
-
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -16,5 +16,11 @@ namespace Jewelry.FolderProduct
         {
             InitializeComponent();
         }
+
+        private void panelAdd_Click(object sender, EventArgs e)
+        {
+            Product_Add frm = new Product_Add();
+            frm.ShowDialog();
+        }
     }
 }

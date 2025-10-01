@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -66,7 +66,7 @@
             // guna2Button2
             // 
             this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderColor = System.Drawing.Color.IndianRed;
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button2.BorderThickness = 2;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -75,7 +75,7 @@
             this.guna2Button2.Enabled = false;
             this.guna2Button2.FillColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Firebrick;
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button2.Location = new System.Drawing.Point(348, 168);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.Transparent;
@@ -90,7 +90,7 @@
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Enabled = false;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button1.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(79, 168);
@@ -121,7 +121,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
@@ -147,7 +147,7 @@
             this.grbBestSelling.Controls.Add(this.ptbMonth);
             this.grbBestSelling.Controls.Add(this.ptbWeek);
             this.grbBestSelling.Font = new System.Drawing.Font("Sora SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBestSelling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.grbBestSelling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.grbBestSelling.Location = new System.Drawing.Point(749, 16);
             this.grbBestSelling.Name = "grbBestSelling";
             this.grbBestSelling.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -160,7 +160,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.label3.Location = new System.Drawing.Point(398, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 28);
@@ -171,7 +171,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.label2.Location = new System.Drawing.Point(165, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 28);
@@ -198,17 +198,17 @@
             // 
             // chartSoldProduct
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartSoldProduct.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSoldProduct.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartSoldProduct.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartSoldProduct.Legends.Add(legend2);
             this.chartSoldProduct.Location = new System.Drawing.Point(73, 282);
             this.chartSoldProduct.Name = "chartSoldProduct";
             this.chartSoldProduct.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSoldProduct.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartSoldProduct.Series.Add(series2);
             this.chartSoldProduct.Size = new System.Drawing.Size(1215, 502);
             this.chartSoldProduct.TabIndex = 2;
             this.chartSoldProduct.Text = "chart1";

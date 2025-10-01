@@ -34,7 +34,6 @@
             this.btnAddAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveAccount = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchAccount = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
@@ -47,7 +46,6 @@
             this.panel3.Controls.Add(this.btnAddAccount);
             this.panel3.Controls.Add(this.btnViewAccount);
             this.panel3.Controls.Add(this.btnDeleteAccount);
-            this.panel3.Controls.Add(this.btnSaveAccount);
             this.panel3.Controls.Add(this.txtSearchAccount);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -116,27 +114,7 @@
             this.btnDeleteAccount.PressedColor = System.Drawing.Color.LightGreen;
             this.btnDeleteAccount.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteAccount.TabIndex = 3;
-            // 
-            // btnSaveAccount
-            // 
-            this.btnSaveAccount.BackColor = System.Drawing.Color.White;
-            this.btnSaveAccount.BorderRadius = 12;
-            this.btnSaveAccount.BorderThickness = 1;
-            this.btnSaveAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveAccount.ForeColor = System.Drawing.Color.White;
-            this.btnSaveAccount.Image = global::Jewelry.Properties.Resources.Save;
-            this.btnSaveAccount.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSaveAccount.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSaveAccount.Location = new System.Drawing.Point(1079, 21);
-            this.btnSaveAccount.Name = "btnSaveAccount";
-            this.btnSaveAccount.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSaveAccount.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveAccount.TabIndex = 1;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click_1);
             // 
             // txtSearchAccount
             // 
@@ -212,7 +190,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAddAccount;
         private Guna.UI2.WinForms.Guna2Button btnViewAccount;
         private Guna.UI2.WinForms.Guna2Button btnDeleteAccount;
-        private Guna.UI2.WinForms.Guna2Button btnSaveAccount;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchAccount;
         private System.Windows.Forms.DataGridView dataGridViewAccount;
     }

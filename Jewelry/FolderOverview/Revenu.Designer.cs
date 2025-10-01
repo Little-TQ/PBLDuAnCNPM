@@ -64,7 +64,7 @@
             // guna2Button2
             // 
             this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderColor = System.Drawing.Color.IndianRed;
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button2.BorderThickness = 2;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -73,7 +73,7 @@
             this.guna2Button2.Enabled = false;
             this.guna2Button2.FillColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Firebrick;
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button2.Location = new System.Drawing.Point(337, 180);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.Transparent;
@@ -88,7 +88,7 @@
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Enabled = false;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.guna2Button1.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(90, 180);
@@ -119,7 +119,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
@@ -145,7 +145,7 @@
             this.grbBestSelling.Controls.Add(this.label3);
             this.grbBestSelling.Controls.Add(this.label2);
             this.grbBestSelling.Font = new System.Drawing.Font("Sora SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBestSelling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.grbBestSelling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(57)))), ((int)(((byte)(59)))));
             this.grbBestSelling.Location = new System.Drawing.Point(737, 17);
             this.grbBestSelling.Name = "grbBestSelling";
             this.grbBestSelling.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -203,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.label3.Location = new System.Drawing.Point(406, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 28);
@@ -214,7 +214,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.label2.Location = new System.Drawing.Point(173, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 28);

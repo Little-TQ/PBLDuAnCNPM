@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Jewelry.Overview
 {
-    public partial class Revenu: UserControl
+    public partial class Revenu : UserControl
     {
         public Revenu()
         {

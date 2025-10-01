@@ -82,8 +82,7 @@ namespace Jewelry.Account
                 LoadAccounts();
             }
         }
-
-        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        private void btnDeleteAccount_Click_1(object sender, EventArgs e)
         {
             if (dataGridViewAccount.SelectedRows.Count == 0)
             {

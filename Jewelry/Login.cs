@@ -54,9 +54,7 @@ namespace Jewelry
                 MessageBox.Show($"Lỗi load roles: {ex.Message}");
             }
         }
-        
-
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmit_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -97,6 +95,7 @@ namespace Jewelry
             {
                 MessageBox.Show($"Lỗi: {ex.Message}");
             }
+
         }
         private void txtUsername_Enter_1(object sender, EventArgs e)
         {
@@ -113,7 +112,7 @@ namespace Jewelry
                 txtPassword.PasswordChar = '*';
             }
         }
-        private void btnExitLogin_Click(object sender, EventArgs e)
+        private void picLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

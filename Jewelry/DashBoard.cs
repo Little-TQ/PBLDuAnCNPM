@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,8 +44,7 @@ namespace Jewelry
         {
             InitializeComponent();
         }
-
-        private void lblAccount_Click(object sender, EventArgs e)
+        private void lblAccount_Click_1(object sender, EventArgs e)
         {
             if (currentUser.Permissions.Contains("Account"))
             {
@@ -86,20 +86,24 @@ namespace Jewelry
                 }
             }
         }
-        private void btnExitDashBoard_Click(object sender, EventArgs e)
+
+        private void picLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
         }
 
         private void lblOverview_Click(object sender, EventArgs e)
         {
             Page_Overview frm = new Page_Overview();
             frm.ShowDialog();
+
         }
 
-        private void lblUpdate_Click(object sender, EventArgs e)
+        private void lblProduct_Click(object sender, EventArgs e)
         {
-            UpdatePrice frm = new UpdatePrice();
+            Product_View frm = new Product_View();
             frm.ShowDialog();
         }
 
@@ -109,16 +113,28 @@ namespace Jewelry
             frm.ShowDialog();
         }
 
-        private void lblProduct_Click(object sender, EventArgs e)
+        private void lblEmployee_Click(object sender, EventArgs e)
         {
-            Product_View frm = new Product_View();
+            Employee frm = new Employee();
             frm.ShowDialog();
         }
 
-        private void lblWareHouse_Click(object sender, EventArgs e)
+        private void lblInvoice_Click(object sender, EventArgs e)
         {
-            Import_Invoice frm = new Import_Invoice();
+            Import_Invoice frm = new Import_Invoice(); 
             frm.ShowDialog();
+        }
+
+        private void lblPayment_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblUpdate_Click(object sender, EventArgs e)
+        {
+            UpdatePrice frm = new UpdatePrice();
+            frm.ShowDialog();
+
         }
     }
 }

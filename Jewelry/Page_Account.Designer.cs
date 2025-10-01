@@ -42,10 +42,10 @@
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pnlContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlContainer = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.mstNAccount.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -107,49 +107,49 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.toolStripMenuItem1.Text = "Account";
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.overviewToolStripMenuItem1.Text = "Overview";
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.productToolStripMenuItem1.Text = "Product";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(253, 48);
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(253, 48);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // paymentToolStripMenuItem1
             // 
             this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
-            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.paymentToolStripMenuItem1.Text = "Payment";
             // 
             // accountToolStripMenuItem
@@ -182,14 +182,6 @@
             this.panelMain.Size = new System.Drawing.Size(1440, 1024);
             this.panelMain.TabIndex = 5;
             // 
-            // pnlContainer
-            // 
-            this.pnlContainer.Location = new System.Drawing.Point(0, 217);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1437, 807);
-            this.pnlContainer.TabIndex = 4;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
@@ -220,6 +212,14 @@
             this.label1.Size = new System.Drawing.Size(276, 96);
             this.label1.TabIndex = 0;
             this.label1.Text = "Account";
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Location = new System.Drawing.Point(0, 217);
+            this.pnlContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(1437, 807);
+            this.pnlContainer.TabIndex = 4;
             // 
             // Page_Account
             // 

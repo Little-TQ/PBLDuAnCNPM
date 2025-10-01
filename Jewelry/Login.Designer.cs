@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(458, 234);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(577, 728);
+            this.panel1.Size = new System.Drawing.Size(577, 693);
             this.panel1.TabIndex = 2;
             // 
             // picLogin
@@ -75,21 +75,23 @@
             this.picLogin.Size = new System.Drawing.Size(36, 35);
             this.picLogin.TabIndex = 5;
             this.picLogin.TabStop = false;
+            this.picLogin.Click += new System.EventHandler(this.picLogin_Click);
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("EB Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(80, 613);
+            this.btnSubmit.Location = new System.Drawing.Point(80, 578);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(418, 51);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.txtPassword);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(59, 453);
+            this.panel5.Location = new System.Drawing.Point(59, 406);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(462, 130);
             this.panel5.TabIndex = 3;
@@ -128,7 +130,7 @@
             // 
             this.panel4.Controls.Add(this.txtUsername);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(59, 274);
+            this.panel4.Location = new System.Drawing.Point(59, 251);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(462, 149);
             this.panel4.TabIndex = 2;
