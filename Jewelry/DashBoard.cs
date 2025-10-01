@@ -16,37 +16,14 @@ namespace Jewelry
 {
     public partial class DashBoard : Form
     {
-        private LoginDTO currentUser;
-        private Login loginForm;
-        public DashBoard(Login loginForm)
-        {
-            InitializeComponent();
-            this.loginForm = loginForm;
-            this.currentUser = loginForm.CurrentUser;
-            if (currentUser == null)
-            {
-                currentUser = new LoginDTO
-                {
-                    Username = "Unknown",
-                    Permissions = new List<string>()
-                };
-            }
-
-            if (currentUser.Permissions == null)
-            {
-                currentUser.Permissions = new List<string>();
-            }
-
-            SetupPermissions();
-        }
-        //ham dashboard mac dinh
         public DashBoard()
         {
             InitializeComponent();
+            SetupPermissions();
         }
         private void lblAccount_Click_1(object sender, EventArgs e)
         {
-            if (currentUser.Permissions.Contains("Account"))
+            if (Session.CurrentUser?.Permissions.Contains("Account") == true)
             {
                 Page_Account frm = new Page_Account();
                 frm.ShowDialog();
@@ -66,9 +43,11 @@ namespace Jewelry
             lblInvoice.Visible = false;
             lblUpdate.Visible = false;
 
+            var currentUser = Session.CurrentUser;
+
             if (currentUser?.Permissions == null)
             {
-                currentUser.Permissions = new List<string>();
+                return; // Không có permission thì ẩn hết
             }
 
             foreach (string permission in currentUser.Permissions)
@@ -89,8 +68,9 @@ namespace Jewelry
 
         private void picLogin_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Session.CurrentUser = null; // clear session
             this.Hide();
+            Login login = new Login();
             login.ShowDialog();
         }
 

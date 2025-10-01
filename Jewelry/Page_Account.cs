@@ -37,6 +37,7 @@ namespace Jewelry
             homeToolStripMenuItem.BackColor = Color.Transparent;
             homeToolStripMenuItem.ForeColor = Color.Red;
             LoadUserControl(new General());
+
         }
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -66,6 +67,13 @@ namespace Jewelry
         private void btnExitAccount_Click(object sender, EventArgs e)
         {
             Application.Exit();  
+        }
+
+        private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashBoard frm = new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }

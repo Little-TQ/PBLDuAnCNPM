@@ -45,8 +45,8 @@
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnViewProduct = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnEditProperty = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.cbMaterial = new System.Windows.Forms.ComboBox();
@@ -59,8 +59,8 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).BeginInit();
             this.panelDGV.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,8 +124,8 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox10);
+            this.panel1.Controls.Add(this.btnViewProduct);
+            this.panel1.Controls.Add(this.btnEditProperty);
             this.panel1.Controls.Add(this.cbCategory);
             this.panel1.Controls.Add(this.cbGender);
             this.panel1.Controls.Add(this.cbMaterial);
@@ -221,29 +221,30 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
-            // guna2CirclePictureBox1
+            // btnViewProduct
             // 
-            this.guna2CirclePictureBox1.Image = global::Jewelry.Properties.Resources.View;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1136, 41);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 45;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.btnViewProduct.Image = global::Jewelry.Properties.Resources.View;
+            this.btnViewProduct.ImageRotate = 0F;
+            this.btnViewProduct.Location = new System.Drawing.Point(1136, 41);
+            this.btnViewProduct.Name = "btnViewProduct";
+            this.btnViewProduct.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnViewProduct.Size = new System.Drawing.Size(30, 29);
+            this.btnViewProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnViewProduct.TabIndex = 45;
+            this.btnViewProduct.TabStop = false;
+            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
             // 
-            // guna2CirclePictureBox10
+            // btnEditProperty
             // 
-            this.guna2CirclePictureBox10.Image = global::Jewelry.Properties.Resources.Edit;
-            this.guna2CirclePictureBox10.ImageRotate = 0F;
-            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(1186, 41);
-            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
-            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox10.TabIndex = 44;
-            this.guna2CirclePictureBox10.TabStop = false;
+            this.btnEditProperty.Image = global::Jewelry.Properties.Resources.Edit;
+            this.btnEditProperty.ImageRotate = 0F;
+            this.btnEditProperty.Location = new System.Drawing.Point(1186, 41);
+            this.btnEditProperty.Name = "btnEditProperty";
+            this.btnEditProperty.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEditProperty.Size = new System.Drawing.Size(30, 29);
+            this.btnEditProperty.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEditProperty.TabIndex = 44;
+            this.btnEditProperty.TabStop = false;
             // 
             // cbCategory
             // 
@@ -353,8 +354,8 @@
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).EndInit();
             this.panelDGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -369,8 +370,8 @@
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.ComboBox cbMaterial;
         private System.Windows.Forms.ComboBox cbColor;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox10;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btnEditProperty;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btnViewProduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;

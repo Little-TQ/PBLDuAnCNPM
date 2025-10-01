@@ -14,6 +14,7 @@ namespace Jewelry.DTO
         public string RoleName { get; set; }
         public List<string> Permissions { get; set; }
 
+
         public LoginDTO()
         {
             Permissions = new List<string>();

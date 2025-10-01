@@ -81,15 +81,20 @@ namespace Jewelry
                         Permissions = loginResult.Item4
                     };
 
-                    DashBoard dashboard = new DashBoard(this);
+                    // Lưu vào session static
+                    Session.CurrentUser = CurrentUser;
+
+                    DashBoard dashboard = new DashBoard();
                     this.Hide();
                     dashboard.ShowDialog();
 
                     // Khi Dashboard đóng, quay lại Login
                     CurrentUser = null;
+                    Session.CurrentUser = null;
                     txtPassword.Clear();
                     this.Show();
                 }
+
             }
             catch (Exception ex)
             {

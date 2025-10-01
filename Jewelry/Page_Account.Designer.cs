@@ -46,6 +46,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.mstNAccount.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -91,7 +92,8 @@
             this.employeeToolStripMenuItem1,
             this.wareHouseToolStripMenuItem,
             this.updateToolStripMenuItem,
-            this.paymentToolStripMenuItem1});
+            this.paymentToolStripMenuItem1,
+            this.dashBoardToolStripMenuItem});
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Sora", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.Image = global::Jewelry.Properties.Resources.Bar;
             this.homeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -221,6 +223,13 @@
             this.pnlContainer.Size = new System.Drawing.Size(1437, 807);
             this.pnlContainer.TabIndex = 4;
             // 
+            // dashBoardToolStripMenuItem
+            // 
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
+            this.dashBoardToolStripMenuItem.Text = "DashBoard";
+            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
+            // 
             // Page_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,5 +272,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
     }
 }

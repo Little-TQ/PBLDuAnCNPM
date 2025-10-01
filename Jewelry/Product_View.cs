@@ -16,6 +16,8 @@ namespace Jewelry
         public Product_View()
         {
             InitializeComponent();
+            property1.Visible = false;
+            product1.Visible = false;
             
         }
 
@@ -30,14 +32,9 @@ namespace Jewelry
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void btnViewProduct_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            product1.Visible=true;
         }
     }
 }
