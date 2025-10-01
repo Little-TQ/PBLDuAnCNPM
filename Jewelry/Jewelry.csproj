@@ -221,12 +221,6 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment.Designer.cs">
-      <DependentUpon>Payment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Payment_Sale_invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,29 +257,29 @@
     <Compile Include="Product_EditProperty.Designer.cs">
       <DependentUpon>Product_EditProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_PreOrder_Invoice.cs">
+    <Compile Include="Payment_PreOrder_Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_PreOrder_Invoice.Designer.cs">
-      <DependentUpon>Product_PreOrder_Invoice.cs</DependentUpon>
+    <Compile Include="Payment_PreOrder_Invoice.Designer.cs">
+      <DependentUpon>Payment_PreOrder_Invoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_PreOrder_Select.cs">
+    <Compile Include="Payment_PreOrder_Select.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_PreOrder_Select.Designer.cs">
-      <DependentUpon>Product_PreOrder_Select.cs</DependentUpon>
+    <Compile Include="Payment_PreOrder_Select.Designer.cs">
+      <DependentUpon>Payment_PreOrder_Select.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Repurchase_Invoice.cs">
+    <Compile Include="Payment_Repurchase_Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_Repurchase_Invoice.Designer.cs">
-      <DependentUpon>Product_Repurchase_Invoice.cs</DependentUpon>
+    <Compile Include="Payment_Repurchase_Invoice.Designer.cs">
+      <DependentUpon>Payment_Repurchase_Invoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Repurchase_Select.cs">
+    <Compile Include="Payment_Repurchase_Select.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_Repurchase_Select.Designer.cs">
-      <DependentUpon>Product_Repurchase_Select.cs</DependentUpon>
+    <Compile Include="Payment_Repurchase_Select.Designer.cs">
+      <DependentUpon>Payment_Repurchase_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Product_View.cs">
       <SubType>Form</SubType>
@@ -385,9 +379,6 @@
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment.resx">
-      <DependentUpon>Payment.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Payment_Sale_invoice.resx">
       <DependentUpon>Payment_Sale_invoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,17 +397,17 @@
     <EmbeddedResource Include="Product_EditProperty.resx">
       <DependentUpon>Product_EditProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_PreOrder_Invoice.resx">
-      <DependentUpon>Product_PreOrder_Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="Payment_PreOrder_Invoice.resx">
+      <DependentUpon>Payment_PreOrder_Invoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_PreOrder_Select.resx">
-      <DependentUpon>Product_PreOrder_Select.cs</DependentUpon>
+    <EmbeddedResource Include="Payment_PreOrder_Select.resx">
+      <DependentUpon>Payment_PreOrder_Select.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Repurchase_Invoice.resx">
-      <DependentUpon>Product_Repurchase_Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="Payment_Repurchase_Invoice.resx">
+      <DependentUpon>Payment_Repurchase_Invoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Repurchase_Select.resx">
-      <DependentUpon>Product_Repurchase_Select.cs</DependentUpon>
+    <EmbeddedResource Include="Payment_Repurchase_Select.resx">
+      <DependentUpon>Payment_Repurchase_Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product_View.resx">
       <DependentUpon>Product_View.cs</DependentUpon>
