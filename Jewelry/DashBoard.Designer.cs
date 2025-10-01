@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
-            this.tlpNavigion = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExitDashBoard = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +37,6 @@
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHoseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uppdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
-            this.flpDashBoard = new System.Windows.Forms.FlowLayoutPanel();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Account = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,74 +45,24 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblAccount = new System.Windows.Forms.Label();
-            this.lblOverview = new System.Windows.Forms.Label();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.lblCustomer = new System.Windows.Forms.Label();
-            this.lblEmployee = new System.Windows.Forms.Label();
-            this.lblPayment = new System.Windows.Forms.Label();
-            this.lblWareHouse = new System.Windows.Forms.Label();
-            this.lblUpdate = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tlpNavigion.SuspendLayout();
+            this.lblName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picLogin = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tlpNavigion
-            // 
-            this.tlpNavigion.ColumnCount = 1;
-            this.tlpNavigion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNavigion.Controls.Add(this.panel1, 0, 0);
-            this.tlpNavigion.Controls.Add(this.panel2, 0, 1);
-            this.tlpNavigion.Location = new System.Drawing.Point(0, 1);
-            this.tlpNavigion.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.tlpNavigion.Name = "tlpNavigion";
-            this.tlpNavigion.RowCount = 2;
-            this.tlpNavigion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpNavigion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpNavigion.Size = new System.Drawing.Size(1440, 225);
-            this.tlpNavigion.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btnExitDashBoard);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1434, 129);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnExitDashBoard
-            // 
-            this.btnExitDashBoard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitDashBoard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitDashBoard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitDashBoard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitDashBoard.FillColor = System.Drawing.Color.White;
-            this.btnExitDashBoard.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitDashBoard.ForeColor = System.Drawing.Color.White;
-            this.btnExitDashBoard.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitDashBoard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitDashBoard.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitDashBoard.Location = new System.Drawing.Point(1375, 3);
-            this.btnExitDashBoard.Name = "btnExitDashBoard";
-            this.btnExitDashBoard.Size = new System.Drawing.Size(56, 41);
-            this.btnExitDashBoard.TabIndex = 3;
-            this.btnExitDashBoard.Click += new System.EventHandler(this.btnExitDashBoard_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("EB Garamond Medium", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(438, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(559, 119);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "  Arpels Jewelry";
             // 
             // accountToolStripMenuItem
             // 
@@ -184,28 +128,6 @@
             this.uppdateToolStripMenuItem.Size = new System.Drawing.Size(148, 35);
             this.uppdateToolStripMenuItem.Text = "Uppdate";
             // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AccessibleName = "New item selection";
-            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.miniToolStrip.Location = new System.Drawing.Point(73, 58);
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.Size = new System.Drawing.Size(66, 46);
-            this.miniToolStrip.TabIndex = 0;
-            // 
-            // flpDashBoard
-            // 
-            this.flpDashBoard.BackgroundImage = global::Jewelry.Properties.Resources.Ship_DashBoard;
-            this.flpDashBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flpDashBoard.Location = new System.Drawing.Point(3, 223);
-            this.flpDashBoard.Name = "flpDashBoard";
-            this.flpDashBoard.Size = new System.Drawing.Size(1440, 802);
-            this.flpDashBoard.TabIndex = 2;
-            // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -269,143 +191,212 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(218, 36);
             this.updateToolStripMenuItem.Text = "Update";
             // 
-            // lblAccount
+            // lblName
             // 
-            this.lblAccount.AutoSize = true;
-            this.lblAccount.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccount.Location = new System.Drawing.Point(106, 31);
-            this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblAccount.Size = new System.Drawing.Size(109, 30);
-            this.lblAccount.TabIndex = 0;
-            this.lblAccount.Text = "Account";
-            this.lblAccount.Click += new System.EventHandler(this.lblAccount_Click);
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("EB Garamond SemiBold", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(843, 466);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(538, 119);
+            this.lblName.TabIndex = 9;
+            this.lblName.Text = "Arpels Jewelry";
             // 
-            // lblOverview
+            // panel1
             // 
-            this.lblOverview.AutoSize = true;
-            this.lblOverview.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverview.Location = new System.Drawing.Point(253, 31);
-            this.lblOverview.Name = "lblOverview";
-            this.lblOverview.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblOverview.Size = new System.Drawing.Size(115, 30);
-            this.lblOverview.TabIndex = 0;
-            this.lblOverview.Text = "Overview";
-            this.lblOverview.Click += new System.EventHandler(this.lblOverview_Click);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.picLogin);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(52, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1360, 102);
+            this.panel1.TabIndex = 10;
             // 
-            // lblProduct
+            // picLogin
             // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(409, 31);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblProduct.Size = new System.Drawing.Size(104, 30);
-            this.lblProduct.TabIndex = 0;
-            this.lblProduct.Text = "Product";
-            this.lblProduct.Click += new System.EventHandler(this.lblProduct_Click);
+            this.picLogin.BackColor = System.Drawing.Color.Transparent;
+            this.picLogin.FillColor = System.Drawing.Color.Transparent;
+            this.picLogin.Image = global::Jewelry.Properties.Resources.Logout;
+            this.picLogin.ImageRotate = 0F;
+            this.picLogin.Location = new System.Drawing.Point(1281, 36);
+            this.picLogin.Name = "picLogin";
+            this.picLogin.Size = new System.Drawing.Size(48, 43);
+            this.picLogin.TabIndex = 9;
+            this.picLogin.TabStop = false;
             // 
-            // lblCustomer
+            // label1
             // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(563, 31);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblCustomer.Size = new System.Drawing.Size(123, 30);
-            this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Customer";
-            this.lblCustomer.Click += new System.EventHandler(this.lblCustomer_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1114, 36);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(129, 48);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Update";
             // 
-            // lblEmployee
+            // label2
             // 
-            this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(736, 31);
-            this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblEmployee.Size = new System.Drawing.Size(121, 30);
-            this.lblEmployee.TabIndex = 0;
-            this.lblEmployee.Text = "Employee";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(970, 36);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(136, 48);
+            this.label2.TabIndex = 2;
+            this.label2.Text = " Invoice";
             // 
-            // lblPayment
+            // label3
             // 
-            this.lblPayment.AutoSize = true;
-            this.lblPayment.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.Location = new System.Drawing.Point(906, 31);
-            this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblPayment.Size = new System.Drawing.Size(110, 30);
-            this.lblPayment.TabIndex = 0;
-            this.lblPayment.Text = "Payment";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(826, 36);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(147, 48);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Payment";
             // 
-            // lblWareHouse
+            // label4
             // 
-            this.lblWareHouse.AutoSize = true;
-            this.lblWareHouse.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWareHouse.Location = new System.Drawing.Point(1064, 31);
-            this.lblWareHouse.Name = "lblWareHouse";
-            this.lblWareHouse.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblWareHouse.Size = new System.Drawing.Size(170, 30);
-            this.lblWareHouse.TabIndex = 0;
-            this.lblWareHouse.Text = "Import Invoice";
-            this.lblWareHouse.Click += new System.EventHandler(this.lblWareHouse_Click);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(157, 36);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label4.Size = new System.Drawing.Size(161, 48);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Overview";
             // 
-            // lblUpdate
+            // label5
             // 
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdate.Location = new System.Drawing.Point(1265, 31);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.lblUpdate.Size = new System.Drawing.Size(98, 30);
-            this.lblUpdate.TabIndex = 0;
-            this.lblUpdate.Text = "Update";
-            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(657, 36);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label5.Size = new System.Drawing.Size(159, 48);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Employee";
             // 
-            // panel2
+            // label6
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.lblUpdate);
-            this.panel2.Controls.Add(this.lblWareHouse);
-            this.panel2.Controls.Add(this.lblPayment);
-            this.panel2.Controls.Add(this.lblEmployee);
-            this.panel2.Controls.Add(this.lblCustomer);
-            this.panel2.Controls.Add(this.lblProduct);
-            this.panel2.Controls.Add(this.lblOverview);
-            this.panel2.Controls.Add(this.lblAccount);
-            this.panel2.Location = new System.Drawing.Point(3, 138);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1434, 84);
-            this.panel2.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 36);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(144, 48);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Account";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(481, 36);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label7.Size = new System.Drawing.Size(165, 48);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Customer";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("EB Garamond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(328, 36);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label8.Size = new System.Drawing.Size(141, 48);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Product";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Jewelry.Properties.Resources._;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(704, 938);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(33, 30);
+            this.guna2PictureBox1.TabIndex = 12;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("EB Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(677, 974);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(88, 31);
+            this.guna2HtmlLabel4.TabIndex = 11;
+            this.guna2HtmlLabel4.Text = "Since 2025";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("EB Garamond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(912, 604);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(404, 41);
+            this.guna2HtmlLabel2.TabIndex = 13;
+            this.guna2HtmlLabel2.Text = "Gold and diamond flowers come to life";
             // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Jewelry.Properties.Resources.Background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.tlpNavigion);
-            this.Controls.Add(this.flpDashBoard);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.guna2HtmlLabel4);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblName);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";
-            this.tlpNavigion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flpDashBoard;
-        private System.Windows.Forms.TableLayoutPanel tlpNavigion;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem overviewToolStripMenuItem;
@@ -422,16 +413,19 @@
         private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip miniToolStrip;
-        private Guna.UI2.WinForms.Guna2Button btnExitDashBoard;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblUpdate;
-        private System.Windows.Forms.Label lblWareHouse;
-        private System.Windows.Forms.Label lblPayment;
-        private System.Windows.Forms.Label lblEmployee;
-        private System.Windows.Forms.Label lblCustomer;
-        private System.Windows.Forms.Label lblProduct;
-        private System.Windows.Forms.Label lblOverview;
-        private System.Windows.Forms.Label lblAccount;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogin;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

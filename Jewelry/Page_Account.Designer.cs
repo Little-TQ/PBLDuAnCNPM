@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExitAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReturnAddA = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mstNAccount = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,76 +38,19 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.paymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.mstNAccount.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btnExitAccount);
-            this.panel1.Controls.Add(this.btnReturnAddA);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(4, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1433, 110);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnExitAccount
-            // 
-            this.btnExitAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitAccount.FillColor = System.Drawing.Color.White;
-            this.btnExitAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitAccount.ForeColor = System.Drawing.Color.White;
-            this.btnExitAccount.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitAccount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitAccount.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitAccount.Location = new System.Drawing.Point(1374, 3);
-            this.btnExitAccount.Name = "btnExitAccount";
-            this.btnExitAccount.Size = new System.Drawing.Size(56, 41);
-            this.btnExitAccount.TabIndex = 3;
-            this.btnExitAccount.Click += new System.EventHandler(this.btnExitAccount_Click);
-            // 
-            // btnReturnAddA
-            // 
-            this.btnReturnAddA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnAddA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnAddA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReturnAddA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnAddA.FillColor = System.Drawing.Color.White;
-            this.btnReturnAddA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReturnAddA.ForeColor = System.Drawing.Color.White;
-            this.btnReturnAddA.Image = global::Jewelry.Properties.Resources.Return;
-            this.btnReturnAddA.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnReturnAddA.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReturnAddA.Location = new System.Drawing.Point(3, 17);
-            this.btnReturnAddA.Name = "btnReturnAddA";
-            this.btnReturnAddA.Size = new System.Drawing.Size(50, 36);
-            this.btnReturnAddA.TabIndex = 2;
-            this.btnReturnAddA.Click += new System.EventHandler(this.btnReturnAddA_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(611, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 72);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Account";
             // 
             // panel2
             // 
@@ -207,6 +146,12 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(253, 48);
             this.updateToolStripMenuItem.Text = "Update";
             // 
+            // paymentToolStripMenuItem1
+            // 
+            this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
+            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
+            this.paymentToolStripMenuItem1.Text = "Payment";
+            // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Font = new System.Drawing.Font("Sora", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,6 +173,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelMain.Controls.Add(this.panel1);
             this.panelMain.Controls.Add(this.pnlContainer);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
@@ -244,11 +190,36 @@
             this.pnlContainer.Size = new System.Drawing.Size(1437, 807);
             this.pnlContainer.TabIndex = 4;
             // 
-            // paymentToolStripMenuItem1
+            // panel1
             // 
-            this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
-            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(253, 48);
-            this.paymentToolStripMenuItem1.Text = "Payment";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1440, 110);
+            this.panel1.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(1, 109);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1436, 99);
+            this.panel3.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(613, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(276, 96);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Account";
             // 
             // Page_Account
             // 
@@ -256,28 +227,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Page_Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Account_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.mstNAccount.ResumeLayout(false);
             this.mstNAccount.PerformLayout();
             this.panelMain.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel pnlContainer;
@@ -292,8 +259,9 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
-        private Guna.UI2.WinForms.Guna2Button btnReturnAddA;
-        private Guna.UI2.WinForms.Guna2Button btnExitAccount;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }

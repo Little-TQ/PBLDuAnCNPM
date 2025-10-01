@@ -43,19 +43,24 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MembershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContainerCustomer = new System.Windows.Forms.Panel();
-            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnExitCustomer);
             this.panel1.Controls.Add(this.btnReturnCustomer);
@@ -172,44 +177,50 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.toolStripMenuItem1.Text = "Account";
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.productToolStripMenuItem1.Text = "Product";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
+            this.paymentToolStripMenuItem.Text = "Payment";
             // 
             // InformationToolStripMenuItem
             // 
@@ -236,11 +247,35 @@
             this.pnlContainerCustomer.Size = new System.Drawing.Size(1434, 812);
             this.pnlContainerCustomer.TabIndex = 6;
             // 
-            // paymentToolStripMenuItem
+            // panel4
             // 
-            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
-            this.paymentToolStripMenuItem.Text = "Payment";
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1440, 110);
+            this.panel4.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(1, 109);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1436, 99);
+            this.panel5.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(580, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Customer";
             // 
             // Customer
             // 
@@ -260,6 +295,8 @@
             this.panel3.PerformLayout();
             this.mstNCustomer.ResumeLayout(false);
             this.mstNCustomer.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +322,8 @@
         private System.Windows.Forms.ToolStripMenuItem MembershipToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContainerCustomer;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
     }
 }

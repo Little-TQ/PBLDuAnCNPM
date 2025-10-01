@@ -83,7 +83,7 @@
             this.btnExitEditCustomer.FillColor = System.Drawing.Color.White;
             this.btnExitEditCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExitEditCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnExitEditCustomer.Image = global::Jewelry.Properties.Resources.Exit;
+            this.btnExitEditCustomer.Image = global::Jewelry.Properties.Resources.EXIT1;
             this.btnExitEditCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExitEditCustomer.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitEditCustomer.Location = new System.Drawing.Point(956, 3);

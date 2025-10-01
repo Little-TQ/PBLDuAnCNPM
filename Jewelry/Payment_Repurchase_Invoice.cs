@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class Payment : Form
+    public partial class Payment_Repurchase_Invoice : Form
     {
-        public Payment()
+        public Payment_Repurchase_Invoice()
         {
             InitializeComponent();
-        }
-
-        private void SoldProductToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

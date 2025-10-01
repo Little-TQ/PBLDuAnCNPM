@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class Product_PreOrder_Invoice
+    partial class Payment_PreOrder_Invoice
     {
         /// <summary>
         /// Required designer variable.

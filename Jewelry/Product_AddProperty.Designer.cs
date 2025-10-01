@@ -83,7 +83,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Image = global::Jewelry.Properties.Resources.Close;
+            this.guna2PictureBox2.Image = global::Jewelry.Properties.Resources.EXIT1;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(3, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class Product_Repurchase_Select : Form
+    public partial class Payment_Repurchase_Select : Form
     {
-        public Product_Repurchase_Select()
+        public Payment_Repurchase_Select()
         {
             InitializeComponent();
         }

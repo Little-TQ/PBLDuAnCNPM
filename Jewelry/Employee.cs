@@ -74,5 +74,10 @@ namespace Jewelry
             homeToolStripMenuItem.BackColor = Color.Transparent;
             homeToolStripMenuItem.ForeColor = Color.Red;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

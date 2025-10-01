@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExitEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReturnEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mstNEmployee = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,81 +38,18 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContainerEmployee = new System.Windows.Forms.Panel();
-            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnExitEmployee);
-            this.panel1.Controls.Add(this.btnReturnEmployee);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1440, 110);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(9, 109);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1436, 120);
-            this.panel2.TabIndex = 4;
-            // 
-            // btnExitEmployee
-            // 
-            this.btnExitEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitEmployee.FillColor = System.Drawing.Color.White;
-            this.btnExitEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnExitEmployee.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitEmployee.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitEmployee.Location = new System.Drawing.Point(1374, 3);
-            this.btnExitEmployee.Name = "btnExitEmployee";
-            this.btnExitEmployee.Size = new System.Drawing.Size(56, 41);
-            this.btnExitEmployee.TabIndex = 3;
-            // 
-            // btnReturnEmployee
-            // 
-            this.btnReturnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReturnEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnEmployee.FillColor = System.Drawing.Color.White;
-            this.btnReturnEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReturnEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnReturnEmployee.Image = global::Jewelry.Properties.Resources.Return;
-            this.btnReturnEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnReturnEmployee.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReturnEmployee.Location = new System.Drawing.Point(3, 17);
-            this.btnReturnEmployee.Name = "btnReturnEmployee";
-            this.btnReturnEmployee.Size = new System.Drawing.Size(50, 36);
-            this.btnReturnEmployee.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(605, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 72);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee";
             // 
             // panel3
             // 
@@ -173,44 +105,50 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.toolStripMenuItem1.Text = "Account";
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.productToolStripMenuItem1.Text = "Product";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
+            this.paymentToolStripMenuItem.Text = "Payment";
             // 
             // InformationToolStripMenuItem
             // 
@@ -246,40 +184,59 @@
             this.pnlContainerEmployee.Size = new System.Drawing.Size(1439, 805);
             this.pnlContainerEmployee.TabIndex = 7;
             // 
-            // paymentToolStripMenuItem
+            // panel1
             // 
-            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
-            this.paymentToolStripMenuItem.Text = "Payment";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1440, 110);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(1, 109);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1436, 99);
+            this.panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(613, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 96);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Employee";
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlContainerEmployee);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";
             this.Text = "frmEmployee";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.mstNEmployee.ResumeLayout(false);
             this.mstNEmployee.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btnExitEmployee;
-        private Guna.UI2.WinForms.Guna2Button btnReturnEmployee;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip mstNEmployee;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
@@ -295,5 +252,8 @@
         private System.Windows.Forms.Panel pnlContainerEmployee;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

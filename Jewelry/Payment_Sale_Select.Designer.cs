@@ -31,17 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelRepurchase = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelPreOrder = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panelSale = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.navbar = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -66,13 +55,20 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panel1.SuspendLayout();
-            this.panelRepurchase.SuspendLayout();
-            this.panelPreOrder.SuspendLayout();
-            this.panelSale.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.navbar.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRepurchase = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelPreOrder = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelSale = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.navbar = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -80,115 +76,15 @@
             this.btnPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelRepurchase.SuspendLayout();
+            this.panelPreOrder.SuspendLayout();
+            this.panelSale.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.navbar.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panelRepurchase);
-            this.panel1.Controls.Add(this.panelPreOrder);
-            this.panel1.Controls.Add(this.panelSale);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(0, 124);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1440, 100);
-            this.panel1.TabIndex = 2;
-            // 
-            // panelRepurchase
-            // 
-            this.panelRepurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelRepurchase.Controls.Add(this.label3);
-            this.panelRepurchase.Location = new System.Drawing.Point(605, 32);
-            this.panelRepurchase.Name = "panelRepurchase";
-            this.panelRepurchase.Size = new System.Drawing.Size(146, 42);
-            this.panelRepurchase.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 30);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Repurchase";
-            // 
-            // panelPreOrder
-            // 
-            this.panelPreOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelPreOrder.Controls.Add(this.label5);
-            this.panelPreOrder.Location = new System.Drawing.Point(937, 32);
-            this.panelPreOrder.Name = "panelPreOrder";
-            this.panelPreOrder.Size = new System.Drawing.Size(126, 42);
-            this.panelPreOrder.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 30);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Pre-Order";
-            // 
-            // panelSale
-            // 
-            this.panelSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSale.Controls.Add(this.label1);
-            this.panelSale.Location = new System.Drawing.Point(278, 32);
-            this.panelSale.Name = "panelSale";
-            this.panelSale.Size = new System.Drawing.Size(126, 42);
-            this.panelSale.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 30);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Sale";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(30, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(65, 69);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Jewelry.Properties.Resources.Bar;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 63);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // navbar
-            // 
-            this.navbar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.navbar.Controls.Add(this.guna2HtmlLabel6);
-            this.navbar.Controls.Add(this.panel1);
-            this.navbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navbar.Location = new System.Drawing.Point(0, 0);
-            this.navbar.Name = "navbar";
-            this.navbar.Size = new System.Drawing.Size(1440, 222);
-            this.navbar.TabIndex = 1;
-            // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(40, 12);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(179, 74);
-            this.guna2HtmlLabel6.TabIndex = 5;
-            this.guna2HtmlLabel6.Text = "Payment";
             // 
             // panel3
             // 
@@ -268,7 +164,7 @@
             this.btnPayment.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnPayment.Controls.Add(this.guna2PictureBox1);
             this.btnPayment.Controls.Add(this.guna2HtmlLabel5);
-            this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.btnPayment.Location = new System.Drawing.Point(36, 696);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.ShadowColor = System.Drawing.Color.Black;
@@ -491,6 +387,145 @@
             this.guna2HtmlLabel1.TabIndex = 50;
             this.guna2HtmlLabel1.Text = "Order Summary";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panelRepurchase);
+            this.panel1.Controls.Add(this.panelPreOrder);
+            this.panel1.Controls.Add(this.panelSale);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 112);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1440, 112);
+            this.panel1.TabIndex = 2;
+            // 
+            // panelRepurchase
+            // 
+            this.panelRepurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRepurchase.Controls.Add(this.label3);
+            this.panelRepurchase.Location = new System.Drawing.Point(605, 32);
+            this.panelRepurchase.Name = "panelRepurchase";
+            this.panelRepurchase.Size = new System.Drawing.Size(146, 42);
+            this.panelRepurchase.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 30);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Repurchase";
+            // 
+            // panelPreOrder
+            // 
+            this.panelPreOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPreOrder.Controls.Add(this.label5);
+            this.panelPreOrder.Location = new System.Drawing.Point(937, 32);
+            this.panelPreOrder.Name = "panelPreOrder";
+            this.panelPreOrder.Size = new System.Drawing.Size(126, 42);
+            this.panelPreOrder.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 30);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Pre-Order";
+            // 
+            // panelSale
+            // 
+            this.panelSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSale.Controls.Add(this.label1);
+            this.panelSale.Location = new System.Drawing.Point(278, 32);
+            this.panelSale.Name = "panelSale";
+            this.panelSale.Size = new System.Drawing.Size(126, 42);
+            this.panelSale.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sora", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 30);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Sale";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(30, 19);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(65, 69);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Jewelry.Properties.Resources.Bar;
+            this.pictureBox2.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 63);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // navbar
+            // 
+            this.navbar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.navbar.Controls.Add(this.panel7);
+            this.navbar.Controls.Add(this.panel1);
+            this.navbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navbar.Location = new System.Drawing.Point(0, 0);
+            this.navbar.Name = "navbar";
+            this.navbar.Size = new System.Drawing.Size(1440, 222);
+            this.navbar.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1440, 110);
+            this.panel7.TabIndex = 9;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(1, 109);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1436, 99);
+            this.panel8.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(613, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(283, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Payment";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(40, 12);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(179, 74);
+            this.guna2HtmlLabel6.TabIndex = 5;
+            this.guna2HtmlLabel6.Text = "Payment";
+            // 
             // Payment_Sale_Select
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,6 +537,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment_Sale_Select";
             this.Text = "Payment_Sale_Select";
+            this.panel3.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
+            this.btnPayment.ResumeLayout(false);
+            this.btnPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelRepurchase.ResumeLayout(false);
             this.panelRepurchase.PerformLayout();
@@ -512,32 +556,13 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.navbar.ResumeLayout(false);
-            this.navbar.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
-            this.btnPayment.ResumeLayout(false);
-            this.btnPayment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelRepurchase;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panelPreOrder;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panelSale;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel navbar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -562,6 +587,19 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel btnPayment;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelRepurchase;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelPreOrder;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelSale;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel navbar;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
     }
 }

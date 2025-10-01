@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class Product_Repurchase_Invoice
+    partial class Payment_Repurchase_Invoice
     {
         /// <summary>
         /// Required designer variable.

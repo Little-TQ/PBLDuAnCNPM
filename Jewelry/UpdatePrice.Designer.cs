@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPricenow = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -58,8 +57,9 @@
             this.btnChangeMonth = new Guna.UI2.WinForms.Guna2Button();
             this.btnChangeDate = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnExitUpDate = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturnUpDate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExitUpDate = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -67,15 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Jewelry.Properties.Resources.Cô_gái_vàng_đỏ;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(45, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 359);
-            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -315,17 +306,17 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(367, 439);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(506, 355);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -478,24 +469,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Biểu Đồ Giá Vàng";
             // 
-            // btnExitUpDate
-            // 
-            this.btnExitUpDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitUpDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitUpDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitUpDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitUpDate.FillColor = System.Drawing.Color.White;
-            this.btnExitUpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExitUpDate.ForeColor = System.Drawing.Color.White;
-            this.btnExitUpDate.Image = global::Jewelry.Properties.Resources.Exit;
-            this.btnExitUpDate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnExitUpDate.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitUpDate.Location = new System.Drawing.Point(1383, 3);
-            this.btnExitUpDate.Name = "btnExitUpDate";
-            this.btnExitUpDate.Size = new System.Drawing.Size(56, 41);
-            this.btnExitUpDate.TabIndex = 7;
-            this.btnExitUpDate.Click += new System.EventHandler(this.btnExitUpDate_Click);
-            // 
             // btnReturnUpDate
             // 
             this.btnReturnUpDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -514,7 +487,34 @@
             this.btnReturnUpDate.TabIndex = 8;
             this.btnReturnUpDate.Click += new System.EventHandler(this.btnReturnUpDate_Click);
             // 
-            // frmUpdatePrice
+            // btnExitUpDate
+            // 
+            this.btnExitUpDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitUpDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitUpDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitUpDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitUpDate.FillColor = System.Drawing.Color.White;
+            this.btnExitUpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExitUpDate.ForeColor = System.Drawing.Color.White;
+            this.btnExitUpDate.Image = global::Jewelry.Properties.Resources.EXIT1;
+            this.btnExitUpDate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExitUpDate.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExitUpDate.Location = new System.Drawing.Point(1383, 3);
+            this.btnExitUpDate.Name = "btnExitUpDate";
+            this.btnExitUpDate.Size = new System.Drawing.Size(56, 41);
+            this.btnExitUpDate.TabIndex = 7;
+            this.btnExitUpDate.Click += new System.EventHandler(this.btnExitUpDate_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Jewelry.Properties.Resources.Update;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(45, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(316, 359);
+            this.panel1.TabIndex = 0;
+            // 
+            // UpdatePrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -530,7 +530,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmUpdatePrice";
+            this.Name = "UpdatePrice";
             this.Text = "frmUpdatePrice";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

@@ -41,5 +41,10 @@ namespace Jewelry
         {
 
         }
+
+        private void guna2HtmlLabel13_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

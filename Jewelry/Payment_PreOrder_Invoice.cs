@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jewelry
 {
-    public partial class Product_PreOrder_Invoice : Form
+    public partial class Payment_PreOrder_Invoice : Form
     {
-        public Product_PreOrder_Invoice()
+        public Payment_PreOrder_Invoice()
         {
             InitializeComponent();
         }
