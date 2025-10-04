@@ -24,11 +24,11 @@ namespace Jewelry.DTO
         public double? Size { get; set; }
         public string Photo { get; set; }
 
-        public ProductDTO(string v) { }
+        public ProductDTO(string v, string text, decimal? v1) { }
         public ProductDTO(string idProduct, string nameProduct, decimal? priceSilver, decimal? wage,
                      int sold, int instock, string idCategory, string idMaterial,
                      string idColor, string idCollection, string gender,
-                     double weight, double? size, string photo)
+                     double? weight, double? size, string photo)
         {
             this.idProduct = idProduct;
             this.NameProduct = nameProduct;

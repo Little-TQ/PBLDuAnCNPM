@@ -27,6 +27,10 @@ namespace Jewelry
         public Login()
         {
             InitializeComponent();
+          
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
             LoadRolesFromDatabase();
         }
         // Hàm load roles từ database vào combobox
@@ -119,7 +123,9 @@ namespace Jewelry
         }
         private void picLogin_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();   
         }
+
+        
     }
 }

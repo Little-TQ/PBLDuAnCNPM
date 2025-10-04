@@ -32,5 +32,13 @@ namespace Jewelry
         {
 
         }
+
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

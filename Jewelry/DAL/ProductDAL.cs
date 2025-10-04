@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +18,35 @@ namespace Jewelry.DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT * FROM Product";
+                string query = @"
+            SELECT 
+                p.idProduct AS ID,
+                p.NameProduct AS Name,
+                p.PriceSilver AS Price,
+                p.Wage,
+                p.Sold,
+                p.Instock,
+                c.NameCategory AS Category,
+                m.NameMaterial AS Material,
+                co.NameColor AS Color,
+                col.NameCollection AS Collection,
+                p.Gender,
+                p.Weight,
+                p.Size,
+                p.Photo 
+            FROM Product p
+            LEFT JOIN Category c ON p.idCategory = c.idCategory
+            LEFT JOIN Material m ON p.idMaterial = m.idMaterial
+            LEFT JOIN Color co ON p.idColor = co.idColor
+            LEFT JOIN Collection col ON p.idCollection = col.idCollection";
+
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 return dt;
             }
         }
+
         //Get product by ID
         public ProductDTO GetProductByID(string idProduct)
         {
@@ -57,6 +80,35 @@ namespace Jewelry.DAL
                 return null;
             }
         }
+        //Generate a new unique product ID
+        public string GenerateProductID(string categoryName, string materialName)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string catSymbol = categoryName.Substring(0, 1).ToUpper();
+                string matSymbol = materialName.Substring(0, 1).ToUpper();
+                string prefix = "P" + catSymbol + matSymbol;
+
+                string query = "SELECT MAX(idProduct) FROM Product WHERE idProduct LIKE @prefix + '%'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@prefix", prefix + "-");
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                int nextNumber = 1; 
+                if (result != DBNull.Value && result != null)
+                {
+                    string lastId = result.ToString(); 
+                    string[] parts = lastId.Split('-');
+                    if (parts.Length == 2 && int.TryParse(parts[1], out int currentNumber))
+                    {
+                        nextNumber = currentNumber + 1;
+                    }
+                }
+                return prefix + "-" + nextNumber.ToString("D3"); // ví dụ: PRG-005
+            }
+        }
+
         //Add a new product to the database
         public bool InsertProduct(ProductDTO product)
         {
@@ -74,8 +126,8 @@ namespace Jewelry.DAL
                 cmd.Parameters.AddWithValue("@Instock", product.Instock);
                 cmd.Parameters.AddWithValue("@idCategory", product.idCategory);
                 cmd.Parameters.AddWithValue("@idMaterial", product.idMaterial);
-                cmd.Parameters.AddWithValue("@idColor", product.idCategory);
-                cmd.Parameters.AddWithValue("@idCollection", (object)product.idCategory ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@idColor", product.idColor);
+                cmd.Parameters.AddWithValue("@idCollection", (object)product.idCollection ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Gender", product.Gender);
                 cmd.Parameters.AddWithValue("@Weight", product.Weight);
                 cmd.Parameters.AddWithValue("@Size", (object)product.Size ?? DBNull.Value);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picLogin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@
             // 
             this.picLogin.BackColor = System.Drawing.Color.Transparent;
             this.picLogin.FillColor = System.Drawing.Color.Transparent;
-            this.picLogin.Image = global::Jewelry.Properties.Resources.EXIT1;
+            this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
             this.picLogin.ImageRotate = 0F;
             this.picLogin.Location = new System.Drawing.Point(14, 13);
             this.picLogin.Name = "picLogin";
@@ -220,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Jewelry.Properties.Resources.Homepage;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
             this.Controls.Add(this.lblName);
@@ -230,6 +231,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOME";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();

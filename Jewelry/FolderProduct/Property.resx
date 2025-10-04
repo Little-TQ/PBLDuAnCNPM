@@ -123,6 +123,18 @@
   <metadata name="Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAASJJREFUSEutllGxAjEMRSMBCUhAAhJwABJwAA7AAThAAhKQgAQkwJyZzcwlyzYt
+        2zPTj/e2m5tmcxvMzK5m9jSzpfXhMsRb6D9fZvbuJHQaYrE2+mAvDx4xgwYOEofqjDjKhnt8WIEKFBM9
+        y0aOXctW3qsqOcf0F8guY/XPN+WYHNeF+F5TEJDA7EOoSsBByF9mUY6ICrA4UTMxSw0SkyidNgUhr7eW
+        Q8tJV85mLQHJHjd3FXB2EtjXT7PNBYOqSHf02vFF2bpBV+k3ucnfNWZN0e5SN2t3zRJq8ckvs6ZEN9Nd
+        kbiHVq8m3l0lL0yZNaXVbM23sA4eZkstalaEJgeWCtCmraQjXDcUM0nQET4yqwqkNU3QEf41Y7iXegg4
+        o99xH0x7kxD/vtqaAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

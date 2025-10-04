@@ -61,12 +61,14 @@
     </Compile>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\PermissionBLL.cs" />
-    <Compile Include="BLL\Product.BLL.cs" />
+    <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\PropertyBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\AccountPermissionDAL.cs" />
     <Compile Include="DAL\DBConnect.cs" />
     <Compile Include="DAL\PermissionDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
+    <Compile Include="DAL\PropertyDAL.cs" />
     <Compile Include="DAL\RoleDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\AccountPermissionDTO.cs" />
@@ -135,11 +137,11 @@
     <Compile Include="FolderInvoice\ExportInvoice.Designer.cs">
       <DependentUpon>ExportInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FolderProduct\Product.cs">
+    <Compile Include="FolderProduct\Products.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FolderProduct\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="FolderProduct\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
     </Compile>
     <Compile Include="FolderProduct\Property.cs">
       <SubType>UserControl</SubType>
@@ -338,8 +340,8 @@
     <EmbeddedResource Include="FolderInvoice\ExportInvoice.resx">
       <DependentUpon>ExportInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FolderProduct\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="FolderProduct\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FolderProduct\Property.resx">
       <DependentUpon>Property.cs</DependentUpon>
