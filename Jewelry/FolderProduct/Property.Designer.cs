@@ -178,11 +178,10 @@
             "Category",
             "Material",
             "Color",
-            "Gender",
             "Collection"});
             this.cbChoice.Location = new System.Drawing.Point(74, 66);
             this.cbChoice.Name = "cbChoice";
-            this.cbChoice.Size = new System.Drawing.Size(126, 38);
+            this.cbChoice.Size = new System.Drawing.Size(212, 38);
             this.cbChoice.TabIndex = 10;
             this.cbChoice.SelectedIndexChanged += new System.EventHandler(this.cbChoice_SelectedIndexChanged);
             // 
@@ -216,7 +215,7 @@
             this.Controls.Add(this.guna2CirclePictureBox3);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.dgvProperty);
-            base.Name = "Property";
+            //this.Name = "Property";
             this.Size = new System.Drawing.Size(732, 589);
             this.Load += new System.EventHandler(this.Property_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProperty)).EndInit();
