@@ -173,5 +173,10 @@ namespace Jewelry
                 UpdateStatistics(currentMaterialId);
             }
         }
+
+        private void UpdatePrice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

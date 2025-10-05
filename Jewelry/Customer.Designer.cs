@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExitCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturnCustomer = new Guna.UI2.WinForms.Guna2Button();
@@ -44,16 +47,16 @@
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MembershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Info = new System.Windows.Forms.ToolStripMenuItem();
+            this.Membership = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContainerCustomer = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.informationCustomer1 = new Jewelry.FolderCustomer.InformationCustomer();
+            this.membershipClass1 = new Jewelry.FolderCustomer.MembershipClass();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlContainerCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +73,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1446, 110);
             this.panel1.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1440, 110);
+            this.panel4.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(1, 109);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1436, 99);
+            this.panel5.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(580, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Customer";
             // 
             // panel2
             // 
@@ -139,8 +172,8 @@
             this.mstNCustomer.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstNCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
-            this.InformationToolStripMenuItem,
-            this.MembershipToolStripMenuItem});
+            this.Info,
+            this.Membership});
             this.mstNCustomer.Location = new System.Drawing.Point(0, 0);
             this.mstNCustomer.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.mstNCustomer.Name = "mstNCustomer";
@@ -222,60 +255,47 @@
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             // 
-            // InformationToolStripMenuItem
+            // Info
             // 
-            this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
-            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(558, 74);
-            this.InformationToolStripMenuItem.Text = "Information";
-            this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
+            this.Info.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info.Name = "Info";
+            this.Info.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
+            this.Info.Size = new System.Drawing.Size(558, 74);
+            this.Info.Text = "Information";
+            this.Info.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
-            // MembershipToolStripMenuItem
+            // Membership
             // 
-            this.MembershipToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MembershipToolStripMenuItem.Name = "MembershipToolStripMenuItem";
-            this.MembershipToolStripMenuItem.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
-            this.MembershipToolStripMenuItem.Size = new System.Drawing.Size(632, 74);
-            this.MembershipToolStripMenuItem.Text = "Membership Class";
-            this.MembershipToolStripMenuItem.Click += new System.EventHandler(this.MembershipToolStripMenuItem_Click);
+            this.Membership.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Membership.Name = "Membership";
+            this.Membership.Padding = new System.Windows.Forms.Padding(200, 0, 200, 0);
+            this.Membership.Size = new System.Drawing.Size(632, 74);
+            this.Membership.Text = "Membership Class";
+            this.Membership.Click += new System.EventHandler(this.MembershipToolStripMenuItem_Click);
             // 
             // pnlContainerCustomer
             // 
+            this.pnlContainerCustomer.Controls.Add(this.membershipClass1);
+            this.pnlContainerCustomer.Controls.Add(this.informationCustomer1);
             this.pnlContainerCustomer.Location = new System.Drawing.Point(3, 210);
             this.pnlContainerCustomer.Name = "pnlContainerCustomer";
             this.pnlContainerCustomer.Size = new System.Drawing.Size(1434, 812);
             this.pnlContainerCustomer.TabIndex = 6;
             // 
-            // panel4
+            // informationCustomer1
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(3, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1440, 110);
-            this.panel4.TabIndex = 5;
+            this.informationCustomer1.BackColor = System.Drawing.Color.White;
+            this.informationCustomer1.Location = new System.Drawing.Point(1, 3);
+            this.informationCustomer1.Name = "informationCustomer1";
+            this.informationCustomer1.Size = new System.Drawing.Size(1434, 812);
+            this.informationCustomer1.TabIndex = 0;
             // 
-            // panel5
+            // membershipClass1
             // 
-            this.panel5.Location = new System.Drawing.Point(1, 109);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1436, 99);
-            this.panel5.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(580, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 96);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Customer";
+            this.membershipClass1.Location = new System.Drawing.Point(0, 3);
+            this.membershipClass1.Name = "membershipClass1";
+            this.membershipClass1.Size = new System.Drawing.Size(1434, 812);
+            this.membershipClass1.TabIndex = 1;
             // 
             // Customer
             // 
@@ -289,14 +309,16 @@
             this.Name = "Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomer";
+            this.Load += new System.EventHandler(this.Customer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.mstNCustomer.ResumeLayout(false);
             this.mstNCustomer.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlContainerCustomer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -318,12 +340,14 @@
         private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem InformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MembershipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Info;
+        private System.Windows.Forms.ToolStripMenuItem Membership;
         private System.Windows.Forms.Panel pnlContainerCustomer;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
+        private FolderCustomer.InformationCustomer informationCustomer1;
+        private FolderCustomer.MembershipClass membershipClass1;
     }
 }

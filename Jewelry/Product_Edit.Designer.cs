@@ -514,6 +514,7 @@
             this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_Edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_ViewProduct";
             this.Load += new System.EventHandler(this.Product_EditProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();

@@ -33,9 +33,10 @@ namespace Jewelry
                 item.ForeColor = Color.Black;
             }
 
-            InformationToolStripMenuItem.BackColor = Color.Transparent;
-            InformationToolStripMenuItem.ForeColor = Color.Red;
+            Info.BackColor = Color.Transparent;
+            Info.ForeColor = Color.Red;
             LoadUserControl(new InformationCustomer());
+            membershipClass1.Visible = false;
         }
 
         private void MembershipToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,9 +47,10 @@ namespace Jewelry
                 item.ForeColor = Color.Black;
             }
 
-            MembershipToolStripMenuItem.BackColor = Color.Transparent;
-            MembershipToolStripMenuItem.ForeColor = Color.Red;
+            Membership.BackColor = Color.Transparent;
+            Membership.ForeColor = Color.Red;
             LoadUserControl(new MembershipClass());
+            informationCustomer1.Visible = false;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +76,12 @@ namespace Jewelry
             DashBoard frm = new DashBoard();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            informationCustomer1.Visible = true;
+            membershipClass1.Visible = false;
         }
     }
 }

@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewInfoC = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnViewCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.btnView = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchCustomer = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInfoC)).BeginInit();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.dgvCustomerInfo = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerInfo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewInfoC
-            // 
-            this.dataGridViewInfoC.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewInfoC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInfoC.Location = new System.Drawing.Point(83, 197);
-            this.dataGridViewInfoC.Name = "dataGridViewInfoC";
-            this.dataGridViewInfoC.RowHeadersWidth = 51;
-            this.dataGridViewInfoC.RowTemplate.Height = 24;
-            this.dataGridViewInfoC.Size = new System.Drawing.Size(1277, 587);
-            this.dataGridViewInfoC.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.btnViewCustomer);
-            this.panel4.Controls.Add(this.btnSaveCustomer);
+            this.panel4.Controls.Add(this.btnView);
+            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.txtSearchCustomer);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -68,47 +67,47 @@
             this.panel5.Size = new System.Drawing.Size(1440, 717);
             this.panel5.TabIndex = 6;
             // 
-            // btnViewCustomer
+            // btnView
             // 
-            this.btnViewCustomer.BackColor = System.Drawing.Color.White;
-            this.btnViewCustomer.BorderRadius = 12;
-            this.btnViewCustomer.BorderThickness = 1;
-            this.btnViewCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnViewCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnViewCustomer.Image = global::Jewelry.Properties.Resources.View;
-            this.btnViewCustomer.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnViewCustomer.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnViewCustomer.Location = new System.Drawing.Point(1314, 21);
-            this.btnViewCustomer.Name = "btnViewCustomer";
-            this.btnViewCustomer.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnViewCustomer.Size = new System.Drawing.Size(50, 50);
-            this.btnViewCustomer.TabIndex = 4;
+            this.btnView.BackColor = System.Drawing.Color.White;
+            this.btnView.BorderRadius = 12;
+            this.btnView.BorderThickness = 1;
+            this.btnView.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnView.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnView.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnView.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnView.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnView.ForeColor = System.Drawing.Color.White;
+            this.btnView.Image = global::Jewelry.Properties.Resources.View;
+            this.btnView.ImageOffset = new System.Drawing.Point(1, 0);
+            this.btnView.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnView.Location = new System.Drawing.Point(1266, 21);
+            this.btnView.Name = "btnView";
+            this.btnView.PressedColor = System.Drawing.Color.LightGreen;
+            this.btnView.Size = new System.Drawing.Size(50, 50);
+            this.btnView.TabIndex = 4;
             // 
-            // btnSaveCustomer
+            // btnSave
             // 
-            this.btnSaveCustomer.BackColor = System.Drawing.Color.White;
-            this.btnSaveCustomer.BorderRadius = 12;
-            this.btnSaveCustomer.BorderThickness = 1;
-            this.btnSaveCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCustomer.Image = global::Jewelry.Properties.Resources.Save;
-            this.btnSaveCustomer.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSaveCustomer.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSaveCustomer.Location = new System.Drawing.Point(1198, 21);
-            this.btnSaveCustomer.Name = "btnSaveCustomer";
-            this.btnSaveCustomer.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSaveCustomer.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveCustomer.TabIndex = 1;
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BorderRadius = 12;
+            this.btnSave.BorderThickness = 1;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::Jewelry.Properties.Resources.Save;
+            this.btnSave.ImageOffset = new System.Drawing.Point(1, 0);
+            this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSave.Location = new System.Drawing.Point(1198, 21);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PressedColor = System.Drawing.Color.LightGreen;
+            this.btnSave.Size = new System.Drawing.Size(50, 50);
+            this.btnSave.TabIndex = 1;
             // 
             // txtSearchCustomer
             // 
@@ -133,27 +132,117 @@
             this.txtSearchCustomer.Size = new System.Drawing.Size(468, 45);
             this.txtSearchCustomer.TabIndex = 0;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Jewelry.Properties.Resources.Edit1;
+            this.btnEdit.ImageRotate = 0F;
+            this.btnEdit.Location = new System.Drawing.Point(1123, 21);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEdit.Size = new System.Drawing.Size(52, 50);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabStop = false;
+            // 
+            // dgvCustomerInfo
+            // 
+            this.dgvCustomerInfo.AllowUserToAddRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCustomerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Inter", 14F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvCustomerInfo.ColumnHeadersHeight = 60;
+            this.dgvCustomerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerInfo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvCustomerInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCustomerInfo.Location = new System.Drawing.Point(34, 122);
+            this.dgvCustomerInfo.Name = "dgvCustomerInfo";
+            this.dgvCustomerInfo.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvCustomerInfo.RowHeadersVisible = false;
+            this.dgvCustomerInfo.RowHeadersWidth = 51;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCustomerInfo.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvCustomerInfo.RowTemplate.Height = 50;
+            this.dgvCustomerInfo.Size = new System.Drawing.Size(1358, 668);
+            this.dgvCustomerInfo.TabIndex = 12;
+            this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvCustomerInfo.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerInfo.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCustomerInfo.ThemeStyle.HeaderStyle.Height = 60;
+            this.dgvCustomerInfo.ThemeStyle.ReadOnly = true;
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.Height = 50;
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // InformationCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvCustomerInfo);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dataGridViewInfoC);
             this.Name = "InformationCustomer";
             this.Size = new System.Drawing.Size(1434, 812);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInfoC)).EndInit();
+            this.Load += new System.EventHandler(this.InformationCustomer_Load);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewInfoC;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2Button btnViewCustomer;
-        private Guna.UI2.WinForms.Guna2Button btnSaveCustomer;
+        private Guna.UI2.WinForms.Guna2Button btnView;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchCustomer;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btnEdit;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvCustomerInfo;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

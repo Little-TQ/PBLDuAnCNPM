@@ -28,37 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnViewMembership = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchMembershipC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dataGridViewMembersipC = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtTop = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.txtMBBronze = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtBronze = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtMBSilver = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtSilver = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtMBGold = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtGold = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtMBDiamond = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtDiamond = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.dgvMembershipC = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembersipC)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -68,6 +74,7 @@
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembershipC)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -132,17 +139,6 @@
             this.txtSearchMembershipC.Size = new System.Drawing.Size(468, 45);
             this.txtSearchMembershipC.TabIndex = 0;
             // 
-            // dataGridViewMembersipC
-            // 
-            this.dataGridViewMembersipC.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewMembersipC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMembersipC.Location = new System.Drawing.Point(56, 124);
-            this.dataGridViewMembersipC.Name = "dataGridViewMembersipC";
-            this.dataGridViewMembersipC.RowHeadersWidth = 51;
-            this.dataGridViewMembersipC.RowTemplate.Height = 24;
-            this.dataGridViewMembersipC.Size = new System.Drawing.Size(670, 377);
-            this.dataGridViewMembersipC.TabIndex = 8;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(211)))), ((int)(((byte)(195)))));
@@ -168,22 +164,22 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.guna2HtmlLabel3);
+            this.panel10.Controls.Add(this.txtTop);
             this.panel10.Controls.Add(this.label5);
             this.panel10.Location = new System.Drawing.Point(23, 138);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(268, 38);
             this.panel10.TabIndex = 3;
             // 
-            // guna2HtmlLabel3
+            // txtTop
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(179, 9);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(72, 20);
-            this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "Kim Cương";
+            this.txtTop.BackColor = System.Drawing.Color.Transparent;
+            this.txtTop.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTop.Location = new System.Drawing.Point(179, 9);
+            this.txtTop.Name = "txtTop";
+            this.txtTop.Size = new System.Drawing.Size(72, 20);
+            this.txtTop.TabIndex = 1;
+            this.txtTop.Text = "Kim Cương";
             // 
             // label5
             // 
@@ -197,22 +193,22 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.guna2HtmlLabel4);
+            this.panel11.Controls.Add(this.txtTotal);
             this.panel11.Controls.Add(this.label6);
             this.panel11.Location = new System.Drawing.Point(23, 73);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(268, 38);
             this.panel11.TabIndex = 2;
             // 
-            // guna2HtmlLabel4
+            // txtTotal
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(174, 9);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(91, 20);
-            this.guna2HtmlLabel4.TabIndex = 1;
-            this.guna2HtmlLabel4.Text = "4 Khách Hàng";
+            this.txtTotal.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotal.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(174, 9);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(91, 20);
+            this.txtTotal.TabIndex = 1;
+            this.txtTotal.Text = "4 Khách Hàng";
             // 
             // label6
             // 
@@ -251,22 +247,22 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.txtMBBronze);
+            this.panel12.Controls.Add(this.txtBronze);
             this.panel12.Controls.Add(this.label7);
             this.panel12.Location = new System.Drawing.Point(21, 182);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(268, 38);
             this.panel12.TabIndex = 5;
             // 
-            // txtMBBronze
+            // txtBronze
             // 
-            this.txtMBBronze.BackColor = System.Drawing.Color.Transparent;
-            this.txtMBBronze.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMBBronze.Location = new System.Drawing.Point(179, 9);
-            this.txtMBBronze.Name = "txtMBBronze";
-            this.txtMBBronze.Size = new System.Drawing.Size(87, 20);
-            this.txtMBBronze.TabIndex = 1;
-            this.txtMBBronze.Text = "1 Khách Hàng";
+            this.txtBronze.BackColor = System.Drawing.Color.Transparent;
+            this.txtBronze.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBronze.Location = new System.Drawing.Point(179, 9);
+            this.txtBronze.Name = "txtBronze";
+            this.txtBronze.Size = new System.Drawing.Size(87, 20);
+            this.txtBronze.TabIndex = 1;
+            this.txtBronze.Text = "1 Khách Hàng";
             // 
             // label7
             // 
@@ -280,22 +276,22 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txtMBSilver);
+            this.panel7.Controls.Add(this.txtSilver);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(21, 138);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(268, 38);
             this.panel7.TabIndex = 4;
             // 
-            // txtMBSilver
+            // txtSilver
             // 
-            this.txtMBSilver.BackColor = System.Drawing.Color.Transparent;
-            this.txtMBSilver.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMBSilver.Location = new System.Drawing.Point(179, 9);
-            this.txtMBSilver.Name = "txtMBSilver";
-            this.txtMBSilver.Size = new System.Drawing.Size(87, 20);
-            this.txtMBSilver.TabIndex = 1;
-            this.txtMBSilver.Text = "1 Khách Hàng";
+            this.txtSilver.BackColor = System.Drawing.Color.Transparent;
+            this.txtSilver.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSilver.Location = new System.Drawing.Point(179, 9);
+            this.txtSilver.Name = "txtSilver";
+            this.txtSilver.Size = new System.Drawing.Size(87, 20);
+            this.txtSilver.TabIndex = 1;
+            this.txtSilver.Text = "1 Khách Hàng";
             // 
             // label3
             // 
@@ -309,22 +305,22 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txtMBGold);
+            this.panel6.Controls.Add(this.txtGold);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(21, 94);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(268, 38);
             this.panel6.TabIndex = 3;
             // 
-            // txtMBGold
+            // txtGold
             // 
-            this.txtMBGold.BackColor = System.Drawing.Color.Transparent;
-            this.txtMBGold.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMBGold.Location = new System.Drawing.Point(179, 9);
-            this.txtMBGold.Name = "txtMBGold";
-            this.txtMBGold.Size = new System.Drawing.Size(87, 20);
-            this.txtMBGold.TabIndex = 1;
-            this.txtMBGold.Text = "1 Khách Hàng";
+            this.txtGold.BackColor = System.Drawing.Color.Transparent;
+            this.txtGold.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGold.Location = new System.Drawing.Point(179, 9);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(87, 20);
+            this.txtGold.TabIndex = 1;
+            this.txtGold.Text = "1 Khách Hàng";
             // 
             // label2
             // 
@@ -338,22 +334,22 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtMBDiamond);
+            this.panel3.Controls.Add(this.txtDiamond);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(21, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(268, 38);
             this.panel3.TabIndex = 2;
             // 
-            // txtMBDiamond
+            // txtDiamond
             // 
-            this.txtMBDiamond.BackColor = System.Drawing.Color.Transparent;
-            this.txtMBDiamond.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMBDiamond.Location = new System.Drawing.Point(179, 9);
-            this.txtMBDiamond.Name = "txtMBDiamond";
-            this.txtMBDiamond.Size = new System.Drawing.Size(87, 20);
-            this.txtMBDiamond.TabIndex = 1;
-            this.txtMBDiamond.Text = "1 Khách Hàng";
+            this.txtDiamond.BackColor = System.Drawing.Color.Transparent;
+            this.txtDiamond.Font = new System.Drawing.Font("Inter Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiamond.Location = new System.Drawing.Point(179, 9);
+            this.txtDiamond.Name = "txtDiamond";
+            this.txtDiamond.Size = new System.Drawing.Size(87, 20);
+            this.txtDiamond.TabIndex = 1;
+            this.txtDiamond.Text = "1 Khách Hàng";
             // 
             // label1
             // 
@@ -385,18 +381,92 @@
             this.panel9.Size = new System.Drawing.Size(505, 672);
             this.panel9.TabIndex = 10;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // dgvMembershipC
+            // 
+            this.dgvMembershipC.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMembershipC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembershipC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMembershipC.ColumnHeadersHeight = 60;
+            this.dgvMembershipC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMembershipC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMembershipC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMembershipC.Location = new System.Drawing.Point(56, 124);
+            this.dgvMembershipC.Name = "dgvMembershipC";
+            this.dgvMembershipC.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembershipC.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMembershipC.RowHeadersVisible = false;
+            this.dgvMembershipC.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMembershipC.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvMembershipC.RowTemplate.Height = 50;
+            this.dgvMembershipC.Size = new System.Drawing.Size(671, 379);
+            this.dgvMembershipC.TabIndex = 13;
+            this.dgvMembershipC.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMembershipC.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvMembershipC.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMembershipC.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvMembershipC.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvMembershipC.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMembershipC.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvMembershipC.ThemeStyle.HeaderStyle.Height = 60;
+            this.dgvMembershipC.ThemeStyle.ReadOnly = true;
+            this.dgvMembershipC.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMembershipC.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMembershipC.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMembershipC.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMembershipC.ThemeStyle.RowsStyle.Height = 50;
+            this.dgvMembershipC.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMembershipC.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // MembershipClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvMembershipC);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewMembersipC);
             this.Controls.Add(this.panel4);
             this.Name = "MembershipClass";
             this.Size = new System.Drawing.Size(1434, 812);
+            this.Load += new System.EventHandler(this.MembershipClass_Load);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembersipC)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -414,6 +484,7 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembershipC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,30 +495,31 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnViewMembership;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchMembershipC;
-        private System.Windows.Forms.DataGridView dataGridViewMembersipC;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtMBDiamond;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtDiamond;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtTop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtTotal;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtMBSilver;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtSilver;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtMBGold;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtGold;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel12;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtMBBronze;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtBronze;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel9;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMembershipC;
     }
 }

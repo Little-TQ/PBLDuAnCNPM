@@ -174,7 +174,6 @@ namespace Jewelry.FolderProduct
         //btn Save
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int savedCount = 0;
 
             foreach (DataGridViewRow row in dgvProduct.Rows)
             {
@@ -196,7 +195,6 @@ namespace Jewelry.FolderProduct
                     );
 
                     productBLL.EditProduct(product);
-                    savedCount++;
                 }
                 catch (Exception ex)
                 {
@@ -204,7 +202,7 @@ namespace Jewelry.FolderProduct
                 }
             }
 
-            MessageBox.Show($" {savedCount} products saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Products saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadProducts();
         }
 
