@@ -31,7 +31,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.mstNAccount = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +38,7 @@
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -46,7 +46,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.mstNAccount.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -85,7 +87,6 @@
             this.homeToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.overviewToolStripMenuItem1,
             this.productToolStripMenuItem1,
             this.customerToolStripMenuItem1,
@@ -106,53 +107,65 @@
             this.homeToolStripMenuItem.Text = " Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click_1);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
-            this.toolStripMenuItem1.Text = "Account";
-            // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
             this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.overviewToolStripMenuItem1.Text = "Overview";
+            this.overviewToolStripMenuItem1.Click += new System.EventHandler(this.overviewToolStripMenuItem1_Click);
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
             this.productToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.productToolStripMenuItem1.Text = "Product";
+            this.productToolStripMenuItem1.Click += new System.EventHandler(this.productToolStripMenuItem1_Click);
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
             this.customerToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.customerToolStripMenuItem1.Text = "Customer";
+            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
             this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.employeeToolStripMenuItem1.Text = "Employee";
+            this.employeeToolStripMenuItem1.Click += new System.EventHandler(this.employeeToolStripMenuItem1_Click);
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
             this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
+            this.wareHouseToolStripMenuItem.Click += new System.EventHandler(this.wareHouseToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem1
             // 
+            this.paymentToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saleToolStripMenuItem,
+            this.repurchaseToolStripMenuItem,
+            this.preOrderToolStripMenuItem});
             this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
             this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(267, 48);
             this.paymentToolStripMenuItem1.Text = "Payment";
+            this.paymentToolStripMenuItem1.Click += new System.EventHandler(this.paymentToolStripMenuItem1_Click);
+            // 
+            // dashBoardToolStripMenuItem
+            // 
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
+            this.dashBoardToolStripMenuItem.Text = "DashBoard";
+            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
             // accountToolStripMenuItem
             // 
@@ -196,6 +209,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1440, 110);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
@@ -223,12 +237,26 @@
             this.pnlContainer.Size = new System.Drawing.Size(1437, 807);
             this.pnlContainer.TabIndex = 4;
             // 
-            // dashBoardToolStripMenuItem
+            // saleToolStripMenuItem
             // 
-            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
-            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(267, 48);
-            this.dashBoardToolStripMenuItem.Text = "DashBoard";
-            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
+            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(280, 48);
+            this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
+            // 
+            // repurchaseToolStripMenuItem
+            // 
+            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
+            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(280, 48);
+            this.repurchaseToolStripMenuItem.Text = "Repurchase";
+            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
+            // 
+            // preOrderToolStripMenuItem
+            // 
+            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
+            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(280, 48);
+            this.preOrderToolStripMenuItem.Text = "Pre-Order";
+            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
             // 
             // Page_Account
             // 
@@ -259,7 +287,6 @@
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.MenuStrip mstNAccount;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem overviewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
@@ -274,5 +301,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repurchaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
     }
 }

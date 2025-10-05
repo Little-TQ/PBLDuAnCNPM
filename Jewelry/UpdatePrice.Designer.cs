@@ -570,6 +570,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdatePrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdatePrice";
             this.Load += new System.EventHandler(this.UpdatePrice_Load);
             this.guna2Panel1.ResumeLayout(false);

@@ -304,11 +304,11 @@
     <Compile Include="FolderOverview\SoldProduct.Designer.cs">
       <DependentUpon>SoldProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Import_Invoice.cs">
+    <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Import_Invoice.Designer.cs">
-      <DependentUpon>Import_Invoice.cs</DependentUpon>
+    <Compile Include="Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
@@ -426,8 +426,8 @@
     <EmbeddedResource Include="FolderOverview\SoldProduct.resx">
       <DependentUpon>SoldProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Import_Invoice.resx">
-      <DependentUpon>Import_Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

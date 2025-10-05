@@ -123,7 +123,9 @@ namespace Jewelry
         }
         private void picLogin_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            HomePage frm= new HomePage();
+            this.Hide();
+            frm.ShowDialog();
         }
 
         

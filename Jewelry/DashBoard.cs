@@ -101,7 +101,7 @@ namespace Jewelry
 
         private void lblInvoice_Click(object sender, EventArgs e)
         {
-            Import_Invoice frm = new Import_Invoice(); 
+            Invoice frm = new Invoice(); 
             frm.ShowDialog();
         }
 

@@ -35,10 +35,13 @@
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preorderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,10 +89,10 @@
             this.overviewToolStripMenuItem1,
             this.productToolStripMenuItem1,
             this.customerToolStripMenuItem1,
-            this.employeeToolStripMenuItem1,
             this.wareHouseToolStripMenuItem,
             this.updateToolStripMenuItem,
-            this.paymentToolStripMenuItem});
+            this.paymentToolStripMenuItem,
+            this.dashBoardToolStripMenuItem});
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.Image = global::Jewelry.Properties.Resources.Bar;
             this.homeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -105,50 +108,83 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.toolStripMenuItem1.Text = "Account";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
+            this.overviewToolStripMenuItem1.Click += new System.EventHandler(this.overviewToolStripMenuItem1_Click);
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.productToolStripMenuItem1.Text = "Product";
+            this.productToolStripMenuItem1.Click += new System.EventHandler(this.productToolStripMenuItem1_Click);
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
-            // 
-            // employeeToolStripMenuItem1
-            // 
-            this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
-            this.employeeToolStripMenuItem1.Text = "Employee";
+            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
+            this.wareHouseToolStripMenuItem.Click += new System.EventHandler(this.wareHouseToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
+            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saleToolStripMenuItem,
+            this.reToolStripMenuItem,
+            this.preorderToolStripMenuItem});
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // saleToolStripMenuItem
+            // 
+            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
+            // 
+            // reToolStripMenuItem
+            // 
+            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
+            this.reToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.reToolStripMenuItem.Text = "Repurchase";
+            this.reToolStripMenuItem.Click += new System.EventHandler(this.reToolStripMenuItem_Click);
+            // 
+            // preorderToolStripMenuItem
+            // 
+            this.preorderToolStripMenuItem.Name = "preorderToolStripMenuItem";
+            this.preorderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.preorderToolStripMenuItem.Text = "Pre-order";
+            this.preorderToolStripMenuItem.Click += new System.EventHandler(this.preorderToolStripMenuItem_Click);
+            // 
+            // dashBoardToolStripMenuItem
+            // 
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.dashBoardToolStripMenuItem.Text = "DashBoard";
+            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
             // InformationToolStripMenuItem
             // 
@@ -225,6 +261,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmployee";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.panel3.ResumeLayout(false);
@@ -245,7 +282,6 @@
         private System.Windows.Forms.ToolStripMenuItem overviewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InformationToolStripMenuItem;
@@ -256,5 +292,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preorderToolStripMenuItem;
     }
 }

@@ -917,7 +917,7 @@
             this.guna2HtmlLabel16.TabIndex = 77;
             this.guna2HtmlLabel16.Text = "Invoice Preview";
             // 
-            // Product_Repurchase_Invoice
+            // Payment_Repurchase_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -937,7 +937,8 @@
             this.Controls.Add(this.guna2HtmlLabel16);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Product_Repurchase_Invoice";
+            this.Name = "Payment_Repurchase_Invoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_Repurchase_Invoice";
             this.btnPayment.ResumeLayout(false);
             this.btnPayment.PerformLayout();

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design.Serialization;
 using Jewelry.Account;
+using Jewelry.FolderProduct;
 namespace Jewelry
 {
     public partial class Page_Account : Form
@@ -69,9 +70,81 @@ namespace Jewelry
             Application.Exit();  
         }
 
+        //Transfer another form
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DashBoard frm = new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void overviewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Page_Overview frm = new Page_Overview();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void productToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Product_View frm = new Product_View();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void customerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Customer frm= new Customer();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void employeeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Employee frm = new Employee();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Invoice frm = new Invoice();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdatePrice frm = new UpdatePrice();
+            this.Hide();
+            frm.ShowDialog();
+        }
+        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Sale_Select frm = new Payment_Sale_Select();
+            this.Hide();
+            frm.ShowDialog();
+        }
+        private void paymentToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void repurchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Repurchase_Select frm = new Payment_Repurchase_Select();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_PreOrder_Select frm = new Payment_PreOrder_Select();
             this.Hide();
             frm.ShowDialog();
         }
