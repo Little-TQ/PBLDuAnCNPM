@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbAddProperty = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // txbAddProperty
+            // txtName
             // 
-            this.txbAddProperty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbAddProperty.DefaultText = "";
-            this.txbAddProperty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbAddProperty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbAddProperty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbAddProperty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbAddProperty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbAddProperty.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbAddProperty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbAddProperty.Location = new System.Drawing.Point(28, 72);
-            this.txbAddProperty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txbAddProperty.Name = "txbAddProperty";
-            this.txbAddProperty.PlaceholderText = "Enter an item";
-            this.txbAddProperty.SelectedText = "";
-            this.txbAddProperty.Size = new System.Drawing.Size(312, 52);
-            this.txbAddProperty.TabIndex = 0;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(28, 72);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.PlaceholderText = "Enter an item";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(312, 52);
+            this.txtName.TabIndex = 0;
             // 
             // guna2ContextMenuStrip1
             // 
@@ -78,6 +78,7 @@
             this.guna2PictureBox2.Size = new System.Drawing.Size(40, 40);
             this.guna2PictureBox2.TabIndex = 40;
             this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // guna2Button1
             // 
@@ -94,6 +95,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(61, 33);
             this.guna2Button1.TabIndex = 41;
             this.guna2Button1.Text = "OK";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Product_AddProperty
             // 
@@ -103,10 +105,12 @@
             this.ClientSize = new System.Drawing.Size(374, 220);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2PictureBox2);
-            this.Controls.Add(this.txbAddProperty);
+            this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_AddProperty";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_AddProperty";
+            this.Load += new System.EventHandler(this.Product_AddProperty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -114,7 +118,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox txbAddProperty;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
