@@ -21,6 +21,8 @@ namespace Jewelry.FolderProduct
         private void Products_Load(object sender, EventArgs e)
         {
             LoadProducts();
+
+            dgvProduct.DataBindingComplete += dgvProduct_DataBindingComplete;
         }
 
         // Load 
@@ -204,6 +206,11 @@ namespace Jewelry.FolderProduct
 
             MessageBox.Show($" {savedCount} products saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadProducts();
+        }
+
+        private void dgvProduct_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ShowThumbnail();
         }
     }
 }
