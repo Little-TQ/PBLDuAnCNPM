@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPricenow = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -48,9 +50,10 @@
             this.dataGridViewChangePrice = new System.Windows.Forms.DataGridView();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DateTimeUpdatePrice = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txtWeight = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCompleteUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.cbxMaterialUpdate = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.DateTimeUpdatePrice = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEnterChangePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -294,38 +297,59 @@
             // 
             // dataGridViewChangePrice
             // 
+            this.dataGridViewChangePrice.AllowUserToAddRows = false;
+            this.dataGridViewChangePrice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewChangePrice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewChangePrice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewChangePrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewChangePrice.Location = new System.Drawing.Point(904, 50);
             this.dataGridViewChangePrice.Name = "dataGridViewChangePrice";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewChangePrice.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewChangePrice.RowHeadersVisible = false;
             this.dataGridViewChangePrice.RowHeadersWidth = 51;
             this.dataGridViewChangePrice.RowTemplate.Height = 24;
+            this.dataGridViewChangePrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewChangePrice.Size = new System.Drawing.Size(503, 962);
             this.dataGridViewChangePrice.TabIndex = 4;
             this.dataGridViewChangePrice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChangePrice_CellContentClick);
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(367, 439);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(506, 355);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.DateTimeUpdatePrice);
-            this.panel2.Controls.Add(this.txtWeight);
+            this.panel2.Controls.Add(this.btnCompleteUpdate);
+            this.panel2.Controls.Add(this.cbxMaterialUpdate);
             this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.DateTimeUpdatePrice);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtEnterChangePrice);
             this.panel2.Controls.Add(this.label8);
@@ -337,6 +361,52 @@
             this.panel2.Size = new System.Drawing.Size(316, 540);
             this.panel2.TabIndex = 6;
             // 
+            // btnCompleteUpdate
+            // 
+            this.btnCompleteUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCompleteUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleteUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleteUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCompleteUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCompleteUpdate.FillColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCompleteUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCompleteUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCompleteUpdate.Image = global::Jewelry.Properties.Resources.Tick;
+            this.btnCompleteUpdate.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnCompleteUpdate.Location = new System.Drawing.Point(254, 482);
+            this.btnCompleteUpdate.Name = "btnCompleteUpdate";
+            this.btnCompleteUpdate.PressedColor = System.Drawing.Color.Lime;
+            this.btnCompleteUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnCompleteUpdate.Size = new System.Drawing.Size(40, 39);
+            this.btnCompleteUpdate.TabIndex = 15;
+            this.btnCompleteUpdate.Click += new System.EventHandler(this.btnCompleteUpdate_Click);
+            // 
+            // cbxMaterialUpdate
+            // 
+            this.cbxMaterialUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.cbxMaterialUpdate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxMaterialUpdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMaterialUpdate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxMaterialUpdate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxMaterialUpdate.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxMaterialUpdate.ForeColor = System.Drawing.Color.Silver;
+            this.cbxMaterialUpdate.ItemHeight = 30;
+            this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 417);
+            this.cbxMaterialUpdate.Name = "cbxMaterialUpdate";
+            this.cbxMaterialUpdate.Size = new System.Drawing.Size(271, 36);
+            this.cbxMaterialUpdate.TabIndex = 14;
+            this.cbxMaterialUpdate.SelectedIndexChanged += new System.EventHandler(this.cbxMaterialUpdate_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(19, 371);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 24);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Chất Liệu:";
+            // 
             // DateTimeUpdatePrice
             // 
             this.DateTimeUpdatePrice.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -345,7 +415,7 @@
             this.DateTimeUpdatePrice.FillColor = System.Drawing.Color.Khaki;
             this.DateTimeUpdatePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimeUpdatePrice.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTimeUpdatePrice.Location = new System.Drawing.Point(23, 328);
+            this.DateTimeUpdatePrice.Location = new System.Drawing.Point(23, 307);
             this.DateTimeUpdatePrice.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimeUpdatePrice.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimeUpdatePrice.Name = "DateTimeUpdatePrice";
@@ -354,42 +424,11 @@
             this.DateTimeUpdatePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DateTimeUpdatePrice.Value = new System.DateTime(2025, 9, 14, 3, 29, 18, 605);
             // 
-            // txtWeight
-            // 
-            this.txtWeight.BorderColor = System.Drawing.Color.Khaki;
-            this.txtWeight.BorderRadius = 8;
-            this.txtWeight.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtWeight.DefaultText = "";
-            this.txtWeight.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtWeight.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtWeight.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtWeight.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtWeight.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtWeight.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtWeight.Location = new System.Drawing.Point(23, 459);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.PlaceholderText = "";
-            this.txtWeight.SelectedText = "";
-            this.txtWeight.Size = new System.Drawing.Size(271, 48);
-            this.txtWeight.TabIndex = 11;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 413);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 24);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Khối Lượng: ";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 287);
+            this.label9.Location = new System.Drawing.Point(19, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 24);
             this.label9.TabIndex = 8;
@@ -408,7 +447,7 @@
             this.txtEnterChangePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEnterChangePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEnterChangePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 201);
+            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 180);
             this.txtEnterChangePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEnterChangePrice.Name = "txtEnterChangePrice";
             this.txtEnterChangePrice.PlaceholderText = "";
@@ -420,7 +459,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 155);
+            this.label8.Location = new System.Drawing.Point(19, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 24);
             this.label8.TabIndex = 3;
@@ -571,11 +610,12 @@
         private Guna.UI2.WinForms.Guna2Button btnChangeMonth;
         private Guna.UI2.WinForms.Guna2TextBox txtEnterChangePrice;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtWeight;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeUpdatePrice;
         private Guna.UI2.WinForms.Guna2Button btnExitUpDate;
         private Guna.UI2.WinForms.Guna2Button btnReturnUpDate;
+        private Guna.UI2.WinForms.Guna2CircleButton btnCompleteUpdate;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxMaterialUpdate;
+        private System.Windows.Forms.Label label10;
     }
 }
