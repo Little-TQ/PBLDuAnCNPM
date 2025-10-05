@@ -251,11 +251,11 @@
     <Compile Include="Product_AddProperty.Designer.cs">
       <DependentUpon>Product_AddProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_EditProduct.cs">
+    <Compile Include="Product_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_EditProduct.Designer.cs">
-      <DependentUpon>Product_EditProduct.cs</DependentUpon>
+    <Compile Include="Product_Edit.Designer.cs">
+      <DependentUpon>Product_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment_PreOrder_Invoice.cs">
       <SubType>Form</SubType>
@@ -391,8 +391,8 @@
     <EmbeddedResource Include="Product_AddProperty.resx">
       <DependentUpon>Product_AddProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_EditProduct.resx">
-      <DependentUpon>Product_EditProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Product_Edit.resx">
+      <DependentUpon>Product_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment_PreOrder_Invoice.resx">
       <DependentUpon>Payment_PreOrder_Invoice.cs</DependentUpon>

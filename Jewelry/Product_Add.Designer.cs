@@ -50,19 +50,17 @@
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnBack = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnNext = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox10 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Photo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblSize = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).BeginInit();
             this.SuspendLayout();
@@ -354,66 +352,31 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(12, 11);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(42, 40);
             this.guna2PictureBox2.TabIndex = 39;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
-            // btnBack
+            // btnEdit
             // 
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageRotate = 0F;
-            this.btnBack.Location = new System.Drawing.Point(770, 265);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnBack.Size = new System.Drawing.Size(28, 28);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack.TabIndex = 20;
-            this.btnBack.TabStop = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageRotate = 0F;
-            this.btnNext.Location = new System.Drawing.Point(930, 265);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnNext.Size = new System.Drawing.Size(28, 28);
-            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNext.TabIndex = 19;
-            this.btnNext.TabStop = false;
-            // 
-            // guna2CirclePictureBox10
-            // 
-            this.guna2CirclePictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox10.Image")));
-            this.guna2CirclePictureBox10.ImageRotate = 0F;
-            this.guna2CirclePictureBox10.Location = new System.Drawing.Point(642, 264);
-            this.guna2CirclePictureBox10.Name = "guna2CirclePictureBox10";
-            this.guna2CirclePictureBox10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox10.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox10.TabIndex = 15;
-            this.guna2CirclePictureBox10.TabStop = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageRotate = 0F;
-            this.btnDelete.Location = new System.Drawing.Point(873, 256);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnDelete.Size = new System.Drawing.Size(37, 37);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDelete.TabIndex = 16;
-            this.btnDelete.TabStop = false;
+            this.btnEdit.Image = global::Jewelry.Properties.Resources.Edit;
+            this.btnEdit.ImageRotate = 0F;
+            this.btnEdit.Location = new System.Drawing.Point(640, 270);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEdit.Size = new System.Drawing.Size(24, 23);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageRotate = 0F;
-            this.btnSave.Location = new System.Drawing.Point(818, 256);
+            this.btnSave.Location = new System.Drawing.Point(921, 256);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSave.Size = new System.Drawing.Size(37, 37);
@@ -429,6 +392,7 @@
             this.Photo.Location = new System.Drawing.Point(310, 27);
             this.Photo.Name = "Photo";
             this.Photo.Size = new System.Drawing.Size(324, 266);
+            this.Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Photo.TabIndex = 0;
             this.Photo.TabStop = false;
             // 
@@ -462,12 +426,51 @@
             this.txtSize.Size = new System.Drawing.Size(264, 42);
             this.txtSize.TabIndex = 40;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 815);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1030, 5);
+            this.panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel2.Location = new System.Drawing.Point(1023, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(21, 820);
+            this.panel2.TabIndex = 43;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1030, 5);
+            this.panel3.TabIndex = 44;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel4.Location = new System.Drawing.Point(-7, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(13, 820);
+            this.panel4.TabIndex = 45;
+            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(1030, 820);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.txtSize);
             this.Controls.Add(this.guna2PictureBox2);
@@ -489,10 +492,7 @@
             this.Controls.Add(this.txtWage);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.guna2CirclePictureBox10);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtNameP);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -503,10 +503,7 @@
             this.Text = "Product_Add";
             this.Load += new System.EventHandler(this.Product_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();
             this.ResumeLayout(false);
@@ -519,11 +516,8 @@
         private Guna.UI2.WinForms.Guna2PictureBox Photo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtNameP;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox10;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnDelete;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btnEdit;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btnSave;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnNext;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnBack;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtWage;
@@ -545,5 +539,9 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSize;
         private Guna.UI2.WinForms.Guna2TextBox txtSize;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

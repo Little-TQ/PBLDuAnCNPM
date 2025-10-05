@@ -24,7 +24,7 @@ namespace Jewelry.DTO
         public double? Size { get; set; }
         public string Photo { get; set; }
 
-        public ProductDTO(string v, string text, decimal? v1) { }
+        public ProductDTO() { }
         public ProductDTO(string idProduct, string nameProduct, decimal? priceSilver, decimal? wage,
                      int sold, int instock, string idCategory, string idMaterial,
                      string idColor, string idCollection, string gender,

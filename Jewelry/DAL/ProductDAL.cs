@@ -52,34 +52,37 @@ namespace Jewelry.DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT * FROM Product WHERE IDProduct = @IDProduct";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@IDProduct", idProduct);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                // dùng đúng tên cột + đúng tham số
+                string query = "SELECT * FROM Product WHERE idProduct = @idProduct";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    return new ProductDTO(
-                       reader["idProduct"].ToString(),
-                       reader["NameProduct"].ToString(),
-                       reader["PriceSilver"] == DBNull.Value ? null : (decimal?)Convert.ToDecimal(reader["PriceSilver"]),
-                       reader["Wage"] == DBNull.Value ? null : (decimal?)Convert.ToDecimal(reader["Wage"]),
-                       Convert.ToInt32(reader["Sold"]),
-                       Convert.ToInt32(reader["Instock"]),
-                       reader["idCategory"].ToString(),
-                       reader["idMaterial"].ToString(),
-                       reader["idColor"].ToString(),
-                       reader["idCollection"].ToString(),
-                       reader["Gender"].ToString(),
-                       reader["Weight"] == DBNull.Value ? 0 : Convert.ToDouble(reader["Weight"]),
-                       reader["Size"] == DBNull.Value ? 0 : Convert.ToDouble(reader["Size"]),
-                       reader["Photo"].ToString()
-                   );
+                    cmd.Parameters.AddWithValue("@idProduct", idProduct);
+                    conn.Open();
+                    using (SqlDataReader r = cmd.ExecuteReader())
+                    {
+                        if (!r.Read()) return null;
 
+                        return new ProductDTO(
+                            r["idProduct"].ToString(),
+                            r["NameProduct"].ToString(),
+                            r["PriceSilver"] == DBNull.Value ? null : (decimal?)Convert.ToDecimal(r["PriceSilver"]),
+                            r["Wage"] == DBNull.Value ? null : (decimal?)Convert.ToDecimal(r["Wage"]),
+                            Convert.ToInt32(r["Sold"]),
+                            Convert.ToInt32(r["Instock"]),
+                            r["idCategory"].ToString(),
+                            r["idMaterial"].ToString(),
+                            r["idColor"].ToString(),
+                            r["idCollection"] == DBNull.Value ? null : r["idCollection"].ToString(),
+                            r["Gender"].ToString(),
+                            r["Weight"] == DBNull.Value ? (double?)null : Convert.ToDouble(r["Weight"]),
+                            r["Size"] == DBNull.Value ? (double?)null : Convert.ToDouble(r["Size"]),
+                            r["Photo"] == DBNull.Value ? null : r["Photo"].ToString()
+                        );
+                    }
                 }
-                return null;
             }
         }
+
         //Generate a new unique product ID
         public string GenerateProductID(string categoryName, string materialName)
         {
@@ -117,6 +120,7 @@ namespace Jewelry.DAL
                 string query = @"INSERT INTO Product 
                     (idProduct, NameProduct, PriceSilver, Wage, Sold, Instock, idCategory, idMaterial, idColor, idCollection, Gender, Weight, Size, Photo) 
                     VALUES (@idProduct, @NameProduct, @PriceSilver, @Wage, @Sold, @Instock, @idCategory, @idMaterial, @idColor, @idCollection, @Gender, @Weight, @Size, @Photo)";
+               
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@idProduct", product.idProduct);
                 cmd.Parameters.AddWithValue("@NameProduct", product.NameProduct);
@@ -129,7 +133,7 @@ namespace Jewelry.DAL
                 cmd.Parameters.AddWithValue("@idColor", product.idColor);
                 cmd.Parameters.AddWithValue("@idCollection", (object)product.idCollection ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Gender", product.Gender);
-                cmd.Parameters.AddWithValue("@Weight", product.Weight);
+                cmd.Parameters.AddWithValue("@Weight", (object)product.Weight ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Size", (object)product.Size ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Photo", product.Photo);
 
@@ -159,19 +163,19 @@ namespace Jewelry.DAL
                        WHERE idProduct = @idProduct";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@idProduct", product.idProduct);
-                cmd.Parameters.AddWithValue("@NameProduct", product.NameProduct);
+                cmd.Parameters.AddWithValue("@NameProduct", (object)product.NameProduct ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@PriceSilver", (object)product.PriceSilver ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Wage", (object)product.Wage ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Sold", product.Sold);
-                cmd.Parameters.AddWithValue("@Instock", product.Instock);
-                cmd.Parameters.AddWithValue("@idCategory", product.idCategory);
-                cmd.Parameters.AddWithValue("@idMaterial", product.idMaterial);
-                cmd.Parameters.AddWithValue("@idColor", product.idColor);
+                cmd.Parameters.AddWithValue("@Sold", (object)product.Sold ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Instock", (object)product.Instock ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@idCategory", (object)product.idCategory ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@idMaterial", (object)product.idMaterial ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@idColor", (object)product.idColor ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@idCollection", (object)product.idCollection ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Gender", product.Gender);
-                cmd.Parameters.AddWithValue("@Weight", product.Weight);
+                cmd.Parameters.AddWithValue("@Gender", (object)product.Gender ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Weight", (object)product.Weight ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Size", (object)product.Size ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Photo", product.Photo);
+                cmd.Parameters.AddWithValue("@Photo", (object)product.Photo ?? DBNull.Value);
 
                 conn.Open();
                 return cmd.ExecuteNonQuery() > 0;
