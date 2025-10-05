@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationEmployee));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewInfoEmployee = new System.Windows.Forms.DataGridView();
-            this.btnAddAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewInfoEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteInfoEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveInfoEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchInfoEmployee = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridViewInfoEmployee = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInfoEmployee)).BeginInit();
             this.SuspendLayout();
@@ -43,46 +44,34 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Controls.Add(this.btnAddAccount);
+            this.panel3.Controls.Add(this.btnAddEmployee);
             this.panel3.Controls.Add(this.btnViewInfoEmployee);
             this.panel3.Controls.Add(this.btnDeleteInfoEmployee);
-            this.panel3.Controls.Add(this.btnSaveInfoEmployee);
             this.panel3.Controls.Add(this.txtSearchInfoEmployee);
             this.panel3.Location = new System.Drawing.Point(2, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1438, 99);
             this.panel3.TabIndex = 5;
             // 
-            // dataGridViewInfoEmployee
+            // btnAddEmployee
             // 
-            this.dataGridViewInfoEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewInfoEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInfoEmployee.Location = new System.Drawing.Point(159, 226);
-            this.dataGridViewInfoEmployee.Name = "dataGridViewInfoEmployee";
-            this.dataGridViewInfoEmployee.RowHeadersWidth = 51;
-            this.dataGridViewInfoEmployee.RowTemplate.Height = 24;
-            this.dataGridViewInfoEmployee.Size = new System.Drawing.Size(1095, 432);
-            this.dataGridViewInfoEmployee.TabIndex = 6;
-            // 
-            // btnAddAccount
-            // 
-            this.btnAddAccount.BorderColor = System.Drawing.Color.Gray;
-            this.btnAddAccount.BorderRadius = 18;
-            this.btnAddAccount.BorderThickness = 1;
-            this.btnAddAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddAccount.FillColor = System.Drawing.Color.White;
-            this.btnAddAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddAccount.ForeColor = System.Drawing.Color.Gray;
-            this.btnAddAccount.Image = global::Jewelry.Properties.Resources.plus;
-            this.btnAddAccount.Location = new System.Drawing.Point(667, 28);
-            this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(153, 38);
-            this.btnAddAccount.TabIndex = 5;
-            this.btnAddAccount.Text = "Thêm Nhân Viên";
-            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            this.btnAddEmployee.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddEmployee.BorderRadius = 18;
+            this.btnAddEmployee.BorderThickness = 1;
+            this.btnAddEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddEmployee.FillColor = System.Drawing.Color.White;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.Gray;
+            this.btnAddEmployee.Image = global::Jewelry.Properties.Resources.plus;
+            this.btnAddEmployee.Location = new System.Drawing.Point(667, 28);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(153, 38);
+            this.btnAddEmployee.TabIndex = 5;
+            this.btnAddEmployee.Text = "Thêm Nhân Viên";
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnViewInfoEmployee
             // 
@@ -104,6 +93,7 @@
             this.btnViewInfoEmployee.PressedColor = System.Drawing.Color.LightGreen;
             this.btnViewInfoEmployee.Size = new System.Drawing.Size(50, 50);
             this.btnViewInfoEmployee.TabIndex = 4;
+            this.btnViewInfoEmployee.Click += new System.EventHandler(this.btnViewInfoEmployee_Click);
             // 
             // btnDeleteInfoEmployee
             // 
@@ -125,27 +115,7 @@
             this.btnDeleteInfoEmployee.PressedColor = System.Drawing.Color.LightGreen;
             this.btnDeleteInfoEmployee.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteInfoEmployee.TabIndex = 3;
-            // 
-            // btnSaveInfoEmployee
-            // 
-            this.btnSaveInfoEmployee.BackColor = System.Drawing.Color.White;
-            this.btnSaveInfoEmployee.BorderRadius = 12;
-            this.btnSaveInfoEmployee.BorderThickness = 1;
-            this.btnSaveInfoEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveInfoEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveInfoEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveInfoEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveInfoEmployee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveInfoEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveInfoEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnSaveInfoEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveInfoEmployee.Image")));
-            this.btnSaveInfoEmployee.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSaveInfoEmployee.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSaveInfoEmployee.Location = new System.Drawing.Point(1079, 21);
-            this.btnSaveInfoEmployee.Name = "btnSaveInfoEmployee";
-            this.btnSaveInfoEmployee.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSaveInfoEmployee.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveInfoEmployee.TabIndex = 1;
+            this.btnDeleteInfoEmployee.Click += new System.EventHandler(this.btnDeleteInfoEmployee_Click);
             // 
             // txtSearchInfoEmployee
             // 
@@ -170,6 +140,35 @@
             this.txtSearchInfoEmployee.Size = new System.Drawing.Size(468, 45);
             this.txtSearchInfoEmployee.TabIndex = 0;
             // 
+            // dataGridViewInfoEmployee
+            // 
+            this.dataGridViewInfoEmployee.AllowUserToAddRows = false;
+            this.dataGridViewInfoEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewInfoEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewInfoEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewInfoEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewInfoEmployee.Location = new System.Drawing.Point(159, 226);
+            this.dataGridViewInfoEmployee.Name = "dataGridViewInfoEmployee";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewInfoEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewInfoEmployee.RowHeadersWidth = 51;
+            this.dataGridViewInfoEmployee.RowTemplate.Height = 24;
+            this.dataGridViewInfoEmployee.Size = new System.Drawing.Size(1095, 432);
+            this.dataGridViewInfoEmployee.TabIndex = 6;
+            // 
             // InformationEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,10 +186,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnAddAccount;
+        private Guna.UI2.WinForms.Guna2Button btnAddEmployee;
         private Guna.UI2.WinForms.Guna2Button btnViewInfoEmployee;
         private Guna.UI2.WinForms.Guna2Button btnDeleteInfoEmployee;
-        private Guna.UI2.WinForms.Guna2Button btnSaveInfoEmployee;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchInfoEmployee;
         private System.Windows.Forms.DataGridView dataGridViewInfoEmployee;
     }
