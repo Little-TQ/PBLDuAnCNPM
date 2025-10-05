@@ -96,66 +96,66 @@
             this.homeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.homeToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
+            this.homeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.homeToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(381, 74);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(361, 74);
             this.homeToolStripMenuItem.Text = " Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.toolStripMenuItem1.Text = "Account";
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.productToolStripMenuItem1.Text = "Product";
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(220, 40);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
             this.employeeToolStripMenuItem1.Text = "Employee";
             // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
+            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.wareHouseToolStripMenuItem.Text = "Invoice";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(220, 40);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             // 
             // InformationToolStripMenuItem
             // 
             this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
-            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(378, 74);
+            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(358, 74);
             this.InformationToolStripMenuItem.Text = "Information";
             this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
@@ -163,8 +163,8 @@
             // 
             this.SalaryToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalaryToolStripMenuItem.Name = "SalaryToolStripMenuItem";
-            this.SalaryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(310, 74);
+            this.SalaryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(290, 74);
             this.SalaryToolStripMenuItem.Text = "Salary";
             this.SalaryToolStripMenuItem.Click += new System.EventHandler(this.SalaryToolStripMenuItem_Click);
             // 
@@ -172,8 +172,8 @@
             // 
             this.scheduleToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
-            this.scheduleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(349, 74);
+            this.scheduleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(329, 74);
             this.scheduleToolStripMenuItem.Text = "Schedule";
             this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
             // 
@@ -226,6 +226,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";
             this.Text = "frmEmployee";
+            this.Load += new System.EventHandler(this.Employee_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.mstNEmployee.ResumeLayout(false);

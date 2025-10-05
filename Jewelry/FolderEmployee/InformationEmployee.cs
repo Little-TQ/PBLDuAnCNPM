@@ -7,21 +7,112 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Jewelry.DAL;
+using Jewelry.BLL;
 
 namespace Jewelry.FolderEmployee
 {
     public partial class InformationEmployee: UserControl
     {
+        EmployeeDAL employeeDAL = new EmployeeDAL();
         public InformationEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnAddAccount_Click(object sender, EventArgs e)
+        private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            AddEmployee frm = new AddEmployee();
-            frm.ShowDialog();
+            AddEmployee addEmployee = new AddEmployee();
+            addEmployee.ShowDialog();
+            if (addEmployee.ShowDialog() == DialogResult.OK)
+            {
+                LoadEmployees(); // load lại DataGridView
+            }
+        }
+        public void LoadEmployees()
+        {
+            try
+            {
+                dataGridViewInfoEmployee.DataSource = employeeDAL.GetAllEmployees();
+
+                // Đặt tên cột hiển thị
+                if (dataGridViewInfoEmployee.Columns.Count > 0)
+                {
+                    dataGridViewInfoEmployee.Columns["idEmployee"].HeaderText = "Mã NV";
+                    dataGridViewInfoEmployee.Columns["NameEmployee"].HeaderText = "Tên Nhân Viên";
+                    dataGridViewInfoEmployee.Columns["PhoneNumberE"].HeaderText = "Số Điện Thoại";
+                    dataGridViewInfoEmployee.Columns["DateOfBirth"].HeaderText = "Ngày Sinh";
+                    dataGridViewInfoEmployee.Columns["AddressE"].HeaderText = "Địa Chỉ";
+                    dataGridViewInfoEmployee.Columns["RoleName"].HeaderText = "Vai Trò";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        private void dataGridViewInfoEmployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get selected row
+                DataGridViewRow row = dataGridViewInfoEmployee.Rows[e.RowIndex];
+
+                // Extract Employee info
+                string idEmployee = row.Cells["idEmployee"].Value?.ToString();
+                string nameEmployee = row.Cells["NameEmployee"].Value?.ToString();
+                string phoneEmployee = row.Cells["PhoneNumberE"].Value?.ToString();
+                DateTime dateofbirth = row.Cells["DateOfBirth"].Value != DBNull.Value
+                        ? Convert.ToDateTime(row.Cells["DateOfBirth"].Value)
+                        : DateTime.MinValue;
+                string addressEmployee = row.Cells["AddressE"].Value?.ToString();
+                string roleName = row.Cells["RoleName"].Value?.ToString();
+
+                // Open AddEmployee form with info, in read-only mode
+                AddEmployee frm = new AddEmployee(idEmployee, nameEmployee, phoneEmployee, dateofbirth, addressEmployee, roleName, true); // true = read-only
+                frm.btnEditEmployee.Visible = true;
+                frm.ShowDialog();
+
+                // Optionally reload accounts after editing
+                LoadEmployees();
+            }
         }
 
+        private void btnViewInfoEmployee_Click(object sender, EventArgs e)
+
+        {
+            LoadEmployees();
+        }
+
+        private void btnDeleteInfoEmployee_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridViewInfoEmployee.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select employees to delete.");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                $"Delete {dataGridViewInfoEmployee.SelectedRows.Count} selected employees?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                EmployeeBLL employeeBLL = new EmployeeBLL();
+
+                foreach (DataGridViewRow row in dataGridViewInfoEmployee.SelectedRows)
+                {
+                    string EmployeeId = row.Cells["idEmployee"].Value.ToString();
+                    employeeBLL.DeleteEmployee(EmployeeId);
+                }
+
+                MessageBox.Show("Employees deleted successfully!");
+                LoadEmployees(); // Refresh DataGridView
+            }
+        }
     }
 }

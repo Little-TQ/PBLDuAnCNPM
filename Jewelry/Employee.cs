@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Jewelry.Account;
 using Jewelry.FolderEmployee;
 
 namespace Jewelry
@@ -23,7 +24,10 @@ namespace Jewelry
             uc.Dock = DockStyle.Fill;
             pnlContainerEmployee.Controls.Add(uc);
         }
-
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            LoadUserControl(new General());
+        }
         private void InformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (ToolStripMenuItem item in mstNEmployee.Items)

@@ -16,7 +16,7 @@ namespace Jewelry.DAL
 
             using (SqlConnection conn = db.GetConnection())
             {
-
+                conn.Open();
                 string query = $"SELECT * FROM {tableName}";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
