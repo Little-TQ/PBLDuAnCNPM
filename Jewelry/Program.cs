@@ -18,7 +18,7 @@ namespace Jewelry
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SetProcessDPIAware();
-            Application.Run(new UpdatePrice());
+            Application.Run(new Employee());
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

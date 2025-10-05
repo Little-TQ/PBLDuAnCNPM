@@ -52,14 +52,14 @@ namespace Jewelry.FolderEmployee
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void dataGridViewInfoEmployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewInfoEmployee_DoubleClick(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (dataGridViewInfoEmployee.CurrentRow != null && dataGridViewInfoEmployee.CurrentRow.Index >= 0)
             {
-                // Get selected row
-                DataGridViewRow row = dataGridViewInfoEmployee.Rows[e.RowIndex];
+                // Lấy dòng được chọn
+                DataGridViewRow row = dataGridViewInfoEmployee.CurrentRow;
 
-                // Extract Employee info
+                // Lấy thông tin nhân viên
                 string idEmployee = row.Cells["idEmployee"].Value?.ToString();
                 string nameEmployee = row.Cells["NameEmployee"].Value?.ToString();
                 string phoneEmployee = row.Cells["PhoneNumberE"].Value?.ToString();
@@ -69,16 +69,17 @@ namespace Jewelry.FolderEmployee
                 string addressEmployee = row.Cells["AddressE"].Value?.ToString();
                 string roleName = row.Cells["RoleName"].Value?.ToString();
 
-                // Open AddEmployee form with info, in read-only mode
-                AddEmployee frm = new AddEmployee(idEmployee, nameEmployee, phoneEmployee, dateofbirth, addressEmployee, roleName, true); // true = read-only
-                frm.btnEditEmployee.Visible = true;
+                // Mở form AddEmployee ở chế độ chỉnh sửa (tham số cuối = false hoặc bỏ readonly flag)
+                AddEmployee frm = new AddEmployee(idEmployee, nameEmployee, phoneEmployee, dateofbirth, addressEmployee, roleName, true);
+
+                // Hiện form chỉnh sửa
+                frm.btnEditEmployee.Visible = true;   // đảm bảo nút Edit hiện
                 frm.ShowDialog();
 
-                // Optionally reload accounts after editing
+                // Sau khi edit thì reload danh sách nhân viên
                 LoadEmployees();
             }
         }
-
         private void btnViewInfoEmployee_Click(object sender, EventArgs e)
 
         {

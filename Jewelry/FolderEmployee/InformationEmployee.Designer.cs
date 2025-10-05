@@ -212,6 +212,7 @@
             this.dataGridViewInfoEmployee.ThemeStyle.RowsStyle.Height = 50;
             this.dataGridViewInfoEmployee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewInfoEmployee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridViewInfoEmployee.DoubleClick += new System.EventHandler(this.dataGridViewInfoEmployee_DoubleClick);
             // 
             // InformationEmployee
             // 
