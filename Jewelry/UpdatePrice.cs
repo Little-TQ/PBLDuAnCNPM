@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using Jewelry.BLL;
 using Jewelry.DTO;
@@ -12,6 +13,7 @@ namespace Jewelry
         private UpdateBLL updateBLL = new UpdateBLL();
         private string currentMaterialId = "";
         private decimal currentPrice = 0;
+        string idMaterial;
 
         public UpdatePrice()
         {
@@ -22,7 +24,8 @@ namespace Jewelry
         private void InitializeForm()
         {
             LoadMaterials();
-            LoadPriceHistory();
+            idMaterial = cbxMaterialUpdate.Text;
+            LoadPriceHistoryByMaterial(idMaterial);
             DateTimeUpdatePrice.Value = DateTime.Now;
         }
 
@@ -42,21 +45,6 @@ namespace Jewelry
             }
         }
 
-        //Load toàn bộ lịch sử giá từ DB
-        private void LoadPriceHistory()
-        {
-            try
-            {
-                DataTable history = updateBLL.GetAllUpdatePrices();
-                dataGridViewChangePrice.DataSource = history;
-                dataGridViewChangePrice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewChangePrice.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải lịch sử giá: " + ex.Message);
-            }
-        }
 
         // Cập nhật thông tin thống kê theo chất liệu
         private void UpdateStatistics(string materialId)
@@ -114,32 +102,30 @@ namespace Jewelry
         }
 
         // Load lịch sử riêng cho từng chất liệu
-        private void LoadPriceHistoryByMaterial(string materialId)
+        private void LoadPriceHistoryByMaterial(string idMaterial)
         {
             try
             {
-                DataTable dt = updateBLL.GetAllUpdatePrices(); // vẫn dùng chung hàm DAL gốc
-                if (dt.Columns.Contains("Loại Vàng"))
-                {
-                    // lọc nếu DAL có cột "Loại Vàng"
-                    DataView view = new DataView(dt);
-                    view.RowFilter = $"[Loại Vàng] LIKE '%{cbxMaterialUpdate.Text}%'";
-                    dataGridViewChangePrice.DataSource = view;
-                }
-                else
-                {
-                    dataGridViewChangePrice.DataSource = dt;
-                }
+                DataTable history = updateBLL.GetAllUpdatePrices(idMaterial);
+                dataGridViewChangePrice.DataSource = history;
+
+                // Tuỳ chọn: căn giữa và format cột
+                dataGridViewChangePrice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewChangePrice.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewChangePrice.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewChangePrice.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dataGridViewChangePrice.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lọc lịch sử giá: " + ex.Message);
+                MessageBox.Show("Lỗi khi tải lịch sử giá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         // Nút hoàn tất cập nhật giá
         private void btnCompleteUpdate_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 // Kiểm tra dữ liệu nhập
@@ -179,7 +165,7 @@ namespace Jewelry
                     txtChange.ForeColor = changeAmount >= 0 ? Color.Green : Color.Red;
 
                     // Load lại dữ liệu
-                    LoadPriceHistory();
+                    LoadPriceHistoryByMaterial(idMaterial);
                     UpdateStatistics(currentMaterialId);
                     txtEnterChangePrice.Clear();
                 }
