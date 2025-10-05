@@ -41,13 +41,13 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
-            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
@@ -141,42 +141,42 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.toolStripMenuItem1.Text = "Account";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // overviewToolStripMenuItem1
             // 
             this.overviewToolStripMenuItem1.Name = "overviewToolStripMenuItem1";
-            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             this.overviewToolStripMenuItem1.Click += new System.EventHandler(this.overviewToolStripMenuItem1_Click);
             // 
             // productToolStripMenuItem1
             // 
             this.productToolStripMenuItem1.Name = "productToolStripMenuItem1";
-            this.productToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.productToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.productToolStripMenuItem1.Text = "Product";
             this.productToolStripMenuItem1.Click += new System.EventHandler(this.productToolStripMenuItem1_Click);
             // 
             // customerToolStripMenuItem1
             // 
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.customerToolStripMenuItem1.Text = "Customer";
             this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
             // 
             // employeeToolStripMenuItem1
             // 
             this.employeeToolStripMenuItem1.Name = "employeeToolStripMenuItem1";
-            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(224, 40);
+            this.employeeToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.employeeToolStripMenuItem1.Text = "Employee";
             this.employeeToolStripMenuItem1.Click += new System.EventHandler(this.employeeToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 40);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
@@ -190,6 +190,34 @@
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // saleToolStripMenuItem
+            // 
+            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
+            // 
+            // repurchaseToolStripMenuItem
+            // 
+            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
+            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.repurchaseToolStripMenuItem.Text = "Repurchase";
+            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
+            // 
+            // preOrderToolStripMenuItem
+            // 
+            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
+            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.preOrderToolStripMenuItem.Text = "Pre-Order";
+            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
+            // 
+            // dashBoardToolStripMenuItem
+            // 
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.dashBoardToolStripMenuItem.Text = "DashBoard";
+            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
             // ImportToolStripMenuItem
             // 
@@ -217,34 +245,6 @@
             this.pnlContainerImportInvoice.TabIndex = 7;
             this.pnlContainerImportInvoice.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainerImportInvoice_Paint);
             // 
-            // dashBoardToolStripMenuItem
-            // 
-            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
-            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
-            this.dashBoardToolStripMenuItem.Text = "DashBoard";
-            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
-            // 
-            // saleToolStripMenuItem
-            // 
-            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.saleToolStripMenuItem.Text = "Sale";
-            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
-            // 
-            // repurchaseToolStripMenuItem
-            // 
-            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
-            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.repurchaseToolStripMenuItem.Text = "Repurchase";
-            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
-            // 
-            // preOrderToolStripMenuItem
-            // 
-            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
-            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.preOrderToolStripMenuItem.Text = "Pre-Order";
-            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
-            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,6 +255,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Invoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WareHousecs";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

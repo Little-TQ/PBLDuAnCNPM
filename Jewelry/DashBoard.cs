@@ -26,6 +26,7 @@ namespace Jewelry
             if (Session.CurrentUser?.Permissions.Contains("Account") == true)
             {
                 Page_Account frm = new Page_Account();
+                this.Hide();
                 frm.ShowDialog();
             }
         }
@@ -77,6 +78,7 @@ namespace Jewelry
         private void lblOverview_Click(object sender, EventArgs e)
         {
             Page_Overview frm = new Page_Overview();
+            this.Hide();
             frm.ShowDialog();
 
         }
@@ -84,24 +86,28 @@ namespace Jewelry
         private void lblProduct_Click(object sender, EventArgs e)
         {
             Product_View frm = new Product_View();
+            this.Hide();
             frm.ShowDialog();
         }
 
         private void lblCustomer_Click(object sender, EventArgs e)
         {
             Customer frm = new Customer();
+            this.Hide();
             frm.ShowDialog();
         }
 
         private void lblEmployee_Click(object sender, EventArgs e)
         {
             Employee frm = new Employee();
+            this.Hide();
             frm.ShowDialog();
         }
 
         private void lblInvoice_Click(object sender, EventArgs e)
         {
-            Invoice frm = new Invoice(); 
+            Invoice frm = new Invoice();
+            this.Hide();
             frm.ShowDialog();
         }
 
@@ -113,6 +119,7 @@ namespace Jewelry
         private void lblUpdate_Click(object sender, EventArgs e)
         {
             UpdatePrice frm = new UpdatePrice();
+            this.Hide();
             frm.ShowDialog();
 
         }
