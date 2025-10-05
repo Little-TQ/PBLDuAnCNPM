@@ -18,6 +18,7 @@ namespace Jewelry.FolderEmployee
         public InformationEmployee()
         {
             InitializeComponent();
+            LoadEmployees();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace Jewelry.FolderEmployee
         private void btnViewInfoEmployee_Click(object sender, EventArgs e)
 
         {
-            LoadEmployees();
+            
         }
 
         private void btnDeleteInfoEmployee_Click(object sender, EventArgs e)
@@ -113,6 +114,11 @@ namespace Jewelry.FolderEmployee
                 MessageBox.Show("Employees deleted successfully!");
                 LoadEmployees(); // Refresh DataGridView
             }
+        }
+
+        private void InformationEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

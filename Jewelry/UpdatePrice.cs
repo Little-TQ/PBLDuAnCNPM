@@ -1,33 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Jewelry.BLL;
 using Jewelry.DTO;
 
 namespace Jewelry
 {
-    public partial class UpdatePrice: Form
+    public partial class UpdatePrice : Form
     {
         private UpdateBLL updateBLL = new UpdateBLL();
         private string currentMaterialId = "";
         private decimal currentPrice = 0;
+
         public UpdatePrice()
         {
             InitializeComponent();
             InitializeForm();
         }
+
         private void InitializeForm()
         {
             LoadMaterials();
             LoadPriceHistory();
             DateTimeUpdatePrice.Value = DateTime.Now;
         }
+
+        // Load danh sách chất liệu từ DB
         private void LoadMaterials()
         {
             try
@@ -39,17 +38,19 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error load material: {ex.Message}");
+                MessageBox.Show($"Lỗi khi tải danh sách chất liệu: {ex.Message}");
             }
         }
 
-        // Load lịch sử giá
+        //Load toàn bộ lịch sử giá từ DB
         private void LoadPriceHistory()
         {
             try
             {
                 DataTable history = updateBLL.GetAllUpdatePrices();
                 dataGridViewChangePrice.DataSource = history;
+                dataGridViewChangePrice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewChangePrice.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -57,7 +58,7 @@ namespace Jewelry
             }
         }
 
-        // Cập nhật thông tin thống kê
+        // Cập nhật thông tin thống kê theo chất liệu
         private void UpdateStatistics(string materialId)
         {
             try
@@ -67,17 +68,17 @@ namespace Jewelry
                 {
                     DataRow row = stats.Rows[0];
 
-                    // Cập nhật giá cao nhất
-                    if (row["MaxPrice"] != DBNull.Value)
-                        txtMaxChangePrice.Text = Convert.ToDecimal(row["MaxPrice"]).ToString("N0") + " VND";
+                    txtMaxChangePrice.Text = row["MaxPrice"] != DBNull.Value
+                        ? Convert.ToDecimal(row["MaxPrice"]).ToString("N0") + " VND"
+                        : "0 VND";
 
-                    // Cập nhật giá thấp nhất
-                    if (row["MinPrice"] != DBNull.Value)
-                        txtMinChangePrice.Text = Convert.ToDecimal(row["MinPrice"]).ToString("N0") + " VND";
+                    txtMinChangePrice.Text = row["MinPrice"] != DBNull.Value
+                        ? Convert.ToDecimal(row["MinPrice"]).ToString("N0") + " VND"
+                        : "0 VND";
 
-                    // Cập nhật thời gian cập nhật cuối
-                    if (row["LastUpdateTime"] != DBNull.Value)
-                        txtChangeTimeLatest.Text = Convert.ToDateTime(row["LastUpdateTime"]).ToString("HH:mm:ss");
+                    txtChangeTimeLatest.Text = row["LastUpdateTime"] != DBNull.Value
+                        ? Convert.ToDateTime(row["LastUpdateTime"]).ToString("HH:mm:ss")
+                        : "--:--:--";
                 }
             }
             catch (Exception ex)
@@ -85,28 +86,63 @@ namespace Jewelry
                 MessageBox.Show("Lỗi khi tải thống kê: " + ex.Message);
             }
         }
-        private void dataGridViewChangePrice_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        // Khi chọn chất liệu
+        private void cbxMaterialUpdate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbxMaterialUpdate.SelectedValue != null)
+                {
+                    currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
+
+                    var info = updateBLL.GetLatestPriceAndChange(currentMaterialId);
+                    currentPrice = info.Price;
+
+                    txtPricenow.Text = $"{currentPrice:N0} VND";
+                    txtChange.Text = (info.Change >= 0 ? "+" : "") + $"{info.Change:N0}";
+                    txtChange.ForeColor = info.Change >= 0 ? Color.Green : Color.Red;
+
+                    UpdateStatistics(currentMaterialId);
+                    LoadPriceHistoryByMaterial(currentMaterialId);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải giá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnExitUpDate_Click(object sender, EventArgs e)
+        // Load lịch sử riêng cho từng chất liệu
+        private void LoadPriceHistoryByMaterial(string materialId)
         {
-            this.Close();
+            try
+            {
+                DataTable dt = updateBLL.GetAllUpdatePrices(); // vẫn dùng chung hàm DAL gốc
+                if (dt.Columns.Contains("Loại Vàng"))
+                {
+                    // lọc nếu DAL có cột "Loại Vàng"
+                    DataView view = new DataView(dt);
+                    view.RowFilter = $"[Loại Vàng] LIKE '%{cbxMaterialUpdate.Text}%'";
+                    dataGridViewChangePrice.DataSource = view;
+                }
+                else
+                {
+                    dataGridViewChangePrice.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc lịch sử giá: " + ex.Message);
+            }
         }
 
-        private void btnReturnUpDate_Click(object sender, EventArgs e)
-        {
-            DashBoard frm = new DashBoard();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
+        // Nút hoàn tất cập nhật giá
         private void btnCompleteUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validate dữ liệu
+                // Kiểm tra dữ liệu nhập
                 string validationResult = updateBLL.ValidatePriceUpdate(txtEnterChangePrice.Text, currentMaterialId);
                 if (validationResult != "VALID")
                 {
@@ -118,7 +154,7 @@ namespace Jewelry
                 DateTime updateTime = DateTimeUpdatePrice.Value;
                 decimal changeAmount = newPrice - currentPrice;
 
-                // Tạo DTO
+                // Tạo DTO lưu vào DB
                 UpdateDTO updateDTO = new UpdateDTO
                 {
                     idUpdate = updateBLL.GenerateUpdateId(),
@@ -128,25 +164,23 @@ namespace Jewelry
                     ChangePrice = changeAmount
                 };
 
-                // Thực hiện cập nhật
+                // Gọi hàm cập nhật
                 bool success = updateBLL.UpdatePrice(updateDTO);
 
                 if (success)
                 {
-                    MessageBox.Show("Cập nhật giá thành công!", "Thành công",
+                    MessageBox.Show("✅ Cập nhật giá thành công!", "Thành công",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Cập nhật giao diện
+                    // Cập nhật UI
                     currentPrice = newPrice;
                     txtPricenow.Text = currentPrice.ToString("N0") + " VND";
                     txtChange.Text = (changeAmount >= 0 ? "+" : "") + changeAmount.ToString("N0");
                     txtChange.ForeColor = changeAmount >= 0 ? Color.Green : Color.Red;
 
-                    // Load lại lịch sử và thống kê
+                    // Load lại dữ liệu
                     LoadPriceHistory();
                     UpdateStatistics(currentMaterialId);
-
-                    // Clear ô nhập giá
                     txtEnterChangePrice.Clear();
                 }
                 else
@@ -162,21 +196,20 @@ namespace Jewelry
             }
         }
 
-        private void cbxMaterialUpdate_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-            if (cbxMaterialUpdate.SelectedValue != null)
-            {
-                currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
-                currentPrice = updateBLL.GetCurrentPricePerOunce(currentMaterialId);
-                txtPricenow.Text = currentPrice.ToString("N0") + " VND";
-                UpdateStatistics(currentMaterialId);
-            }
+        private void btnReturnUpDate_Click(object sender, EventArgs e)
+        {
+            DashBoard frm = new DashBoard();    
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void dataGridViewChangePrice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
 
         private void UpdatePrice_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -35,11 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnView = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchCustomer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.dgvCustomerInfo = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel4.SuspendLayout();
@@ -59,6 +59,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1431, 99);
             this.panel4.TabIndex = 6;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Jewelry.Properties.Resources.Edit1;
+            this.btnEdit.ImageRotate = 0F;
+            this.btnEdit.Location = new System.Drawing.Point(1123, 21);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEdit.Size = new System.Drawing.Size(52, 50);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabStop = false;
             // 
             // panel5
             // 
@@ -131,18 +143,6 @@
             this.txtSearchCustomer.SelectedText = "";
             this.txtSearchCustomer.Size = new System.Drawing.Size(468, 45);
             this.txtSearchCustomer.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Jewelry.Properties.Resources.Edit1;
-            this.btnEdit.ImageRotate = 0F;
-            this.btnEdit.Location = new System.Drawing.Point(1123, 21);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnEdit.Size = new System.Drawing.Size(52, 50);
-            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.TabStop = false;
             // 
             // dgvCustomerInfo
             // 

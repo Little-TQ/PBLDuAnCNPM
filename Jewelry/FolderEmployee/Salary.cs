@@ -16,5 +16,10 @@ namespace Jewelry.FolderEmployee
         {
             InitializeComponent();
         }
+
+        private void Salary_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

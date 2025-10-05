@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewSalaryEmployee = new System.Windows.Forms.DataGridView();
             this.btnEditSalaryEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewSalaaryEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveSalaryEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchSalaryEmployee = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridViewSalary = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalaryEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -49,17 +54,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1438, 99);
             this.panel3.TabIndex = 6;
-            // 
-            // dataGridViewSalaryEmployee
-            // 
-            this.dataGridViewSalaryEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewSalaryEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSalaryEmployee.Location = new System.Drawing.Point(177, 204);
-            this.dataGridViewSalaryEmployee.Name = "dataGridViewSalaryEmployee";
-            this.dataGridViewSalaryEmployee.RowHeadersWidth = 51;
-            this.dataGridViewSalaryEmployee.RowTemplate.Height = 24;
-            this.dataGridViewSalaryEmployee.Size = new System.Drawing.Size(1089, 403);
-            this.dataGridViewSalaryEmployee.TabIndex = 7;
             // 
             // btnEditSalaryEmployee
             // 
@@ -147,16 +141,87 @@
             this.txtSearchSalaryEmployee.Size = new System.Drawing.Size(468, 45);
             this.txtSearchSalaryEmployee.TabIndex = 0;
             // 
+            // dataGridViewSalary
+            // 
+            this.dataGridViewSalary.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewSalary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSalary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewSalary.ColumnHeadersHeight = 60;
+            this.dataGridViewSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSalary.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewSalary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewSalary.Location = new System.Drawing.Point(27, 118);
+            this.dataGridViewSalary.Name = "dataGridViewSalary";
+            this.dataGridViewSalary.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSalary.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewSalary.RowHeadersVisible = false;
+            this.dataGridViewSalary.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewSalary.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewSalary.RowTemplate.Height = 50;
+            this.dataGridViewSalary.Size = new System.Drawing.Size(1358, 668);
+            this.dataGridViewSalary.TabIndex = 15;
+            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewSalary.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewSalary.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridViewSalary.ThemeStyle.HeaderStyle.Height = 60;
+            this.dataGridViewSalary.ThemeStyle.ReadOnly = true;
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.Height = 50;
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewSalary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // Salary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridViewSalaryEmployee);
+            this.Controls.Add(this.dataGridViewSalary);
             this.Controls.Add(this.panel3);
             this.Name = "Salary";
             this.Size = new System.Drawing.Size(1439, 805);
+            this.Load += new System.EventHandler(this.Salary_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalaryEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalary)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +233,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSaveSalaryEmployee;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchSalaryEmployee;
         private Guna.UI2.WinForms.Guna2Button btnEditSalaryEmployee;
-        private System.Windows.Forms.DataGridView dataGridViewSalaryEmployee;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewSalary;
     }
 }

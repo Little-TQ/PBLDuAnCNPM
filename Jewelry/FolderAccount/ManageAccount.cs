@@ -18,7 +18,8 @@ namespace Jewelry.Account
         public ManageAccount()
         {
             InitializeComponent();
-            dataGridViewAccount.CellDoubleClick += dataGridViewAccount_CellDoubleClick;
+            LoadAccounts();
+            dgvManageAccount.CellDoubleClick += dataGridViewAccount_CellDoubleClick;
         }
 
         // Load dữ liệu vào DataGridView
@@ -36,16 +37,16 @@ namespace Jewelry.Account
         {
             try
             {
-                dataGridViewAccount.DataSource = accountDAL.GetAllAccounts();
+                dgvManageAccount.DataSource = accountDAL.GetAllAccounts();
 
                 // Đặt tên cột hiển thị
-                if (dataGridViewAccount.Columns.Count > 0)
+                if (dgvManageAccount.Columns.Count > 0)
                 {
-                    dataGridViewAccount.Columns["idAccount"].HeaderText = "Mã TK";
-                    dataGridViewAccount.Columns["Username"].HeaderText = "Tên đăng nhập";
-                    dataGridViewAccount.Columns["Password"].HeaderText = "Mật khẩu";
-                    dataGridViewAccount.Columns["RoleName"].HeaderText = "Vai trò";
-                    dataGridViewAccount.Columns["IsActive"].HeaderText = "Trạng thái";
+                    dgvManageAccount.Columns["idAccount"].HeaderText = "Mã TK";
+                    dgvManageAccount.Columns["Username"].HeaderText = "Tên đăng nhập";
+                    dgvManageAccount.Columns["Password"].HeaderText = "Mật khẩu";
+                    dgvManageAccount.Columns["RoleName"].HeaderText = "Vai trò";
+                    dgvManageAccount.Columns["IsActive"].HeaderText = "Trạng thái";
                 }
             }
             catch (Exception ex)
@@ -57,14 +58,14 @@ namespace Jewelry.Account
         // Nút Load
         private void btnViewAccount_Click(object sender, EventArgs e)
         {
-            LoadAccounts();
+            
         }
         private void dataGridViewAccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 // Get selected row
-                DataGridViewRow row = dataGridViewAccount.Rows[e.RowIndex];
+                DataGridViewRow row = dgvManageAccount.Rows[e.RowIndex];
 
                 // Extract account info
                 string idAccount = row.Cells["idAccount"].Value?.ToString();
@@ -84,14 +85,14 @@ namespace Jewelry.Account
         }
         private void btnDeleteAccount_Click_1(object sender, EventArgs e)
         {
-            if (dataGridViewAccount.SelectedRows.Count == 0)
+            if (dgvManageAccount.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select accounts to delete.");
                 return;
             }
 
             DialogResult confirm = MessageBox.Show(
-                $"Delete {dataGridViewAccount.SelectedRows.Count} selected accounts?",
+                $"Delete {dgvManageAccount.SelectedRows.Count} selected accounts?",
                 "Confirm Delete",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -101,7 +102,7 @@ namespace Jewelry.Account
             {
                 AccountBLL accountBLL = new AccountBLL();
 
-                foreach (DataGridViewRow row in dataGridViewAccount.SelectedRows)
+                foreach (DataGridViewRow row in dgvManageAccount.SelectedRows)
                 {
                     string accountId = row.Cells["idAccount"].Value.ToString();
                     accountBLL.DeleteAccount(accountId);
@@ -110,6 +111,11 @@ namespace Jewelry.Account
                 MessageBox.Show("Accounts deleted successfully!");
                 LoadAccounts(); // Refresh DataGridView
             }
+        }
+
+        private void ManageAccount_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

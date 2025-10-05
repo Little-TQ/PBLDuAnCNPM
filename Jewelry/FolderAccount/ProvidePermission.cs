@@ -18,6 +18,7 @@ namespace Jewelry.Account
         public Provide_Permission()
         {
             InitializeComponent();
+            LoadPermissions();
         }
         private void LoadPermissions()
         {
@@ -77,7 +78,12 @@ namespace Jewelry.Account
 
         private void btnViewPermission_Click(object sender, EventArgs e)
         {
-            LoadPermissions();
+            
+        }
+
+        private void Provide_Permission_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
