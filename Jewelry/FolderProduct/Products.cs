@@ -171,44 +171,14 @@ namespace Jewelry.FolderProduct
             }
         }
 
-        //btn Save
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            foreach (DataGridViewRow row in dgvProduct.Rows)
-            {
-                if (row.IsNewRow) continue;
-                try
-                {
-                    ProductDTO product = new ProductDTO(
-                        row.Cells["ID"].Value?.ToString(),
-                        row.Cells["Name"].Value?.ToString(),
-                        row.Cells["Price"].Value == DBNull.Value ? null : (decimal?)Convert.ToDecimal(row.Cells["Price"].Value),
-                        row.Cells["Wage"].Value == DBNull.Value ? null : (decimal?)Convert.ToDecimal(row.Cells["Wage"].Value),
-                        Convert.ToInt32(row.Cells["Sold"].Value ?? 0),
-                        Convert.ToInt32(row.Cells["Instock"].Value ?? 0),
-                        null, null, null, null, 
-                        row.Cells["Gender"].Value?.ToString(),
-                        row.Cells["Weight"].Value == DBNull.Value ? null : (double?)Convert.ToDouble(row.Cells["Weight"].Value),
-                        row.Cells["Size"].Value == DBNull.Value ? null : (double?)Convert.ToDouble(row.Cells["Size"].Value),
-                        row.Cells["Photo"].Value?.ToString()
-                    );
-
-                    productBLL.EditProduct(product);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error saving product: " + ex.Message);
-                }
-            }
-
-            MessageBox.Show($"Products saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LoadProducts();
-        }
-
         private void dgvProduct_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ShowThumbnail();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -61,7 +61,8 @@ namespace Jewelry
                     MessageBox.Show("Added successfully!");
                   
                     OnItemAdded?.Invoke(newID, name);
-                    this.Close();
+
+                    txtName.Clear();
                 }
                 else
                 {

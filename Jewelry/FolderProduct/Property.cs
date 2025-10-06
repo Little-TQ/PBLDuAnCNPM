@@ -125,8 +125,9 @@ namespace Jewelry.FolderProduct
                 selectedID = dgvProperty.Rows[e.RowIndex].Cells[0].Value?.ToString();
             }
         }
-        //Delete
-        private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
+       
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(selectedID))
             {

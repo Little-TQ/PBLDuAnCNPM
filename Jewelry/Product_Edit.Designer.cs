@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Edit));
-            this.btnDelete = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,25 +59,11 @@
             this.txtNameP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Photo = new Guna.UI2.WinForms.Guna2PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Jewelry.Properties.Resources.Delete1;
-            this.btnDelete.ImageRotate = 0F;
-            this.btnDelete.Location = new System.Drawing.Point(873, 256);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnDelete.Size = new System.Drawing.Size(37, 37);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDelete.TabIndex = 44;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel4
             // 
@@ -100,9 +85,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            this.panel2.Location = new System.Drawing.Point(1020, 0);
+            this.panel2.Location = new System.Drawing.Point(1024, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 820);
+            this.panel2.Size = new System.Drawing.Size(17, 820);
             this.panel2.TabIndex = 73;
             // 
             // panel1
@@ -222,7 +207,8 @@
             this.cbGender.ItemHeight = 30;
             this.cbGender.Items.AddRange(new object[] {
             "Male",
-            "Female"});
+            "Female",
+            "Unisex"});
             this.cbGender.Location = new System.Drawing.Point(710, 710);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(245, 36);
@@ -511,13 +497,11 @@
             this.Controls.Add(this.txtNameP);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.Photo);
-            this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_ViewProduct";
             this.Load += new System.EventHandler(this.Product_EditProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -528,7 +512,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnDelete;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;

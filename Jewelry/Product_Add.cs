@@ -98,11 +98,17 @@ namespace Jewelry
                     if (parentForm != null)
                         parentForm.LoadProducts();
 
-                    this.Close();
+                    txtNameP.Clear();
+                    txtPrice.Clear();
+                    txtWage.Clear();
+                    txtStock.Clear();
+                    txtWeight.Clear();
+                    txtSize.Clear();
+
                 }
                 else
                 {
-                    MessageBox.Show("❌ Failed to add product.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to add product.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

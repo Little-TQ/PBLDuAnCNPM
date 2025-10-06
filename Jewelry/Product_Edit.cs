@@ -118,10 +118,6 @@ namespace Jewelry
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
         //Btn Save
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
