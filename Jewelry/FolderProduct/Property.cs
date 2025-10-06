@@ -177,51 +177,5 @@ namespace Jewelry.FolderProduct
                 }
             }
         }
-        //btn Save
-        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
-        {
-            if (cbChoice.SelectedItem == null)
-            {
-                MessageBox.Show("Please select a property type first.");
-                return;
-            }
-
-            string tableName = cbChoice.SelectedItem.ToString();
-            string idColumn = "";
-            string nameColumn = "";
-
-            switch (tableName.ToLower())
-            {
-                case "category": idColumn = "idCategory"; nameColumn = "nameCategory"; break;
-                case "material": idColumn = "idMaterial"; nameColumn = "nameMaterial"; break;
-                case "color": idColumn = "idColor"; nameColumn = "nameColor"; break;
-                case "collection": idColumn = "idCollection"; nameColumn = "nameCollection"; break;
-            }
-
-            PropertyBLL propertyBLL = new PropertyBLL();
-            bool success = true;
-
-            foreach (DataGridViewRow row in dgvProperty.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                string id = row.Cells[0].Value?.ToString();
-                string name = row.Cells[1].Value?.ToString();
-
-                // Gọi hàm update trong DAL/BLL
-                bool result = propertyBLL.UpdatePropertyItem(tableName, idColumn, id, nameColumn, name);
-                if (!result)
-                {
-                    success = false;
-                    MessageBox.Show($"Failed to save");
-                }
-            }
-
-            if (success)
-            {
-                MessageBox.Show("All changes have been saved successfully!");
-                
-            }
-        }
     }
 }
