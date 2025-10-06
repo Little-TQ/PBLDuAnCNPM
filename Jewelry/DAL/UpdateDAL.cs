@@ -17,11 +17,10 @@ namespace Jewelry.DAL
                 conn.Open();
                 string query = @"
                     SELECT 
-                        up.idUpdate AS [Mã Cập Nhật],
                         m.NameMaterial AS [Chất Liệu],
                         FORMAT(up.Price, 'N0') AS [Giá],
                         FORMAT(up.ChangePrice, 'N0') AS [Thay Đổi],
-                        CONVERT(VARCHAR(10), up.UpdateTime, 103) + ' ' + CONVERT(VARCHAR(5), up.UpdateTime, 108) AS [Thời Gian]
+                        CONVERT(VARCHAR(5), up.UpdateTime, 108) + ' ' + CONVERT(VARCHAR(10), up.UpdateTime, 103) AS [Thời Gian]
                     FROM UpdatePrice up
                     INNER JOIN Material m ON up.idMaterial = m.idMaterial";
 
@@ -95,26 +94,6 @@ namespace Jewelry.DAL
                 return dt;
             }
         }
-
-        // Cập nhật giá vàng trong Product
-        public bool UpdateProductPrice(string idMaterial, decimal newPrice)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                conn.Open();
-                string query = @"
-                    UPDATE Product 
-                    SET PriceSilver = @newPrice 
-                    WHERE idMaterial = @idMaterial";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
-                cmd.Parameters.AddWithValue("@newPrice", newPrice);
-
-                return cmd.ExecuteNonQuery() > 0;
-            }
-        }
-
         // Lấy thống kê giá (cao nhất, thấp nhất, cập nhật gần nhất)
         public DataTable GetPriceStatistics(string idMaterial)
         {

@@ -28,5 +28,14 @@ namespace Jewelry.DTO
             Membership = "Friend";
             AddressC = addressC;
         }
+        public CustomerDTO(string idCustomer, string nameCustomer, string phoneNumberC, string addressC, int point)
+        {
+            this.idCustomer = idCustomer;
+            NameCustomer = nameCustomer;
+            PhoneNumberC = phoneNumberC;
+            Point = 0;
+            Membership = "Friend";
+            AddressC = addressC;
+        }
     }
 }

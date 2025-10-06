@@ -32,9 +32,6 @@
             this.btnExitEditCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturnExitEditCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtIDCustomer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,26 +41,25 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtCustomerAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtCustomerTotalExpense = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtCustomerPoint = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCompleteEditC = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnEditCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtIDCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnExitEditCustomer);
@@ -80,13 +76,13 @@
             this.btnExitEditCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnExitEditCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExitEditCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitEditCustomer.FillColor = System.Drawing.Color.White;
+            this.btnExitEditCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.btnExitEditCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExitEditCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnExitEditCustomer.Image = global::Jewelry.Properties.Resources.EXIT1;
+            this.btnExitEditCustomer.Image = global::Jewelry.Properties.Resources.Exit;
             this.btnExitEditCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnExitEditCustomer.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitEditCustomer.Location = new System.Drawing.Point(956, 3);
+            this.btnExitEditCustomer.Location = new System.Drawing.Point(956, 8);
             this.btnExitEditCustomer.Name = "btnExitEditCustomer";
             this.btnExitEditCustomer.Size = new System.Drawing.Size(56, 41);
             this.btnExitEditCustomer.TabIndex = 2;
@@ -98,7 +94,7 @@
             this.btnReturnExitEditCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReturnExitEditCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReturnExitEditCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnExitEditCustomer.FillColor = System.Drawing.Color.White;
+            this.btnReturnExitEditCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
             this.btnReturnExitEditCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReturnExitEditCustomer.ForeColor = System.Drawing.Color.White;
             this.btnReturnExitEditCustomer.Image = global::Jewelry.Properties.Resources.Return;
@@ -114,49 +110,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("EB Garamond", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 6);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(412, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 58);
+            this.label1.Size = new System.Drawing.Size(190, 58);
             this.label1.TabIndex = 0;
-            this.label1.Text = "  Arpels Jewelry";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtIDCustomer);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 163);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 107);
-            this.panel2.TabIndex = 3;
-            // 
-            // txtIDCustomer
-            // 
-            this.txtIDCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIDCustomer.DefaultText = "";
-            this.txtIDCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIDCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIDCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIDCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDCustomer.Location = new System.Drawing.Point(20, 41);
-            this.txtIDCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIDCustomer.Name = "txtIDCustomer";
-            this.txtIDCustomer.PlaceholderText = "";
-            this.txtIDCustomer.SelectedText = "";
-            this.txtIDCustomer.Size = new System.Drawing.Size(264, 44);
-            this.txtIDCustomer.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "MÃ KH";
+            this.label1.Text = "Customer";
             // 
             // panel3
             // 
@@ -272,49 +231,11 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "ĐỊA CHỈ";
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtCustomerTotalExpense);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(359, 349);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(303, 107);
-            this.panel6.TabIndex = 4;
-            // 
-            // txtCustomerTotalExpense
-            // 
-            this.txtCustomerTotalExpense.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerTotalExpense.DefaultText = "";
-            this.txtCustomerTotalExpense.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerTotalExpense.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerTotalExpense.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerTotalExpense.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerTotalExpense.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerTotalExpense.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCustomerTotalExpense.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerTotalExpense.Location = new System.Drawing.Point(20, 41);
-            this.txtCustomerTotalExpense.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCustomerTotalExpense.Name = "txtCustomerTotalExpense";
-            this.txtCustomerTotalExpense.PlaceholderText = "";
-            this.txtCustomerTotalExpense.SelectedText = "";
-            this.txtCustomerTotalExpense.Size = new System.Drawing.Size(264, 44);
-            this.txtCustomerTotalExpense.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 24);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "TỔNG CHI TIÊU";
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.txtCustomerPoint);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(706, 349);
+            this.panel7.Location = new System.Drawing.Point(359, 349);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(303, 107);
             this.panel7.TabIndex = 4;
@@ -365,6 +286,7 @@
             this.btnCompleteEditC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnCompleteEditC.Size = new System.Drawing.Size(40, 39);
             this.btnCompleteEditC.TabIndex = 7;
+            this.btnCompleteEditC.Click += new System.EventHandler(this.btnCompleteEditC_Click);
             // 
             // btnEditCustomer
             // 
@@ -386,6 +308,45 @@
             this.btnEditCustomer.PressedColor = System.Drawing.Color.LightGreen;
             this.btnEditCustomer.Size = new System.Drawing.Size(40, 39);
             this.btnEditCustomer.TabIndex = 11;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "MÃ KH";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtIDCustomer);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(12, 163);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(303, 107);
+            this.panel2.TabIndex = 3;
+            // 
+            // txtIDCustomer
+            // 
+            this.txtIDCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIDCustomer.DefaultText = "";
+            this.txtIDCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIDCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIDCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIDCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDCustomer.Location = new System.Drawing.Point(20, 41);
+            this.txtIDCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIDCustomer.Name = "txtIDCustomer";
+            this.txtIDCustomer.PlaceholderText = "";
+            this.txtIDCustomer.SelectedText = "";
+            this.txtIDCustomer.Size = new System.Drawing.Size(264, 44);
+            this.txtIDCustomer.TabIndex = 1;
             // 
             // EditInfoCustomer
             // 
@@ -395,7 +356,6 @@
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnCompleteEditC);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -407,18 +367,16 @@
             this.Text = "EditInfoCustomer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -429,9 +387,6 @@
         private Guna.UI2.WinForms.Guna2Button btnExitEditCustomer;
         private Guna.UI2.WinForms.Guna2Button btnReturnExitEditCustomer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtIDCustomer;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerName;
         private System.Windows.Forms.Label label3;
@@ -441,13 +396,13 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerTotalExpense;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerPoint;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2CircleButton btnCompleteEditC;
         public Guna.UI2.WinForms.Guna2Button btnEditCustomer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2TextBox txtIDCustomer;
     }
 }

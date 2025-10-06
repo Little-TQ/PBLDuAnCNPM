@@ -105,7 +105,7 @@
             this.txtPricenow.Name = "txtPricenow";
             this.txtPricenow.PlaceholderText = "";
             this.txtPricenow.SelectedText = "";
-            this.txtPricenow.Size = new System.Drawing.Size(107, 44);
+            this.txtPricenow.Size = new System.Drawing.Size(184, 44);
             this.txtPricenow.TabIndex = 1;
             // 
             // guna2Panel1
@@ -115,9 +115,9 @@
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.Controls.Add(this.txtPricenow);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(457, 53);
+            this.guna2Panel1.Location = new System.Drawing.Point(383, 53);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(142, 112);
+            this.guna2Panel1.Size = new System.Drawing.Size(211, 112);
             this.guna2Panel1.TabIndex = 2;
             // 
             // guna2Panel2
@@ -127,9 +127,9 @@
             this.guna2Panel2.Controls.Add(this.txtChange);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(667, 53);
+            this.guna2Panel2.Location = new System.Drawing.Point(610, 53);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(142, 112);
+            this.guna2Panel2.Size = new System.Drawing.Size(212, 112);
             this.guna2Panel2.TabIndex = 3;
             // 
             // txtChange
@@ -152,7 +152,7 @@
             this.txtChange.Name = "txtChange";
             this.txtChange.PlaceholderText = "";
             this.txtChange.SelectedText = "";
-            this.txtChange.Size = new System.Drawing.Size(107, 44);
+            this.txtChange.Size = new System.Drawing.Size(177, 44);
             this.txtChange.TabIndex = 1;
             // 
             // label2
@@ -178,9 +178,9 @@
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Controls.Add(this.txtMaxChangePrice);
             this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Location = new System.Drawing.Point(457, 188);
+            this.guna2Panel3.Location = new System.Drawing.Point(383, 188);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(352, 224);
+            this.guna2Panel3.Size = new System.Drawing.Size(439, 224);
             this.guna2Panel3.TabIndex = 3;
             // 
             // txtChangeTimeLatest
@@ -249,7 +249,7 @@
             this.txtMinChangePrice.Name = "txtMinChangePrice";
             this.txtMinChangePrice.PlaceholderText = "";
             this.txtMinChangePrice.SelectedText = "";
-            this.txtMinChangePrice.Size = new System.Drawing.Size(107, 44);
+            this.txtMinChangePrice.Size = new System.Drawing.Size(194, 44);
             this.txtMinChangePrice.TabIndex = 3;
             // 
             // label4
@@ -283,7 +283,7 @@
             this.txtMaxChangePrice.Name = "txtMaxChangePrice";
             this.txtMaxChangePrice.PlaceholderText = "";
             this.txtMaxChangePrice.SelectedText = "";
-            this.txtMaxChangePrice.Size = new System.Drawing.Size(107, 44);
+            this.txtMaxChangePrice.Size = new System.Drawing.Size(194, 44);
             this.txtMaxChangePrice.TabIndex = 1;
             // 
             // label3

@@ -35,42 +35,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnView = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCustomerInfo = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnView);
-            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.txtSearchCustomer);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1431, 99);
             this.panel4.TabIndex = 6;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Jewelry.Properties.Resources.Edit1;
-            this.btnEdit.ImageRotate = 0F;
-            this.btnEdit.Location = new System.Drawing.Point(1123, 21);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnEdit.Size = new System.Drawing.Size(52, 50);
-            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.TabStop = false;
             // 
             // panel5
             // 
@@ -99,27 +82,6 @@
             this.btnView.PressedColor = System.Drawing.Color.LightGreen;
             this.btnView.Size = new System.Drawing.Size(50, 50);
             this.btnView.TabIndex = 4;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.BorderRadius = 12;
-            this.btnSave.BorderThickness = 1;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::Jewelry.Properties.Resources.Save;
-            this.btnSave.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSave.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSave.Location = new System.Drawing.Point(1198, 21);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSave.Size = new System.Drawing.Size(50, 50);
-            this.btnSave.TabIndex = 1;
             // 
             // txtSearchCustomer
             // 
@@ -213,6 +175,7 @@
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.Height = 50;
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCustomerInfo.DoubleClick += new System.EventHandler(this.dgvCustomerInfo_DoubleClick);
             // 
             // guna2Elipse1
             // 
@@ -229,7 +192,6 @@
             this.Size = new System.Drawing.Size(1434, 812);
             this.Load += new System.EventHandler(this.InformationCustomer_Load);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerInfo)).EndInit();
             this.ResumeLayout(false);
 
@@ -239,9 +201,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnView;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchCustomer;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnEdit;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCustomerInfo;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }

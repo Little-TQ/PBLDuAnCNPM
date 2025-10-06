@@ -18,7 +18,11 @@ namespace Jewelry
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SetProcessDPIAware();
+<<<<<<< HEAD
             Application.Run(new HomePage());
+=======
+            Application.Run(new DashBoard());
+>>>>>>> 570a598 (Quynh edit DashBoard)
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

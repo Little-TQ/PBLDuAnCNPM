@@ -32,8 +32,7 @@ namespace Jewelry.BLL
         public bool UpdatePrice(UpdateDTO updateDTO)
         {
             bool inserted = updateDAL.InsertUpdatePrice(updateDTO);
-            bool updated = updateDAL.UpdateProductPrice(updateDTO.idMaterial, updateDTO.Price);
-            return inserted && updated;
+            return inserted;
         }
 
         public string GenerateUpdateId()

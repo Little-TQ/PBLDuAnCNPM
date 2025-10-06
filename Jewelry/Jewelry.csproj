@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddSupplier.Designer.cs">
-      <DependentUpon>AddSupplier.cs</DependentUpon>
-    </Compile>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
@@ -310,9 +304,6 @@
     <Compile Include="Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddSupplier.resx">
-      <DependentUpon>AddSupplier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FolderEmployee\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
     </EmbeddedResource>

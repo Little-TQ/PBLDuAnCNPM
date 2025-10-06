@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +21,93 @@ namespace Jewelry
         {
             InitializeComponent();
             SetupPermissions();
+            mstDashBoard.BackColor = Color.Transparent;
+            mstDashBoard.Renderer = new TransparentMenuRenderer();
+
         }
-        private void lblAccount_Click_1(object sender, EventArgs e)
+        private class TransparentMenuRenderer : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+            {
+                // Không vẽ gì cả => để lộ nền phía sau
+                e.Graphics.FillRectangle(new SolidBrush(Color.Transparent), e.AffectedBounds);
+            }
+            protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+            {
+                // không vẽ nền khi hover => menu trong suốt
+                if (e.Item.Selected || e.Item.Pressed)
+                {
+                    
+                    e.Item.ForeColor = Color.FromArgb(27, 56, 59);
+                }
+                else
+                {
+                    e.Item.ForeColor = Color.White; 
+                }
+            }
+        }
+        private void SetupPermissions()
+        {
+            var currentUser = Session.CurrentUser;
+
+            if (currentUser?.Permissions == null)
+            {
+                // Nếu không có quyền gì thì disable hết
+                foreach (ToolStripMenuItem item in mstDashBoard.Items)
+                {
+                    item.Enabled = false;
+                }
+                return;
+            }
+
+            // Reset tất cả menu => disable trước
+            foreach (ToolStripMenuItem item in mstDashBoard.Items)
+            {
+                item.Enabled = false;
+                item.ForeColor = Color.Gray;   // màu mờ khi không có quyền
+            }
+
+            // Duyệt quyền của user để bật menu
+            foreach (string permission in currentUser.Permissions)
+            {
+                switch (permission)
+                {
+                    case "Account":
+                        accountToolStripMenuItem1.Enabled = true;
+                        accountToolStripMenuItem1.ForeColor = Color.White;
+                        break;
+                    case "Overview":
+                        overviewToolStripMenuItem2.Enabled = true;
+                        overviewToolStripMenuItem2.ForeColor = Color.White;
+                        break;
+                    case "Product":
+                        productToolStripMenuItem2.Enabled = true;
+                        productToolStripMenuItem2.ForeColor = Color.White;
+                        break;
+                    case "Customer":
+                        customerToolStripMenuItem2.Enabled = true;
+                        customerToolStripMenuItem2.ForeColor = Color.White;
+                        break;
+                    case "Employee":
+                        employeeToolStripMenuItem2.Enabled = true;
+                        employeeToolStripMenuItem2.ForeColor = Color.White;
+                        break;
+                    case "Payment":
+                        paymentToolStripMenuItem1.Enabled = true;
+                        paymentToolStripMenuItem1.ForeColor = Color.White;
+                        break;
+                    case "Invoice":
+                        invoiceToolStripMenuItem.Enabled = true;
+                        invoiceToolStripMenuItem.ForeColor = Color.White;
+                        break;
+                    case "Update":
+                        updateToolStripMenuItem1.Enabled = true;
+                        updateToolStripMenuItem1.ForeColor = Color.White;
+                        break;
+                }
+            }
+        }
+        private void accountToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (Session.CurrentUser?.Permissions.Contains("Account") == true)
             {
@@ -30,43 +116,15 @@ namespace Jewelry
                 frm.ShowDialog();
             }
         }
-
-        private void SetupPermissions()
+        private void overviewToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
-            // Ẩn tất cả các label navigation trước
-            lblAccount.Visible = false;
-            lblOverview.Visible = false;
-            lblProduct.Visible = false;
-            lblCustomer.Visible = false;
-            lblEmployee.Visible = false;
-            lblPayment.Visible = false;
-            lblInvoice.Visible = false;
-            lblUpdate.Visible = false;
-
-            var currentUser = Session.CurrentUser;
-
-            if (currentUser?.Permissions == null)
+            if (Session.CurrentUser?.Permissions.Contains("Overview") == true)
             {
-                return; // Không có permission thì ẩn hết
-            }
-
-            foreach (string permission in currentUser.Permissions)
-            {
-                switch (permission)
-                {
-                    case "Account": lblAccount.Visible = true; break;
-                    case "Overview": lblOverview.Visible = true; break;
-                    case "Product": lblProduct.Visible = true; break;
-                    case "Customer": lblCustomer.Visible = true; break;
-                    case "Employee": lblEmployee.Visible = true; break;
-                    case "Payment": lblPayment.Visible = true; break;
-                    case "Invoice": lblInvoice.Visible = true; break;
-                    case "Update": lblUpdate.Visible = true; break;
-                }
+                Page_Overview frm = new Page_Overview();
+                this.Hide();
+                frm.ShowDialog();
             }
         }
-
         private void picLogin_Click(object sender, EventArgs e)
         {
             Session.CurrentUser = null; // clear session
@@ -74,54 +132,59 @@ namespace Jewelry
             Login login = new Login();
             login.ShowDialog();
         }
-
-        private void lblOverview_Click(object sender, EventArgs e)
+        private void productToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Page_Overview frm = new Page_Overview();
-            this.Hide();
-            frm.ShowDialog();
-
+            if (Session.CurrentUser?.Permissions.Contains("Product") == true)
+            {
+                Product_View frm = new Product_View();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
-
-        private void lblProduct_Click(object sender, EventArgs e)
+        private void customerToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Product_View frm = new Product_View();
-            this.Hide();
-            frm.ShowDialog();
+            if (Session.CurrentUser?.Permissions.Contains("Customer") == true)
+            {
+                Customer frm = new Customer();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
-
-        private void lblCustomer_Click(object sender, EventArgs e)
+        private void employeeToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Customer frm = new Customer();
-            this.Hide();
-            frm.ShowDialog();
+            if (Session.CurrentUser?.Permissions.Contains("Employee") == true)
+            {
+                Employee frm = new Employee();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
-
-        private void lblEmployee_Click(object sender, EventArgs e)
+        private void paymentToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Employee frm = new Employee();
-            this.Hide();
-            frm.ShowDialog();
+            if (Session.CurrentUser?.Permissions.Contains("Payment") == true)
+            {
+                Payment_Sale_Select frm = new Payment_Sale_Select();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
-
-        private void lblInvoice_Click(object sender, EventArgs e)
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Invoice frm = new Invoice();
-            this.Hide();
-            frm.ShowDialog();
+            if (Session.CurrentUser?.Permissions.Contains("Invoice") == true)
+            {
+                Invoice frm = new Invoice();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
-
-        private void lblPayment_Click(object sender, EventArgs e)
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void lblUpdate_Click(object sender, EventArgs e)
-        {
-            UpdatePrice frm = new UpdatePrice();
-            this.Hide();
-            frm.ShowDialog();
-
+            if (Session.CurrentUser?.Permissions.Contains("Update") == true)
+            {
+                UpdatePrice frm = new UpdatePrice();
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
     }
 }
