@@ -55,7 +55,7 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi load roles: {ex.Message}");
+                MessageBox.Show($"Error when loading roles: {ex.Message}");
             }
         }
         private void btnSubmit_Click_1(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Jewelry
 
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                    MessageBox.Show("Please enter fully information!");
                     return;
                 }
 

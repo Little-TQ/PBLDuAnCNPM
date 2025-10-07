@@ -39,12 +39,12 @@ namespace Jewelry.FolderEmployee
                 // Đặt tên cột hiển thị
                 if (dataGridViewInfoEmployee.Columns.Count > 0)
                 {
-                    dataGridViewInfoEmployee.Columns["idEmployee"].HeaderText = "Mã NV";
-                    dataGridViewInfoEmployee.Columns["NameEmployee"].HeaderText = "Tên Nhân Viên";
-                    dataGridViewInfoEmployee.Columns["PhoneNumberE"].HeaderText = "Số Điện Thoại";
-                    dataGridViewInfoEmployee.Columns["DateOfBirth"].HeaderText = "Ngày Sinh";
-                    dataGridViewInfoEmployee.Columns["AddressE"].HeaderText = "Địa Chỉ";
-                    dataGridViewInfoEmployee.Columns["RoleName"].HeaderText = "Vai Trò";
+                    dataGridViewInfoEmployee.Columns["idEmployee"].HeaderText = "ID";
+                    dataGridViewInfoEmployee.Columns["NameEmployee"].HeaderText = "Name";
+                    dataGridViewInfoEmployee.Columns["PhoneNumberE"].HeaderText = "Phone number";
+                    dataGridViewInfoEmployee.Columns["DateOfBirth"].HeaderText = "Birthday";
+                    dataGridViewInfoEmployee.Columns["AddressE"].HeaderText = "Address";
+                    dataGridViewInfoEmployee.Columns["RoleName"].HeaderText = "Role";
                 }
             }
             catch (Exception ex)

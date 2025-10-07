@@ -41,7 +41,7 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải danh sách chất liệu: {ex.Message}");
+                MessageBox.Show($"Error when loading: {ex.Message}");
             }
         }
 
@@ -71,7 +71,7 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải thống kê: " + ex.Message);
+                MessageBox.Show("Error when loading: " + ex.Message);
             }
         }
 
@@ -97,7 +97,7 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải giá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error when loading: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -118,7 +118,8 @@ namespace Jewelry
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải lịch sử giá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error when loading: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error when loading: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -132,7 +133,7 @@ namespace Jewelry
                 string validationResult = updateBLL.ValidatePriceUpdate(txtEnterChangePrice.Text, currentMaterialId);
                 if (validationResult != "VALID")
                 {
-                    MessageBox.Show(validationResult, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(validationResult, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -155,7 +156,7 @@ namespace Jewelry
 
                 if (success)
                 {
-                    MessageBox.Show("✅ Cập nhật giá thành công!", "Thành công",
+                    MessageBox.Show("Updated Susccessfully!", "Susccessful",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Cập nhật UI
@@ -171,13 +172,13 @@ namespace Jewelry
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật giá thất bại!", "Lỗi",
+                    MessageBox.Show("Updated Susccessfully!", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi cập nhật giá: " + ex.Message, "Lỗi",
+                MessageBox.Show("Error: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
