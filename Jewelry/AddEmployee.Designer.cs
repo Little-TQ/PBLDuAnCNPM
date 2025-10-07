@@ -133,6 +133,7 @@
             this.pnlAddE.Name = "pnlAddE";
             this.pnlAddE.Size = new System.Drawing.Size(1012, 485);
             this.pnlAddE.TabIndex = 3;
+            this.pnlAddE.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddE_Paint);
             // 
             // panel7
             // 
@@ -166,9 +167,9 @@
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(21, 18);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(72, 30);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(45, 30);
             this.guna2HtmlLabel6.TabIndex = 0;
-            this.guna2HtmlLabel6.Text = "Vai Trò";
+            this.guna2HtmlLabel6.Text = "Role";
             // 
             // panel5
             // 
@@ -203,9 +204,9 @@
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(21, 18);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(100, 30);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(82, 30);
             this.guna2HtmlLabel5.TabIndex = 0;
-            this.guna2HtmlLabel5.Text = "Ngày Sinh";
+            this.guna2HtmlLabel5.Text = "Birthday";
             // 
             // panel4
             // 
@@ -243,9 +244,9 @@
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(21, 18);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(72, 30);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(83, 30);
             this.guna2HtmlLabel4.TabIndex = 0;
-            this.guna2HtmlLabel4.Text = "Địa Chỉ";
+            this.guna2HtmlLabel4.Text = "Address";
             // 
             // panel3
             // 
@@ -283,9 +284,9 @@
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(21, 18);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(137, 30);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(144, 30);
             this.guna2HtmlLabel3.TabIndex = 0;
-            this.guna2HtmlLabel3.Text = "Số Điện Thoại";
+            this.guna2HtmlLabel3.Text = "Phone number";
             // 
             // panel2
             // 
@@ -323,9 +324,9 @@
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(21, 18);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(104, 30);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(99, 30);
             this.guna2HtmlLabel2.TabIndex = 0;
-            this.guna2HtmlLabel2.Text = "Họ Và Tên";
+            this.guna2HtmlLabel2.Text = "Full Name";
             // 
             // btnCompleteE
             // 
