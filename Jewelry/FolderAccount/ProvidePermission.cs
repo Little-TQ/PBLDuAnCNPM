@@ -25,20 +25,20 @@ namespace Jewelry.Account
             DataTable dt = permissionBLL.GetAccountPermissions();
             dataGridViewPermission.DataSource = dt;
 
-            // Ẩn cột ID
+            // Ignore ID column
             dataGridViewPermission.Columns["idAccount"].Visible = false;
 
-            // Đặt tiếng Việt cho header
-            dataGridViewPermission.Columns["Username"].HeaderText = "Tên đăng nhập";
-            dataGridViewPermission.Columns["RoleName"].HeaderText = "Vai trò";
-            dataGridViewPermission.Columns["Account"].HeaderText = "Tài khoản";
-            dataGridViewPermission.Columns["Overview"].HeaderText = "Thống Kê";
-            dataGridViewPermission.Columns["Product"].HeaderText = "Sản phẩm";
-            dataGridViewPermission.Columns["Customer"].HeaderText = "Khách hàng";
-            dataGridViewPermission.Columns["Employee"].HeaderText = "Nhân viên";
-            dataGridViewPermission.Columns["Payment"].HeaderText = "Thanh toán";
-            dataGridViewPermission.Columns["Invoice"].HeaderText = "Hóa đơn";
-            dataGridViewPermission.Columns["Update"].HeaderText = "Cập nhật";
+            //Set header name
+            dataGridViewPermission.Columns["Username"].HeaderText = "Username";
+            dataGridViewPermission.Columns["RoleName"].HeaderText = "Role";
+            dataGridViewPermission.Columns["Account"].HeaderText = "Account";
+            dataGridViewPermission.Columns["Overview"].HeaderText = "Overview";
+            dataGridViewPermission.Columns["Product"].HeaderText = "Product";
+            dataGridViewPermission.Columns["Customer"].HeaderText = "Customer";
+            dataGridViewPermission.Columns["Employee"].HeaderText = "Employee";
+            dataGridViewPermission.Columns["Payment"].HeaderText = "Payment";
+            dataGridViewPermission.Columns["Invoice"].HeaderText = "Invoice";
+            dataGridViewPermission.Columns["Update"].HeaderText = "Update Price";
         }
 
         private void btnSavePermission_Click(object sender, EventArgs e)
@@ -67,11 +67,11 @@ namespace Jewelry.Account
                         permissionBLL.UpdatePermissions(dto);
                     }
                 }
-                MessageBox.Show("Cập nhật quyền thành công!");
+                MessageBox.Show("Updated susccessfully!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

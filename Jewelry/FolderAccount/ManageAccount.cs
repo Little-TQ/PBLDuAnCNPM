@@ -42,16 +42,16 @@ namespace Jewelry.Account
                 // Đặt tên cột hiển thị
                 if (dgvManageAccount.Columns.Count > 0)
                 {
-                    dgvManageAccount.Columns["idAccount"].HeaderText = "Mã TK";
-                    dgvManageAccount.Columns["Username"].HeaderText = "Tên đăng nhập";
-                    dgvManageAccount.Columns["Password"].HeaderText = "Mật khẩu";
-                    dgvManageAccount.Columns["RoleName"].HeaderText = "Vai trò";
-                    dgvManageAccount.Columns["IsActive"].HeaderText = "Trạng thái";
+                    dgvManageAccount.Columns["idAccount"].HeaderText = "ID";
+                    dgvManageAccount.Columns["Username"].HeaderText = "Username";
+                    dgvManageAccount.Columns["Password"].HeaderText = "Password";
+                    dgvManageAccount.Columns["RoleName"].HeaderText = "Role";
+                    dgvManageAccount.Columns["IsActive"].HeaderText = "Status";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
