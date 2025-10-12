@@ -19,7 +19,7 @@ namespace Jewelry
             Application.SetCompatibleTextRenderingDefault(false);
             SetProcessDPIAware();
 
-            Application.Run(new Employee());
+            Application.Run(new HomePage());
 
         }
         [DllImport("user32.dll")]

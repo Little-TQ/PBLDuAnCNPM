@@ -80,9 +80,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 24);
+            this.label1.Size = new System.Drawing.Size(116, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Giá Hiện Tại";
+            this.label1.Text = "Current Price";
             // 
             // txtPricenow
             // 
@@ -163,9 +163,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(13, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.Size = new System.Drawing.Size(72, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Thay Đổi";
+            this.label2.Text = "Change";
             // 
             // guna2Panel3
             // 
@@ -214,9 +214,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(29, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 24);
+            this.label6.Size = new System.Drawing.Size(109, 24);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Cập Nhật Lần Cuối: ";
+            this.label6.Text = "Last Update";
             // 
             // label5
             // 
@@ -225,9 +225,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(29, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 24);
+            this.label5.Size = new System.Drawing.Size(115, 24);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Giá Thấp Nhất:";
+            this.label5.Text = "Lowest Price";
             // 
             // txtMinChangePrice
             // 
@@ -259,9 +259,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(29, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 24);
+            this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Giá Cao Nhất: ";
+            this.label4.Text = "Highest Price";
             // 
             // txtMaxChangePrice
             // 
@@ -293,9 +293,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(13, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 26);
+            this.label3.Size = new System.Drawing.Size(178, 26);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Thông Tin Thị Trường";
+            this.label3.Text = "Market Information";
             // 
             // chart1
             // 
@@ -373,9 +373,9 @@
             this.label10.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(19, 259);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 24);
+            this.label10.Size = new System.Drawing.Size(77, 24);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Chất Liệu:";
+            this.label10.Text = "Material";
             // 
             // DateTimeUpdatePrice
             // 
@@ -400,9 +400,9 @@
             this.label9.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(19, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 24);
+            this.label9.Size = new System.Drawing.Size(87, 24);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Thời Gian:";
+            this.label9.Text = "DateTime";
             // 
             // txtEnterChangePrice
             // 
@@ -431,9 +431,9 @@
             this.label8.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(19, 366);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 24);
+            this.label8.Size = new System.Drawing.Size(135, 24);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Giá Thay Đổi: ";
+            this.label8.Text = "Changing Price";
             // 
             // btnChangeMonth
             // 
@@ -450,7 +450,7 @@
             this.btnChangeMonth.Name = "btnChangeMonth";
             this.btnChangeMonth.Size = new System.Drawing.Size(123, 45);
             this.btnChangeMonth.TabIndex = 2;
-            this.btnChangeMonth.Text = "Trong Tháng";
+            this.btnChangeMonth.Text = "Month";
             // 
             // btnChangeDate
             // 
@@ -466,7 +466,7 @@
             this.btnChangeDate.Name = "btnChangeDate";
             this.btnChangeDate.Size = new System.Drawing.Size(114, 45);
             this.btnChangeDate.TabIndex = 1;
-            this.btnChangeDate.Text = "Trong Ngày";
+            this.btnChangeDate.Text = "Day";
             // 
             // label7
             // 
@@ -474,9 +474,9 @@
             this.label7.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(19, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 24);
+            this.label7.Size = new System.Drawing.Size(117, 24);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Biểu Đồ Giá Vàng";
+            this.label7.Text = "Update Price";
             // 
             // btnReturnUpDate
             // 

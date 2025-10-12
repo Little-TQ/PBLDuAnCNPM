@@ -9,25 +9,27 @@ namespace Jewelry.DAL
     {
         private DBConnect db = new DBConnect();
 
-        // Lấy toàn bộ lịch sử cập nhật giá (hoặc riêng theo chất liệu)
+        //Lấy toàn bộ lịch sử cập nhật giá (hoặc theo chất liệu)
         public DataTable GetAllUpdatePrices(string idMaterial = null)
         {
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
+
                 string query = @"
                     SELECT 
-                        m.NameMaterial AS [Chất Liệu],
-                        FORMAT(up.Price, 'N0') AS [Giá],
-                        FORMAT(up.ChangePrice, 'N0') AS [Thay Đổi],
-                        CONVERT(VARCHAR(5), up.UpdateTime, 108) + ' ' + CONVERT(VARCHAR(10), up.UpdateTime, 103) AS [Thời Gian]
+                        m.NameMaterial AS [Material],
+                        FORMAT(up.Price, 'N0') AS [Price],
+                        FORMAT(up.ChangePrice, 'N0') AS [Change],
+                        CONVERT(VARCHAR(5), up.UpdateTime, 108) + ' ' +
+                        CONVERT(VARCHAR(10), up.UpdateTime, 103) AS [Time]
                     FROM UpdatePrice up
                     INNER JOIN Material m ON up.idMaterial = m.idMaterial";
 
                 if (!string.IsNullOrEmpty(idMaterial))
                     query += " WHERE up.idMaterial = @idMaterial";
 
-                query += " ORDER BY up.UpdateTime DESC";
+                query += " ORDER BY up.UpdateTime ASC";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 if (!string.IsNullOrEmpty(idMaterial))
@@ -68,8 +70,8 @@ namespace Jewelry.DAL
             {
                 conn.Open();
                 string query = @"
-                    SELECT TOP 1 Price 
-                    FROM UpdatePrice 
+                    SELECT TOP 1 Price
+                    FROM UpdatePrice
                     WHERE idMaterial = @idMaterial
                     ORDER BY UpdateTime DESC";
 
@@ -94,7 +96,8 @@ namespace Jewelry.DAL
                 return dt;
             }
         }
-        // Lấy thống kê giá (cao nhất, thấp nhất, cập nhật gần nhất)
+
+        //Lấy thống kê giá (cao nhất, thấp nhất, cập nhật gần nhất)
         public DataTable GetPriceStatistics(string idMaterial)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -118,7 +121,7 @@ namespace Jewelry.DAL
             }
         }
 
-        //Lấy bản ghi gần nhất (Giá + Thay đổi)
+        //Lấy giá + thay đổi mới nhất cho 1 chất liệu
         public (decimal Price, decimal Change) GetLatestPriceAndChange(string idMaterial)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -128,7 +131,7 @@ namespace Jewelry.DAL
                     SELECT TOP 1 Price, ChangePrice
                     FROM UpdatePrice
                     WHERE idMaterial = @idMaterial
-                    ORDER BY UpdateTime DESC";
+                    ORDER BY UpdateTime ASC";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
@@ -141,6 +144,47 @@ namespace Jewelry.DAL
                     return (price, change);
                 }
                 return (0, 0);
+            }
+        }
+
+        //Lấy bản ghi mới nhất (DataRow)
+        public DataRow GetLatestPriceInfo(string idMaterial)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                    SELECT TOP 1 Price, ChangePrice, UpdateTime
+                    FROM UpdatePrice
+                    WHERE idMaterial = @idMaterial";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                return dt.Rows.Count > 0 ? dt.Rows[0] : null;
+            }
+        }
+
+        // Cập nhật cột PriceSilver trong Product Công thức: PriceSilver = (newPrice * Weight) + Cost
+        public bool UpdateProductPriceByMaterial(string idMaterial, decimal newPrice)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                    UPDATE Product
+                    SET PriceSilver = (@newPrice * Weight) + Wage
+                    WHERE idMaterial = @idMaterial";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
+                cmd.Parameters.AddWithValue("@newPrice", newPrice);
+
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
     }
