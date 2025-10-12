@@ -59,26 +59,15 @@ namespace Jewelry
 
                 currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
 
-                // Lấy thông tin giá mới nhất từ DB
-                DataRow latest = updateBLL.GetLatestPriceInfo(currentMaterialId);
-                if (latest != null)
-                {
-                    currentPrice = Convert.ToDecimal(latest["Price"]);
-                    decimal change = Convert.ToDecimal(latest["ChangePrice"]);
+                //Lấy tuple (Price, Change)
+                var info = updateBLL.GetLatestPriceAndChange(currentMaterialId);
+                currentPrice = info.Price;
 
-                    txtPricenow.Text = $"{currentPrice:N0} VND";
-                    txtChange.Text = (change >= 0 ? "+" : "") + $"{change:N0}";
-                    txtChange.ForeColor = change >= 0 ? Color.Green : Color.Red;
-                }
-                else
-                {
-                    currentPrice = 0;
-                    txtPricenow.Text = "0 VND";
-                    txtChange.Text = "0";
-                    txtChange.ForeColor = Color.Black;
-                }
+                txtPricenow.Text = $"{currentPrice:N0} VND";
+                txtChange.Text = (info.Change >= 0 ? "+" : "") + $"{info.Change:N0}";
+                txtChange.ForeColor = info.Change >= 0 ? Color.Green : Color.Red;
 
-                // Load bảng và thống kê
+                // Load lại DataGridView & thống kê
                 LoadPriceHistoryByMaterial(currentMaterialId);
                 UpdateStatistics(currentMaterialId);
             }
@@ -138,12 +127,11 @@ namespace Jewelry
             }
         }
 
-        //Nút hoàn tất cập nhật giá
+        // Nút hoàn tất cập nhật giá
         private void btnCompleteUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                // Kiểm tra dữ liệu nhập
                 string validationResult = updateBLL.ValidatePriceUpdate(txtEnterChangePrice.Text, currentMaterialId);
                 if (validationResult != "VALID")
                 {
@@ -153,7 +141,6 @@ namespace Jewelry
 
                 decimal newPrice = decimal.Parse(txtEnterChangePrice.Text);
                 DateTime updateTime = DateTimeUpdatePrice.Value;
-                decimal changeAmount = newPrice - currentPrice;
 
                 UpdateDTO updateDTO = new UpdateDTO
                 {
@@ -161,45 +148,43 @@ namespace Jewelry
                     idMaterial = currentMaterialId,
                     UpdateTime = updateTime,
                     Price = newPrice,
-                    ChangePrice = changeAmount
+                    ChangePrice = 0
                 };
 
                 bool success = updateBLL.UpdatePrice(updateDTO);
 
                 if (success)
                 {
-                    MessageBox.Show("Updated Successfully!", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("✅ Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Reload giá mới từ DB
-                    DataRow latest = updateBLL.GetLatestPriceInfo(currentMaterialId);
+                    // Sau khi cập nhật, đọc lại dòng mới nhất để cập nhật UI
+                    DataRow latest = updateBLL.GetLatestRowByMaterial(currentMaterialId);
                     if (latest != null)
                     {
                         currentPrice = Convert.ToDecimal(latest["Price"]);
-                        txtPricenow.Text = $"{currentPrice:N0} VND";
-
                         decimal change = Convert.ToDecimal(latest["ChangePrice"]);
+
+                        txtPricenow.Text = $"{currentPrice:N0} VND";
                         txtChange.Text = (change >= 0 ? "+" : "") + $"{change:N0}";
                         txtChange.ForeColor = change >= 0 ? Color.Green : Color.Red;
                     }
 
-                    // Reload DataGridView & thống kê
                     LoadPriceHistoryByMaterial(currentMaterialId);
                     UpdateStatistics(currentMaterialId);
                     txtEnterChangePrice.Clear();
                 }
                 else
                 {
-                    MessageBox.Show(" Update failed!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Update failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         // Nút quay lại Dashboard
         private void btnReturnUpDate_Click(object sender, EventArgs e)

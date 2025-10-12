@@ -17,19 +17,19 @@ namespace Jewelry.DAL
                 conn.Open();
 
                 string query = @"
-                    SELECT 
-                        m.NameMaterial AS [Material],
-                        FORMAT(up.Price, 'N0') AS [Price],
-                        FORMAT(up.ChangePrice, 'N0') AS [Change],
-                        CONVERT(VARCHAR(5), up.UpdateTime, 108) + ' ' +
-                        CONVERT(VARCHAR(10), up.UpdateTime, 103) AS [Time]
-                    FROM UpdatePrice up
-                    INNER JOIN Material m ON up.idMaterial = m.idMaterial";
+            SELECT 
+                m.NameMaterial AS [Material],
+                FORMAT(up.Price, 'N0') AS [Price],
+                FORMAT(up.ChangePrice, 'N0') AS [Change],
+                CONVERT(VARCHAR(5), up.UpdateTime, 108) + ' ' +
+                CONVERT(VARCHAR(10), up.UpdateTime, 103) AS [Time]
+            FROM UpdatePrice up
+            INNER JOIN Material m ON up.idMaterial = m.idMaterial";
 
                 if (!string.IsNullOrEmpty(idMaterial))
                     query += " WHERE up.idMaterial = @idMaterial";
 
-                query += " ORDER BY up.UpdateTime ASC";
+                query += " ORDER BY up.idUpdate ASC"; 
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 if (!string.IsNullOrEmpty(idMaterial))
@@ -42,26 +42,49 @@ namespace Jewelry.DAL
             }
         }
 
-        // Thêm bản ghi mới vào UpdatePrice
+        // InsertUpdatePrice
         public bool InsertUpdatePrice(UpdateDTO update)
         {
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = @"
-                    INSERT INTO UpdatePrice (idUpdate, idMaterial, UpdateTime, Price, ChangePrice)
-                    VALUES (@idUpdate, @idMaterial, @UpdateTime, @Price, @ChangePrice)";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idUpdate", update.idUpdate);
-                cmd.Parameters.AddWithValue("@idMaterial", update.idMaterial);
-                cmd.Parameters.AddWithValue("@UpdateTime", update.UpdateTime);
-                cmd.Parameters.AddWithValue("@Price", update.Price);
-                cmd.Parameters.AddWithValue("@ChangePrice", update.ChangePrice);
+                const string prevQuery = @"
+            SELECT TOP 1 Price
+            FROM UpdatePrice
+            WHERE idMaterial = @idMaterial AND UpdateTime < @UpdateTime
+            ORDER BY UpdateTime DESC";
 
-                return cmd.ExecuteNonQuery() > 0;
+                decimal prevPrice = 0;
+                using (SqlCommand prevCmd = new SqlCommand(prevQuery, conn))
+                {
+                    prevCmd.Parameters.AddWithValue("@idMaterial", update.idMaterial);
+                    prevCmd.Parameters.AddWithValue("@UpdateTime", update.UpdateTime);
+
+                    object prev = prevCmd.ExecuteScalar();
+                    if (prev != null && prev != DBNull.Value)
+                        prevPrice = Convert.ToDecimal(prev);
+                }
+
+                // change = Giá mới - Giá trước đó
+                decimal change = update.Price - prevPrice;
+
+                const string insertQuery = @"
+            INSERT INTO UpdatePrice (idUpdate, idMaterial, UpdateTime, Price, ChangePrice)
+            VALUES (@idUpdate, @idMaterial, @UpdateTime, @Price, @ChangePrice)";
+
+                using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idUpdate", update.idUpdate);
+                    cmd.Parameters.AddWithValue("@idMaterial", update.idMaterial);
+                    cmd.Parameters.AddWithValue("@UpdateTime", update.UpdateTime);
+                    cmd.Parameters.AddWithValue("@Price", update.Price);
+                    cmd.Parameters.AddWithValue("@ChangePrice", change);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
             }
         }
+
 
         // Lấy giá gần nhất của một chất liệu
         public decimal GetCurrentPricePerOunce(string idMaterial)
@@ -104,22 +127,24 @@ namespace Jewelry.DAL
             {
                 conn.Open();
                 string query = @"
-                    SELECT 
-                        MAX(Price) AS MaxPrice,
-                        MIN(Price) AS MinPrice,
-                        MAX(UpdateTime) AS LastUpdateTime
-                    FROM UpdatePrice
-                    WHERE idMaterial = @idMaterial";
+            SELECT 
+                MAX(Price)       AS MaxPrice,
+                MIN(Price)       AS MinPrice,
+                MAX(UpdateTime)  AS LastUpdateTime
+            FROM UpdatePrice
+            WHERE idMaterial = @idMaterial";  
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt;
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
             }
         }
+
 
         //Lấy giá + thay đổi mới nhất cho 1 chất liệu
         public (decimal Price, decimal Change) GetLatestPriceAndChange(string idMaterial)
@@ -127,36 +152,40 @@ namespace Jewelry.DAL
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
+                // lấy bản ghi mới nhất theo idUpdate (vì idUpdate sinh theo thời gian)
                 string query = @"
-                    SELECT TOP 1 Price, ChangePrice
-                    FROM UpdatePrice
-                    WHERE idMaterial = @idMaterial
-                    ORDER BY UpdateTime ASC";
+            SELECT TOP 1 Price, ChangePrice
+            FROM UpdatePrice
+            WHERE idMaterial = @idMaterial
+            ORDER BY idUpdate DESC";   // ✅ thay vì ORDER BY UpdateTime DESC
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    decimal price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0;
-                    decimal change = reader["ChangePrice"] != DBNull.Value ? Convert.ToDecimal(reader["ChangePrice"]) : 0;
-                    return (price, change);
+                    if (reader.Read())
+                    {
+                        decimal price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0;
+                        decimal change = reader["ChangePrice"] != DBNull.Value ? Convert.ToDecimal(reader["ChangePrice"]) : 0;
+                        return (price, change);
+                    }
                 }
                 return (0, 0);
             }
         }
 
         //Lấy bản ghi mới nhất (DataRow)
-        public DataRow GetLatestPriceInfo(string idMaterial)
+        public DataRow GetLatestRowByMaterial(string idMaterial)
         {
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
                 string query = @"
-                    SELECT TOP 1 Price, ChangePrice, UpdateTime
-                    FROM UpdatePrice
-                    WHERE idMaterial = @idMaterial";
+            SELECT TOP 1 Price, ChangePrice, UpdateTime
+            FROM UpdatePrice
+            WHERE idMaterial = @idMaterial
+            ORDER BY idUpdate DESC"; 
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@idMaterial", idMaterial);

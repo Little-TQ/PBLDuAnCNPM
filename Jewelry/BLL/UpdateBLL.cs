@@ -62,10 +62,11 @@ namespace Jewelry.BLL
         }
 
         //Lấy bản ghi mới nhất trong bảng UpdatePrice
-        public DataRow GetLatestPriceInfo(string idMaterial)
+        public DataRow GetLatestRowByMaterial(string idMaterial)
         {
-            return updateDAL.GetLatestPriceInfo(idMaterial);
+            return updateDAL.GetLatestRowByMaterial(idMaterial);
         }
+
 
         // Cập nhật giá mới
         public bool UpdatePrice(UpdateDTO updateDTO)
