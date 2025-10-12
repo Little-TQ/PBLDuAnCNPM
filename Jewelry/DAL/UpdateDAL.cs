@@ -178,7 +178,7 @@ namespace Jewelry.DAL
         //Lấy bản ghi mới nhất (DataRow)
         public DataRow GetLatestRowByMaterial(string idMaterial)
         {
-            using (SqlConnection conn = db.GetConnection())
+           using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
                 string query = @"

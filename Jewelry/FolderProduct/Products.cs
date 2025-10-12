@@ -170,6 +170,33 @@ namespace Jewelry.FolderProduct
                 }
             }
         }
+        //Filter for Product
+        public void FilterProducts(string category, string material, string color)
+        {
+            DataTable dt = productBLL.GetAllProducts();
+            DataView dv = dt.DefaultView;
+
+            // Condition
+            string filter = "";
+
+            if (!string.IsNullOrWhiteSpace(category) && category != "All")
+                filter += $"Category = '{category.Replace("'", "''")}'";
+
+            if (!string.IsNullOrWhiteSpace(material) && material != "All")
+                filter += (filter != "" ? " AND " : "") + $"Material = '{material.Replace("'", "''")}'";
+
+            if (!string.IsNullOrWhiteSpace(color) && color != "All")
+                filter += (filter != "" ? " AND " : "") + $"Color = '{color.Replace("'", "''")}'";
+
+
+            // Apply
+            dv.RowFilter = filter;
+            dgvProduct.DataSource = dv.ToTable();
+
+            lblTotal.Text = "Total Product: " + dgvProduct.Rows.Count;
+            ShowThumbnail();
+        }
+
 
         private void dgvProduct_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
