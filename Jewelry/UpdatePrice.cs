@@ -184,15 +184,72 @@ namespace Jewelry
             }
         }
 
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Page_Account frm = new Page_Account();
+            this.Hide();
+            frm.ShowDialog();
+        }
 
+        private void overviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Page_Overview frm = new Page_Overview();
+            this.Hide();
+            frm.ShowDialog();
+        }
 
-        // Nút quay lại Dashboard
-        private void btnReturnUpDate_Click(object sender, EventArgs e)
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer frm = new Customer();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Employee frm = new Employee();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Sale_Select frm = new Payment_Sale_Select();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void repurchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Repurchase_Select frm = new Payment_Repurchase_Select();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_PreOrder_Select frm= new Payment_PreOrder_Select();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Invoice frm = new Invoice();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DashBoard frm = new DashBoard();
             this.Hide();
             frm.ShowDialog();
-            this.Close();
         }
     }
 }

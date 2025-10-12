@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPricenow = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -59,18 +59,29 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtEnterChangePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnChangeMonth = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChangeDate = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnReturnUpDate = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewChangePrice = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.overviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChangePrice)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,7 +126,7 @@
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.Controls.Add(this.txtPricenow);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(383, 53);
+            this.guna2Panel1.Location = new System.Drawing.Point(383, 120);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(211, 112);
             this.guna2Panel1.TabIndex = 2;
@@ -127,7 +138,7 @@
             this.guna2Panel2.Controls.Add(this.txtChange);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(610, 53);
+            this.guna2Panel2.Location = new System.Drawing.Point(610, 120);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(212, 112);
             this.guna2Panel2.TabIndex = 3;
@@ -178,7 +189,7 @@
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Controls.Add(this.txtMaxChangePrice);
             this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Location = new System.Drawing.Point(383, 188);
+            this.guna2Panel3.Location = new System.Drawing.Point(383, 255);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(439, 224);
             this.guna2Panel3.TabIndex = 3;
@@ -299,17 +310,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(367, 439);
+            chartArea13.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chart1.Legends.Add(legend13);
+            this.chart1.Location = new System.Drawing.Point(367, 506);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series13.ChartArea = "ChartArea1";
+            series13.Legend = "Legend1";
+            series13.Name = "Series1";
+            this.chart1.Series.Add(series13);
             this.chart1.Size = new System.Drawing.Size(506, 355);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -323,12 +334,10 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtEnterChangePrice);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.btnChangeMonth);
-            this.panel2.Controls.Add(this.btnChangeDate);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(45, 472);
+            this.panel2.Location = new System.Drawing.Point(45, 506);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 540);
+            this.panel2.Size = new System.Drawing.Size(316, 473);
             this.panel2.TabIndex = 6;
             // 
             // btnCompleteUpdate
@@ -343,7 +352,7 @@
             this.btnCompleteUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCompleteUpdate.Image = global::Jewelry.Properties.Resources.Tick;
             this.btnCompleteUpdate.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCompleteUpdate.Location = new System.Drawing.Point(254, 482);
+            this.btnCompleteUpdate.Location = new System.Drawing.Point(254, 414);
             this.btnCompleteUpdate.Name = "btnCompleteUpdate";
             this.btnCompleteUpdate.PressedColor = System.Drawing.Color.Lime;
             this.btnCompleteUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -361,7 +370,7 @@
             this.cbxMaterialUpdate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxMaterialUpdate.ForeColor = System.Drawing.Color.Silver;
             this.cbxMaterialUpdate.ItemHeight = 30;
-            this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 286);
+            this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 218);
             this.cbxMaterialUpdate.Name = "cbxMaterialUpdate";
             this.cbxMaterialUpdate.Size = new System.Drawing.Size(271, 36);
             this.cbxMaterialUpdate.TabIndex = 14;
@@ -371,7 +380,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 259);
+            this.label10.Location = new System.Drawing.Point(19, 191);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 24);
             this.label10.TabIndex = 13;
@@ -385,7 +394,7 @@
             this.DateTimeUpdatePrice.FillColor = System.Drawing.Color.Khaki;
             this.DateTimeUpdatePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimeUpdatePrice.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTimeUpdatePrice.Location = new System.Drawing.Point(23, 161);
+            this.DateTimeUpdatePrice.Location = new System.Drawing.Point(23, 93);
             this.DateTimeUpdatePrice.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimeUpdatePrice.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimeUpdatePrice.Name = "DateTimeUpdatePrice";
@@ -398,7 +407,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 134);
+            this.label9.Location = new System.Drawing.Point(19, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 24);
             this.label9.TabIndex = 8;
@@ -417,7 +426,7 @@
             this.txtEnterChangePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEnterChangePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEnterChangePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 404);
+            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 336);
             this.txtEnterChangePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEnterChangePrice.Name = "txtEnterChangePrice";
             this.txtEnterChangePrice.PlaceholderText = "";
@@ -429,44 +438,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 366);
+            this.label8.Location = new System.Drawing.Point(19, 298);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 24);
             this.label8.TabIndex = 3;
             this.label8.Text = "Changing Price";
-            // 
-            // btnChangeMonth
-            // 
-            this.btnChangeMonth.BackColor = System.Drawing.SystemColors.Control;
-            this.btnChangeMonth.BorderRadius = 8;
-            this.btnChangeMonth.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeMonth.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeMonth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChangeMonth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangeMonth.FillColor = System.Drawing.SystemColors.Control;
-            this.btnChangeMonth.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btnChangeMonth.Location = new System.Drawing.Point(171, 50);
-            this.btnChangeMonth.Name = "btnChangeMonth";
-            this.btnChangeMonth.Size = new System.Drawing.Size(123, 45);
-            this.btnChangeMonth.TabIndex = 2;
-            this.btnChangeMonth.Text = "Month";
-            // 
-            // btnChangeDate
-            // 
-            this.btnChangeDate.BorderRadius = 8;
-            this.btnChangeDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChangeDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangeDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btnChangeDate.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeDate.ForeColor = System.Drawing.Color.White;
-            this.btnChangeDate.Location = new System.Drawing.Point(23, 50);
-            this.btnChangeDate.Name = "btnChangeDate";
-            this.btnChangeDate.Size = new System.Drawing.Size(114, 45);
-            this.btnChangeDate.TabIndex = 1;
-            this.btnChangeDate.Text = "Day";
             // 
             // label7
             // 
@@ -478,29 +454,11 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Update Price";
             // 
-            // btnReturnUpDate
-            // 
-            this.btnReturnUpDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnUpDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReturnUpDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReturnUpDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReturnUpDate.FillColor = System.Drawing.Color.White;
-            this.btnReturnUpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReturnUpDate.ForeColor = System.Drawing.Color.White;
-            this.btnReturnUpDate.Image = global::Jewelry.Properties.Resources.Return;
-            this.btnReturnUpDate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnReturnUpDate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReturnUpDate.Location = new System.Drawing.Point(12, 8);
-            this.btnReturnUpDate.Name = "btnReturnUpDate";
-            this.btnReturnUpDate.Size = new System.Drawing.Size(50, 36);
-            this.btnReturnUpDate.TabIndex = 8;
-            this.btnReturnUpDate.Click += new System.EventHandler(this.btnReturnUpDate_Click);
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Jewelry.Properties.Resources.Update;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(45, 53);
+            this.panel1.Location = new System.Drawing.Point(45, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 359);
             this.panel1.TabIndex = 0;
@@ -508,50 +466,50 @@
             // dataGridViewChangePrice
             // 
             this.dataGridViewChangePrice.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewChangePrice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewChangePrice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewChangePrice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("Inter", 10F);
+            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewChangePrice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
             this.dataGridViewChangePrice.ColumnHeadersHeight = 60;
             this.dataGridViewChangePrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewChangePrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle63.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle63.Font = new System.Drawing.Font("Inter", 8F);
+            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewChangePrice.DefaultCellStyle = dataGridViewCellStyle63;
             this.dataGridViewChangePrice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridViewChangePrice.Location = new System.Drawing.Point(850, 53);
+            this.dataGridViewChangePrice.Location = new System.Drawing.Point(850, 35);
             this.dataGridViewChangePrice.Name = "dataGridViewChangePrice";
             this.dataGridViewChangePrice.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewChangePrice.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle64.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle64.Font = new System.Drawing.Font("Inter", 8F);
+            dataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewChangePrice.RowHeadersDefaultCellStyle = dataGridViewCellStyle64;
             this.dataGridViewChangePrice.RowHeadersVisible = false;
             this.dataGridViewChangePrice.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewChangePrice.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewChangePrice.RowsDefaultCellStyle = dataGridViewCellStyle65;
             this.dataGridViewChangePrice.RowTemplate.Height = 50;
-            this.dataGridViewChangePrice.Size = new System.Drawing.Size(549, 940);
+            this.dataGridViewChangePrice.Size = new System.Drawing.Size(549, 958);
             this.dataGridViewChangePrice.TabIndex = 15;
             this.dataGridViewChangePrice.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewChangePrice.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -575,14 +533,124 @@
             this.dataGridViewChangePrice.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewChangePrice.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(45, 47);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(287, 43);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountToolStripMenuItem,
+            this.overviewToolStripMenuItem,
+            this.customerToolStripMenuItem,
+            this.employeeToolStripMenuItem,
+            this.paymentToolStripMenuItem,
+            this.invoiceToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.dashBoardToolStripMenuItem});
+            this.homeToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.homeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(129, 39);
+            this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
+            // 
+            // overviewToolStripMenuItem
+            // 
+            this.overviewToolStripMenuItem.Name = "overviewToolStripMenuItem";
+            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.overviewToolStripMenuItem.Text = "Overview";
+            this.overviewToolStripMenuItem.Click += new System.EventHandler(this.overviewToolStripMenuItem_Click);
+            // 
+            // customerToolStripMenuItem
+            // 
+            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saleToolStripMenuItem,
+            this.repurchaseToolStripMenuItem,
+            this.preOrderToolStripMenuItem});
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // saleToolStripMenuItem
+            // 
+            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
+            // 
+            // repurchaseToolStripMenuItem
+            // 
+            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
+            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.repurchaseToolStripMenuItem.Text = "Repurchase";
+            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
+            // 
+            // preOrderToolStripMenuItem
+            // 
+            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
+            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
+            this.preOrderToolStripMenuItem.Text = "Pre-Order";
+            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
+            // 
+            // invoiceToolStripMenuItem
+            // 
+            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.invoiceToolStripMenuItem.Text = "Invoice";
+            this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.invoiceToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // dashBoardToolStripMenuItem
+            // 
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
+            this.dashBoardToolStripMenuItem.Text = "DashBoard";
+            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
+            // 
             // UpdatePrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridViewChangePrice);
-            this.Controls.Add(this.btnReturnUpDate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.guna2Panel3);
@@ -604,7 +672,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChangePrice)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -627,17 +698,27 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btnChangeDate;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2Button btnChangeMonth;
         private Guna.UI2.WinForms.Guna2TextBox txtEnterChangePrice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeUpdatePrice;
-        private Guna.UI2.WinForms.Guna2Button btnReturnUpDate;
         private Guna.UI2.WinForms.Guna2CircleButton btnCompleteUpdate;
         private Guna.UI2.WinForms.Guna2ComboBox cbxMaterialUpdate;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewChangePrice;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem overviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repurchaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
     }
 }
