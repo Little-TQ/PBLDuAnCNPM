@@ -443,6 +443,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "Schedule";
             this.Size = new System.Drawing.Size(1439, 805);
+            this.Load += new System.EventHandler(this.Schedule_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

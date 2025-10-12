@@ -28,32 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpSalaryView = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnEditSalaryEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewSalaaryEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveSalaryEmployee = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewSalary = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchSalaryEmployee = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dataGridViewSalary = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvSalaryView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaryView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Controls.Add(this.cbxRole);
+            this.panel3.Controls.Add(this.dtpSalaryView);
             this.panel3.Controls.Add(this.btnEditSalaryEmployee);
-            this.panel3.Controls.Add(this.btnViewSalaaryEmployee);
-            this.panel3.Controls.Add(this.btnSaveSalaryEmployee);
+            this.panel3.Controls.Add(this.btnViewSalary);
             this.panel3.Controls.Add(this.txtSearchSalaryEmployee);
             this.panel3.Location = new System.Drawing.Point(0, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1438, 99);
             this.panel3.TabIndex = 6;
+            // 
+            // cbxRole
+            // 
+            this.cbxRole.BackColor = System.Drawing.Color.Transparent;
+            this.cbxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxRole.ItemHeight = 30;
+            this.cbxRole.Location = new System.Drawing.Point(844, 30);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.Size = new System.Drawing.Size(156, 36);
+            this.cbxRole.TabIndex = 21;
+            this.cbxRole.SelectedIndexChanged += new System.EventHandler(this.cbxRole_SelectedIndexChanged);
+            // 
+            // dtpSalaryView
+            // 
+            this.dtpSalaryView.Checked = true;
+            this.dtpSalaryView.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.dtpSalaryView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpSalaryView.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtpSalaryView.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSalaryView.Location = new System.Drawing.Point(654, 30);
+            this.dtpSalaryView.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpSalaryView.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpSalaryView.Name = "dtpSalaryView";
+            this.dtpSalaryView.Size = new System.Drawing.Size(132, 36);
+            this.dtpSalaryView.TabIndex = 20;
+            this.dtpSalaryView.Value = new System.DateTime(2025, 10, 9, 14, 22, 51, 122);
+            this.dtpSalaryView.ValueChanged += new System.EventHandler(this.dtpSalaryView_ValueChanged);
             // 
             // btnEditSalaryEmployee
             // 
@@ -75,48 +109,29 @@
             this.btnEditSalaryEmployee.PressedColor = System.Drawing.Color.Yellow;
             this.btnEditSalaryEmployee.Size = new System.Drawing.Size(50, 50);
             this.btnEditSalaryEmployee.TabIndex = 5;
+            this.btnEditSalaryEmployee.Click += new System.EventHandler(this.btnEditSalaryEmployee_Click);
             // 
-            // btnViewSalaaryEmployee
+            // btnViewSalary
             // 
-            this.btnViewSalaaryEmployee.BackColor = System.Drawing.Color.White;
-            this.btnViewSalaaryEmployee.BorderRadius = 12;
-            this.btnViewSalaaryEmployee.BorderThickness = 1;
-            this.btnViewSalaaryEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewSalaaryEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewSalaaryEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewSalaaryEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewSalaaryEmployee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnViewSalaaryEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewSalaaryEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnViewSalaaryEmployee.Image = global::Jewelry.Properties.Resources.View;
-            this.btnViewSalaaryEmployee.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnViewSalaaryEmployee.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnViewSalaaryEmployee.Location = new System.Drawing.Point(1292, 21);
-            this.btnViewSalaaryEmployee.Name = "btnViewSalaaryEmployee";
-            this.btnViewSalaaryEmployee.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnViewSalaaryEmployee.Size = new System.Drawing.Size(50, 50);
-            this.btnViewSalaaryEmployee.TabIndex = 4;
-            // 
-            // btnSaveSalaryEmployee
-            // 
-            this.btnSaveSalaryEmployee.BackColor = System.Drawing.Color.White;
-            this.btnSaveSalaryEmployee.BorderRadius = 12;
-            this.btnSaveSalaryEmployee.BorderThickness = 1;
-            this.btnSaveSalaryEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveSalaryEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveSalaryEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveSalaryEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveSalaryEmployee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSaveSalaryEmployee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveSalaryEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnSaveSalaryEmployee.Image = global::Jewelry.Properties.Resources.Save;
-            this.btnSaveSalaryEmployee.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnSaveSalaryEmployee.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSaveSalaryEmployee.Location = new System.Drawing.Point(1079, 21);
-            this.btnSaveSalaryEmployee.Name = "btnSaveSalaryEmployee";
-            this.btnSaveSalaryEmployee.PressedColor = System.Drawing.Color.LightGreen;
-            this.btnSaveSalaryEmployee.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveSalaryEmployee.TabIndex = 1;
+            this.btnViewSalary.BackColor = System.Drawing.Color.White;
+            this.btnViewSalary.BorderRadius = 12;
+            this.btnViewSalary.BorderThickness = 1;
+            this.btnViewSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnViewSalary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewSalary.ForeColor = System.Drawing.Color.White;
+            this.btnViewSalary.Image = global::Jewelry.Properties.Resources.View;
+            this.btnViewSalary.ImageOffset = new System.Drawing.Point(1, 0);
+            this.btnViewSalary.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnViewSalary.Location = new System.Drawing.Point(1292, 21);
+            this.btnViewSalary.Name = "btnViewSalary";
+            this.btnViewSalary.PressedColor = System.Drawing.Color.LightGreen;
+            this.btnViewSalary.Size = new System.Drawing.Size(50, 50);
+            this.btnViewSalary.TabIndex = 4;
+            this.btnViewSalary.Click += new System.EventHandler(this.btnViewSalary_Click);
             // 
             // txtSearchSalaryEmployee
             // 
@@ -140,88 +155,91 @@
             this.txtSearchSalaryEmployee.SelectedText = "";
             this.txtSearchSalaryEmployee.Size = new System.Drawing.Size(468, 45);
             this.txtSearchSalaryEmployee.TabIndex = 0;
+            this.txtSearchSalaryEmployee.TextChanged += new System.EventHandler(this.txtSearchSalaryEmployee_TextChanged);
+            this.txtSearchSalaryEmployee.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchSalaryEmployee_KeyDown);
             // 
-            // dataGridViewSalary
+            // dgvSalaryView
             // 
-            this.dataGridViewSalary.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewSalary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSalary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewSalary.ColumnHeadersHeight = 60;
-            this.dataGridViewSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSalary.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewSalary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridViewSalary.Location = new System.Drawing.Point(27, 118);
-            this.dataGridViewSalary.Name = "dataGridViewSalary";
-            this.dataGridViewSalary.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSalary.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewSalary.RowHeadersVisible = false;
-            this.dataGridViewSalary.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewSalary.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewSalary.RowTemplate.Height = 50;
-            this.dataGridViewSalary.Size = new System.Drawing.Size(1358, 668);
-            this.dataGridViewSalary.TabIndex = 15;
-            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataGridViewSalary.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewSalary.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridViewSalary.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridViewSalary.ThemeStyle.HeaderStyle.Height = 60;
-            this.dataGridViewSalary.ThemeStyle.ReadOnly = true;
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.Height = 50;
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridViewSalary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSalaryView.AllowUserToAddRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSalaryView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalaryView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvSalaryView.ColumnHeadersHeight = 60;
+            this.dgvSalaryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Inter", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalaryView.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvSalaryView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvSalaryView.Location = new System.Drawing.Point(27, 118);
+            this.dgvSalaryView.Name = "dgvSalaryView";
+            this.dgvSalaryView.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalaryView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvSalaryView.RowHeadersVisible = false;
+            this.dgvSalaryView.RowHeadersWidth = 51;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSalaryView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvSalaryView.RowTemplate.Height = 50;
+            this.dgvSalaryView.Size = new System.Drawing.Size(1358, 668);
+            this.dgvSalaryView.TabIndex = 15;
+            this.dgvSalaryView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSalaryView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvSalaryView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvSalaryView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvSalaryView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvSalaryView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSalaryView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvSalaryView.ThemeStyle.HeaderStyle.Height = 60;
+            this.dgvSalaryView.ThemeStyle.ReadOnly = true;
+            this.dgvSalaryView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSalaryView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSalaryView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSalaryView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSalaryView.ThemeStyle.RowsStyle.Height = 50;
+            this.dgvSalaryView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvSalaryView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSalaryView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalaryView_CellDoubleClick);
             // 
             // Salary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridViewSalary);
+            this.Controls.Add(this.dgvSalaryView);
             this.Controls.Add(this.panel3);
             this.Name = "Salary";
             this.Size = new System.Drawing.Size(1439, 805);
             this.Load += new System.EventHandler(this.Salary_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaryView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,10 +247,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnViewSalaaryEmployee;
-        private Guna.UI2.WinForms.Guna2Button btnSaveSalaryEmployee;
+        private Guna.UI2.WinForms.Guna2Button btnViewSalary;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchSalaryEmployee;
         private Guna.UI2.WinForms.Guna2Button btnEditSalaryEmployee;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewSalary;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvSalaryView;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxRole;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpSalaryView;
     }
 }

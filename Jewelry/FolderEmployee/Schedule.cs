@@ -46,14 +46,14 @@ namespace Jewelry.FolderEmployee
             // Hide ID
             dataGridViewSchedule.Columns["EmployeeID"].Visible = false;
 
-            // IMPORTANT: Set all as ReadOnly initially
+            // Set all as ReadOnly initially
             dataGridViewSchedule.ReadOnly = true;
             dataGridViewSchedule.Columns["EmployeeName"].ReadOnly = true;
             dataGridViewSchedule.Columns["Role"].ReadOnly = true;
             dataGridViewSchedule.Columns["Status"].ReadOnly = true;
             dataGridViewSchedule.Columns["Shift"].ReadOnly = true;
 
-            // IMPORTANT: Set EditMode
+            // Set EditMode
             dataGridViewSchedule.EditMode = DataGridViewEditMode.EditOnEnter;
 
             // Disable add/delete rows
@@ -135,25 +135,24 @@ namespace Jewelry.FolderEmployee
                     string currentStatus = row.Cells["Status"].Value?.ToString() ?? "";
                     string currentShift = row.Cells["Shift"].Value?.ToString() ?? "";
 
-                    // Get original values from the DataTable
-                    string originalStatus = originalData.Rows[i]["Status"].ToString();
-                    string originalShift = originalData.Rows[i]["Shift"].ToString();
+                    
+                    if (string.IsNullOrEmpty(currentStatus))
+                        currentStatus = "";
+                    if (string.IsNullOrEmpty(currentShift))
+                        currentShift = "Full-time"; 
 
-                    // Check if status or shift has changed
-                    if (currentStatus != originalStatus || currentShift != originalShift)
+                    
+                    var schedule = new ScheduleDTO
                     {
-                        var schedule = new ScheduleDTO
-                        {
-                            IdEmployee = employeeId,
-                            EmployeeName = row.Cells["EmployeeName"].Value?.ToString() ?? "",
-                            Role = row.Cells["Role"].Value?.ToString() ?? "",
-                            Status = currentStatus,
-                            Shift = currentShift,
-                            WorkDate = dtpSchedule.Value
-                        };
+                        IdEmployee = employeeId,
+                        EmployeeName = row.Cells["EmployeeName"].Value?.ToString() ?? "",
+                        Role = row.Cells["Role"].Value?.ToString() ?? "",
+                        Status = currentStatus,
+                        Shift = currentShift,
+                        WorkDate = dtpSchedule.Value
+                    };
 
-                        changedSchedules.Add(schedule);
-                    }
+                    changedSchedules.Add(schedule);
                 }
             }
 
@@ -274,7 +273,7 @@ namespace Jewelry.FolderEmployee
             }
         }
 
-        // Update temporary statistics while editing - ĐÃ SỬA
+        // Update temporary statistics while editing 
         private void UpdateTemporaryStatistics()
         {
             if (!isEditing) return;
@@ -308,7 +307,7 @@ namespace Jewelry.FolderEmployee
             txtLate.Text = late.ToString();
         }
 
-        // Method tính số ca dựa trên loại ca - THÊM MỚI
+        // Method tính số ca dựa trên loại ca
         private int CalculateShiftsCount(string shiftType)
         {
             if (string.IsNullOrEmpty(shiftType))
@@ -338,6 +337,11 @@ namespace Jewelry.FolderEmployee
                     UpdateTemporaryStatistics();
                 }
             }
+        }
+
+        private void Schedule_Load(object sender, EventArgs e)
+        {
+            dtpSchedule.Value = DateTime.Today;
         }
     }
 }

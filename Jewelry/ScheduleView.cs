@@ -148,6 +148,7 @@ namespace Jewelry
         private void ScheduleView_Load(object sender, EventArgs e)
         {
             LoadData();
+            dtpScheduleView.Value = DateTime.Now;
         }
 
         private void btnReturnSchedule_Click(object sender, EventArgs e)
