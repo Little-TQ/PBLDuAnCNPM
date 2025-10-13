@@ -19,7 +19,7 @@ namespace Jewelry.FolderEmployee
             InitializeComponent();
             SetupDataGridView();
         }
-
+        //For View
         private void SetupDataGridView()
         {
             dataGridViewSchedule.Columns.Clear();
@@ -342,6 +342,8 @@ namespace Jewelry.FolderEmployee
         private void Schedule_Load(object sender, EventArgs e)
         {
             dtpSchedule.Value = DateTime.Today;
+            UpdateStatistics();
+            LoadEmployeesForAttendance(DateTime.Today);
         }
     }
 }

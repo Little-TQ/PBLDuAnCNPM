@@ -129,7 +129,7 @@ namespace Jewelry.DAL
             }
         }
 
-        // Tạo ID duy nhất - SỬA LẠI
+        // Tạo ID duy nhất 
         private string GenerateUniqueScheduleID()
         {
             using (SqlConnection conn = db.GetConnection())

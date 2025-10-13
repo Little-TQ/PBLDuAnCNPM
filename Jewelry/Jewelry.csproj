@@ -59,6 +59,7 @@
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\PropertyBLL.cs" />
+    <Compile Include="BLL\SalaryBLL.cs" />
     <Compile Include="BLL\ScheduleBLL.cs" />
     <Compile Include="BLL\UpdateBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\PropertyDAL.cs" />
     <Compile Include="DAL\RoleDAL.cs" />
+    <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\ScheduleDAL.cs" />
     <Compile Include="DAL\UpdateDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\SalaryDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="DTO\Session.cs" />
     <Compile Include="DTO\UpdateDTO.cs" />
@@ -173,6 +176,12 @@
     </Compile>
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryEdit.Designer.cs">
+      <DependentUpon>SalaryEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="ScheduleView.cs">
       <SubType>Form</SubType>
@@ -359,6 +368,7 @@
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalaryEdit.resx" />
     <EmbeddedResource Include="ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>

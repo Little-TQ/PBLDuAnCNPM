@@ -206,7 +206,7 @@ namespace Jewelry.DAL
                 conn.Open();
                 string query = @"
                     UPDATE Product
-                    SET PriceSilver = (@newPrice * Weight) + Wage
+                    SET PriceSilver = @newPrice 
                     WHERE idMaterial = @idMaterial";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
