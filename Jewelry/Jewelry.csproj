@@ -368,7 +368,9 @@
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalaryEdit.resx" />
+    <EmbeddedResource Include="SalaryEdit.resx">
+      <DependentUpon>SalaryEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>

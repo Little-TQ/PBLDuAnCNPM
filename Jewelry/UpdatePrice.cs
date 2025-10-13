@@ -251,5 +251,12 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Product_View frm = new Product_View();
+            this.Hide();
+            frm.ShowDialog();
+        }
     }
 }

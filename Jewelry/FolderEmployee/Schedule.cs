@@ -18,6 +18,7 @@ namespace Jewelry.FolderEmployee
         {
             InitializeComponent();
             SetupDataGridView();
+
         }
         //For View
         private void SetupDataGridView()
@@ -45,20 +46,9 @@ namespace Jewelry.FolderEmployee
 
             // Hide ID
             dataGridViewSchedule.Columns["EmployeeID"].Visible = false;
-
-            // Set all as ReadOnly initially
-            dataGridViewSchedule.ReadOnly = true;
-            dataGridViewSchedule.Columns["EmployeeName"].ReadOnly = true;
-            dataGridViewSchedule.Columns["Role"].ReadOnly = true;
-            dataGridViewSchedule.Columns["Status"].ReadOnly = true;
-            dataGridViewSchedule.Columns["Shift"].ReadOnly = true;
-
             // Set EditMode
             dataGridViewSchedule.EditMode = DataGridViewEditMode.EditOnEnter;
 
-            // Disable add/delete rows
-            dataGridViewSchedule.AllowUserToAddRows = false;
-            dataGridViewSchedule.AllowUserToDeleteRows = false;
         }
 
         // View Button: Open statistics form
@@ -117,7 +107,6 @@ namespace Jewelry.FolderEmployee
                 statusCell.Value = statusValue;
                 shiftCell.Value = shiftValue;
             }
-
             UpdateStatistics();
         }
 
@@ -135,11 +124,11 @@ namespace Jewelry.FolderEmployee
                     string currentStatus = row.Cells["Status"].Value?.ToString() ?? "";
                     string currentShift = row.Cells["Shift"].Value?.ToString() ?? "";
 
-                    
+                     
                     if (string.IsNullOrEmpty(currentStatus))
                         currentStatus = "";
                     if (string.IsNullOrEmpty(currentShift))
-                        currentShift = "Full-time"; 
+                        currentShift = ""; 
 
                     
                     var schedule = new ScheduleDTO
@@ -221,7 +210,6 @@ namespace Jewelry.FolderEmployee
                 dataGridViewSchedule.ReadOnly = false;
                 dataGridViewSchedule.Columns["Status"].ReadOnly = false;
                 dataGridViewSchedule.Columns["Shift"].ReadOnly = false;
-                dataGridViewSchedule.DefaultCellStyle.BackColor = Color.LightYellow;
 
                 // Ensure combobox can be clicked
                 dataGridViewSchedule.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -244,32 +232,38 @@ namespace Jewelry.FolderEmployee
             try
             {
                 DateTime selectedDate = dtpSchedule.Value;
-                var dt = scheduleBLL.GetMonthlyStatistics(selectedDate);
+                var dt = scheduleBLL.GetDailyStatistics(selectedDate);
 
-                int present = 0, absent = 0, onLeave = 0, late = 0;
-                int totalShifts = 0;
-
-                foreach (DataRow row in dt.Rows)
+                // Nếu dùng Cách 2, chỉ có 1 dòng kết quả
+                if (dt.Rows.Count > 0)
                 {
-                    present += Convert.ToInt32(row["PresentDays"]);
-                    absent += Convert.ToInt32(row["AbsentDays"]);
-                    onLeave += Convert.ToInt32(row["LeaveDays"]);
-                    late += Convert.ToInt32(row["LateCount"]);
+                    DataRow row = dt.Rows[0];
+                    int present = row["PresentDays"] == DBNull.Value ? 0 : Convert.ToInt32(row["PresentDays"]);
+                    int absent = row["AbsentDays"] == DBNull.Value ? 0 : Convert.ToInt32(row["AbsentDays"]);
+                    int onLeave = row["LeaveDays"] == DBNull.Value ? 0 : Convert.ToInt32(row["LeaveDays"]);
+                    int late = row["LateCount"] == DBNull.Value ? 0 : Convert.ToInt32(row["LateCount"]);
 
-                    // Tính tổng số ca theo loại ca
-                    string shiftType = row["Shift"]?.ToString() ?? "";
-                    totalShifts += CalculateShiftsCount(shiftType);
+                    txtPresent.Text = present.ToString();
+                    txtAbsent.Text = absent.ToString();
+                    txtOnLeave.Text = onLeave.ToString();
+                    txtLate.Text = late.ToString();
                 }
-
-                txtPresent.Text = present.ToString();
-                txtAbsent.Text = absent.ToString();
-                txtOnLeave.Text = onLeave.ToString();
-                txtLate.Text = late.ToString();
-
+                else
+                {
+                    // Không có dữ liệu
+                    txtPresent.Text = "0";
+                    txtAbsent.Text = "0";
+                    txtOnLeave.Text = "0";
+                    txtLate.Text = "0";
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Statistics error: " + ex.Message);
+                txtPresent.Text = "0";
+                txtAbsent.Text = "0";
+                txtOnLeave.Text = "0";
+                txtLate.Text = "0";
             }
         }
 
@@ -341,9 +335,23 @@ namespace Jewelry.FolderEmployee
 
         private void Schedule_Load(object sender, EventArgs e)
         {
+
             dtpSchedule.Value = DateTime.Today;
-            UpdateStatistics();
-            LoadEmployeesForAttendance(DateTime.Today);
+            DateTime selectedDate = dtpSchedule.Value;
+            LoadEmployeesForAttendance(selectedDate);
         }
+
+        private void dataGridViewSchedule_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SetEditMode(true);
+            btnEditSchedule.Enabled = true;
+            isEditing = true;
+        }
+        private void dtpSchedule_ValueChanged(object sender, EventArgs e)
+        {
+                DateTime selectedDate = dtpSchedule.Value;
+                LoadEmployeesForAttendance(selectedDate);
+        }
+
     }
 }
