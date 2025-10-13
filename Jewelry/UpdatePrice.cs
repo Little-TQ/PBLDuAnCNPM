@@ -155,7 +155,7 @@ namespace Jewelry
 
                 if (success)
                 {
-                    MessageBox.Show("✅ Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Sau khi cập nhật, đọc lại dòng mới nhất để cập nhật UI
                     DataRow latest = updateBLL.GetLatestRowByMaterial(currentMaterialId);
