@@ -15,6 +15,10 @@ namespace Jewelry.BLL
         {
             return scheduleDAL.GetMonthlyStatistics(month);
         }
+        public DataTable GetDailyStatistics(DateTime date)
+        {
+            return scheduleDAL.GetDailyStatistics(date);
+        }
 
         // Lấy danh sách chấm công
         public DataTable GetEmployeesForAttendance(DateTime workDate)

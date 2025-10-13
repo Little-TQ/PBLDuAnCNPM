@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace Jewelry.DAL
 {
@@ -49,7 +50,30 @@ namespace Jewelry.DAL
                 return dt;
             }
         }
+        // Lấy thống kê theo ngày
 
+        public DataTable GetDailyStatistics(DateTime date)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                COUNT(CASE WHEN Status = 'Present' THEN 1 END) as PresentDays,
+                COUNT(CASE WHEN Status = 'Late' THEN 1 END) as LateCount,
+                COUNT(CASE WHEN Status = 'Absent' THEN 1 END) as AbsentDays,
+                COUNT(CASE WHEN Status = 'On Leave' THEN 1 END) as LeaveDays
+            FROM Schedule 
+            WHERE CAST(WorkDate AS DATE) = @Date";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                adapter.SelectCommand.Parameters.AddWithValue("@Date", date.Date);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
         // Lấy danh sách nhân viên để chấm công
         public DataTable GetEmployeesForAttendance(DateTime workDate)
         {
@@ -78,7 +102,7 @@ namespace Jewelry.DAL
             }
         }
 
-        // Lưu chấm công - SỬA LẠI HOÀN TOÀN
+        // Lưu chấm công
         public bool SaveAttendance(ScheduleDTO schedule)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -165,95 +189,6 @@ namespace Jewelry.DAL
                     // Fallback: sử dụng timestamp nếu không parse được
                     return "SC" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
                 }
-            }
-        }
-
-        // Lấy schedules as List<ScheduleDTO> 
-        public List<ScheduleDTO> GetSchedulesListByDate(DateTime workDate)
-        {
-            List<ScheduleDTO> schedules = new List<ScheduleDTO>();
-
-            using (SqlConnection conn = db.GetConnection())
-            {
-                conn.Open();
-                string query = @"
-                    SELECT 
-                        e.idEmployee,
-                        e.NameEmployee, 
-                        r.RoleName as Role,
-                        ISNULL(s.idSchedule, '') as idSchedule,
-                        ISNULL(s.Status, '') as Status,
-                        ISNULL(s.Shift, '') as Shift
-                    FROM Employee e
-                    INNER JOIN Role r ON e.idRole = r.idRole
-                    LEFT JOIN Schedule s ON e.idEmployee = s.idEmployee AND s.WorkDate = @WorkDate
-                    ORDER BY e.idEmployee";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@WorkDate", workDate.Date);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            ScheduleDTO schedule = new ScheduleDTO
-                            {
-                                IdEmployee = reader["idEmployee"].ToString(),
-                                EmployeeName = reader["NameEmployee"].ToString(),
-                                Role = reader["Role"].ToString(),
-                                IdSchedule = reader["idSchedule"].ToString(),
-                                Status = reader["Status"].ToString(),
-                                WorkDate = workDate,
-                                Shift = reader["Shift"].ToString()
-                            };
-                            schedules.Add(schedule);
-                        }
-                    }
-                }
-            }
-
-            return schedules;
-        }
-
-        // Statistics for attendance
-        public (int present, int absent, int onLeave, int late, int total) GetAttendanceStatistics(DateTime workDate)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                conn.Open();
-                string query = @"
-                    SELECT 
-                        Status, 
-                        COUNT(*) AS Total
-                    FROM Schedule
-                    WHERE WorkDate = @workDate
-                    GROUP BY Status";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@workDate", workDate.Date);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                int present = 0, absent = 0, onLeave = 0, late = 0;
-                int total = 0;
-
-                while (reader.Read())
-                {
-                    string status = reader["Status"].ToString().Trim();
-                    int count = Convert.ToInt32(reader["Total"]);
-                    total += count;
-
-                    switch (status.ToLower())
-                    {
-                        case "present": present = count; break;
-                        case "absent": absent = count; break;
-                        case "on leave": onLeave = count; break;
-                        case "late": late = count; break;
-                    }
-                }
-
-                reader.Close();
-                return (present, absent, onLeave, late, total);
             }
         }
     }
