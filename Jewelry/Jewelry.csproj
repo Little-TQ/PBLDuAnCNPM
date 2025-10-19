@@ -87,6 +87,18 @@
     <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="DTO\Session.cs" />
     <Compile Include="DTO\UpdateDTO.cs" />
+    <Compile Include="FlowLayoutPanel\Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FlowLayoutPanel\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowLayoutPanel\ProductList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FlowLayoutPanel\ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FolderEmployee\Salary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,6 +335,12 @@
     <Compile Include="Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FlowLayoutPanel\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowLayoutPanel\ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FolderEmployee\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
     </EmbeddedResource>
