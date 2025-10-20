@@ -145,19 +145,6 @@ namespace Jewelry
             frm.ShowDialog();
         }
 
-        private void repurchaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_Repurchase_Select frm = new Payment_Repurchase_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
-        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_PreOrder_Select frm = new Payment_PreOrder_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
 
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -34,6 +34,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnReset = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,9 +46,6 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -55,21 +56,17 @@
             this.cbMaterial = new System.Windows.Forms.ComboBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.panelDGV = new System.Windows.Forms.Panel();
-            this.btnReset = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.lblTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.property1 = new Jewelry.FolderProduct.Property();
             this.products1 = new Jewelry.FolderProduct.Products();
             this.navbar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).BeginInit();
             this.panelDGV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -148,6 +145,49 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(833, 9);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(55, 30);
+            this.guna2HtmlLabel2.TabIndex = 50;
+            this.guna2HtmlLabel2.Text = "Color";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(598, 9);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(80, 30);
+            this.guna2HtmlLabel1.TabIndex = 49;
+            this.guna2HtmlLabel1.Text = "Material";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(379, 9);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(91, 30);
+            this.lblTotal.TabIndex = 48;
+            this.lblTotal.Text = "Category";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Image = global::Jewelry.Properties.Resources.EXIT1;
+            this.btnReset.ImageRotate = 0F;
+            this.btnReset.Location = new System.Drawing.Point(1067, 41);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnReset.Size = new System.Drawing.Size(30, 29);
+            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReset.TabIndex = 47;
+            this.btnReset.TabStop = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.menuStrip1);
@@ -217,34 +257,10 @@
             // 
             // paymentToolStripMenuItem
             // 
-            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saleToolStripMenuItem,
-            this.repurchaseToolStripMenuItem,
-            this.preOrderToolStripMenuItem});
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
-            // 
-            // saleToolStripMenuItem
-            // 
-            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.saleToolStripMenuItem.Text = "Sale";
-            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
-            // 
-            // repurchaseToolStripMenuItem
-            // 
-            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
-            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.repurchaseToolStripMenuItem.Text = "Repurchase";
-            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
-            // 
-            // preOrderToolStripMenuItem
-            // 
-            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
-            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.preOrderToolStripMenuItem.Text = "Pre-Order";
-            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // invoiceToolStripMenuItem
             // 
@@ -338,49 +354,6 @@
             this.panelDGV.Size = new System.Drawing.Size(1440, 796);
             this.panelDGV.TabIndex = 3;
             // 
-            // btnReset
-            // 
-            this.btnReset.Image = global::Jewelry.Properties.Resources.EXIT1;
-            this.btnReset.ImageRotate = 0F;
-            this.btnReset.Location = new System.Drawing.Point(1067, 41);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnReset.Size = new System.Drawing.Size(30, 29);
-            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReset.TabIndex = 47;
-            this.btnReset.TabStop = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(379, 9);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(91, 30);
-            this.lblTotal.TabIndex = 48;
-            this.lblTotal.Text = "Category";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(598, 9);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(80, 30);
-            this.guna2HtmlLabel1.TabIndex = 49;
-            this.guna2HtmlLabel1.Text = "Material";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(833, 9);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(55, 30);
-            this.guna2HtmlLabel2.TabIndex = 50;
-            this.guna2HtmlLabel2.Text = "Color";
-            // 
             // property1
             // 
             this.property1.BackColor = System.Drawing.Color.White;
@@ -417,6 +390,7 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -424,7 +398,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).EndInit();
             this.panelDGV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,9 +428,6 @@
         private System.Windows.Forms.Label label11;
         private FolderProduct.Products products1;
         private FolderProduct.Property property1;
-        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem repurchaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btnReset;

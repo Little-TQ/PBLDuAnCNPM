@@ -41,9 +41,6 @@
             this.employeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,35 +179,10 @@
             // 
             // paymentToolStripMenuItem
             // 
-            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saleToolStripMenuItem,
-            this.repurchaseToolStripMenuItem,
-            this.preOrderToolStripMenuItem});
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
-            // 
-            // saleToolStripMenuItem
-            // 
-            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.saleToolStripMenuItem.Text = "Sale";
-            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
-            // 
-            // repurchaseToolStripMenuItem
-            // 
-            this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
-            this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.repurchaseToolStripMenuItem.Text = "Repurchase";
-            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
-            // 
-            // preOrderToolStripMenuItem
-            // 
-            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
-            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.preOrderToolStripMenuItem.Text = "Pre-Order";
-            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
             // 
             // dashBoardToolStripMenuItem
             // 
@@ -285,9 +257,6 @@
         private System.Windows.Forms.ToolStripMenuItem SupplierToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContainerImportInvoice;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem repurchaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Jewelry;
+using Jewelry.BLL;
+using Jewelry.FlowLayoutPanel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,26 +10,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Jewelry
 {
-    public partial class Payment_Repurchase_Select : Form
+    public partial class Payment_Sale_Select : Form
     {
-        public Payment_Repurchase_Select()
+        private PropertyBLL propertyBLL = new PropertyBLL();
+        public Payment_Sale_Select()
         {
             InitializeComponent();
         }
-        //Transfer another form
+        private void Payment_Sale_Select_Load(object sender, EventArgs e)
+        {
+        }
+        
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Page_Account frm=new Page_Account();
+            Page_Account frm = new Page_Account();
             this.Hide();
             frm.ShowDialog();
         }
 
         private void overviewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Page_Overview frm=new Page_Overview();
+            Page_Overview frm = new Page_Overview();
             this.Hide();
             frm.ShowDialog();
         }
@@ -69,6 +77,23 @@ namespace Jewelry
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DashBoard frm= new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void navbar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Payment_Sale_Select frm = new Payment_Sale_Select();
             this.Hide();
             frm.ShowDialog();
         }

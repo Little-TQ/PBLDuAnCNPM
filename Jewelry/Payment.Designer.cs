@@ -1,6 +1,6 @@
 ﻿namespace Jewelry
 {
-    partial class Employee
+    partial class Payment_Sale_Select
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.navbar = new System.Windows.Forms.Panel();
             this.mstNEmployee = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preorderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContainerEmployee = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3.SuspendLayout();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.navbar.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
+            // navbar
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.mstNEmployee);
-            this.panel3.Location = new System.Drawing.Point(3, 114);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1440, 103);
-            this.panel3.TabIndex = 6;
+            this.navbar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.navbar.Controls.Add(this.mstNEmployee);
+            this.navbar.Controls.Add(this.panel7);
+            this.navbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navbar.Location = new System.Drawing.Point(0, 0);
+            this.navbar.Name = "navbar";
+            this.navbar.Size = new System.Drawing.Size(1440, 222);
+            this.navbar.TabIndex = 1;
+            this.navbar.Paint += new System.Windows.Forms.PaintEventHandler(this.navbar_Paint);
             // 
             // mstNEmployee
             // 
@@ -73,12 +72,12 @@
             this.InformationToolStripMenuItem,
             this.SalaryToolStripMenuItem,
             this.scheduleToolStripMenuItem});
-            this.mstNEmployee.Location = new System.Drawing.Point(0, 0);
+            this.mstNEmployee.Location = new System.Drawing.Point(0, 110);
             this.mstNEmployee.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.mstNEmployee.Name = "mstNEmployee";
             this.mstNEmployee.Padding = new System.Windows.Forms.Padding(10, 20, 0, 8);
-            this.mstNEmployee.Size = new System.Drawing.Size(1438, 102);
-            this.mstNEmployee.TabIndex = 6;
+            this.mstNEmployee.Size = new System.Drawing.Size(1440, 102);
+            this.mstNEmployee.TabIndex = 11;
             this.mstNEmployee.Text = "mstNavigionAccount";
             // 
             // homeToolStripMenuItem
@@ -88,12 +87,11 @@
             this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.overviewToolStripMenuItem1,
+            this.toolStripMenuItem2,
             this.productToolStripMenuItem1,
             this.customerToolStripMenuItem1,
-            this.toolStripMenuItem2,
             this.wareHouseToolStripMenuItem,
             this.updateToolStripMenuItem,
-            this.paymentToolStripMenuItem,
             this.dashBoardToolStripMenuItem});
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.Image = global::Jewelry.Properties.Resources.Bar;
@@ -105,7 +103,6 @@
             this.homeToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(361, 74);
             this.homeToolStripMenuItem.Text = " Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -120,6 +117,13 @@
             this.overviewToolStripMenuItem1.Size = new System.Drawing.Size(232, 40);
             this.overviewToolStripMenuItem1.Text = "Overview";
             this.overviewToolStripMenuItem1.Click += new System.EventHandler(this.overviewToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 40);
+            this.toolStripMenuItem2.Text = "Employee";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // productToolStripMenuItem1
             // 
@@ -149,36 +153,6 @@
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
-            // paymentToolStripMenuItem
-            // 
-            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saleToolStripMenuItem,
-            this.reToolStripMenuItem,
-            this.preorderToolStripMenuItem});
-            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
-            this.paymentToolStripMenuItem.Text = "Payment";
-            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
-            // 
-            // saleToolStripMenuItem
-            // 
-            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.saleToolStripMenuItem.Text = "Sale";
-            // 
-            // reToolStripMenuItem
-            // 
-            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
-            this.reToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.reToolStripMenuItem.Text = "Repurchase";
-
-            // 
-            // preorderToolStripMenuItem
-            // 
-            this.preorderToolStripMenuItem.Name = "preorderToolStripMenuItem";
-            this.preorderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.preorderToolStripMenuItem.Text = "Pre-order";
-            // 
             // dashBoardToolStripMenuItem
             // 
             this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
@@ -191,118 +165,107 @@
             this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
             this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(358, 74);
-            this.InformationToolStripMenuItem.Text = "Information";
-            this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
+            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(269, 74);
+            this.InformationToolStripMenuItem.Text = "Sale";
             // 
             // SalaryToolStripMenuItem
             // 
             this.SalaryToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalaryToolStripMenuItem.Name = "SalaryToolStripMenuItem";
             this.SalaryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(290, 74);
-            this.SalaryToolStripMenuItem.Text = "Salary";
-            this.SalaryToolStripMenuItem.Click += new System.EventHandler(this.SalaryToolStripMenuItem_Click);
+            this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(356, 74);
+            this.SalaryToolStripMenuItem.Text = "Repurchase";
             // 
             // scheduleToolStripMenuItem
             // 
             this.scheduleToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
             this.scheduleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(329, 74);
-            this.scheduleToolStripMenuItem.Text = "Schedule";
-            this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
+            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(337, 74);
+            this.scheduleToolStripMenuItem.Text = "Pre-Order";
             // 
-            // pnlContainerEmployee
+            // panel7
             // 
-            this.pnlContainerEmployee.Location = new System.Drawing.Point(3, 217);
-            this.pnlContainerEmployee.Name = "pnlContainerEmployee";
-            this.pnlContainerEmployee.Size = new System.Drawing.Size(1439, 805);
-            this.pnlContainerEmployee.TabIndex = 7;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1440, 110);
+            this.panel7.TabIndex = 9;
             // 
-            // panel1
+            // panel8
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1440, 110);
-            this.panel1.TabIndex = 8;
+            this.panel8.Location = new System.Drawing.Point(1, 109);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1436, 99);
+            this.panel8.TabIndex = 4;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.Location = new System.Drawing.Point(1, 109);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1436, 99);
-            this.panel2.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(555, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(283, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Payment";
             // 
-            // label1
+            // guna2HtmlLabel6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("EB Garamond", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(613, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 96);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee";
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("EB Garamond Medium", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(40, 12);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(179, 74);
+            this.guna2HtmlLabel6.TabIndex = 5;
+            this.guna2HtmlLabel6.Text = "Payment";
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 40);
-            this.toolStripMenuItem2.Text = "Payment";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // Employee
+            // Payment_Sale_Select
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlContainerEmployee);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.navbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Employee";
+            this.Name = "Payment_Sale_Select";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEmployee";
-            this.Load += new System.EventHandler(this.Employee_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Text = "Payment_Sale_Select";
+            this.Load += new System.EventHandler(this.Payment_Sale_Select_Load);
+            this.navbar.ResumeLayout(false);
+            this.navbar.PerformLayout();
             this.mstNEmployee.ResumeLayout(false);
             this.mstNEmployee.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel navbar;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private System.Windows.Forms.MenuStrip mstNEmployee;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem overviewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SalaryToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlContainerEmployee;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preorderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

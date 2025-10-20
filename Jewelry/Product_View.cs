@@ -140,27 +140,6 @@ namespace Jewelry
             frm.ShowDialog();
         }
 
-        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_Sale_Select frm = new Payment_Sale_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
-        private void repurchaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_Repurchase_Select frm= new Payment_Repurchase_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
-        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_PreOrder_Select frm= new Payment_PreOrder_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
         private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Invoice frm= new Invoice();
@@ -206,6 +185,13 @@ namespace Jewelry
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Sale_Select frm = new Payment_Sale_Select();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }

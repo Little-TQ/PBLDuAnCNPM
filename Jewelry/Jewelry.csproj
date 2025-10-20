@@ -87,12 +87,6 @@
     <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="DTO\Session.cs" />
     <Compile Include="DTO\UpdateDTO.cs" />
-    <Compile Include="FlowLayoutPanel\Category.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FlowLayoutPanel\Category.Designer.cs">
-      <DependentUpon>Category.cs</DependentUpon>
-    </Compile>
     <Compile Include="FlowLayoutPanel\ProductList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +183,24 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\Pre-Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment\Pre-Order.Designer.cs">
+      <DependentUpon>Pre-Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Repurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment\Repurchase.Designer.cs">
+      <DependentUpon>Repurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Sale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment\Sale.Designer.cs">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalaryEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,11 +279,11 @@
     <Compile Include="Payment_Sale_invoice.Designer.cs">
       <DependentUpon>Payment_Sale_invoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment_Sale_Select.cs">
+    <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Payment_Sale_Select.Designer.cs">
-      <DependentUpon>Payment_Sale_Select.cs</DependentUpon>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Product_Add.cs">
       <SubType>Form</SubType>
@@ -297,23 +309,11 @@
     <Compile Include="Payment_PreOrder_Invoice.Designer.cs">
       <DependentUpon>Payment_PreOrder_Invoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment_PreOrder_Select.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment_PreOrder_Select.Designer.cs">
-      <DependentUpon>Payment_PreOrder_Select.cs</DependentUpon>
-    </Compile>
     <Compile Include="Payment_Repurchase_Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Payment_Repurchase_Invoice.Designer.cs">
       <DependentUpon>Payment_Repurchase_Invoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payment_Repurchase_Select.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment_Repurchase_Select.Designer.cs">
-      <DependentUpon>Payment_Repurchase_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Product_View.cs">
       <SubType>Form</SubType>
@@ -335,9 +335,6 @@
     <Compile Include="Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FlowLayoutPanel\Category.resx">
-      <DependentUpon>Category.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FlowLayoutPanel\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +383,15 @@
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Pre-Order.resx">
+      <DependentUpon>Pre-Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Repurchase.resx">
+      <DependentUpon>Repurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalaryEdit.resx">
       <DependentUpon>SalaryEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,8 +431,8 @@
     <EmbeddedResource Include="Payment_Sale_invoice.resx">
       <DependentUpon>Payment_Sale_invoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment_Sale_Select.resx">
-      <DependentUpon>Payment_Sale_Select.cs</DependentUpon>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product_Add.resx">
       <DependentUpon>Product_Add.cs</DependentUpon>
@@ -440,14 +446,8 @@
     <EmbeddedResource Include="Payment_PreOrder_Invoice.resx">
       <DependentUpon>Payment_PreOrder_Invoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment_PreOrder_Select.resx">
-      <DependentUpon>Payment_PreOrder_Select.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Payment_Repurchase_Invoice.resx">
       <DependentUpon>Payment_Repurchase_Invoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Payment_Repurchase_Select.resx">
-      <DependentUpon>Payment_Repurchase_Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product_View.resx">
       <DependentUpon>Product_View.cs</DependentUpon>

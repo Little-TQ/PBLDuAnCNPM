@@ -73,14 +73,6 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
-
-        private void reperuchaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_Repurchase_Select frm=new Payment_Repurchase_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Page_Account frm= new Page_Account();
@@ -115,24 +107,16 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
-
-        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_Sale_Select frm= new Payment_Sale_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
-        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Payment_PreOrder_Select frm= new Payment_PreOrder_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
-
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DashBoard frm = new DashBoard();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment_Sale_Select frm = new Payment_Sale_Select();
             this.Hide();
             frm.ShowDialog();
         }
