@@ -275,14 +275,13 @@
             this.repurchaseToolStripMenuItem.Name = "repurchaseToolStripMenuItem";
             this.repurchaseToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
             this.repurchaseToolStripMenuItem.Text = "Repurchase";
-            this.repurchaseToolStripMenuItem.Click += new System.EventHandler(this.repurchaseToolStripMenuItem_Click);
+          
             // 
             // preOrderToolStripMenuItem
             // 
             this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
             this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
             this.preOrderToolStripMenuItem.Text = "Pre-Order";
-            this.preOrderToolStripMenuItem.Click += new System.EventHandler(this.preOrderToolStripMenuItem_Click);
             // 
             // dashBoardToolStripMenuItem
             // 
