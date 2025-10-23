@@ -13,7 +13,8 @@ namespace Jewelry.DTO
         public DateTime UpdateTime { get; set; }
         public decimal Price { get; set; }
         public decimal ChangePrice { get; set; }
-        public string MaterialName { get; set; } // Thêm để hiển thị tên chất liệu
+        public decimal RepurchasePrice { get; set; }
+        public decimal RepurchaseChange {  get; set; }
 
         public UpdateDTO() { }
 
