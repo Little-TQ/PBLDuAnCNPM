@@ -43,6 +43,10 @@
             this.txtChange = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMinRepurchasePrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMaxRepurchasePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChangeTimeLatest = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,12 +54,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaxChangePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPanel = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtEnterRepurchasePrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnCompleteUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
             this.cbxMaterialUpdate = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.DateTimeUpdatePrice = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpUpdatePrice = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEnterChangePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,13 +79,21 @@
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtRepurchaseNow = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtChangeRepurchasePrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPanel)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChangePrice)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -124,9 +138,9 @@
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.Controls.Add(this.txtPricenow);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(383, 120);
+            this.guna2Panel1.Location = new System.Drawing.Point(340, 130);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(211, 112);
+            this.guna2Panel1.Size = new System.Drawing.Size(226, 112);
             this.guna2Panel1.TabIndex = 2;
             // 
             // guna2Panel2
@@ -136,7 +150,7 @@
             this.guna2Panel2.Controls.Add(this.txtChange);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(610, 120);
+            this.guna2Panel2.Location = new System.Drawing.Point(572, 130);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(212, 112);
             this.guna2Panel2.TabIndex = 3;
@@ -180,6 +194,10 @@
             // 
             this.guna2Panel3.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.label14);
+            this.guna2Panel3.Controls.Add(this.txtMinRepurchasePrice);
+            this.guna2Panel3.Controls.Add(this.label15);
+            this.guna2Panel3.Controls.Add(this.txtMaxRepurchasePrice);
             this.guna2Panel3.Controls.Add(this.txtChangeTimeLatest);
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Controls.Add(this.label5);
@@ -187,10 +205,78 @@
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Controls.Add(this.txtMaxChangePrice);
             this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Location = new System.Drawing.Point(383, 255);
+            this.guna2Panel3.Location = new System.Drawing.Point(340, 259);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(439, 224);
+            this.guna2Panel3.Size = new System.Drawing.Size(439, 320);
             this.guna2Panel3.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(6, 219);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(211, 24);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Lowest RepurchasePrice";
+            // 
+            // txtMinRepurchasePrice
+            // 
+            this.txtMinRepurchasePrice.BorderColor = System.Drawing.SystemColors.Control;
+            this.txtMinRepurchasePrice.BorderRadius = 12;
+            this.txtMinRepurchasePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMinRepurchasePrice.DefaultText = "$2023.80";
+            this.txtMinRepurchasePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMinRepurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMinRepurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMinRepurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMinRepurchasePrice.FillColor = System.Drawing.SystemColors.Control;
+            this.txtMinRepurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMinRepurchasePrice.Font = new System.Drawing.Font("Sora", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinRepurchasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtMinRepurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMinRepurchasePrice.Location = new System.Drawing.Point(227, 212);
+            this.txtMinRepurchasePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMinRepurchasePrice.Name = "txtMinRepurchasePrice";
+            this.txtMinRepurchasePrice.PlaceholderText = "";
+            this.txtMinRepurchasePrice.SelectedText = "";
+            this.txtMinRepurchasePrice.Size = new System.Drawing.Size(194, 44);
+            this.txtMinRepurchasePrice.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label15.Location = new System.Drawing.Point(6, 165);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(214, 24);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Highest RepurchasePrice";
+            // 
+            // txtMaxRepurchasePrice
+            // 
+            this.txtMaxRepurchasePrice.BorderColor = System.Drawing.SystemColors.Control;
+            this.txtMaxRepurchasePrice.BorderRadius = 12;
+            this.txtMaxRepurchasePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaxRepurchasePrice.DefaultText = "$2057.76";
+            this.txtMaxRepurchasePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaxRepurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaxRepurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaxRepurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaxRepurchasePrice.FillColor = System.Drawing.SystemColors.Control;
+            this.txtMaxRepurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaxRepurchasePrice.Font = new System.Drawing.Font("Sora", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxRepurchasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.txtMaxRepurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaxRepurchasePrice.Location = new System.Drawing.Point(227, 155);
+            this.txtMaxRepurchasePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaxRepurchasePrice.Name = "txtMaxRepurchasePrice";
+            this.txtMaxRepurchasePrice.PlaceholderText = "";
+            this.txtMaxRepurchasePrice.SelectedText = "";
+            this.txtMaxRepurchasePrice.Size = new System.Drawing.Size(194, 44);
+            this.txtMaxRepurchasePrice.TabIndex = 7;
             // 
             // txtChangeTimeLatest
             // 
@@ -207,7 +293,7 @@
             this.txtChangeTimeLatest.Font = new System.Drawing.Font("Sora", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChangeTimeLatest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtChangeTimeLatest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtChangeTimeLatest.Location = new System.Drawing.Point(227, 155);
+            this.txtChangeTimeLatest.Location = new System.Drawing.Point(227, 266);
             this.txtChangeTimeLatest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtChangeTimeLatest.Name = "txtChangeTimeLatest";
             this.txtChangeTimeLatest.PlaceholderText = "";
@@ -221,7 +307,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(29, 169);
+            this.label6.Location = new System.Drawing.Point(6, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 24);
             this.label6.TabIndex = 5;
@@ -232,7 +318,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(29, 111);
+            this.label5.Location = new System.Drawing.Point(6, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 24);
             this.label5.TabIndex = 4;
@@ -266,7 +352,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(29, 54);
+            this.label4.Location = new System.Drawing.Point(6, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 2;
@@ -300,43 +386,76 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 10);
+            this.label3.Location = new System.Drawing.Point(5, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Market Information";
             // 
-            // chart1
+            // chartPanel
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chartPanel.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(367, 506);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chartPanel.Legends.Add(legend1);
+            this.chartPanel.Location = new System.Drawing.Point(340, 606);
+            this.chartPanel.Name = "chartPanel";
+            this.chartPanel.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(506, 355);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
+            this.chartPanel.Series.Add(series1);
+            this.chartPanel.Size = new System.Drawing.Size(444, 362);
+            this.chartPanel.TabIndex = 5;
+            this.chartPanel.Text = "chart1";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtEnterRepurchasePrice);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.btnCompleteUpdate);
             this.panel2.Controls.Add(this.cbxMaterialUpdate);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.DateTimeUpdatePrice);
+            this.panel2.Controls.Add(this.dtpUpdatePrice);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtEnterChangePrice);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(45, 506);
+            this.panel2.Location = new System.Drawing.Point(12, 474);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 473);
+            this.panel2.Size = new System.Drawing.Size(316, 494);
             this.panel2.TabIndex = 6;
+            // 
+            // txtEnterRepurchasePrice
+            // 
+            this.txtEnterRepurchasePrice.BorderColor = System.Drawing.Color.Khaki;
+            this.txtEnterRepurchasePrice.BorderRadius = 8;
+            this.txtEnterRepurchasePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEnterRepurchasePrice.DefaultText = "";
+            this.txtEnterRepurchasePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEnterRepurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEnterRepurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEnterRepurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEnterRepurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEnterRepurchasePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEnterRepurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEnterRepurchasePrice.Location = new System.Drawing.Point(23, 376);
+            this.txtEnterRepurchasePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEnterRepurchasePrice.Name = "txtEnterRepurchasePrice";
+            this.txtEnterRepurchasePrice.PlaceholderText = "";
+            this.txtEnterRepurchasePrice.SelectedText = "";
+            this.txtEnterRepurchasePrice.Size = new System.Drawing.Size(271, 48);
+            this.txtEnterRepurchasePrice.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(19, 331);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(155, 24);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Repurchase Price";
             // 
             // btnCompleteUpdate
             // 
@@ -350,7 +469,7 @@
             this.btnCompleteUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCompleteUpdate.Image = global::Jewelry.Properties.Resources.Tick;
             this.btnCompleteUpdate.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCompleteUpdate.Location = new System.Drawing.Point(254, 414);
+            this.btnCompleteUpdate.Location = new System.Drawing.Point(254, 448);
             this.btnCompleteUpdate.Name = "btnCompleteUpdate";
             this.btnCompleteUpdate.PressedColor = System.Drawing.Color.Lime;
             this.btnCompleteUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -368,7 +487,7 @@
             this.cbxMaterialUpdate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxMaterialUpdate.ForeColor = System.Drawing.Color.Silver;
             this.cbxMaterialUpdate.ItemHeight = 30;
-            this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 218);
+            this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 168);
             this.cbxMaterialUpdate.Name = "cbxMaterialUpdate";
             this.cbxMaterialUpdate.Size = new System.Drawing.Size(271, 36);
             this.cbxMaterialUpdate.TabIndex = 14;
@@ -378,34 +497,34 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 191);
+            this.label10.Location = new System.Drawing.Point(19, 141);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 24);
             this.label10.TabIndex = 13;
             this.label10.Text = "Material";
             // 
-            // DateTimeUpdatePrice
+            // dtpUpdatePrice
             // 
-            this.DateTimeUpdatePrice.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DateTimeUpdatePrice.BorderRadius = 8;
-            this.DateTimeUpdatePrice.Checked = true;
-            this.DateTimeUpdatePrice.FillColor = System.Drawing.Color.Khaki;
-            this.DateTimeUpdatePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DateTimeUpdatePrice.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTimeUpdatePrice.Location = new System.Drawing.Point(23, 93);
-            this.DateTimeUpdatePrice.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateTimeUpdatePrice.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DateTimeUpdatePrice.Name = "DateTimeUpdatePrice";
-            this.DateTimeUpdatePrice.Size = new System.Drawing.Size(271, 48);
-            this.DateTimeUpdatePrice.TabIndex = 7;
-            this.DateTimeUpdatePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.DateTimeUpdatePrice.Value = new System.DateTime(2025, 9, 14, 3, 29, 18, 605);
+            this.dtpUpdatePrice.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtpUpdatePrice.BorderRadius = 8;
+            this.dtpUpdatePrice.Checked = true;
+            this.dtpUpdatePrice.FillColor = System.Drawing.Color.Khaki;
+            this.dtpUpdatePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpUpdatePrice.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpUpdatePrice.Location = new System.Drawing.Point(23, 72);
+            this.dtpUpdatePrice.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpUpdatePrice.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpUpdatePrice.Name = "dtpUpdatePrice";
+            this.dtpUpdatePrice.Size = new System.Drawing.Size(271, 48);
+            this.dtpUpdatePrice.TabIndex = 7;
+            this.dtpUpdatePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dtpUpdatePrice.Value = new System.DateTime(2025, 9, 14, 3, 29, 18, 605);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 66);
+            this.label9.Location = new System.Drawing.Point(19, 45);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 24);
             this.label9.TabIndex = 8;
@@ -424,7 +543,7 @@
             this.txtEnterChangePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEnterChangePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEnterChangePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 336);
+            this.txtEnterChangePrice.Location = new System.Drawing.Point(23, 268);
             this.txtEnterChangePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEnterChangePrice.Name = "txtEnterChangePrice";
             this.txtEnterChangePrice.PlaceholderText = "";
@@ -436,7 +555,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 298);
+            this.label8.Location = new System.Drawing.Point(19, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 24);
             this.label8.TabIndex = 3;
@@ -456,7 +575,7 @@
             // 
             this.panel1.BackgroundImage = global::Jewelry.Properties.Resources.Update;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(45, 120);
+            this.panel1.Location = new System.Drawing.Point(12, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 359);
             this.panel1.TabIndex = 0;
@@ -489,7 +608,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewChangePrice.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewChangePrice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridViewChangePrice.Location = new System.Drawing.Point(850, 35);
+            this.dataGridViewChangePrice.Location = new System.Drawing.Point(816, 12);
             this.dataGridViewChangePrice.Name = "dataGridViewChangePrice";
             this.dataGridViewChangePrice.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -507,7 +626,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewChangePrice.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewChangePrice.RowTemplate.Height = 50;
-            this.dataGridViewChangePrice.Size = new System.Drawing.Size(549, 958);
+            this.dataGridViewChangePrice.Size = new System.Drawing.Size(612, 981);
             this.dataGridViewChangePrice.TabIndex = 15;
             this.dataGridViewChangePrice.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewChangePrice.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -537,9 +656,9 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(45, 47);
+            this.menuStrip1.Location = new System.Drawing.Point(9, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(287, 43);
+            this.menuStrip1.Size = new System.Drawing.Size(137, 43);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -624,16 +743,112 @@
             this.dashBoardToolStripMenuItem.Text = "DashBoard";
             this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.guna2Panel4.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.guna2Panel4.BorderRadius = 8;
+            this.guna2Panel4.Controls.Add(this.txtRepurchaseNow);
+            this.guna2Panel4.Controls.Add(this.label12);
+            this.guna2Panel4.Location = new System.Drawing.Point(340, 12);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(226, 112);
+            this.guna2Panel4.TabIndex = 3;
+            // 
+            // txtRepurchaseNow
+            // 
+            this.txtRepurchaseNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtRepurchaseNow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtRepurchaseNow.BorderRadius = 12;
+            this.txtRepurchaseNow.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRepurchaseNow.DefaultText = "$2057.76";
+            this.txtRepurchaseNow.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRepurchaseNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRepurchaseNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRepurchaseNow.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRepurchaseNow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtRepurchaseNow.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRepurchaseNow.Font = new System.Drawing.Font("Sora", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepurchaseNow.ForeColor = System.Drawing.Color.Black;
+            this.txtRepurchaseNow.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRepurchaseNow.Location = new System.Drawing.Point(17, 49);
+            this.txtRepurchaseNow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRepurchaseNow.Name = "txtRepurchaseNow";
+            this.txtRepurchaseNow.PlaceholderText = "";
+            this.txtRepurchaseNow.SelectedText = "";
+            this.txtRepurchaseNow.Size = new System.Drawing.Size(184, 44);
+            this.txtRepurchaseNow.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(13, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(212, 24);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Current RepurchasePrice";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.guna2Panel5.BorderRadius = 8;
+            this.guna2Panel5.Controls.Add(this.txtChangeRepurchasePrice);
+            this.guna2Panel5.Controls.Add(this.label13);
+            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.guna2Panel5.Location = new System.Drawing.Point(572, 12);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(212, 112);
+            this.guna2Panel5.TabIndex = 4;
+            // 
+            // txtChangeRepurchasePrice
+            // 
+            this.txtChangeRepurchasePrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtChangeRepurchasePrice.BorderRadius = 12;
+            this.txtChangeRepurchasePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChangeRepurchasePrice.DefaultText = "+13.85";
+            this.txtChangeRepurchasePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtChangeRepurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtChangeRepurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeRepurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeRepurchasePrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.txtChangeRepurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtChangeRepurchasePrice.Font = new System.Drawing.Font("Sora", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChangeRepurchasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.txtChangeRepurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtChangeRepurchasePrice.Location = new System.Drawing.Point(17, 49);
+            this.txtChangeRepurchasePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtChangeRepurchasePrice.Name = "txtChangeRepurchasePrice";
+            this.txtChangeRepurchasePrice.PlaceholderText = "";
+            this.txtChangeRepurchasePrice.SelectedText = "";
+            this.txtChangeRepurchasePrice.Size = new System.Drawing.Size(177, 44);
+            this.txtChangeRepurchasePrice.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.label13.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(13, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Change";
+            // 
             // UpdatePrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.guna2Panel5);
+            this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridViewChangePrice);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chartPanel);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -649,12 +864,16 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPanel)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChangePrice)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,13 +896,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMinChangePrice;
         private Guna.UI2.WinForms.Guna2TextBox txtChangeTimeLatest;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtEnterChangePrice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimeUpdatePrice;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpUpdatePrice;
         private Guna.UI2.WinForms.Guna2CircleButton btnCompleteUpdate;
         private Guna.UI2.WinForms.Guna2ComboBox cbxMaterialUpdate;
         private System.Windows.Forms.Label label10;
@@ -699,5 +918,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private Guna.UI2.WinForms.Guna2TextBox txtEnterRepurchasePrice;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2TextBox txtRepurchaseNow;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2TextBox txtChangeRepurchasePrice;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2TextBox txtMinRepurchasePrice;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaxRepurchasePrice;
     }
 }
