@@ -190,8 +190,6 @@ namespace Jewelry
                     MessageBox.Show($"Invoice {invoiceID} saved successfully!",
                                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Có thể gọi thêm hàm In PDF / Print Preview tại đây
-                    // PrintInvoicePDF(invoice, details);
                 }
                 else
                 {
@@ -208,14 +206,12 @@ namespace Jewelry
         {
             if (string.IsNullOrWhiteSpace(input)) return 0;
 
-            // Xóa các ký tự không hợp lệ
             input = input.Replace("₫", "")
                          .Replace("đ", "")
                          .Replace(",", "")
                          .Replace(".", "")
                          .Trim();
 
-            // Chuyển đổi an toàn
             return decimal.TryParse(input, out decimal value) ? value : 0;
         }
 
