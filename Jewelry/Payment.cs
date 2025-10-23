@@ -97,5 +97,10 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
+
+        private void mstNEmployee_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

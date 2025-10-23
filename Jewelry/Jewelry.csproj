@@ -56,6 +56,7 @@
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\InvoiceBLL.cs" />
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\PropertyBLL.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DAL\DBConnect.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
     <Compile Include="DAL\PermissionDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\PropertyDAL.cs" />
@@ -79,7 +81,10 @@
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\EmployeeStatistics.cs" />
+    <Compile Include="DTO\InvoiceDetailDTO.cs" />
+    <Compile Include="DTO\InvoiceDTO.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
+    <Compile Include="DTO\OrderItem.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />

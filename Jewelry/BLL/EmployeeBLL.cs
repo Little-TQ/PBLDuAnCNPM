@@ -82,5 +82,9 @@ namespace Jewelry.BLL
 
             return employeeDAL.DeleteEmployee(employeeId);
         }
+        public string GetEmployeeIDByName(string name)
+        {
+            return employeeDAL.GetEmployeeIDByName(name);
+        }
     }
 }

@@ -100,5 +100,10 @@ namespace Jewelry.BLL
 
             return productDAL.DeleteProduct(idProduct);
         }
+        public string GetProductIDByName(string name)
+        {
+            return new ProductDAL().GetProductIDByName(name);
+        }
+
     }
 }

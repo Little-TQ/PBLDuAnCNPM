@@ -47,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.sale1 = new Jewelry.Payment.Sale();
-            this.pre_Order1 = new Jewelry.Payment.Pre_Order();
             this.navbar.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -81,6 +80,7 @@
             this.mstNEmployee.Size = new System.Drawing.Size(1440, 102);
             this.mstNEmployee.TabIndex = 11;
             this.mstNEmployee.Text = "mstNavigionAccount";
+            this.mstNEmployee.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mstNEmployee_ItemClicked);
             // 
             // homeToolStripMenuItem
             // 
@@ -235,20 +235,12 @@
             this.sale1.Size = new System.Drawing.Size(1437, 849);
             this.sale1.TabIndex = 2;
             // 
-            // pre_Order1
-            // 
-            this.pre_Order1.Location = new System.Drawing.Point(0, 215);
-            this.pre_Order1.Name = "pre_Order1";
-            this.pre_Order1.Size = new System.Drawing.Size(1437, 849);
-            this.pre_Order1.TabIndex = 3;
-            // 
             // Payment_Sale_Select
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
-            this.Controls.Add(this.pre_Order1);
             this.Controls.Add(this.sale1);
             this.Controls.Add(this.navbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -286,6 +278,5 @@
         private System.Windows.Forms.ToolStripMenuItem SalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private Payment.Sale sale1;
-        private Payment.Pre_Order pre_Order1;
     }
 }

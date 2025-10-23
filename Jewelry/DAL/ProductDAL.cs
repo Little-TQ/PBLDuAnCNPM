@@ -199,5 +199,18 @@ namespace Jewelry.DAL
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
+        public string GetProductIDByName(string name)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string sql = "SELECT idProduct FROM Product WHERE NameProduct = @NameProduct";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@NameProduct", name);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                return result?.ToString();
+            }
+        }
+
     }
 }

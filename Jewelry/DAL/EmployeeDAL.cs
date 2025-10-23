@@ -134,6 +134,19 @@ namespace Jewelry.DAL
             }
         
         }
+        public string GetEmployeeIDByName(string nameEmployee)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string sql = "SELECT TOP 1 idEmployee FROM Employee WHERE NameEmployee = @NameEmployee";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@NameEmployee", nameEmployee);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : null;
+            }
+        }
     }
 }
 
