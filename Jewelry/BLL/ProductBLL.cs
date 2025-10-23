@@ -104,6 +104,10 @@ namespace Jewelry.BLL
         {
             return new ProductDAL().GetProductIDByName(name);
         }
+        public int GetStockByProductID(string idProduct)
+        {
+            return productDAL.GetStockByProductID(idProduct);
+        }
 
     }
 }

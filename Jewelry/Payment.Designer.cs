@@ -39,7 +39,7 @@
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -70,7 +70,7 @@
             this.mstNEmployee.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstNEmployee.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
-            this.InformationToolStripMenuItem,
+            this.saleToolStripMenuItem,
             this.SalaryToolStripMenuItem,
             this.scheduleToolStripMenuItem});
             this.mstNEmployee.Location = new System.Drawing.Point(0, 110);
@@ -162,13 +162,14 @@
             this.dashBoardToolStripMenuItem.Text = "DashBoard";
             this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
-            // InformationToolStripMenuItem
+            // saleToolStripMenuItem
             // 
-            this.InformationToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
-            this.InformationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(269, 74);
-            this.InformationToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
+            this.saleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(269, 74);
+            this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
             // SalaryToolStripMenuItem
             // 
@@ -274,7 +275,7 @@
         private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem InformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private Payment.Sale sale1;

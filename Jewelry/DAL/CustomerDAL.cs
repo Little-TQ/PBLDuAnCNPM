@@ -165,5 +165,104 @@ namespace Jewelry.DAL
                 return (diamond, gold, silver, bronze, total, topRank);
             }
         }
+        // Get customer by phone number
+        public CustomerDTO GetCustomerByPhone(string phone)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Customer WHERE PhoneNumberC = @phone";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new CustomerDTO
+                            {
+                                idCustomer = reader["idCustomer"].ToString(),
+                                NameCustomer = reader["NameCustomer"].ToString(),
+                                PhoneNumberC = reader["PhoneNumberC"].ToString(),
+                                Point = Convert.ToInt32(reader["Point"]),
+                                Membership = reader["Membership"].ToString(),
+                                AddressC = reader["AddressC"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Check if phone number exists
+        public bool IsPhoneExists(string phone)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Customer WHERE PhoneNumberC = @phone";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+        //get Customer ID by phone
+        public string GetCustomerIdByPhone(string phone)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT idCustomer FROM Customer WHERE PhoneNumberC = @phone";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    object result = cmd.ExecuteScalar();
+                    return result?.ToString();
+                }
+            }
+        }
+        //Update Customer Point
+        //Update Customer Membership
+        public bool UpdateCustomerPointAndMembership(string idCustomer, decimal total)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+
+                int addPoint = (int)Math.Floor(total / 200000);
+
+                string getPointQuery = "SELECT Point FROM Customer WHERE idCustomer = @id";
+                SqlCommand getCmd = new SqlCommand(getPointQuery, conn);
+                getCmd.Parameters.AddWithValue("@id", idCustomer);
+                int currentPoint = Convert.ToInt32(getCmd.ExecuteScalar() ?? 0);
+
+                int newPoint = currentPoint + addPoint;
+
+                string membership="";
+                if (newPoint >= 100)
+                    membership = "Diamond";
+                else if (newPoint >= 50)
+                    membership = "Gold";
+                else if (newPoint >= 20)
+                    membership = "Silver";
+                else if (newPoint < 20 && newPoint >=0)
+                    membership = "Bronze";
+
+                string updateQuery = @"UPDATE Customer 
+                               SET Point = @newPoint, Membership = @membership 
+                               WHERE idCustomer = @id";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+                updateCmd.Parameters.AddWithValue("@newPoint", newPoint);
+                updateCmd.Parameters.AddWithValue("@membership", membership);
+                updateCmd.Parameters.AddWithValue("@id", idCustomer);
+
+                return updateCmd.ExecuteNonQuery() > 0;
+            }
+        }
+
     }
 }

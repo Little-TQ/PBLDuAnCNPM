@@ -211,6 +211,21 @@ namespace Jewelry.DAL
                 return result?.ToString();
             }
         }
+        public int GetStockByProductID(string idProduct)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Instock FROM Product WHERE idProduct = @id";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idProduct);
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
+
 
     }
 }

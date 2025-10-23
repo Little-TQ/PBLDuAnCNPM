@@ -23,6 +23,7 @@ namespace Jewelry
         }
         private void Payment_Sale_Select_Load(object sender, EventArgs e)
         {
+            sale1.Visible = false;
         }
         
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -101,6 +102,12 @@ namespace Jewelry
         private void mstNEmployee_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void InformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sale1.Visible = true;
+            saleToolStripMenuItem.ForeColor = Color.Red;
         }
     }
 }

@@ -89,6 +89,7 @@ namespace Jewelry.Payment
 
                 int index = dgvProduct.Rows.Add();
                 dgvProduct.Rows[index].Cells["Product"].Value = product.NameProduct;
+                dgvProduct.Rows[index].Cells["Product"].Tag = product.idProduct;
                 dgvProduct.Rows[index].Cells["Quantity"].Value = 1;
                 dgvProduct.Rows[index].Cells["Weight"].Value = product.Weight;
                 dgvProduct.Rows[index].Cells["Wage"].Value = product.Wage;
@@ -164,7 +165,71 @@ namespace Jewelry.Payment
 
             // Mở form hóa đơn
             Payment_Sale_invoice frmInvoice = new Payment_Sale_invoice(orderItems);
+            frmInvoice.InvoicePrinted += (s, ev) =>
+            {
+                dgvProduct.Rows.Clear();
+                lblSubtotal.Text = "0 ₫";
+                lblTotal.Text = "0 ₫";
+            };
             frmInvoice.ShowDialog();
+        }
+
+        private void dgvProduct_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvProduct.Columns[e.ColumnIndex].Name == "Quantity")
+                {
+                    DataGridViewRow row = dgvProduct.Rows[e.RowIndex];
+
+                    string productID = row.Cells["Product"].Tag?.ToString();
+                    if (string.IsNullOrEmpty(productID))
+                    {
+                        MessageBox.Show("Invalid product reference.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    var product = productBLL.GetProductByID(productID);
+                    if (product == null)
+                    {
+                        MessageBox.Show("Product not found in database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (!int.TryParse(row.Cells["Quantity"].Value?.ToString(), out int newQty))
+                    {
+                        MessageBox.Show("Please enter a valid quantity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells["Quantity"].Value = 1;
+                        return;
+                    }
+
+                    if (newQty == 0)
+                    {
+                        dgvProduct.Rows.RemoveAt(e.RowIndex);
+                        UpdateTotal();
+                        return;
+                    }
+
+                    int stock = productBLL.GetStockByProductID(productID); 
+
+                    if (newQty > stock)
+                    {
+                        MessageBox.Show($"Not enough stock. Only {stock} items available.",
+                                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells["Quantity"].Value = stock;
+                        newQty = stock;
+                    }
+
+                    decimal price = Convert.ToDecimal(row.Cells["Price"].Value ?? 0);
+                    row.Cells["Amount"].Value = newQty * price;
+
+                    UpdateTotal();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating quantity: " + ex.Message);
+            }
         }
     }
 }

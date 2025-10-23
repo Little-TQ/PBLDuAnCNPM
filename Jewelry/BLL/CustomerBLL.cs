@@ -56,5 +56,30 @@ namespace Jewelry.BLL
         {
             return customerDAL.GetCustomerRankStatistics();
         }
+        //get customer by phone
+        public CustomerDTO GetCustomerByPhone(string phone)
+        {
+            return customerDAL.GetCustomerByPhone(phone);
+        }
+        //check if phone exists
+        public bool IsPhoneExists(string phone)
+        {
+            return customerDAL.IsPhoneExists(phone);
+        }
+        //get customer id by phone
+        public string GetCustomerIdByPhone(string phone)
+        {
+            return customerDAL.GetCustomerIdByPhone(phone);
+        }
+       
+        //update customer point and membership
+        public bool UpdateCustomerPointAndMembership(string idCustomer, decimal total)
+        {
+            if (string.IsNullOrEmpty(idCustomer))
+                throw new Exception("Customer ID is invalid.");
+            return customerDAL.UpdateCustomerPointAndMembership(idCustomer, total);
+        }
+
+
     }
 }

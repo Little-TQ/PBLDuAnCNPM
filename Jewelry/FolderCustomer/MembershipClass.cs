@@ -59,17 +59,22 @@ namespace Jewelry.FolderCustomer
             {
                 var stats = customerBLL.GetCustomerRankStatistics();
 
-                txtDiamond.Text = $"{stats.diamond} Khách Hàng";
-                txtGold.Text = $"{stats.gold} Khách Hàng";
-                txtSilver.Text = $"{stats.silver} Khách Hàng";
-                txtBronze.Text = $"{stats.bronze} Khách Hàng";
-                txtTotal.Text = $"{stats.total} Khách Hàng";
+                txtDiamond.Text = $"{stats.diamond} Customers";
+                txtGold.Text = $"{stats.gold} Customers";
+                txtSilver.Text = $"{stats.silver} Customers";
+                txtBronze.Text = $"{stats.bronze} Customers";
+                txtTotal.Text = $"{stats.total} Customers";
                 txtTop.Text = stats.topRank;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error reading statistics: " + ex.Message);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

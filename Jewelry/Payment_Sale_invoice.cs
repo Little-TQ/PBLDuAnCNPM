@@ -17,6 +17,8 @@ namespace Jewelry
     {
         private InvoiceBLL invoiceBLL = new InvoiceBLL();
         private EmployeeBLL employeeBLL = new EmployeeBLL();
+        private CustomerBLL customerBLL = new CustomerBLL();
+        public event EventHandler InvoicePrinted;
 
         private List<OrderItem> _orderItems;
 
@@ -148,12 +150,43 @@ namespace Jewelry
                 string address = txtAddress.Text.Trim();
                 string employee = txtEmployee.Text.Trim();
 
+                //Check ID Employee
                 string empID = employeeBLL.GetEmployeeIDByName(employee);
                 if (string.IsNullOrEmpty(empID))
                 {
                     MessageBox.Show($"Employee '{employee}' not found in database!",
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
+                }
+
+                //Check or Add Customer
+                string idCustomer = null;
+                var existingCustomer = customerBLL.GetCustomerByPhone(phone);
+
+                if (existingCustomer != null)
+                {
+                    idCustomer = existingCustomer.idCustomer;
+
+                    if (existingCustomer.NameCustomer != customerName || existingCustomer.AddressC != address)
+                    {
+                        existingCustomer.NameCustomer = customerName;
+                        existingCustomer.AddressC = address;
+                        customerBLL.UpdateCustomer(existingCustomer);
+                    }
+                }
+                else
+                {
+                    idCustomer = customerBLL.GenerateCustomerID();
+                    CustomerDTO newCustomer = new CustomerDTO
+                    {
+                        idCustomer = idCustomer,
+                        NameCustomer = customerName,
+                        PhoneNumberC = phone,
+                        AddressC = address,
+                        Point = 0,
+                        Membership = "Bronze"
+                    };
+                    customerBLL.AddCustomer(newCustomer);
                 }
 
                 string type = "Sale";             
@@ -163,10 +196,11 @@ namespace Jewelry
                 decimal discount = ParseMoney(Discount.Text);
                 decimal total = subtotal - discount;
 
+                //Create Invoice and Details
                 InvoiceDTO invoice = new InvoiceDTO
                 {
                     idInvoice = invoiceID,
-                    idCustomer = null,
+                    idCustomer = idCustomer,
                     DateTimeCreateInvoice = DateTime.Now,
                     Type = type,
                     Status = status,
@@ -183,12 +217,27 @@ namespace Jewelry
                     Amount = i.Amount
                 }).ToList();
 
+
+                //Save Invoice
                 bool success = invoiceBLL.SaveInvoice(invoice, details);
 
                 if (success)
                 {
-                    MessageBox.Show($"Invoice {invoiceID} saved successfully!",
-                                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    customerBLL.UpdateCustomerPointAndMembership(invoice.idCustomer, total);
+
+                    DialogResult result = MessageBox.Show(
+                                             $"Invoice {invoiceID} saved successfully!",
+                                             "Success",
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Information
+                                         );
+
+                    if (result == DialogResult.OK)
+                    {
+                        InvoicePrinted?.Invoke(this, EventArgs.Empty);
+                        this.Close();
+
+                    }
 
                 }
                 else
@@ -213,6 +262,45 @@ namespace Jewelry
                          .Trim();
 
             return decimal.TryParse(input, out decimal value) ? value : 0;
+        }
+        private void txtPhone_Leave(object sender, EventArgs e)
+        {
+            string phone = txtPhone.Text.Trim();
+            if (string.IsNullOrEmpty(phone)) return;
+
+            var customer = customerBLL.GetCustomerByPhone(phone);
+
+            if (customer != null)
+            {
+              
+                txtCustomerName.Text = customer.NameCustomer;
+                txtAddress.Text = customer.AddressC;
+
+                lblPoint.Text = customer.Point.ToString();
+                lblMembership.Text = customer.Membership;
+
+            }
+            else
+            {
+                string newID = customerBLL.GenerateCustomerID();
+
+                CustomerDTO newCustomer = new CustomerDTO
+                {
+                    idCustomer = newID,
+                    NameCustomer = txtCustomerName.Text.Trim(),
+                    PhoneNumberC = phone,
+                    AddressC = txtAddress.Text.Trim(),
+                    Point = 0,
+                    Membership = "Member"
+                };
+
+                bool added = customerBLL.AddCustomer(newCustomer);
+
+                if (added)
+                {
+                    MessageBox.Show($"New customer added: {newID}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
@@ -248,6 +336,14 @@ namespace Jewelry
 
         }
 
-       
+        private void btnContinueShopping_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnContinueShopping_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
