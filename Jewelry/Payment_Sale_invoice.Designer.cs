@@ -105,7 +105,7 @@
             this.lblPrevTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPrevDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPreSubTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSub = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel25 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -650,7 +650,7 @@
             this.panel3.Controls.Add(this.lblPrevTotal);
             this.panel3.Controls.Add(this.lblPrevDiscount);
             this.panel3.Controls.Add(this.lblPreSubTotal);
-            this.panel3.Controls.Add(this.guna2HtmlLabel26);
+            this.panel3.Controls.Add(this.lblSub);
             this.panel3.Controls.Add(this.guna2HtmlLabel25);
             this.panel3.Controls.Add(this.guna2HtmlLabel24);
             this.panel3.Controls.Add(this.panel8);
@@ -676,9 +676,9 @@
             this.lblMembership.ForeColor = System.Drawing.Color.Black;
             this.lblMembership.Location = new System.Drawing.Point(118, 286);
             this.lblMembership.Name = "lblMembership";
-            this.lblMembership.Size = new System.Drawing.Size(60, 27);
+            this.lblMembership.Size = new System.Drawing.Size(19, 27);
             this.lblMembership.TabIndex = 107;
-            this.lblMembership.Text = "Member";
+            this.lblMembership.Text = "....";
             // 
             // lblPoint
             // 
@@ -687,9 +687,9 @@
             this.lblPoint.ForeColor = System.Drawing.Color.Black;
             this.lblPoint.Location = new System.Drawing.Point(117, 253);
             this.lblPoint.Name = "lblPoint";
-            this.lblPoint.Size = new System.Drawing.Size(40, 27);
+            this.lblPoint.Size = new System.Drawing.Size(19, 27);
             this.lblPoint.TabIndex = 106;
-            this.lblPoint.Text = "Point";
+            this.lblPoint.Text = "....";
             // 
             // guna2HtmlLabel12
             // 
@@ -720,9 +720,9 @@
             this.lblMedthod.ForeColor = System.Drawing.Color.Black;
             this.lblMedthod.Location = new System.Drawing.Point(252, 609);
             this.lblMedthod.Name = "lblMedthod";
-            this.lblMedthod.Size = new System.Drawing.Size(3, 2);
+            this.lblMedthod.Size = new System.Drawing.Size(19, 27);
             this.lblMedthod.TabIndex = 103;
-            this.lblMedthod.Text = null;
+            this.lblMedthod.Text = "....";
             // 
             // guna2HtmlLabel30
             // 
@@ -985,9 +985,9 @@
             this.lblPreviewEmployee.ForeColor = System.Drawing.Color.Black;
             this.lblPreviewEmployee.Location = new System.Drawing.Point(197, 748);
             this.lblPreviewEmployee.Name = "lblPreviewEmployee";
-            this.lblPreviewEmployee.Size = new System.Drawing.Size(3, 2);
+            this.lblPreviewEmployee.Size = new System.Drawing.Size(19, 27);
             this.lblPreviewEmployee.TabIndex = 87;
-            this.lblPreviewEmployee.Text = null;
+            this.lblPreviewEmployee.Text = "....";
             // 
             // panel9
             // 
@@ -1004,9 +1004,9 @@
             this.lblPrevTotal.ForeColor = System.Drawing.Color.Black;
             this.lblPrevTotal.Location = new System.Drawing.Point(252, 708);
             this.lblPrevTotal.Name = "lblPrevTotal";
-            this.lblPrevTotal.Size = new System.Drawing.Size(3, 2);
+            this.lblPrevTotal.Size = new System.Drawing.Size(11, 27);
             this.lblPrevTotal.TabIndex = 85;
-            this.lblPrevTotal.Text = null;
+            this.lblPrevTotal.Text = "$";
             // 
             // lblPrevDiscount
             // 
@@ -1026,20 +1026,20 @@
             this.lblPreSubTotal.ForeColor = System.Drawing.Color.Black;
             this.lblPreSubTotal.Location = new System.Drawing.Point(252, 642);
             this.lblPreSubTotal.Name = "lblPreSubTotal";
-            this.lblPreSubTotal.Size = new System.Drawing.Size(3, 2);
+            this.lblPreSubTotal.Size = new System.Drawing.Size(11, 27);
             this.lblPreSubTotal.TabIndex = 83;
-            this.lblPreSubTotal.Text = null;
+            this.lblPreSubTotal.Text = "$";
             // 
-            // guna2HtmlLabel26
+            // lblSub
             // 
-            this.guna2HtmlLabel26.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel26.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel26.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel26.Location = new System.Drawing.Point(19, 609);
-            this.guna2HtmlLabel26.Name = "guna2HtmlLabel26";
-            this.guna2HtmlLabel26.Size = new System.Drawing.Size(61, 27);
-            this.guna2HtmlLabel26.TabIndex = 82;
-            this.guna2HtmlLabel26.Text = "Method:";
+            this.lblSub.BackColor = System.Drawing.Color.Transparent;
+            this.lblSub.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub.ForeColor = System.Drawing.Color.Black;
+            this.lblSub.Location = new System.Drawing.Point(19, 609);
+            this.lblSub.Name = "lblSub";
+            this.lblSub.Size = new System.Drawing.Size(61, 27);
+            this.lblSub.TabIndex = 82;
+            this.lblSub.Text = "Method:";
             // 
             // guna2HtmlLabel25
             // 
@@ -1086,9 +1086,9 @@
             this.lblPrevAddress.ForeColor = System.Drawing.Color.Black;
             this.lblPrevAddress.Location = new System.Drawing.Point(117, 213);
             this.lblPrevAddress.Name = "lblPrevAddress";
-            this.lblPrevAddress.Size = new System.Drawing.Size(3, 2);
+            this.lblPrevAddress.Size = new System.Drawing.Size(19, 27);
             this.lblPrevAddress.TabIndex = 75;
-            this.lblPrevAddress.Text = null;
+            this.lblPrevAddress.Text = "....";
             // 
             // lblPrevPhone
             // 
@@ -1097,9 +1097,9 @@
             this.lblPrevPhone.ForeColor = System.Drawing.Color.Black;
             this.lblPrevPhone.Location = new System.Drawing.Point(117, 180);
             this.lblPrevPhone.Name = "lblPrevPhone";
-            this.lblPrevPhone.Size = new System.Drawing.Size(3, 2);
+            this.lblPrevPhone.Size = new System.Drawing.Size(19, 27);
             this.lblPrevPhone.TabIndex = 74;
-            this.lblPrevPhone.Text = null;
+            this.lblPrevPhone.Text = "....";
             // 
             // lblPrevName
             // 
@@ -1108,9 +1108,9 @@
             this.lblPrevName.ForeColor = System.Drawing.Color.Black;
             this.lblPrevName.Location = new System.Drawing.Point(117, 145);
             this.lblPrevName.Name = "lblPrevName";
-            this.lblPrevName.Size = new System.Drawing.Size(3, 2);
+            this.lblPrevName.Size = new System.Drawing.Size(19, 27);
             this.lblPrevName.TabIndex = 73;
-            this.lblPrevName.Text = null;
+            this.lblPrevName.Text = "....";
             // 
             // guna2HtmlLabel20
             // 
@@ -1146,9 +1146,9 @@
             this.lblDate.ForeColor = System.Drawing.Color.Black;
             this.lblDate.Location = new System.Drawing.Point(117, 83);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(3, 2);
+            this.lblDate.Size = new System.Drawing.Size(19, 27);
             this.lblDate.TabIndex = 69;
-            this.lblDate.Text = null;
+            this.lblDate.Text = "....";
             // 
             // lblInvoiceID
             // 
@@ -1157,9 +1157,9 @@
             this.lblInvoiceID.ForeColor = System.Drawing.Color.Black;
             this.lblInvoiceID.Location = new System.Drawing.Point(117, 50);
             this.lblInvoiceID.Name = "lblInvoiceID";
-            this.lblInvoiceID.Size = new System.Drawing.Size(3, 2);
+            this.lblInvoiceID.Size = new System.Drawing.Size(19, 27);
             this.lblInvoiceID.TabIndex = 68;
-            this.lblInvoiceID.Text = null;
+            this.lblInvoiceID.Text = "....";
             // 
             // guna2HtmlLabel17
             // 
@@ -1269,7 +1269,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPrevTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPrevDiscount;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreSubTotal;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSub;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;

@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.sale1 = new Jewelry.Payment.Sale();
+            this.preOrder1 = new Jewelry.Payment.PreOrder();
             this.navbar.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -178,6 +179,7 @@
             this.SalaryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(356, 74);
             this.SalaryToolStripMenuItem.Text = "Repurchase";
+            this.SalaryToolStripMenuItem.Click += new System.EventHandler(this.SalaryToolStripMenuItem_Click);
             // 
             // scheduleToolStripMenuItem
             // 
@@ -186,6 +188,7 @@
             this.scheduleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(337, 74);
             this.scheduleToolStripMenuItem.Text = "Pre-Order";
+            this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
             // 
             // panel7
             // 
@@ -236,12 +239,21 @@
             this.sale1.Size = new System.Drawing.Size(1437, 849);
             this.sale1.TabIndex = 2;
             // 
+            // preOrder1
+            // 
+            this.preOrder1.BackColor = System.Drawing.Color.White;
+            this.preOrder1.Location = new System.Drawing.Point(3, 215);
+            this.preOrder1.Name = "preOrder1";
+            this.preOrder1.Size = new System.Drawing.Size(1437, 849);
+            this.preOrder1.TabIndex = 3;
+            // 
             // Payment_Sale_Select
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.preOrder1);
             this.Controls.Add(this.sale1);
             this.Controls.Add(this.navbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -279,5 +291,6 @@
         private System.Windows.Forms.ToolStripMenuItem SalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private Payment.Sale sale1;
+        private Payment.PreOrder preOrder1;
     }
 }

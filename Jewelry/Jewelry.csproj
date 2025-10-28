@@ -188,11 +188,11 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment\Pre-Order.cs">
+    <Compile Include="Payment\PreOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Payment\Pre-Order.Designer.cs">
-      <DependentUpon>Pre-Order.cs</DependentUpon>
+    <Compile Include="Payment\PreOrder.Designer.cs">
+      <DependentUpon>PreOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment\Repurchase.cs">
       <SubType>UserControl</SubType>
@@ -388,8 +388,8 @@
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment\Pre-Order.resx">
-      <DependentUpon>Pre-Order.cs</DependentUpon>
+    <EmbeddedResource Include="Payment\PreOrder.resx">
+      <DependentUpon>PreOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment\Repurchase.resx">
       <DependentUpon>Repurchase.cs</DependentUpon>

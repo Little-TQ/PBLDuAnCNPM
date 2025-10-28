@@ -3,25 +3,26 @@ using Jewelry.DTO;
 using Jewelry.FlowLayoutPanel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Jewelry.Payment
 {
-    public partial class Sale : UserControl
+    public partial class PreOrder : UserControl
     {
         private PropertyBLL propertyBLL = new PropertyBLL();
         private ProductBLL productBLL = new ProductBLL();
         private UpdateBLL updateBLL = new UpdateBLL();
-
-        public Sale()
+        public PreOrder()
         {
             InitializeComponent();
         }
-
-        private void Sale_Load(object sender, EventArgs e)
+        private void PreOrder_Load(object sender, EventArgs e)
         {
             SetUpDGVStyle();
             LoadProductList();
@@ -84,6 +85,7 @@ namespace Jewelry.Payment
                 flowProduct.Controls.Add(productItem);
             }
         }
+
         private void ProductItem_ProductAdded(object sender, ProductEventArgs e)
         {
             try
@@ -133,6 +135,7 @@ namespace Jewelry.Payment
 
         private void SetUpDGVStyle()
         {
+            dgvProduct.ClearSelection();
             if (dgvProduct.Columns.Contains("Price"))
                 dgvProduct.Columns["Price"].DefaultCellStyle.Format = "#,##0 ₫";
             if (dgvProduct.Columns.Contains("Amount"))
@@ -160,15 +163,6 @@ namespace Jewelry.Payment
             lblTotal.Text = $"{subtotal:N0} ₫";
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-        }
-       
-        private void btnPayment_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-        //btn Payment
         private void btnPayment_Click(object sender, EventArgs e)
         {
             // Tạo danh sách sản phẩm từ dgv
@@ -191,7 +185,7 @@ namespace Jewelry.Payment
             }
 
             // Mở form hóa đơn
-            Payment_Sale_invoice frmInvoice = new Payment_Sale_invoice(orderItems);
+            Payment_PreOrder_Invoice frmInvoice = new Payment_PreOrder_Invoice(orderItems);
             frmInvoice.InvoicePrinted += (s, ev) =>
             {
                 dgvProduct.Rows.Clear();
@@ -237,7 +231,7 @@ namespace Jewelry.Payment
                         return;
                     }
 
-                    int stock = productBLL.GetStockByProductID(productID); 
+                    int stock = productBLL.GetStockByProductID(productID);
 
                     if (newQty > stock)
                     {
@@ -259,10 +253,16 @@ namespace Jewelry.Payment
             }
         }
 
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim().ToUpper();
             LoadProductList(keyword);
+        }
+
+        private void btnPayment_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

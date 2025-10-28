@@ -24,8 +24,14 @@ namespace Jewelry
         private void Payment_Sale_Select_Load(object sender, EventArgs e)
         {
             sale1.Visible = false;
+            preOrder1.Visible = false;
+            
         }
-        
+
+
+
+
+        //Toolstrip Menu
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Page_Account frm = new Page_Account();
@@ -107,7 +113,27 @@ namespace Jewelry
         private void InformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sale1.Visible = true;
+            preOrder1.Visible = false;
             saleToolStripMenuItem.ForeColor = Color.Red;
+            scheduleToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void SalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            preOrder1.Visible = true;
+            sale1.Visible = false;
+            scheduleToolStripMenuItem.ForeColor = Color.Red;
+            saleToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void sale1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
