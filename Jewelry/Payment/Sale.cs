@@ -96,7 +96,7 @@ namespace Jewelry.Payment
                 }
 
                 var (basePrice, change) = updateBLL.GetLatestPriceAndChange(product.idMaterial);
-                decimal price = product.PriceSilver ?? 0;
+                decimal price = (Convert.ToDecimal(product.PriceSilver ?? 0) * Convert.ToDecimal(product.Weight ?? 0)) + Convert.ToDecimal(product.Wage ?? 0);
 
                 // So sánh theo Tag (idProduct)
                 foreach (DataGridViewRow row in dgvProduct.Rows)
@@ -259,6 +259,11 @@ namespace Jewelry.Payment
         {
             string keyword = txtSearch.Text.Trim().ToUpper();
             LoadProductList(keyword);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -276,7 +276,7 @@ namespace Jewelry.DAL
                 }
             }
         }
-        // Cập nhật cột PriceSilver trong Product Công thức: PriceSilver = (newPrice * Weight) + Cost
+        // Cập nhật cột PriceSilver trong Product Công thức: PriceSilver = (newPrice * Weight) + Wage
         public bool UpdateProductPriceByMaterial(string idMaterial, decimal newPrice)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -284,7 +284,7 @@ namespace Jewelry.DAL
                 conn.Open();
                 string query = @"
                     UPDATE Product
-                    SET PriceSilver = @newPrice 
+                    SET PriceSilver = (@newPrice * Weight) 
                     WHERE idMaterial = @idMaterial";
 
                 SqlCommand cmd = new SqlCommand(query, conn);

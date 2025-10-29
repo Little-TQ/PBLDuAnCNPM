@@ -156,12 +156,12 @@ namespace Jewelry.FolderProduct
                 {
                     if (productBLL.DeleteProduct(selectedProductID))
                     {
-                        MessageBox.Show("✅ Product deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(" Product deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadProducts();
                     }
                     else
                     {
-                        MessageBox.Show("❌ Failed to delete product!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to delete product!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)

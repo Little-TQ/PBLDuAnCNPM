@@ -35,12 +35,10 @@
             this.overviewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preorderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,6 +132,12 @@
             this.customerToolStripMenuItem1.Text = "Customer";
             this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 40);
+            this.toolStripMenuItem2.Text = "Payment";
+            // 
             // wareHouseToolStripMenuItem
             // 
             this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
@@ -151,33 +154,10 @@
             // 
             // paymentToolStripMenuItem
             // 
-            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saleToolStripMenuItem,
-            this.reToolStripMenuItem,
-            this.preorderToolStripMenuItem});
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(232, 40);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
-            // 
-            // saleToolStripMenuItem
-            // 
-            this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.saleToolStripMenuItem.Text = "Sale";
-            // 
-            // reToolStripMenuItem
-            // 
-            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
-            this.reToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.reToolStripMenuItem.Text = "Repurchase";
-
-            // 
-            // preorderToolStripMenuItem
-            // 
-            this.preorderToolStripMenuItem.Name = "preorderToolStripMenuItem";
-            this.preorderToolStripMenuItem.Size = new System.Drawing.Size(241, 40);
-            this.preorderToolStripMenuItem.Text = "Pre-order";
             // 
             // dashBoardToolStripMenuItem
             // 
@@ -251,13 +231,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee";
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 40);
-            this.toolStripMenuItem2.Text = "Payment";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,10 +272,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem preorderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

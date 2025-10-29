@@ -135,7 +135,9 @@ namespace Jewelry
 
         private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Payment_Sale_Select frm = new Payment_Sale_Select();
+            this.Hide();
+            frm.ShowDialog();
         }
 
 
@@ -146,11 +148,6 @@ namespace Jewelry
             frm.ShowDialog();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Payment_Sale_Select frm = new Payment_Sale_Select();
-            this.Hide();
-            frm.ShowDialog();
-        }
+       
     }
 }
