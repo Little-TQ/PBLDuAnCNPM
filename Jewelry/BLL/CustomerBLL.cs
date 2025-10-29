@@ -44,12 +44,10 @@ namespace Jewelry.BLL
                 throw new Exception("Customer ID is invalid.");
             return customerDAL.UpdateCustomer(c);
         }
-        //Delete Customer
-        public bool DeleteCustomer(string id)
+        // Thêm vào CustomerBLL class
+        public CustomerDTO GetCustomerById(string customerId)
         {
-            if (string.IsNullOrWhiteSpace(id))
-                throw new Exception("Customer ID is invalid.");
-            return customerDAL.DeleteCustomer(id);
+            return new CustomerDAL().GetCustomerById(customerId);
         }
         //Statistics
         public (int diamond, int gold, int silver, int bronze, int total, string topRank) GetCustomerRankStatistics()

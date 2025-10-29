@@ -87,6 +87,7 @@
     <Compile Include="DTO\OrderItem.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\RepurchaseItem.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\SalaryDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />

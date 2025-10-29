@@ -40,7 +40,7 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RepurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -48,6 +48,7 @@
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.sale1 = new Jewelry.Payment.Sale();
             this.preOrder1 = new Jewelry.Payment.PreOrder();
+            this.repurchase1 = new Jewelry.Payment.Repurchase();
             this.navbar.SuspendLayout();
             this.mstNEmployee.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -72,7 +73,7 @@
             this.mstNEmployee.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.saleToolStripMenuItem,
-            this.SalaryToolStripMenuItem,
+            this.RepurchaseToolStripMenuItem,
             this.scheduleToolStripMenuItem});
             this.mstNEmployee.Location = new System.Drawing.Point(0, 110);
             this.mstNEmployee.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
@@ -172,14 +173,14 @@
             this.saleToolStripMenuItem.Text = "Sale";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
-            // SalaryToolStripMenuItem
+            // RepurchaseToolStripMenuItem
             // 
-            this.SalaryToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalaryToolStripMenuItem.Name = "SalaryToolStripMenuItem";
-            this.SalaryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.SalaryToolStripMenuItem.Size = new System.Drawing.Size(356, 74);
-            this.SalaryToolStripMenuItem.Text = "Repurchase";
-            this.SalaryToolStripMenuItem.Click += new System.EventHandler(this.SalaryToolStripMenuItem_Click);
+            this.RepurchaseToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepurchaseToolStripMenuItem.Name = "RepurchaseToolStripMenuItem";
+            this.RepurchaseToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.RepurchaseToolStripMenuItem.Size = new System.Drawing.Size(356, 74);
+            this.RepurchaseToolStripMenuItem.Text = "Repurchase";
+            this.RepurchaseToolStripMenuItem.Click += new System.EventHandler(this.SalaryToolStripMenuItem_Click);
             // 
             // scheduleToolStripMenuItem
             // 
@@ -247,12 +248,20 @@
             this.preOrder1.Size = new System.Drawing.Size(1437, 849);
             this.preOrder1.TabIndex = 3;
             // 
+            // repurchase1
+            // 
+            this.repurchase1.Location = new System.Drawing.Point(0, 215);
+            this.repurchase1.Name = "repurchase1";
+            this.repurchase1.Size = new System.Drawing.Size(1437, 849);
+            this.repurchase1.TabIndex = 4;
+            // 
             // Payment_Sale_Select
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1440, 1024);
+            this.Controls.Add(this.repurchase1);
             this.Controls.Add(this.preOrder1);
             this.Controls.Add(this.sale1);
             this.Controls.Add(this.navbar);
@@ -288,9 +297,10 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SalaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RepurchaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private Payment.Sale sale1;
         private Payment.PreOrder preOrder1;
+        private Payment.Repurchase repurchase1;
     }
 }

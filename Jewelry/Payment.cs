@@ -24,6 +24,7 @@ namespace Jewelry
         private void Payment_Sale_Select_Load(object sender, EventArgs e)
         {
             sale1.Visible = false;
+            repurchase1.Visible = false;
             preOrder1.Visible = false;
             
         }
@@ -113,22 +114,30 @@ namespace Jewelry
         private void InformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sale1.Visible = true;
+            repurchase1.Visible = false;
             preOrder1.Visible = false;
             saleToolStripMenuItem.ForeColor = Color.Red;
             scheduleToolStripMenuItem.ForeColor = Color.Black;
+            RepurchaseToolStripMenuItem.ForeColor = Color.Black;
         }
 
-        private void SalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SalaryToolStripMenuItem_Click(object sender, EventArgs e) //rEpurchase
         {
-            
+            repurchase1.Visible = true;
+            preOrder1.Visible = false;
+            sale1.Visible = false;
+            RepurchaseToolStripMenuItem.ForeColor = Color.Red;
+            saleToolStripMenuItem.ForeColor = Color.Black;
         }
 
         private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             preOrder1.Visible = true;
             sale1.Visible = false;
+            repurchase1.Visible = false;
             scheduleToolStripMenuItem.ForeColor = Color.Red;
             saleToolStripMenuItem.ForeColor = Color.Black;
+            RepurchaseToolStripMenuItem.ForeColor = Color.Black;
         }
 
         private void sale1_Load(object sender, EventArgs e)

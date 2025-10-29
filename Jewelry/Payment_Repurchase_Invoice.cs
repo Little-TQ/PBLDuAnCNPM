@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Jewelry.BLL;
+using Jewelry.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,346 @@ namespace Jewelry
 {
     public partial class Payment_Repurchase_Invoice : Form
     {
-        public Payment_Repurchase_Invoice()
+        private InvoiceBLL invoiceBLL = new InvoiceBLL();
+        private EmployeeBLL employeeBLL = new EmployeeBLL();
+        private CustomerBLL customerBLL = new CustomerBLL();
+        public event EventHandler InvoicePrinted;
+
+        private List<RepurchaseItem> _repurchaseItems;
+        private string _originalInvoiceId;
+
+        public Payment_Repurchase_Invoice(List<RepurchaseItem> repurchaseItems)
         {
             InitializeComponent();
+            _repurchaseItems = repurchaseItems;
+        }
+
+        public Payment_Repurchase_Invoice(string originalInvoiceId)
+        {
+            InitializeComponent();
+            _originalInvoiceId = originalInvoiceId;
+        }
+
+        private void Payment_Repurchase_Invoice_Load(object sender, EventArgs e)
+        {
+            LoadOrderSummary();
+            LoadPreviewSummary();
+            UpdateInvoicePreview();
+            CalculateTotals();
+            LoadCustomerInfoFromOriginalInvoice();
+        }
+
+        // Load thông tin khách hàng từ hóa đơn gốc
+        private void LoadCustomerInfoFromOriginalInvoice()
+        {
+            if (string.IsNullOrEmpty(_originalInvoiceId) && _repurchaseItems != null)
+                return;
+
+            try
+            {
+                var originalInvoice = invoiceBLL.GetInvoiceById(_originalInvoiceId);
+                if (originalInvoice != null && !string.IsNullOrEmpty(originalInvoice.idCustomer))
+                {
+                    var customer = customerBLL.GetCustomerById(originalInvoice.idCustomer);
+                    if (customer != null)
+                    {
+                        txbCusName.Text = customer.NameCustomer;
+                        txtPhone.Text = customer.PhoneNumberC;
+                        txtAddress.Text = customer.AddressC;
+
+                        // Cập nhật preview
+                        lblPrevName.Text = customer.NameCustomer;
+                        lblPrevPhone.Text = customer.PhoneNumberC;
+                        lblPrevAddress.Text = customer.AddressC;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải thông tin khách hàng: {ex.Message}");
+            }
+        }
+
+        // Load dgv Order Summary
+        private void LoadOrderSummary()
+        {
+            dgvRepurchaseSummary.AutoGenerateColumns = false;
+            dgvRepurchaseSummary.Columns.Clear();
+
+            dgvRepurchaseSummary.Columns.Add("Product", "Product");
+            dgvRepurchaseSummary.Columns.Add("Quantity", "Quantity");
+            dgvRepurchaseSummary.Columns.Add("Weight", "Weight");
+            dgvRepurchaseSummary.Columns.Add("Wage", "Wage");
+            dgvRepurchaseSummary.Columns.Add("BasePrice", "Base Price");
+            dgvRepurchaseSummary.Columns.Add("Price", "Price");
+            dgvRepurchaseSummary.Columns.Add("RepurchasePrice", "Repurchase Price");
+            dgvRepurchaseSummary.Columns.Add("Amount", "Amount");
+
+            dgvRepurchaseSummary.AllowUserToAddRows = false;
+            dgvRepurchaseSummary.ReadOnly = true;
+            dgvRepurchaseSummary.RowTemplate.Height = 35;
+            dgvRepurchaseSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (_repurchaseItems != null)
+            {
+                foreach (var item in _repurchaseItems)
+                {
+                    dgvRepurchaseSummary.Rows.Add(item.Name, item.Quantity, item.Weight,
+                                             item.Wage, item.BasePrice, item.Price,
+                                             item.RepurchasePrice, item.Amount);
+                }
+            }
+
+            dgvRepurchaseSummary.Columns["Wage"].DefaultCellStyle.Format =
+            dgvRepurchaseSummary.Columns["BasePrice"].DefaultCellStyle.Format =
+            dgvRepurchaseSummary.Columns["Price"].DefaultCellStyle.Format =
+            dgvRepurchaseSummary.Columns["RepurchasePrice"].DefaultCellStyle.Format =
+            dgvRepurchaseSummary.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
+        }
+
+        // Load dgv Preview Summary
+        private void LoadPreviewSummary()
+        {
+            dgvPreview.AutoGenerateColumns = false;
+            dgvPreview.Columns.Clear();
+
+            dgvPreview.Columns.Add("Product", "Product");
+            dgvPreview.Columns.Add("Quantity", "Quantity");
+            dgvPreview.Columns.Add("Weight", "Weight");
+            dgvPreview.Columns.Add("Wage", "Wage");
+            dgvPreview.Columns.Add("BasePrice", "Base");
+            dgvPreview.Columns.Add("Price", "Price");
+            dgvPreview.Columns.Add("RepurchasePrice", "Repurchase");
+            dgvPreview.Columns.Add("Amount", "Amount");
+
+            dgvPreview.AllowUserToAddRows = false;
+            dgvPreview.ReadOnly = true;
+            dgvPreview.RowTemplate.Height = 35;
+            dgvPreview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (_repurchaseItems != null)
+            {
+                foreach (var item in _repurchaseItems)
+                {
+                    dgvPreview.Rows.Add(item.Name, item.Quantity, item.Weight,
+                                        item.Wage, item.BasePrice, item.Price,
+                                        item.RepurchasePrice, item.Amount);
+                }
+            }
+
+            dgvPreview.Columns["Wage"].DefaultCellStyle.Format =
+            dgvPreview.Columns["BasePrice"].DefaultCellStyle.Format =
+            dgvPreview.Columns["Price"].DefaultCellStyle.Format =
+            dgvPreview.Columns["RepurchasePrice"].DefaultCellStyle.Format =
+            dgvPreview.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
+        }
+
+        // Update Invoice Preview
+        private void UpdateInvoicePreview()
+        {
+            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            lblInvoiceID.Text = "RP-" + DateTime.Now.ToString("yyMMddHHmmss");
+        }
+
+        // Update totals
+        private void CalculateTotals()
+        {
+            decimal subtotal = 0;
+            decimal depreciation = 0;
+
+            if (_repurchaseItems != null)
+            {
+                foreach (var item in _repurchaseItems)
+                {
+                    subtotal += item.Amount;
+                }
+            }
+
+            if (decimal.TryParse(txtDepreciation.Text.Replace("₫", "").Replace(",", "").Trim(), out decimal depreciationValue))
+                depreciation = depreciationValue;
+
+            decimal total = subtotal - depreciation;
+
+            labelSubTotal.Text = $"{subtotal:N0} ₫";
+            txtDepreciation.Text = $"{depreciation:N0} ₫";
+            lblTotal.Text = $"{total:N0} ₫";
+
+            lblPreSubTotal.Text = $"{subtotal:N0} ₫";
+            lblPrevDepreciation.Text = $"{depreciation:N0} ₫";
+            labelPreviewTotal.Text = $"{total:N0} ₫";
+        }
+
+        // btn Print
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_repurchaseItems == null || _repurchaseItems.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng thêm ít nhất một sản phẩm trước khi in.",
+                                    "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string invoiceID = lblInvoiceID.Text.Trim();
+                string customerName = txbCusName.Text.Trim();
+                string phone = txtPhone.Text.Trim();
+                string address = txtAddress.Text.Trim();
+                string employee = txtEmployee.Text.Trim();
+
+                // Check ID Employee
+                string empID = employeeBLL.GetEmployeeIDByName(employee);
+                if (string.IsNullOrEmpty(empID))
+                {
+                    MessageBox.Show($"Không tìm thấy nhân viên '{employee}' trong hệ thống!",
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Lấy thông tin khách hàng từ hóa đơn gốc
+                string idCustomer = null;
+                if (!string.IsNullOrEmpty(_originalInvoiceId))
+                {
+                    var originalInvoice = invoiceBLL.GetInvoiceById(_originalInvoiceId);
+                    if (originalInvoice != null)
+                    {
+                        idCustomer = originalInvoice.idCustomer;
+                    }
+                }
+
+                // Nếu không có khách hàng từ hóa đơn gốc, tạo mới
+                if (string.IsNullOrEmpty(idCustomer))
+                {
+                    var existingCustomer = customerBLL.GetCustomerByPhone(phone);
+                    if (existingCustomer != null)
+                    {
+                        idCustomer = existingCustomer.idCustomer;
+                    }
+                    else
+                    {
+                        idCustomer = customerBLL.GenerateCustomerID();
+                        CustomerDTO newCustomer = new CustomerDTO
+                        {
+                            idCustomer = idCustomer,
+                            NameCustomer = customerName,
+                            PhoneNumberC = phone,
+                            AddressC = address,
+                            Point = 0,
+                            Membership = "Bronze"
+                        };
+                        customerBLL.AddCustomer(newCustomer);
+                    }
+                }
+
+                string type = "Repurchase";
+                string status = "Completed";
+
+                decimal subtotal = ParseMoney(labelSubTotal.Text);
+                decimal depreciation = ParseMoney(txtDepreciation.Text);
+                decimal total = subtotal - depreciation;
+
+                // Create Invoice and Details
+                InvoiceDTO invoice = new InvoiceDTO
+                {
+                    idInvoice = invoiceID,
+                    idCustomer = idCustomer,
+                    DateTimeCreateInvoice = DateTime.Now,
+                    Type = type,
+                    Status = status,
+                    idEmployee = empID,
+                    Total = total
+                };
+
+                List<InvoiceDetailDTO> details = _repurchaseItems.Select(i => new InvoiceDetailDTO
+                {
+                    idInvoice = invoiceID,
+                    idProduct = i.ID,
+                    Quantity = i.Quantity,
+                    Price = i.RepurchasePrice, // Sử dụng giá mua lại
+                    Amount = i.Amount
+                }).ToList();
+
+                // Save Invoice
+                bool success = invoiceBLL.SaveInvoice(invoice, details);
+
+                if (success)
+                {
+                    DialogResult result = MessageBox.Show(
+                                             $"Hóa đơn mua lại {invoiceID} đã được lưu thành công!",
+                                             "Thành công",
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Information
+                                         );
+
+                    if (result == DialogResult.OK)
+                    {
+                        InvoicePrinted?.Invoke(this, EventArgs.Empty);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi lưu hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi in hóa đơn: " + ex.Message);
+            }
+        }
+
+        private decimal ParseMoney(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return 0;
+
+            input = input.Replace("₫", "")
+                         .Replace("đ", "")
+                         .Replace(",", "")
+                         .Replace(".", "")
+                         .Trim();
+
+            return decimal.TryParse(input, out decimal value) ? value : 0;
+        }
+
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+            lblPrevName.Text = txbCusName.Text;
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            lblPrevPhone.Text = txtPhone.Text;
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            lblPrevAddress.Text = txtAddress.Text;
+        }
+
+        private void txtEmployee_TextChanged(object sender, EventArgs e)
+        {
+            lblPreviewEmployee.Text = txtEmployee.Text;
+        }
+
+        private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDepreciation_TextChanged(object sender, EventArgs e)
+        {
+            CalculateTotals();
+        }
+
+        private void txtDepreciation_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDepreciation.Text))
+            {
+                if (decimal.TryParse(txtDepreciation.Text.Replace("₫", "").Replace(",", "").Trim(), out decimal value))
+                {
+                    txtDepreciation.Text = $"{value:N0} ₫";
+                }
+            }
         }
     }
 }

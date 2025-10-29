@@ -159,10 +159,6 @@ namespace Jewelry.Payment
             lblSubtotal.Text = $"{subtotal:N0} ₫";
             lblTotal.Text = $"{subtotal:N0} ₫";
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-        }
        
         private void btnPayment_Paint(object sender, PaintEventArgs e)
         {
