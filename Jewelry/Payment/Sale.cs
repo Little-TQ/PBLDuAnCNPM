@@ -98,7 +98,7 @@ namespace Jewelry.Payment
                 var (basePrice, change) = updateBLL.GetLatestPriceAndChange(product.idMaterial);
                 decimal price = product.PriceSilver ?? 0;
 
-                // ✔ So sánh theo Tag (idProduct)
+                // So sánh theo Tag (idProduct)
                 foreach (DataGridViewRow row in dgvProduct.Rows)
                 {
                     var idInRow = row.Cells["Product"].Tag?.ToString();
