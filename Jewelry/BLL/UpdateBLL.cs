@@ -75,6 +75,7 @@ namespace Jewelry.BLL
         {
             return updateDAL.GetLatestRowByMaterial(idMaterial);
         }
+
         //Lấy dữ liệu giá trong ngày để vẽ biểu đồ
         public DataTable GetDailyPriceChartData(string idMaterial, DateTime selectedDate)
         {

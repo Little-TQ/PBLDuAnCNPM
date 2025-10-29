@@ -1,6 +1,7 @@
 ﻿using Jewelry.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,56 @@ namespace Jewelry.DAL
                     cmd.ExecuteNonQuery();
                 }
                 return true;
+            }
+        }
+        public DataTable GetInvoiceDetails(string invoiceId)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT p.NameProduct as ProductName, id.Quantity, p.Weight, p.Wage, 
+                   id.Price, p.idProduct, p.idMaterial
+            FROM InvoiceDetail id
+            INNER JOIN Product p ON id.idProduct = p.idProduct
+            WHERE id.idInvoice = @idInvoice";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idInvoice", invoiceId);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+        public InvoiceDTO GetInvoiceById(string invoiceId)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Invoice WHERE idInvoice = @idInvoice";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idInvoice", invoiceId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new InvoiceDTO
+                        {
+                            idInvoice = reader["idInvoice"].ToString(),
+                            idCustomer = reader["idCustomer"]?.ToString(),
+                            DateTimeCreateInvoice = Convert.ToDateTime(reader["DateTimeCreateInvoice"]),
+                            Type = reader["Type"].ToString(),
+                            Status = reader["Status"].ToString(),
+                            idEmployee = reader["idEmployee"].ToString(),
+                            Total = Convert.ToDecimal(reader["Total"])
+                        };
+                    }
+                }
+                return null;
             }
         }
     }

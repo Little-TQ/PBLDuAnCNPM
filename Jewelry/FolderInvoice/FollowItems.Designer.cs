@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FollowItems));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAddItems = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewItems = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteItems = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveItems = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +62,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Controls.Add(this.btnAddItems);
             this.panel3.Controls.Add(this.btnViewItems);
             this.panel3.Controls.Add(this.btnDeleteItems);
             this.panel3.Controls.Add(this.btnSaveItems);
@@ -72,25 +70,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1438, 99);
             this.panel3.TabIndex = 6;
-            // 
-            // btnAddItems
-            // 
-            this.btnAddItems.BorderColor = System.Drawing.Color.Gray;
-            this.btnAddItems.BorderRadius = 18;
-            this.btnAddItems.BorderThickness = 1;
-            this.btnAddItems.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddItems.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddItems.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddItems.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddItems.FillColor = System.Drawing.Color.White;
-            this.btnAddItems.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddItems.ForeColor = System.Drawing.Color.Gray;
-            this.btnAddItems.Image = global::Jewelry.Properties.Resources.plus;
-            this.btnAddItems.Location = new System.Drawing.Point(667, 28);
-            this.btnAddItems.Name = "btnAddItems";
-            this.btnAddItems.Size = new System.Drawing.Size(153, 38);
-            this.btnAddItems.TabIndex = 5;
-            this.btnAddItems.Text = "Thêm Đơn Hàng";
             // 
             // btnViewItems
             // 
@@ -437,7 +416,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnAddItems;
         private Guna.UI2.WinForms.Guna2Button btnViewItems;
         private Guna.UI2.WinForms.Guna2Button btnDeleteItems;
         private Guna.UI2.WinForms.Guna2Button btnSaveItems;

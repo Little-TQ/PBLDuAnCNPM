@@ -242,14 +242,14 @@ namespace Jewelry.DAL
 
                 int newPoint = currentPoint + addPoint;
 
-                string membership="";
+                string membership = "";
                 if (newPoint >= 100)
                     membership = "Diamond";
                 else if (newPoint >= 50)
                     membership = "Gold";
                 else if (newPoint >= 20)
                     membership = "Silver";
-                else if (newPoint < 20 && newPoint >=0)
+                else if (newPoint < 20 && newPoint >= 0)
                     membership = "Bronze";
 
                 string updateQuery = @"UPDATE Customer 
@@ -261,6 +261,34 @@ namespace Jewelry.DAL
                 updateCmd.Parameters.AddWithValue("@id", idCustomer);
 
                 return updateCmd.ExecuteNonQuery() > 0;
+            }
+        }
+        public CustomerDTO GetCustomerById(string customerId)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Customer WHERE idCustomer = @idCustomer";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idCustomer", customerId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new CustomerDTO
+                        {
+                            idCustomer = reader["idCustomer"].ToString(),
+                            NameCustomer = reader["NameCustomer"].ToString(),
+                            PhoneNumberC = reader["PhoneNumberC"].ToString(),
+                            AddressC = reader["AddressC"]?.ToString(),
+                            Point = reader["Point"] != DBNull.Value ? Convert.ToInt32(reader["Point"]) : 0,
+                            Membership = reader["Membership"]?.ToString()
+                        };
+                    }
+                }
+                return null;
             }
         }
 

@@ -45,6 +45,7 @@
             this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
+            this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
@@ -100,7 +101,8 @@
             this.mstNCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.ImportToolStripMenuItem,
-            this.SupplierToolStripMenuItem});
+            this.SupplierToolStripMenuItem,
+            this.preOrderToolStripMenuItem});
             this.mstNCustomer.Location = new System.Drawing.Point(0, 0);
             this.mstNCustomer.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.mstNCustomer.Name = "mstNCustomer";
@@ -217,6 +219,14 @@
             this.pnlContainerImportInvoice.TabIndex = 7;
             this.pnlContainerImportInvoice.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainerImportInvoice_Paint);
             // 
+            // preOrderToolStripMenuItem
+            // 
+            this.preOrderToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderToolStripMenuItem.Name = "preOrderToolStripMenuItem";
+            this.preOrderToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
+            this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(337, 74);
+            this.preOrderToolStripMenuItem.Text = "Pre-Order";
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,5 +268,6 @@
         private System.Windows.Forms.Panel pnlContainerImportInvoice;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
     }
 }

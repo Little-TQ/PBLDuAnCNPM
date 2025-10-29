@@ -62,7 +62,7 @@
             this.btnViewExportInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnViewExportInvoice.Image")));
             this.btnViewExportInvoice.ImageOffset = new System.Drawing.Point(1, 0);
             this.btnViewExportInvoice.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnViewExportInvoice.Location = new System.Drawing.Point(1292, 21);
+            this.btnViewExportInvoice.Location = new System.Drawing.Point(1343, 21);
             this.btnViewExportInvoice.Name = "btnViewExportInvoice";
             this.btnViewExportInvoice.PressedColor = System.Drawing.Color.LightGreen;
             this.btnViewExportInvoice.Size = new System.Drawing.Size(50, 50);
