@@ -105,6 +105,7 @@
             this.txtSearchCustomer.SelectedText = "";
             this.txtSearchCustomer.Size = new System.Drawing.Size(468, 45);
             this.txtSearchCustomer.TabIndex = 0;
+            this.txtSearchCustomer.TextChanged += new System.EventHandler(this.txtSearchCustomer_TextChanged);
             // 
             // dgvCustomerInfo
             // 

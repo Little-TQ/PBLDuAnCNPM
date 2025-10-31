@@ -15,6 +15,7 @@ namespace Jewelry.FolderCustomer
     public partial class MembershipClass: UserControl
     {
         private CustomerBLL customerBLL = new CustomerBLL();
+        private DataTable currentCustomer;
         public MembershipClass()
         {
             InitializeComponent();
@@ -36,7 +37,8 @@ namespace Jewelry.FolderCustomer
                 DataView view = new DataView(dt);
                 DataTable filtered = view.ToTable(false, "NameCustomer", "PhoneNumberC", "Point","Membership");
 
-                dgvMembershipC.DataSource = filtered;
+                currentCustomer = filtered;
+                dgvMembershipC.DataSource = currentCustomer;
 
                 dgvMembershipC.Columns["NameCustomer"].HeaderText = "Customer";
                 dgvMembershipC.Columns["PhoneNumberC"].HeaderText = "PhoneNumber";
@@ -71,10 +73,51 @@ namespace Jewelry.FolderCustomer
                 MessageBox.Show("Error reading statistics: " + ex.Message);
             }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void FilterData()
         {
+            if (currentCustomer.Rows.Count == 0) return;
 
+            try
+            {
+                string search = txtSearchMembershipC.Text.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(search))
+                {
+                    // Hiển thị tất cả dữ liệu
+                    dgvMembershipC.DataSource = currentCustomer;
+                }
+                else
+                {
+                    // Lọc dữ liệu theo nhiều cột
+                    var filteredRows = currentCustomer.AsEnumerable()
+                        .Where(r =>
+                            r.Field<string>("NameCustomer")?.ToLower().Contains(search) == true ||
+                            r.Field<string>("PhoneNumberC")?.ToLower().Contains(search) == true ||
+                            r.Field<int>("Point").ToString().Contains(search) == true)
+                        .ToArray();
+
+                    if (filteredRows.Length > 0)
+                    {
+                        DataTable filteredTable = filteredRows.CopyToDataTable();
+                        dgvMembershipC.DataSource = filteredTable;
+                    }
+                    else
+                    {
+                        // Hiển thị table rỗng nếu không tìm thấy
+                        dgvMembershipC.DataSource = currentCustomer.Clone();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error search: " + ex.Message);
+                // Nếu có lỗi, hiển thị lại toàn bộ dữ liệu
+                dgvMembershipC.DataSource = currentCustomer;
+            }
+        }
+        private void txtSearchMembershipC_TextChanged(object sender, EventArgs e)
+        {
+            FilterData();
         }
     }
 }

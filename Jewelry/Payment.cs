@@ -136,10 +136,5 @@ namespace Jewelry
             saleToolStripMenuItem.ForeColor = Color.Black;
             RepurchaseToolStripMenuItem.ForeColor = Color.Black;
         }
-
-        private void sale1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -50,7 +50,7 @@ namespace Jewelry.Payment
                 string invoiceId = txbSearch.Text.Trim();
                 if (string.IsNullOrEmpty(invoiceId))
                 {
-                    MessageBox.Show("Vui lòng nhập ID hóa đơn");
+                    MessageBox.Show("Please enter your ID invoice");
                     return;
                 }
 
@@ -66,7 +66,7 @@ namespace Jewelry.Payment
 
                 if (invoiceDetails == null || invoiceDetails.Rows.Count == 0)
                 {
-                    MessageBox.Show("Không tìm thấy hóa đơn");
+                    MessageBox.Show("Search Unsuccessful!");
                     return;
                 }
 
@@ -81,31 +81,40 @@ namespace Jewelry.Payment
                     // Lấy giá mua lại từ UpdateBLL
                     var repurchaseData = updateBLL.GetLatestRepurchasePriceAndChange(materialId);
                     decimal repurchasePrice = repurchaseData.Repurchase;
-
+  
                     decimal quantity = Convert.ToDecimal(row["Quantity"]);
-                    decimal price = Convert.ToDecimal(row["Price"]);
                     decimal weight = Convert.ToDecimal(row["Weight"]);
                     decimal wage = Convert.ToDecimal(row["Wage"]);
+                    decimal basicprice = Convert.ToDecimal(row["Price"]);
 
-                    dgvProduct.Rows.Add(
-                        row["ProductName"],
-                        quantity,
-                        weight,
-                        wage,
-                        price,
-                        price,
-                        repurchasePrice,
-                        quantity * repurchasePrice,
-                        productId,
-                        materialId
-                    );
+                    // Tính giá theo công thức: (BasicPrice * Weight) + Wage
+                    decimal price = (basicprice * weight) + wage;
+
+                    // Thêm dòng mới với đầy đủ thông tin
+                    int index = dgvProduct.Rows.Add();
+                    dgvProduct.Rows[index].Cells["Product"].Value = row["ProductName"];
+                    dgvProduct.Rows[index].Cells["Product"].Tag = productId; 
+                    dgvProduct.Rows[index].Cells["Quantity"].Value = quantity;
+                    dgvProduct.Rows[index].Cells["Weight"].Value = weight;
+                    dgvProduct.Rows[index].Cells["Wage"].Value = wage;
+                    dgvProduct.Rows[index].Cells["BasePrice"].Value = basicprice;
+                    dgvProduct.Rows[index].Cells["Price"].Value = price;
+                    dgvProduct.Rows[index].Cells["RepurchasePrice"].Value = repurchasePrice;
+                    dgvProduct.Rows[index].Cells["Amount"].Value = quantity * repurchasePrice;
+                    dgvProduct.Rows[index].Cells["idProduct"].Value = productId;
+                    dgvProduct.Rows[index].Cells["idMaterial"].Value = materialId;
+                    dgvProduct.Columns["Wage"].DefaultCellStyle.Format =
+                    dgvProduct.Columns["BasePrice"].DefaultCellStyle.Format =
+                    dgvProduct.Columns["Price"].DefaultCellStyle.Format =
+                    dgvProduct.Columns["RepurchasePrice"].DefaultCellStyle.Format =
+                    dgvProduct.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
                 }
 
                 UpdateTotal();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tìm kiếm hóa đơn: {ex.Message}");
+                MessageBox.Show($"Error Search Invoice: {ex.Message}");
             }
         }
 
@@ -159,11 +168,11 @@ namespace Jewelry.Payment
         {
             if (dgvProduct.Rows.Count == 0)
             {
-                MessageBox.Show("Không có sản phẩm để thanh toán");
+                MessageBox.Show("Don't have any product for payment");
                 return;
             }
 
-            // Tạo danh sách sản phẩm mua lại từ dgv
+            // Tạo danh sách sản phẩm mua lại từ dgv - SỬA LẠI THEO CÁCH CỦA SALE.CS
             List<RepurchaseItem> repurchaseItems = new List<RepurchaseItem>();
             foreach (DataGridViewRow row in dgvProduct.Rows)
             {
@@ -183,73 +192,15 @@ namespace Jewelry.Payment
                 });
             }
 
-            // Mở form hóa đơn mua lại
-            Payment_Repurchase_Invoice frmInvoice = new Payment_Repurchase_Invoice(repurchaseItems);
+            // Mở form hóa đơn mua lại và truyền cả originalInvoiceId
+            Payment_Repurchase_Invoice frmInvoice = new Payment_Repurchase_Invoice(repurchaseItems, currentInvoiceId);
             frmInvoice.InvoicePrinted += (s, ev) =>
-            {
-                // Sau khi in hóa đơn thành công, lưu vào database
-                if (CreateRepurchaseInvoice())
-                {
-                    dgvProduct.Rows.Clear();
-                    txbSearch.Clear();
-                    UpdateTotal();
-                }
+            { 
+                dgvProduct.Rows.Clear();
+                txbSearch.Clear();
+                UpdateTotal();
             };
             frmInvoice.ShowDialog();
-        }
-
-        private bool CreateRepurchaseInvoice()
-        {
-            try
-            {
-                // Tạo InvoiceDTO cho hóa đơn mua lại
-                var invoice = new InvoiceDTO
-                {
-                    idInvoice = GenerateRepurchaseInvoiceId(),
-                    DateTimeCreateInvoice = DateTime.Now,
-                    Type = "Repurchase",
-                    Status = "Completed",
-                    Total = Convert.ToDecimal(lblTotal.Text.Replace(" ₫", "").Replace(",", "").Trim())
-                };
-
-                // Tạo danh sách chi tiết hóa đơn
-                var details = new List<InvoiceDetailDTO>();
-                foreach (DataGridViewRow row in dgvProduct.Rows)
-                {
-                    if (row.IsNewRow) continue;
-
-                    var detail = new InvoiceDetailDTO
-                    {
-                        idInvoice = invoice.idInvoice,
-                        idProduct = row.Cells["idProduct"].Value?.ToString(),
-                        Quantity = Convert.ToInt32(row.Cells["Quantity"].Value),
-                        Price = Convert.ToDecimal(row.Cells["RepurchasePrice"].Value)
-                    };
-                    details.Add(detail);
-                }
-
-                // Lưu hóa đơn
-                if (invoiceBLL.SaveInvoice(invoice, details))
-                {
-                    MessageBox.Show("Mua lại thành công!");
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi lưu hóa đơn");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tạo hóa đơn: {ex.Message}");
-                return false;
-            }
-        }
-
-        private string GenerateRepurchaseInvoiceId()
-        {
-            return "RP" + DateTime.Now.ToString("yyMMddHHmmss");
         }
     }
 }

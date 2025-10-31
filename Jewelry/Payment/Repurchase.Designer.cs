@@ -156,11 +156,12 @@
             this.btnPayment.Controls.Add(this.guna2PictureBox1);
             this.btnPayment.Controls.Add(this.guna2HtmlLabel5);
             this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
-            this.btnPayment.Location = new System.Drawing.Point(510, 707);
+            this.btnPayment.Location = new System.Drawing.Point(510, 677);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.ShadowColor = System.Drawing.Color.Black;
             this.btnPayment.Size = new System.Drawing.Size(837, 51);
             this.btnPayment.TabIndex = 63;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // guna2PictureBox1
             // 
@@ -243,9 +244,9 @@
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(971, 565);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(77, 31);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(90, 31);
             this.guna2HtmlLabel3.TabIndex = 56;
-            this.guna2HtmlLabel3.Text = "Discount";
+            this.guna2HtmlLabel3.Text = "Decription";
             // 
             // guna2HtmlLabel2
             // 

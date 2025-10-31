@@ -22,18 +22,12 @@ namespace Jewelry
         private List<RepurchaseItem> _repurchaseItems;
         private string _originalInvoiceId;
 
-        public Payment_Repurchase_Invoice(List<RepurchaseItem> repurchaseItems)
+        public Payment_Repurchase_Invoice(List<RepurchaseItem> repurchaseItems, string originalInvoiceId)
         {
             InitializeComponent();
             _repurchaseItems = repurchaseItems;
-        }
-
-        public Payment_Repurchase_Invoice(string originalInvoiceId)
-        {
-            InitializeComponent();
             _originalInvoiceId = originalInvoiceId;
         }
-
         private void Payment_Repurchase_Invoice_Load(object sender, EventArgs e)
         {
             LoadOrderSummary();
@@ -46,8 +40,10 @@ namespace Jewelry
         // Load thông tin khách hàng từ hóa đơn gốc
         private void LoadCustomerInfoFromOriginalInvoice()
         {
-            if (string.IsNullOrEmpty(_originalInvoiceId) && _repurchaseItems != null)
+            if (string.IsNullOrEmpty(_originalInvoiceId))
+            {
                 return;
+            }
 
             try
             {
@@ -67,10 +63,14 @@ namespace Jewelry
                         lblPrevAddress.Text = customer.AddressC;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Don't find origin invoice and customer");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải thông tin khách hàng: {ex.Message}");
+                MessageBox.Show($"Error load information's customer: {ex.Message}");
             }
         }
 
@@ -152,7 +152,7 @@ namespace Jewelry
         private void UpdateInvoicePreview()
         {
             lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            lblInvoiceID.Text = "RP-" + DateTime.Now.ToString("yyMMddHHmmss");
+            lblInvoiceID.Text = "IVN-" + DateTime.Now.ToString("yyMMddHHmmss");
         }
 
         // Update totals
@@ -183,15 +183,28 @@ namespace Jewelry
             labelPreviewTotal.Text = $"{total:N0} ₫";
         }
 
-        // btn Print
+        private decimal ParseMoney(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return 0;
+
+            input = input.Replace("₫", "")
+                         .Replace("đ", "")
+                         .Replace(",", "")
+                         .Replace(".", "")
+                         .Trim();
+
+            return decimal.TryParse(input, out decimal value) ? value : 0;
+        }
+
+     
         private void btnPayment_Click(object sender, EventArgs e)
         {
             try
             {
                 if (_repurchaseItems == null || _repurchaseItems.Count == 0)
                 {
-                    MessageBox.Show("Vui lòng thêm ít nhất một sản phẩm trước khi in.",
-                                    "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please select at least 1 product before printing",
+                                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -205,12 +218,12 @@ namespace Jewelry
                 string empID = employeeBLL.GetEmployeeIDByName(employee);
                 if (string.IsNullOrEmpty(empID))
                 {
-                    MessageBox.Show($"Không tìm thấy nhân viên '{employee}' trong hệ thống!",
-                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Search '{employee}' unsuccessful!",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Lấy thông tin khách hàng từ hóa đơn gốc
+                // LẤY THÔNG TIN KHÁCH HÀNG TỪ HÓA ĐƠN GỐC
                 string idCustomer = null;
                 if (!string.IsNullOrEmpty(_originalInvoiceId))
                 {
@@ -221,32 +234,35 @@ namespace Jewelry
                     }
                 }
 
-                // Nếu không có khách hàng từ hóa đơn gốc, tạo mới
+                // Nếu không có khách hàng từ hóa đơn gốc, tạo mới từ thông tin nhập
                 if (string.IsNullOrEmpty(idCustomer))
                 {
-                    var existingCustomer = customerBLL.GetCustomerByPhone(phone);
-                    if (existingCustomer != null)
+                    if (!string.IsNullOrEmpty(phone))
                     {
-                        idCustomer = existingCustomer.idCustomer;
-                    }
-                    else
-                    {
-                        idCustomer = customerBLL.GenerateCustomerID();
-                        CustomerDTO newCustomer = new CustomerDTO
+                        var existingCustomer = customerBLL.GetCustomerByPhone(phone);
+                        if (existingCustomer != null)
                         {
-                            idCustomer = idCustomer,
-                            NameCustomer = customerName,
-                            PhoneNumberC = phone,
-                            AddressC = address,
-                            Point = 0,
-                            Membership = "Bronze"
-                        };
-                        customerBLL.AddCustomer(newCustomer);
+                            idCustomer = existingCustomer.idCustomer;
+                        }
+                        else
+                        {
+                            idCustomer = customerBLL.GenerateCustomerID();
+                            CustomerDTO newCustomer = new CustomerDTO
+                            {
+                                idCustomer = idCustomer,
+                                NameCustomer = customerName,
+                                PhoneNumberC = phone,
+                                AddressC = address,
+                                Point = 0,
+                                Membership = "Bronze"
+                            };
+                            customerBLL.AddCustomer(newCustomer);
+                        }
                     }
                 }
 
                 string type = "Repurchase";
-                string status = "Completed";
+                string status = "Done";
 
                 decimal subtotal = ParseMoney(labelSubTotal.Text);
                 decimal depreciation = ParseMoney(txtDepreciation.Text);
@@ -269,7 +285,7 @@ namespace Jewelry
                     idInvoice = invoiceID,
                     idProduct = i.ID,
                     Quantity = i.Quantity,
-                    Price = i.RepurchasePrice, // Sử dụng giá mua lại
+                    Price = i.RepurchasePrice,
                     Amount = i.Amount
                 }).ToList();
 
@@ -279,8 +295,8 @@ namespace Jewelry
                 if (success)
                 {
                     DialogResult result = MessageBox.Show(
-                                             $"Hóa đơn mua lại {invoiceID} đã được lưu thành công!",
-                                             "Thành công",
+                                             $"Repurchase Invoice {invoiceID} saved successful!",
+                                             "Successful",
                                              MessageBoxButtons.OK,
                                              MessageBoxIcon.Information
                                          );
@@ -293,29 +309,15 @@ namespace Jewelry
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi lưu hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error save invoice.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi in hóa đơn: " + ex.Message);
+                MessageBox.Show("Error save invoice: " + ex.Message);
             }
         }
-
-        private decimal ParseMoney(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input)) return 0;
-
-            input = input.Replace("₫", "")
-                         .Replace("đ", "")
-                         .Replace(",", "")
-                         .Replace(".", "")
-                         .Trim();
-
-            return decimal.TryParse(input, out decimal value) ? value : 0;
-        }
-
-        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        private void txbCusName_TextChanged(object sender, EventArgs e)
         {
             lblPrevName.Text = txbCusName.Text;
         }
@@ -334,12 +336,6 @@ namespace Jewelry
         {
             lblPreviewEmployee.Text = txtEmployee.Text;
         }
-
-        private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtDepreciation_TextChanged(object sender, EventArgs e)
         {
             CalculateTotals();
@@ -354,6 +350,10 @@ namespace Jewelry
                     txtDepreciation.Text = $"{value:N0} ₫";
                 }
             }
+        }
+        private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMethod.Text = cbPayment.Text;
         }
     }
 }

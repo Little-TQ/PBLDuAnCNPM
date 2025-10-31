@@ -48,6 +48,11 @@
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvPreview = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblPrevAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPrevPhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -56,7 +61,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel31 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPreviewEmployee = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.labelPreviewTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -70,10 +74,17 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvRepurchaseSummary = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RepurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMethod = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.cbPayment = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtEmployee = new Guna.UI2.WinForms.Guna2TextBox();
@@ -86,23 +97,21 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel33 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel27 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblInvoiceID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RepurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbPayment = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.btnContinueShopping.SuspendLayout();
@@ -117,11 +126,13 @@
             this.txtDepreciation.BackColor = System.Drawing.Color.Transparent;
             this.txtDepreciation.Font = new System.Drawing.Font("EB Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDepreciation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.txtDepreciation.Location = new System.Drawing.Point(677, 472);
+            this.txtDepreciation.Location = new System.Drawing.Point(579, 472);
             this.txtDepreciation.Name = "txtDepreciation";
-            this.txtDepreciation.Size = new System.Drawing.Size(12, 31);
+            this.txtDepreciation.Size = new System.Drawing.Size(28, 31);
             this.txtDepreciation.TabIndex = 69;
-            this.txtDepreciation.Text = "$";
+            this.txtDepreciation.Text = "0 $";
+            this.txtDepreciation.TextChanged += new System.EventHandler(this.txtDepreciation_TextChanged);
+            this.txtDepreciation.Leave += new System.EventHandler(this.txtDepreciation_Leave);
             // 
             // guna2HtmlLabel12
             // 
@@ -139,7 +150,7 @@
             this.labelSubTotal.BackColor = System.Drawing.Color.Transparent;
             this.labelSubTotal.Font = new System.Drawing.Font("EB Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.labelSubTotal.Location = new System.Drawing.Point(677, 435);
+            this.labelSubTotal.Location = new System.Drawing.Point(579, 435);
             this.labelSubTotal.Name = "labelSubTotal";
             this.labelSubTotal.Size = new System.Drawing.Size(12, 31);
             this.labelSubTotal.TabIndex = 67;
@@ -175,6 +186,7 @@
             this.btnPayment.ShadowColor = System.Drawing.Color.Black;
             this.btnPayment.Size = new System.Drawing.Size(334, 51);
             this.btnPayment.TabIndex = 64;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // guna2PictureBox1
             // 
@@ -295,6 +307,36 @@
             this.dgvPreview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPreview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "RepurchasePrice";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
@@ -308,33 +350,33 @@
             this.lblPrevAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblPrevAddress.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrevAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblPrevAddress.Location = new System.Drawing.Point(19, 217);
+            this.lblPrevAddress.Location = new System.Drawing.Point(165, 213);
             this.lblPrevAddress.Name = "lblPrevAddress";
-            this.lblPrevAddress.Size = new System.Drawing.Size(62, 27);
+            this.lblPrevAddress.Size = new System.Drawing.Size(15, 27);
             this.lblPrevAddress.TabIndex = 75;
-            this.lblPrevAddress.Text = "Address:";
+            this.lblPrevAddress.Text = "...";
             // 
             // lblPrevPhone
             // 
             this.lblPrevPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPrevPhone.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrevPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblPrevPhone.Location = new System.Drawing.Point(19, 184);
+            this.lblPrevPhone.Location = new System.Drawing.Point(165, 183);
             this.lblPrevPhone.Name = "lblPrevPhone";
-            this.lblPrevPhone.Size = new System.Drawing.Size(50, 27);
+            this.lblPrevPhone.Size = new System.Drawing.Size(15, 27);
             this.lblPrevPhone.TabIndex = 74;
-            this.lblPrevPhone.Text = "Phone:";
+            this.lblPrevPhone.Text = "...";
             // 
             // lblPrevName
             // 
             this.lblPrevName.BackColor = System.Drawing.Color.Transparent;
             this.lblPrevName.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrevName.ForeColor = System.Drawing.Color.Black;
-            this.lblPrevName.Location = new System.Drawing.Point(19, 149);
+            this.lblPrevName.Location = new System.Drawing.Point(165, 150);
             this.lblPrevName.Name = "lblPrevName";
-            this.lblPrevName.Size = new System.Drawing.Size(48, 27);
+            this.lblPrevName.Size = new System.Drawing.Size(15, 27);
             this.lblPrevName.TabIndex = 73;
-            this.lblPrevName.Text = "Name:";
+            this.lblPrevName.Text = "...";
             // 
             // panel5
             // 
@@ -371,27 +413,16 @@
             this.panel10.Size = new System.Drawing.Size(229, 1);
             this.panel10.TabIndex = 89;
             // 
-            // guna2HtmlLabel31
-            // 
-            this.guna2HtmlLabel31.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel31.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel31.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel31.Location = new System.Drawing.Point(20, 785);
-            this.guna2HtmlLabel31.Name = "guna2HtmlLabel31";
-            this.guna2HtmlLabel31.Size = new System.Drawing.Size(165, 27);
-            this.guna2HtmlLabel31.TabIndex = 88;
-            this.guna2HtmlLabel31.Text = "Customer confirmation:";
-            // 
             // lblPreviewEmployee
             // 
             this.lblPreviewEmployee.BackColor = System.Drawing.Color.Transparent;
             this.lblPreviewEmployee.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreviewEmployee.ForeColor = System.Drawing.Color.Black;
-            this.lblPreviewEmployee.Location = new System.Drawing.Point(20, 752);
+            this.lblPreviewEmployee.Location = new System.Drawing.Point(202, 748);
             this.lblPreviewEmployee.Name = "lblPreviewEmployee";
-            this.lblPreviewEmployee.Size = new System.Drawing.Size(131, 27);
+            this.lblPreviewEmployee.Size = new System.Drawing.Size(15, 27);
             this.lblPreviewEmployee.TabIndex = 87;
-            this.lblPreviewEmployee.Text = "Staff confirmation:";
+            this.lblPreviewEmployee.Text = "...";
             // 
             // panel9
             // 
@@ -417,22 +448,22 @@
             this.lblPrevDepreciation.BackColor = System.Drawing.Color.Transparent;
             this.lblPrevDepreciation.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrevDepreciation.ForeColor = System.Drawing.Color.Black;
-            this.lblPrevDepreciation.Location = new System.Drawing.Point(19, 675);
+            this.lblPrevDepreciation.Location = new System.Drawing.Point(202, 678);
             this.lblPrevDepreciation.Name = "lblPrevDepreciation";
-            this.lblPrevDepreciation.Size = new System.Drawing.Size(90, 27);
+            this.lblPrevDepreciation.Size = new System.Drawing.Size(23, 27);
             this.lblPrevDepreciation.TabIndex = 84;
-            this.lblPrevDepreciation.Text = "Depreciation";
+            this.lblPrevDepreciation.Text = "0 $";
             // 
             // lblPreSubTotal
             // 
             this.lblPreSubTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblPreSubTotal.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreSubTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblPreSubTotal.Location = new System.Drawing.Point(19, 642);
+            this.lblPreSubTotal.Location = new System.Drawing.Point(202, 642);
             this.lblPreSubTotal.Name = "lblPreSubTotal";
-            this.lblPreSubTotal.Size = new System.Drawing.Size(64, 27);
+            this.lblPreSubTotal.Size = new System.Drawing.Size(11, 27);
             this.lblPreSubTotal.TabIndex = 83;
-            this.lblPreSubTotal.Text = "Subtotal:";
+            this.lblPreSubTotal.Text = "$";
             // 
             // guna2HtmlLabel25
             // 
@@ -518,7 +549,7 @@
             this.dgvRepurchaseSummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("EB Garamond SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("EB Garamond", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
@@ -578,16 +609,46 @@
             this.dgvRepurchaseSummary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvRepurchaseSummary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2HtmlLabel26
+            // Column1
             // 
-            this.guna2HtmlLabel26.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel26.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel26.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel26.Location = new System.Drawing.Point(19, 609);
-            this.guna2HtmlLabel26.Name = "guna2HtmlLabel26";
-            this.guna2HtmlLabel26.Size = new System.Drawing.Size(61, 27);
-            this.guna2HtmlLabel26.TabIndex = 82;
-            this.guna2HtmlLabel26.Text = "Method:";
+            this.Column1.HeaderText = "Product Name";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            // 
+            // RepurchasePrice
+            // 
+            this.RepurchasePrice.HeaderText = "RepurchasePrice";
+            this.RepurchasePrice.MinimumWidth = 6;
+            this.RepurchasePrice.Name = "RepurchasePrice";
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 6;
+            this.Amount.Name = "Amount";
+            // 
+            // lblMethod
+            // 
+            this.lblMethod.BackColor = System.Drawing.Color.Transparent;
+            this.lblMethod.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMethod.ForeColor = System.Drawing.Color.Black;
+            this.lblMethod.Location = new System.Drawing.Point(198, 609);
+            this.lblMethod.Name = "lblMethod";
+            this.lblMethod.Size = new System.Drawing.Size(15, 27);
+            this.lblMethod.TabIndex = 82;
+            this.lblMethod.Text = "...";
             // 
             // lblDiscount
             // 
@@ -640,6 +701,37 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(726, 648);
             this.guna2ShadowPanel1.TabIndex = 75;
             // 
+            // cbPayment
+            // 
+            this.cbPayment.BackColor = System.Drawing.Color.Transparent;
+            this.cbPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPayment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPayment.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbPayment.ItemHeight = 30;
+            this.cbPayment.Items.AddRange(new object[] {
+            "Cash",
+            "Credit Card",
+            "QR Code"});
+            this.cbPayment.Location = new System.Drawing.Point(37, 467);
+            this.cbPayment.Name = "cbPayment";
+            this.cbPayment.Size = new System.Drawing.Size(235, 36);
+            this.cbPayment.TabIndex = 75;
+            this.cbPayment.SelectedIndexChanged += new System.EventHandler(this.cbPayment_SelectedIndexChanged);
+            // 
+            // guna2HtmlLabel36
+            // 
+            this.guna2HtmlLabel36.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel36.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel36.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel36.Location = new System.Drawing.Point(36, 432);
+            this.guna2HtmlLabel36.Name = "guna2HtmlLabel36";
+            this.guna2HtmlLabel36.Size = new System.Drawing.Size(121, 27);
+            this.guna2HtmlLabel36.TabIndex = 74;
+            this.guna2HtmlLabel36.Text = "Payment Method";
+            // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
@@ -680,6 +772,7 @@
             this.txtEmployee.SelectedText = "";
             this.txtEmployee.Size = new System.Drawing.Size(287, 48);
             this.txtEmployee.TabIndex = 73;
+            this.txtEmployee.TextChanged += new System.EventHandler(this.txtEmployee_TextChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -710,6 +803,7 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(287, 48);
             this.txtAddress.TabIndex = 71;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // guna2HtmlLabel3
             // 
@@ -740,6 +834,7 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(287, 48);
             this.txtPhone.TabIndex = 69;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -770,6 +865,7 @@
             this.txbCusName.SelectedText = "";
             this.txbCusName.Size = new System.Drawing.Size(287, 48);
             this.txbCusName.TabIndex = 67;
+            this.txbCusName.TextChanged += new System.EventHandler(this.txbCusName_TextChanged);
             // 
             // guna2HtmlLabel1
             // 
@@ -796,16 +892,25 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.guna2HtmlLabel29);
+            this.panel3.Controls.Add(this.guna2HtmlLabel28);
+            this.panel3.Controls.Add(this.guna2HtmlLabel27);
+            this.panel3.Controls.Add(this.guna2HtmlLabel23);
+            this.panel3.Controls.Add(this.guna2HtmlLabel22);
+            this.panel3.Controls.Add(this.guna2HtmlLabel21);
+            this.panel3.Controls.Add(this.guna2HtmlLabel19);
+            this.panel3.Controls.Add(this.guna2HtmlLabel18);
+            this.panel3.Controls.Add(this.guna2HtmlLabel14);
+            this.panel3.Controls.Add(this.guna2HtmlLabel11);
             this.panel3.Controls.Add(this.guna2HtmlLabel33);
             this.panel3.Controls.Add(this.guna2HtmlLabel32);
             this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.guna2HtmlLabel31);
             this.panel3.Controls.Add(this.lblPreviewEmployee);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.labelPreviewTotal);
             this.panel3.Controls.Add(this.lblPrevDepreciation);
             this.panel3.Controls.Add(this.lblPreSubTotal);
-            this.panel3.Controls.Add(this.guna2HtmlLabel26);
+            this.panel3.Controls.Add(this.lblMethod);
             this.panel3.Controls.Add(this.guna2HtmlLabel25);
             this.panel3.Controls.Add(this.guna2HtmlLabel24);
             this.panel3.Controls.Add(this.panel8);
@@ -825,6 +930,116 @@
             this.panel3.Size = new System.Drawing.Size(499, 892);
             this.panel3.TabIndex = 76;
             // 
+            // guna2HtmlLabel29
+            // 
+            this.guna2HtmlLabel29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel29.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel29.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel29.Location = new System.Drawing.Point(19, 781);
+            this.guna2HtmlLabel29.Name = "guna2HtmlLabel29";
+            this.guna2HtmlLabel29.Size = new System.Drawing.Size(165, 27);
+            this.guna2HtmlLabel29.TabIndex = 101;
+            this.guna2HtmlLabel29.Text = "Customer confirmation:";
+            // 
+            // guna2HtmlLabel28
+            // 
+            this.guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel28.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel28.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel28.Location = new System.Drawing.Point(19, 752);
+            this.guna2HtmlLabel28.Name = "guna2HtmlLabel28";
+            this.guna2HtmlLabel28.Size = new System.Drawing.Size(131, 27);
+            this.guna2HtmlLabel28.TabIndex = 100;
+            this.guna2HtmlLabel28.Text = "Staff confirmation:";
+            // 
+            // guna2HtmlLabel27
+            // 
+            this.guna2HtmlLabel27.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel27.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel27.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel27.Location = new System.Drawing.Point(20, 54);
+            this.guna2HtmlLabel27.Name = "guna2HtmlLabel27";
+            this.guna2HtmlLabel27.Size = new System.Drawing.Size(68, 27);
+            this.guna2HtmlLabel27.TabIndex = 99;
+            this.guna2HtmlLabel27.Text = "Invoice #:";
+            // 
+            // guna2HtmlLabel23
+            // 
+            this.guna2HtmlLabel23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel23.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel23.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel23.Location = new System.Drawing.Point(19, 87);
+            this.guna2HtmlLabel23.Name = "guna2HtmlLabel23";
+            this.guna2HtmlLabel23.Size = new System.Drawing.Size(40, 27);
+            this.guna2HtmlLabel23.TabIndex = 98;
+            this.guna2HtmlLabel23.Text = "Date:";
+            // 
+            // guna2HtmlLabel22
+            // 
+            this.guna2HtmlLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel22.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel22.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel22.Location = new System.Drawing.Point(20, 213);
+            this.guna2HtmlLabel22.Name = "guna2HtmlLabel22";
+            this.guna2HtmlLabel22.Size = new System.Drawing.Size(62, 27);
+            this.guna2HtmlLabel22.TabIndex = 97;
+            this.guna2HtmlLabel22.Text = "Address:";
+            // 
+            // guna2HtmlLabel21
+            // 
+            this.guna2HtmlLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel21.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel21.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel21.Location = new System.Drawing.Point(20, 183);
+            this.guna2HtmlLabel21.Name = "guna2HtmlLabel21";
+            this.guna2HtmlLabel21.Size = new System.Drawing.Size(50, 27);
+            this.guna2HtmlLabel21.TabIndex = 96;
+            this.guna2HtmlLabel21.Text = "Phone:";
+            // 
+            // guna2HtmlLabel19
+            // 
+            this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel19.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel19.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel19.Location = new System.Drawing.Point(20, 150);
+            this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
+            this.guna2HtmlLabel19.Size = new System.Drawing.Size(48, 27);
+            this.guna2HtmlLabel19.TabIndex = 95;
+            this.guna2HtmlLabel19.Text = "Name:";
+            // 
+            // guna2HtmlLabel18
+            // 
+            this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel18.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel18.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel18.Location = new System.Drawing.Point(20, 675);
+            this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
+            this.guna2HtmlLabel18.Size = new System.Drawing.Size(90, 27);
+            this.guna2HtmlLabel18.TabIndex = 94;
+            this.guna2HtmlLabel18.Text = "Depreciation";
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(19, 642);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(64, 27);
+            this.guna2HtmlLabel14.TabIndex = 93;
+            this.guna2HtmlLabel14.Text = "Subtotal:";
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(19, 609);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(61, 27);
+            this.guna2HtmlLabel11.TabIndex = 92;
+            this.guna2HtmlLabel11.Text = "Method:";
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
@@ -838,22 +1053,22 @@
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(19, 87);
+            this.lblDate.Location = new System.Drawing.Point(165, 87);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(40, 27);
+            this.lblDate.Size = new System.Drawing.Size(15, 27);
             this.lblDate.TabIndex = 69;
-            this.lblDate.Text = "Date:";
+            this.lblDate.Text = "...";
             // 
             // lblInvoiceID
             // 
             this.lblInvoiceID.BackColor = System.Drawing.Color.Transparent;
             this.lblInvoiceID.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoiceID.ForeColor = System.Drawing.Color.Black;
-            this.lblInvoiceID.Location = new System.Drawing.Point(19, 54);
+            this.lblInvoiceID.Location = new System.Drawing.Point(165, 47);
             this.lblInvoiceID.Name = "lblInvoiceID";
-            this.lblInvoiceID.Size = new System.Drawing.Size(68, 27);
+            this.lblInvoiceID.Size = new System.Drawing.Size(15, 27);
             this.lblInvoiceID.TabIndex = 68;
-            this.lblInvoiceID.Text = "Invoice #:";
+            this.lblInvoiceID.Text = "...";
             // 
             // guna2HtmlLabel17
             // 
@@ -876,96 +1091,6 @@
             this.guna2HtmlLabel16.Size = new System.Drawing.Size(197, 45);
             this.guna2HtmlLabel16.TabIndex = 77;
             this.guna2HtmlLabel16.Text = "Invoice Preview";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Product Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            // 
-            // RepurchasePrice
-            // 
-            this.RepurchasePrice.HeaderText = "RepurchasePrice";
-            this.RepurchasePrice.MinimumWidth = 6;
-            this.RepurchasePrice.Name = "RepurchasePrice";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "RepurchasePrice";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // cbPayment
-            // 
-            this.cbPayment.BackColor = System.Drawing.Color.Transparent;
-            this.cbPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPayment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPayment.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbPayment.ItemHeight = 30;
-            this.cbPayment.Items.AddRange(new object[] {
-            "Cash",
-            "Credit Card",
-            "QR Code"});
-            this.cbPayment.Location = new System.Drawing.Point(37, 467);
-            this.cbPayment.Name = "cbPayment";
-            this.cbPayment.Size = new System.Drawing.Size(235, 36);
-            this.cbPayment.TabIndex = 75;
-            // 
-            // guna2HtmlLabel36
-            // 
-            this.guna2HtmlLabel36.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel36.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel36.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel36.Location = new System.Drawing.Point(36, 432);
-            this.guna2HtmlLabel36.Name = "guna2HtmlLabel36";
-            this.guna2HtmlLabel36.Size = new System.Drawing.Size(121, 27);
-            this.guna2HtmlLabel36.TabIndex = 74;
-            this.guna2HtmlLabel36.Text = "Payment Method";
             // 
             // Payment_Repurchase_Invoice
             // 
@@ -990,6 +1115,7 @@
             this.Name = "Payment_Repurchase_Invoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_Repurchase_Invoice";
+            this.Load += new System.EventHandler(this.Payment_Repurchase_Invoice_Load);
             this.btnPayment.ResumeLayout(false);
             this.btnPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -1029,7 +1155,6 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
         private System.Windows.Forms.Panel panel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel31;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreviewEmployee;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelPreviewTotal;
@@ -1043,7 +1168,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2DataGridView dgvRepurchaseSummary;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMethod;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDiscount;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
@@ -1076,5 +1201,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private Guna.UI2.WinForms.Guna2ComboBox cbPayment;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel36;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel21;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel27;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel23;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel29;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel28;
     }
 }

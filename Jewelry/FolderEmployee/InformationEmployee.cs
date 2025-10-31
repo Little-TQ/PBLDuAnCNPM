@@ -15,9 +15,11 @@ namespace Jewelry.FolderEmployee
     public partial class InformationEmployee: UserControl
     {
         EmployeeDAL employeeDAL = new EmployeeDAL();
+        private DataTable currentEmployee;
         public InformationEmployee()
         {
             InitializeComponent();
+            currentEmployee = new DataTable();
             LoadEmployees();
         }
 
@@ -34,7 +36,8 @@ namespace Jewelry.FolderEmployee
         {
             try
             {
-                dataGridViewInfoEmployee.DataSource = employeeDAL.GetAllEmployees();
+                currentEmployee = employeeDAL.GetAllEmployees(); 
+                dataGridViewInfoEmployee.DataSource = currentEmployee;
 
                 // Đặt tên cột hiển thị
                 if (dataGridViewInfoEmployee.Columns.Count > 0)
@@ -120,6 +123,57 @@ namespace Jewelry.FolderEmployee
         private void InformationEmployee_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearchInfoEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                FilterData();
+        }
+
+        private void FilterData()
+        {
+            if (currentEmployee.Rows.Count == 0) return;
+
+            try
+            {
+                string search = txtSearchInfoEmployee.Text.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(search))
+                {
+                    // Hiển thị tất cả dữ liệu
+                    dataGridViewInfoEmployee.DataSource = currentEmployee;
+                }
+                else
+                {
+                   
+                    var filteredRows = currentEmployee.AsEnumerable()
+                        .Where(r =>
+                            r.Field<string>("NameEmployee")?.ToLower().Contains(search) == true ||
+                            r.Field<string>("idEmployee")?.ToLower().Contains(search) == true ||
+                            r.Field<string>("PhoneNumberE")?.ToLower().Contains(search) == true)
+                        .ToArray();
+
+                    if (filteredRows.Length > 0)
+                    {
+                        DataTable filteredTable = filteredRows.CopyToDataTable();
+                        dataGridViewInfoEmployee.DataSource = filteredTable;
+                    }
+                    else
+                    {
+                        dataGridViewInfoEmployee.DataSource = currentEmployee.Clone();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Search: " + ex.Message);
+                dataGridViewInfoEmployee.DataSource = currentEmployee;
+            }
+        }
+        private void txtSearchInfoEmployee_TextChanged(object sender, EventArgs e)
+        {
+            FilterData();
         }
     }
 }

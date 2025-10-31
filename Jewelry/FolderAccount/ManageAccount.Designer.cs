@@ -37,7 +37,6 @@
             this.btnAddAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewAccount = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearchAccount = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvManageAccount = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageAccount)).BeginInit();
@@ -49,7 +48,6 @@
             this.panel3.Controls.Add(this.btnAddAccount);
             this.panel3.Controls.Add(this.btnViewAccount);
             this.panel3.Controls.Add(this.btnDeleteAccount);
-            this.panel3.Controls.Add(this.txtSearchAccount);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1437, 99);
@@ -68,7 +66,7 @@
             this.btnAddAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddAccount.ForeColor = System.Drawing.Color.Gray;
             this.btnAddAccount.Image = global::Jewelry.Properties.Resources.plus;
-            this.btnAddAccount.Location = new System.Drawing.Point(667, 28);
+            this.btnAddAccount.Location = new System.Drawing.Point(39, 21);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(153, 38);
             this.btnAddAccount.TabIndex = 5;
@@ -118,29 +116,6 @@
             this.btnDeleteAccount.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteAccount.TabIndex = 3;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click_1);
-            // 
-            // txtSearchAccount
-            // 
-            this.txtSearchAccount.BorderColor = System.Drawing.Color.Gray;
-            this.txtSearchAccount.BorderRadius = 20;
-            this.txtSearchAccount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchAccount.DefaultText = "";
-            this.txtSearchAccount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchAccount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchAccount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearchAccount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchAccount.IconLeft = global::Jewelry.Properties.Resources.Search;
-            this.txtSearchAccount.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtSearchAccount.Location = new System.Drawing.Point(53, 21);
-            this.txtSearchAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearchAccount.Name = "txtSearchAccount";
-            this.txtSearchAccount.PlaceholderText = "";
-            this.txtSearchAccount.SelectedText = "";
-            this.txtSearchAccount.Size = new System.Drawing.Size(468, 45);
-            this.txtSearchAccount.TabIndex = 0;
             // 
             // dgvManageAccount
             // 
@@ -233,7 +208,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAddAccount;
         private Guna.UI2.WinForms.Guna2Button btnViewAccount;
         private Guna.UI2.WinForms.Guna2Button btnDeleteAccount;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearchAccount;
         private Guna.UI2.WinForms.Guna2DataGridView dgvManageAccount;
     }
 }
