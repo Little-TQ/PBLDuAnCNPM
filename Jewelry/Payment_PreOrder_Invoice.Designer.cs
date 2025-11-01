@@ -36,7 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlInvoicePreview = new System.Windows.Forms.Panel();
+            this.deliveryDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblMembership = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -130,8 +131,7 @@
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.deliveryDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.panel3.SuspendLayout();
+            this.pnlInvoicePreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderSummary)).BeginInit();
@@ -151,57 +151,71 @@
             this.guna2HtmlLabel13.TabIndex = 51;
             this.guna2HtmlLabel13.Text = "Review your order details before payment";
             // 
-            // panel3
+            // pnlInvoicePreview
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.deliveryDate);
-            this.panel3.Controls.Add(this.guna2HtmlLabel14);
-            this.panel3.Controls.Add(this.guna2HtmlLabel29);
-            this.panel3.Controls.Add(this.lblMembership);
-            this.panel3.Controls.Add(this.lblPoint);
-            this.panel3.Controls.Add(this.lblEm);
-            this.panel3.Controls.Add(this.lblTol);
-            this.panel3.Controls.Add(this.lblDis);
-            this.panel3.Controls.Add(this.lblPrevSubTotal);
-            this.panel3.Controls.Add(this.dgvPreview);
-            this.panel3.Controls.Add(this.lblInvoiceID);
-            this.panel3.Controls.Add(this.lblMethod);
-            this.panel3.Controls.Add(this.lblPrevAddress);
-            this.panel3.Controls.Add(this.lblPrevPhone);
-            this.panel3.Controls.Add(this.lblPrevName);
-            this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Controls.Add(this.guna2HtmlLabel18);
-            this.panel3.Controls.Add(this.guna2HtmlLabel7);
-            this.panel3.Controls.Add(this.lblRemaining);
-            this.panel3.Controls.Add(this.guna2HtmlLabel34);
-            this.panel3.Controls.Add(this.lblDeposit);
-            this.panel3.Controls.Add(this.guna2HtmlLabel35);
-            this.panel3.Controls.Add(this.guna2HtmlLabel37);
-            this.panel3.Controls.Add(this.guna2HtmlLabel33);
-            this.panel3.Controls.Add(this.guna2HtmlLabel32);
-            this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.guna2HtmlLabel31);
-            this.panel3.Controls.Add(this.guna2HtmlLabel30);
-            this.panel3.Controls.Add(this.panel9);
-            this.panel3.Controls.Add(this.guna2HtmlLabel28);
-            this.panel3.Controls.Add(this.guna2HtmlLabel27);
-            this.panel3.Controls.Add(this.guna2HtmlLabel26);
-            this.panel3.Controls.Add(this.guna2HtmlLabel25);
-            this.panel3.Controls.Add(this.guna2HtmlLabel24);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.guna2HtmlLabel23);
-            this.panel3.Controls.Add(this.guna2HtmlLabel22);
-            this.panel3.Controls.Add(this.guna2HtmlLabel21);
-            this.panel3.Controls.Add(this.guna2HtmlLabel20);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.guna2HtmlLabel19);
-            this.panel3.Controls.Add(this.guna2HtmlLabel17);
-            this.panel3.Location = new System.Drawing.Point(823, 37);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(491, 918);
-            this.panel3.TabIndex = 76;
+            this.pnlInvoicePreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInvoicePreview.Controls.Add(this.deliveryDate);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel14);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel29);
+            this.pnlInvoicePreview.Controls.Add(this.lblMembership);
+            this.pnlInvoicePreview.Controls.Add(this.lblPoint);
+            this.pnlInvoicePreview.Controls.Add(this.lblEm);
+            this.pnlInvoicePreview.Controls.Add(this.lblTol);
+            this.pnlInvoicePreview.Controls.Add(this.lblDis);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevSubTotal);
+            this.pnlInvoicePreview.Controls.Add(this.dgvPreview);
+            this.pnlInvoicePreview.Controls.Add(this.lblInvoiceID);
+            this.pnlInvoicePreview.Controls.Add(this.lblMethod);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevAddress);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevPhone);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevName);
+            this.pnlInvoicePreview.Controls.Add(this.lblDate);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel18);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlInvoicePreview.Controls.Add(this.lblRemaining);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel34);
+            this.pnlInvoicePreview.Controls.Add(this.lblDeposit);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel35);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel37);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel33);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel32);
+            this.pnlInvoicePreview.Controls.Add(this.panel10);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel31);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel30);
+            this.pnlInvoicePreview.Controls.Add(this.panel9);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel28);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel27);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel26);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel25);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel24);
+            this.pnlInvoicePreview.Controls.Add(this.panel8);
+            this.pnlInvoicePreview.Controls.Add(this.panel7);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel23);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel22);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel21);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel20);
+            this.pnlInvoicePreview.Controls.Add(this.panel5);
+            this.pnlInvoicePreview.Controls.Add(this.panel6);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel19);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel17);
+            this.pnlInvoicePreview.Location = new System.Drawing.Point(823, 37);
+            this.pnlInvoicePreview.Name = "pnlInvoicePreview";
+            this.pnlInvoicePreview.Size = new System.Drawing.Size(420, 918);
+            this.pnlInvoicePreview.TabIndex = 76;
+            // 
+            // deliveryDate
+            // 
+            this.deliveryDate.Checked = true;
+            this.deliveryDate.FillColor = System.Drawing.Color.White;
+            this.deliveryDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.deliveryDate.Location = new System.Drawing.Point(132, 108);
+            this.deliveryDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.deliveryDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.deliveryDate.Name = "deliveryDate";
+            this.deliveryDate.Size = new System.Drawing.Size(232, 24);
+            this.deliveryDate.TabIndex = 125;
+            this.deliveryDate.Value = new System.DateTime(2025, 11, 1, 17, 17, 23, 816);
             // 
             // guna2HtmlLabel14
             // 
@@ -755,11 +769,11 @@
             this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel17.Font = new System.Drawing.Font("EB Garamond SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel17.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(134, 3);
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(86, 3);
             this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            this.guna2HtmlLabel17.Size = new System.Drawing.Size(137, 35);
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(237, 35);
             this.guna2HtmlLabel17.TabIndex = 66;
-            this.guna2HtmlLabel17.Text = "Arpels Jewelry";
+            this.guna2HtmlLabel17.Text = "Arpels Jewelry Pre-Order";
             // 
             // guna2HtmlLabel10
             // 
@@ -1326,20 +1340,6 @@
             this.txtCustomerName.TabIndex = 78;
             this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
-            // deliveryDate
-            // 
-            this.deliveryDate.Checked = true;
-            this.deliveryDate.FillColor = System.Drawing.Color.White;
-            this.deliveryDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.deliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.deliveryDate.Location = new System.Drawing.Point(132, 108);
-            this.deliveryDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.deliveryDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.deliveryDate.Name = "deliveryDate";
-            this.deliveryDate.Size = new System.Drawing.Size(232, 24);
-            this.deliveryDate.TabIndex = 125;
-            this.deliveryDate.Value = new System.DateTime(2025, 11, 1, 17, 17, 23, 816);
-            // 
             // Payment_PreOrder_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1354,7 +1354,7 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.txtCustomerName);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlInvoicePreview);
             this.Controls.Add(this.guna2HtmlLabel16);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -1362,8 +1362,8 @@
             this.Name = "Payment_PreOrder_Invoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Payment_PreOrder_Invoice_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlInvoicePreview.ResumeLayout(false);
+            this.pnlInvoicePreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -1381,7 +1381,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlInvoicePreview;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel33;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
         private System.Windows.Forms.Panel panel10;

@@ -307,7 +307,7 @@ namespace Jewelry
         }
 
         private string currentEmployeeID = null;
-        private void txtEmployee_TextChanged(object sender, EventArgs e)
+        private void txtEmployee_Leave(object sender, EventArgs e)
         {
             string empName = txtEmployee.Text.Trim();
             if (string.IsNullOrEmpty(empName))

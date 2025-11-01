@@ -263,7 +263,7 @@
             this.txtEmployee.SelectedText = "";
             this.txtEmployee.Size = new System.Drawing.Size(287, 48);
             this.txtEmployee.TabIndex = 61;
-            this.txtEmployee.TextChanged += new System.EventHandler(this.txtEmployee_TextChanged);
+            this.txtEmployee.Leave += new System.EventHandler(this.txtEmployee_Leave);
             // 
             // guna2ShadowPanel1
             // 
