@@ -1,15 +1,19 @@
 ﻿using Jewelry.BLL;
-using Jewelry.DAL;
 using Jewelry.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Jewelry
 {
@@ -131,6 +135,48 @@ namespace Jewelry
             lblPrevDiscount.Text = $"{discount:N0} ₫";
             lblPrevTotal.Text = $"{total:N0} ₫";
         }
+
+        //Save PDF
+        private string SaveInvoicePreviewAsPDF(string followID)
+        {
+            try
+            {
+                string folder = Path.Combine(Application.StartupPath, "InvoicePreviews");
+                Directory.CreateDirectory(folder);
+
+                string fileName = $"{followID}.pdf"; // Ví dụ: FO-20251101191523.pdf
+                string filePath = Path.Combine(folder, fileName);
+
+                using (Bitmap bmp = new Bitmap(pnlInvoicePreview.Width, pnlInvoicePreview.Height))
+                {
+                    pnlInvoicePreview.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height));
+
+                    using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                    {
+                        iTextSharp.text.Document doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 25, 25, 25, 25);
+                        iTextSharp.text.pdf.PdfWriter.GetInstance(doc, fs);
+                        doc.Open();
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                            pdfImage.ScaleToFit(doc.PageSize.Width - 50, doc.PageSize.Height - 50);
+                            pdfImage.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                            doc.Add(pdfImage);
+                        }
+
+                        doc.Close();
+                    }
+                }
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving PDF: " + ex.Message);
+                return null;
+            }
+        }
         //btn Print
         private void btnPayment_Click(object sender, EventArgs e)
         {
@@ -223,6 +269,20 @@ namespace Jewelry
                 if (success)
                 {
                     customerBLL.UpdateCustomerPointAndMembership(invoice.idCustomer, total);
+                    //Lưu pdf
+                    string pdfPath = SaveInvoicePreviewAsPDF(invoiceID);
+
+                    if (!string.IsNullOrEmpty(pdfPath))
+                    {
+                        var previewBLL = new InvoicePreviewBLL();
+                        InvoicePreviewDTO preview = new InvoicePreviewDTO
+                        {
+                            idInvoice = invoiceID,
+                            Type = "Pre-Order",
+                            LinkInvoice = pdfPath  // DAL sẽ tự rút tên file
+                        };
+                        previewBLL.AddOrUpdatePreview(preview);
+                    }
 
                     DialogResult result = MessageBox.Show(
                                              $"Invoice {invoiceID} saved successfully!",
@@ -250,6 +310,7 @@ namespace Jewelry
             }
         
          }
+        //Parse money string
         private decimal ParseMoney(string input)
         {
             if (string.IsNullOrWhiteSpace(input)) return 0;
@@ -262,6 +323,7 @@ namespace Jewelry
 
             return decimal.TryParse(input, out decimal value) ? value : 0;
         }
+        //Preferences Customer
         private void txtPhone_Leave(object sender, EventArgs e)
         {
             string phone = txtPhone.Text.Trim();
@@ -305,7 +367,7 @@ namespace Jewelry
         {
             lblPrevAddress.Text = txtAddress.Text;
         }
-
+        //Preferences Employee
         private string currentEmployeeID = null;
         private void txtEmployee_Leave(object sender, EventArgs e)
         {

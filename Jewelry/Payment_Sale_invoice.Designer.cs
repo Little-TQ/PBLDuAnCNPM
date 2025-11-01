@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -73,7 +73,7 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlInvoicePreview = new System.Windows.Forms.Panel();
             this.lblMembership = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPoint = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -125,7 +125,7 @@
             this.btnContinueShopping.SuspendLayout();
             this.btnPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnlInvoicePreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -326,16 +326,16 @@
             // 
             // dgvOrderSummary
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dgvOrderSummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvOrderSummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrderSummary.ColumnHeadersHeight = 30;
             this.dgvOrderSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvOrderSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -346,14 +346,14 @@
             this.BasePrice,
             this.Price,
             this.Amount});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrderSummary.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderSummary.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrderSummary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrderSummary.Location = new System.Drawing.Point(16, 69);
             this.dgvOrderSummary.Name = "dgvOrderSummary";
@@ -623,51 +623,51 @@
             this.guna2HtmlLabel10.TabIndex = 50;
             this.guna2HtmlLabel10.Text = "Order Summary";
             // 
-            // panel3
+            // pnlInvoicePreview
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblMembership);
-            this.panel3.Controls.Add(this.lblPoint);
-            this.panel3.Controls.Add(this.guna2HtmlLabel12);
-            this.panel3.Controls.Add(this.guna2HtmlLabel11);
-            this.panel3.Controls.Add(this.lblMedthod);
-            this.panel3.Controls.Add(this.guna2HtmlLabel30);
-            this.panel3.Controls.Add(this.guna2HtmlLabel34);
-            this.panel3.Controls.Add(this.guna2HtmlLabel35);
-            this.panel3.Controls.Add(this.guna2HtmlLabel23);
-            this.panel3.Controls.Add(this.guna2HtmlLabel27);
-            this.panel3.Controls.Add(this.guna2HtmlLabel13);
-            this.panel3.Controls.Add(this.guna2HtmlLabel18);
-            this.panel3.Controls.Add(this.guna2HtmlLabel19);
-            this.panel3.Controls.Add(this.guna2HtmlLabel21);
-            this.panel3.Controls.Add(this.guna2HtmlLabel22);
-            this.panel3.Controls.Add(this.dgvPreview);
-            this.panel3.Controls.Add(this.guna2HtmlLabel33);
-            this.panel3.Controls.Add(this.guna2HtmlLabel32);
-            this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.lblPreviewEmployee);
-            this.panel3.Controls.Add(this.panel9);
-            this.panel3.Controls.Add(this.lblPrevTotal);
-            this.panel3.Controls.Add(this.lblPrevDiscount);
-            this.panel3.Controls.Add(this.lblPreSubTotal);
-            this.panel3.Controls.Add(this.lblSub);
-            this.panel3.Controls.Add(this.guna2HtmlLabel25);
-            this.panel3.Controls.Add(this.guna2HtmlLabel24);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.lblPrevAddress);
-            this.panel3.Controls.Add(this.lblPrevPhone);
-            this.panel3.Controls.Add(this.lblPrevName);
-            this.panel3.Controls.Add(this.guna2HtmlLabel20);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Controls.Add(this.lblInvoiceID);
-            this.panel3.Controls.Add(this.guna2HtmlLabel17);
-            this.panel3.Location = new System.Drawing.Point(819, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(402, 892);
-            this.panel3.TabIndex = 64;
+            this.pnlInvoicePreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInvoicePreview.Controls.Add(this.lblMembership);
+            this.pnlInvoicePreview.Controls.Add(this.lblPoint);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel12);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel11);
+            this.pnlInvoicePreview.Controls.Add(this.lblMedthod);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel30);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel34);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel35);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel23);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel27);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel13);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel18);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel19);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel21);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel22);
+            this.pnlInvoicePreview.Controls.Add(this.dgvPreview);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel33);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel32);
+            this.pnlInvoicePreview.Controls.Add(this.panel10);
+            this.pnlInvoicePreview.Controls.Add(this.lblPreviewEmployee);
+            this.pnlInvoicePreview.Controls.Add(this.panel9);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevTotal);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevDiscount);
+            this.pnlInvoicePreview.Controls.Add(this.lblPreSubTotal);
+            this.pnlInvoicePreview.Controls.Add(this.lblSub);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel25);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel24);
+            this.pnlInvoicePreview.Controls.Add(this.panel8);
+            this.pnlInvoicePreview.Controls.Add(this.panel7);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevAddress);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevPhone);
+            this.pnlInvoicePreview.Controls.Add(this.lblPrevName);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel20);
+            this.pnlInvoicePreview.Controls.Add(this.panel5);
+            this.pnlInvoicePreview.Controls.Add(this.panel6);
+            this.pnlInvoicePreview.Controls.Add(this.lblDate);
+            this.pnlInvoicePreview.Controls.Add(this.lblInvoiceID);
+            this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel17);
+            this.pnlInvoicePreview.Location = new System.Drawing.Point(819, 52);
+            this.pnlInvoicePreview.Name = "pnlInvoicePreview";
+            this.pnlInvoicePreview.Size = new System.Drawing.Size(402, 892);
+            this.pnlInvoicePreview.TabIndex = 64;
             // 
             // lblMembership
             // 
@@ -836,16 +836,16 @@
             // 
             // dgvPreview
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvPreview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("EB Garamond Medium", 7.799999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPreview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("EB Garamond Medium", 7.799999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPreview.ColumnHeadersHeight = 30;
             this.dgvPreview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPreview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -856,25 +856,25 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPreview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPreview.Location = new System.Drawing.Point(3, 349);
             this.dgvPreview.Name = "dgvPreview";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("EB Garamond", 7.799999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreview.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("EB Garamond", 7.799999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreview.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPreview.RowHeadersVisible = false;
             this.dgvPreview.RowHeadersWidth = 51;
             this.dgvPreview.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1190,7 +1190,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1255, 970);
             this.Controls.Add(this.guna2HtmlLabel16);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlInvoicePreview);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.txtEmployee);
@@ -1214,8 +1214,8 @@
             this.btnPayment.ResumeLayout(false);
             this.btnPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlInvoicePreview.ResumeLayout(false);
+            this.pnlInvoicePreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1252,7 +1252,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2ShadowPanel btnContinueShopping;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlInvoicePreview;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblInvoiceID;

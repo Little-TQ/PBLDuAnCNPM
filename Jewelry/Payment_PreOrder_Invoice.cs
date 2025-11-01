@@ -179,7 +179,7 @@ namespace Jewelry
                 return null;
             }
         }
-
+        //Button Print Click
         private void btnPrint_Click(object sender, EventArgs e)
         {
             try
@@ -292,12 +292,7 @@ namespace Jewelry
             }
 
         }
-
-
-        private void btnPrint_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        //Parse money from string
         private decimal ParseMoney(string input)
         {
             if (string.IsNullOrWhiteSpace(input)) return 0;
@@ -310,7 +305,7 @@ namespace Jewelry
 
             return decimal.TryParse(input, out decimal value) ? value : 0;
         }
-
+        //Preferences Customer
         private void txtPhone_Leave(object sender, EventArgs e)
         {
             string phone = txtPhone.Text.Trim();
@@ -338,6 +333,7 @@ namespace Jewelry
                 lblMembership.Text = "Member";
             }
         }
+        //Preferences Employee
         private string currentEmployeeID = null;
         private void txtEmployee_Leave(object sender, EventArgs e)
         {
@@ -360,6 +356,7 @@ namespace Jewelry
                 lblEm.Text = txtEmployee.Text;
             }
         }
+        //Update preview summary totals
         private void UpdatePreviewSummary()
         {
             try
@@ -383,6 +380,12 @@ namespace Jewelry
         }
 
 
+
+        private void btnPrint_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+        
         private void btnContinueShopping_Paint(object sender, PaintEventArgs e)
         {
             
