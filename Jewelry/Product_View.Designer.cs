@@ -37,7 +37,6 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnReset = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,21 +49,21 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnViewProduct = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnEditProperty = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbMaterial = new System.Windows.Forms.ComboBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.panelDGV = new System.Windows.Forms.Panel();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.property1 = new Jewelry.FolderProduct.Property();
             this.products1 = new Jewelry.FolderProduct.Products();
             this.navbar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).BeginInit();
             this.panelDGV.SuspendLayout();
             this.SuspendLayout();
@@ -128,13 +127,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnViewProduct);
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.guna2HtmlLabel2);
             this.panel1.Controls.Add(this.guna2HtmlLabel1);
             this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnViewProduct);
             this.panel1.Controls.Add(this.btnEditProperty);
             this.panel1.Controls.Add(this.cbCategory);
             this.panel1.Controls.Add(this.cbMaterial);
@@ -174,19 +173,6 @@
             this.lblTotal.Size = new System.Drawing.Size(91, 30);
             this.lblTotal.TabIndex = 48;
             this.lblTotal.Text = "Category";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Image = global::Jewelry.Properties.Resources.EXIT1;
-            this.btnReset.ImageRotate = 0F;
-            this.btnReset.Location = new System.Drawing.Point(1067, 41);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnReset.Size = new System.Drawing.Size(30, 29);
-            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReset.TabIndex = 47;
-            this.btnReset.TabStop = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // panel2
             // 
@@ -288,24 +274,11 @@
             this.dashBoardToolStripMenuItem.Text = "DashBoard";
             this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Image = global::Jewelry.Properties.Resources.View;
-            this.btnViewProduct.ImageRotate = 0F;
-            this.btnViewProduct.Location = new System.Drawing.Point(1136, 41);
-            this.btnViewProduct.Name = "btnViewProduct";
-            this.btnViewProduct.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnViewProduct.Size = new System.Drawing.Size(30, 29);
-            this.btnViewProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnViewProduct.TabIndex = 45;
-            this.btnViewProduct.TabStop = false;
-            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
-            // 
             // btnEditProperty
             // 
             this.btnEditProperty.Image = global::Jewelry.Properties.Resources.Edit;
             this.btnEditProperty.ImageRotate = 0F;
-            this.btnEditProperty.Location = new System.Drawing.Point(1186, 41);
+            this.btnEditProperty.Location = new System.Drawing.Point(282, 50);
             this.btnEditProperty.Name = "btnEditProperty";
             this.btnEditProperty.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnEditProperty.Size = new System.Drawing.Size(30, 29);
@@ -347,6 +320,7 @@
             // 
             // panelDGV
             // 
+            this.panelDGV.Controls.Add(this.panel8);
             this.panelDGV.Controls.Add(this.property1);
             this.panelDGV.Controls.Add(this.products1);
             this.panelDGV.Location = new System.Drawing.Point(0, 228);
@@ -354,11 +328,51 @@
             this.panelDGV.Size = new System.Drawing.Size(1440, 796);
             this.panelDGV.TabIndex = 3;
             // 
+            // btnReset
+            // 
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.btnReset.Font = new System.Drawing.Font("EB Garamond SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(1114, 49);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(86, 34);
+            this.btnReset.TabIndex = 51;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnViewProduct
+            // 
+            this.btnViewProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(56)))), ((int)(((byte)(59)))));
+            this.btnViewProduct.Font = new System.Drawing.Font("EB Garamond SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewProduct.ForeColor = System.Drawing.Color.White;
+            this.btnViewProduct.Location = new System.Drawing.Point(1010, 49);
+            this.btnViewProduct.Name = "btnViewProduct";
+            this.btnViewProduct.Size = new System.Drawing.Size(86, 34);
+            this.btnViewProduct.TabIndex = 52;
+            this.btnViewProduct.Text = "View";
+            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
+            this.panel8.Location = new System.Drawing.Point(-31, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1474, 1);
+            this.panel8.TabIndex = 80;
+            // 
             // property1
             // 
             this.property1.BackColor = System.Drawing.Color.White;
             this.property1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.property1.Location = new System.Drawing.Point(332, 90);
+            this.property1.Location = new System.Drawing.Point(319, 134);
             this.property1.Name = "property1";
             this.property1.Size = new System.Drawing.Size(766, 616);
             this.property1.TabIndex = 1;
@@ -366,9 +380,9 @@
             // products1
             // 
             this.products1.BackColor = System.Drawing.Color.White;
-            this.products1.Location = new System.Drawing.Point(0, 2);
+            this.products1.Location = new System.Drawing.Point(0, 16);
             this.products1.Name = "products1";
-            this.products1.Size = new System.Drawing.Size(1440, 802);
+            this.products1.Size = new System.Drawing.Size(1440, 788);
             this.products1.TabIndex = 0;
             // 
             // Product_View
@@ -390,12 +404,10 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnViewProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditProperty)).EndInit();
             this.panelDGV.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -411,7 +423,6 @@
         private System.Windows.Forms.ComboBox cbMaterial;
         private System.Windows.Forms.ComboBox cbColor;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btnEditProperty;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnViewProduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
@@ -430,9 +441,11 @@
         private FolderProduct.Property property1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnReset;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotal;
+        private Guna.UI2.WinForms.Guna2Button btnViewProduct;
+        private Guna.UI2.WinForms.Guna2Button btnReset;
+        private System.Windows.Forms.Panel panel8;
     }
 }
