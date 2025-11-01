@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblMembership = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -131,6 +130,7 @@
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.deliveryDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -154,7 +154,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtDate);
+            this.panel3.Controls.Add(this.deliveryDate);
             this.panel3.Controls.Add(this.guna2HtmlLabel14);
             this.panel3.Controls.Add(this.guna2HtmlLabel29);
             this.panel3.Controls.Add(this.lblMembership);
@@ -202,25 +202,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(491, 918);
             this.panel3.TabIndex = 76;
-            // 
-            // txtDate
-            // 
-            this.txtDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDate.DefaultText = "";
-            this.txtDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDate.Location = new System.Drawing.Point(128, 106);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.PlaceholderText = "";
-            this.txtDate.SelectedText = "";
-            this.txtDate.Size = new System.Drawing.Size(236, 25);
-            this.txtDate.TabIndex = 125;
             // 
             // guna2HtmlLabel14
             // 
@@ -1102,11 +1083,11 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("EB Garamond SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(98, 5);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(113, 9);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(186, 35);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(53, 35);
             this.guna2HtmlLabel6.TabIndex = 52;
-            this.guna2HtmlLabel6.Text = "Proceed to payment";
+            this.guna2HtmlLabel6.Text = "Print";
             // 
             // Discount
             // 
@@ -1249,7 +1230,7 @@
             this.txtEmployee.SelectedText = "";
             this.txtEmployee.Size = new System.Drawing.Size(287, 48);
             this.txtEmployee.TabIndex = 84;
-            this.txtEmployee.TextChanged += new System.EventHandler(this.txtEmployee_TextChanged);
+            this.txtEmployee.Leave += new System.EventHandler(this.txtEmployee_Leave);
             // 
             // guna2HtmlLabel4
             // 
@@ -1344,6 +1325,20 @@
             this.txtCustomerName.Size = new System.Drawing.Size(287, 48);
             this.txtCustomerName.TabIndex = 78;
             this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
+            // 
+            // deliveryDate
+            // 
+            this.deliveryDate.Checked = true;
+            this.deliveryDate.FillColor = System.Drawing.Color.White;
+            this.deliveryDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.deliveryDate.Location = new System.Drawing.Point(132, 108);
+            this.deliveryDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.deliveryDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.deliveryDate.Name = "deliveryDate";
+            this.deliveryDate.Size = new System.Drawing.Size(232, 24);
+            this.deliveryDate.TabIndex = 125;
+            this.deliveryDate.Value = new System.DateTime(2025, 11, 1, 17, 17, 23, 816);
             // 
             // Payment_PreOrder_Invoice
             // 
@@ -1478,8 +1473,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDeposit;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel29;
-        private Guna.UI2.WinForms.Guna2TextBox txtDate;
         private Guna.UI2.WinForms.Guna2ComboBox cbPayment;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel36;
+        private Guna.UI2.WinForms.Guna2DateTimePicker deliveryDate;
     }
 }

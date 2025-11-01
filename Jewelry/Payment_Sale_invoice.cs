@@ -143,30 +143,28 @@ namespace Jewelry
                     return;
                 }
 
-              
-                string invoiceID = lblInvoiceID.Text.Trim();       
+                string invoiceID = lblInvoiceID.Text.Trim();
                 string customerName = txtCustomerName.Text.Trim();
                 string phone = txtPhone.Text.Trim();
                 string address = txtAddress.Text.Trim();
                 string employee = txtEmployee.Text.Trim();
 
-                //Check ID Employee
-                string empID = employeeBLL.GetEmployeeIDByName(employee);
+                //Lấy ID nhân viên
+                string empID = currentEmployeeID ?? employeeBLL.GetEmployeeIDByName(employee);
                 if (string.IsNullOrEmpty(empID))
                 {
-                    MessageBox.Show($"Employee '{employee}' not found in database!",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Employee not found in database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                //Check or Add Customer
+                // Kiểm tra hoặc thêm khách hàng
                 string idCustomer = null;
                 var existingCustomer = customerBLL.GetCustomerByPhone(phone);
 
                 if (existingCustomer != null)
                 {
                     idCustomer = existingCustomer.idCustomer;
-
+                    // Cập nhật nếu KH có chỉnh sửa
                     if (existingCustomer.NameCustomer != customerName || existingCustomer.AddressC != address)
                     {
                         existingCustomer.NameCustomer = customerName;
@@ -176,6 +174,7 @@ namespace Jewelry
                 }
                 else
                 {
+                    // Thêm KH mới
                     idCustomer = customerBLL.GenerateCustomerID();
                     CustomerDTO newCustomer = new CustomerDTO
                     {
@@ -184,7 +183,7 @@ namespace Jewelry
                         PhoneNumberC = phone,
                         AddressC = address,
                         Point = 0,
-                        Membership = "Bronze"
+                        Membership = "Member"
                     };
                     customerBLL.AddCustomer(newCustomer);
                 }
@@ -272,36 +271,25 @@ namespace Jewelry
 
             if (customer != null)
             {
-              
+                // Nếu KH đã tồn tại -> fill lên form + preview
                 txtCustomerName.Text = customer.NameCustomer;
                 txtAddress.Text = customer.AddressC;
 
+                lblPrevName.Text = customer.NameCustomer;
+                lblPrevPhone.Text = customer.PhoneNumberC;
+                lblPrevAddress.Text = customer.AddressC;
                 lblPoint.Text = customer.Point.ToString();
                 lblMembership.Text = customer.Membership;
-
             }
             else
             {
-                string newID = customerBLL.GenerateCustomerID();
-
-                CustomerDTO newCustomer = new CustomerDTO
-                {
-                    idCustomer = newID,
-                    NameCustomer = txtCustomerName.Text.Trim(),
-                    PhoneNumberC = phone,
-                    AddressC = txtAddress.Text.Trim(),
-                    Point = 0,
-                    Membership = "Member"
-                };
-
-                bool added = customerBLL.AddCustomer(newCustomer);
-
-                if (added)
-                {
-                    MessageBox.Show($"New customer added: {newID}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                // KH chưa có -> khởi tạo dữ liệu tạm
+                lblPrevPhone.Text = phone;
+                lblPoint.Text = "0";
+                lblMembership.Text = "Member";
             }
         }
+
 
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
@@ -318,10 +306,31 @@ namespace Jewelry
             lblPrevAddress.Text = txtAddress.Text;
         }
 
+        private string currentEmployeeID = null;
         private void txtEmployee_TextChanged(object sender, EventArgs e)
         {
-            lblPreviewEmployee.Text = txtEmployee.Text;
+            string empName = txtEmployee.Text.Trim();
+            if (string.IsNullOrEmpty(empName))
+            {
+                currentEmployeeID = null;
+                return;
+            }
+
+            currentEmployeeID = employeeBLL.GetEmployeeIDByName(empName);
+
+            if (string.IsNullOrEmpty(currentEmployeeID))
+            {
+                MessageBox.Show($"Employee '{empName}' not found in database!",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                lblPreviewEmployee.Text = txtEmployee.Text;
+            }
         }
+
+        
+        
         private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblMedthod.Text = cbPayment.Text;

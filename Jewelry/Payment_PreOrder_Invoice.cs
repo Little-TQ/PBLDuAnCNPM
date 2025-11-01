@@ -18,6 +18,7 @@ namespace Jewelry
         private InvoiceBLL invoiceBLL = new InvoiceBLL();
         private EmployeeBLL employeeBLL = new EmployeeBLL();
         private CustomerBLL customerBLL = new CustomerBLL();
+        private FollowOrderBLL followOrderBLL = new FollowOrderBLL();
         public event EventHandler InvoicePrinted;
 
         private List<OrderItem> _orderItems;
@@ -131,7 +132,7 @@ namespace Jewelry
             UpdatePreviewSummary();
         }
 
-        
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
             try
@@ -143,30 +144,28 @@ namespace Jewelry
                     return;
                 }
 
-
                 string invoiceID = lblInvoiceID.Text.Trim();
                 string customerName = txtCustomerName.Text.Trim();
                 string phone = txtPhone.Text.Trim();
                 string address = txtAddress.Text.Trim();
                 string employee = txtEmployee.Text.Trim();
 
-                //Check ID Employee
-                string empID = employeeBLL.GetEmployeeIDByName(employee);
+                //Lấy ID nhân viên
+                string empID = currentEmployeeID ?? employeeBLL.GetEmployeeIDByName(employee);
                 if (string.IsNullOrEmpty(empID))
                 {
-                    MessageBox.Show($"Employee '{employee}' not found in database!",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Employee not found in database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                //Check or Add Customer
+                // Kiểm tra hoặc thêm khách hàng
                 string idCustomer = null;
                 var existingCustomer = customerBLL.GetCustomerByPhone(phone);
 
                 if (existingCustomer != null)
                 {
                     idCustomer = existingCustomer.idCustomer;
-
+                    // Cập nhật nếu KH có chỉnh sửa
                     if (existingCustomer.NameCustomer != customerName || existingCustomer.AddressC != address)
                     {
                         existingCustomer.NameCustomer = customerName;
@@ -176,6 +175,7 @@ namespace Jewelry
                 }
                 else
                 {
+                    // Thêm KH mới
                     idCustomer = customerBLL.GenerateCustomerID();
                     CustomerDTO newCustomer = new CustomerDTO
                     {
@@ -184,65 +184,46 @@ namespace Jewelry
                         PhoneNumberC = phone,
                         AddressC = address,
                         Point = 0,
-                        Membership = "Bronze"
+                        Membership = "Member"
                     };
                     customerBLL.AddCustomer(newCustomer);
                 }
 
-                string type = "Sale";
-                string status = (type == "Pre-Order") ? "In process" : "Done";
-
+                //Tạo bản ghi FollowOrder (PreOrder)
+                string type = "Pre-Order";
+                string status = "In Progress";
                 decimal subtotal = ParseMoney(SubTotal.Text);
                 decimal discount = ParseMoney(Discount.Text);
                 decimal total = subtotal - discount;
 
-                //Create Invoice and Details
-                InvoiceDTO invoice = new InvoiceDTO
+                FollowOrderBLL followBLL = new FollowOrderBLL();
+                string followID = followBLL.GenerateFollowOrderID();
+
+                FollowOrderDTO followOrder = new FollowOrderDTO
                 {
-                    idInvoice = invoiceID,
-                    idCustomer = idCustomer,
-                    DateTimeCreateInvoice = DateTime.Now,
-                    Type = type,
+                    idFollowOrder = followID,
+                    idInvoice = null,
                     Status = status,
-                    idEmployee = empID,
-                    Total = total
+                    DateOrder = DateTime.Now,
+                    DateDelivery = deliveryDate.Value
                 };
 
-                List<InvoiceDetailDTO> details = _orderItems.Select(i => new InvoiceDetailDTO
+                bool followSaved = followBLL.AddFollowOrder(followOrder);
+
+                if (followSaved)
                 {
-                    idInvoice = invoiceID,
-                    idProduct = i.ID,
-                    Quantity = i.Quantity,
-                    Price = i.Price,
-                    Amount = i.Amount
-                }).ToList();
+                    //Cập nhật điểm KH dựa theo tổng
+                    customerBLL.UpdateCustomerPointAndMembership(idCustomer, total);
 
+                    MessageBox.Show($"Pre-Order created successfully!\nOrder ID: {followID}",
+                                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //Save Invoice
-                bool success = invoiceBLL.SaveInvoice(invoice, details);
-
-                if (success)
-                {
-                    customerBLL.UpdateCustomerPointAndMembership(invoice.idCustomer, total);
-
-                    DialogResult result = MessageBox.Show(
-                                             $"Invoice {invoiceID} saved successfully!",
-                                             "Success",
-                                             MessageBoxButtons.OK,
-                                             MessageBoxIcon.Information
-                                         );
-
-                    if (result == DialogResult.OK)
-                    {
-                        InvoicePrinted?.Invoke(this, EventArgs.Empty);
-                        this.Close();
-
-                    }
-
+                    InvoicePrinted?.Invoke(this, EventArgs.Empty);
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Failed to save invoice.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to create Follow Order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -250,6 +231,8 @@ namespace Jewelry
                 MessageBox.Show("Error printing invoice: " + ex.Message);
             }
         }
+
+
         private void btnPrint_Paint(object sender, PaintEventArgs e)
         {
             
@@ -276,36 +259,44 @@ namespace Jewelry
 
             if (customer != null)
             {
-
+                // Nếu KH đã tồn tại -> fill lên form + preview
                 txtCustomerName.Text = customer.NameCustomer;
                 txtAddress.Text = customer.AddressC;
 
+                lblPrevName.Text = customer.NameCustomer;
                 lblPrevPhone.Text = customer.PhoneNumberC;
-
+                lblPrevAddress.Text = customer.AddressC;
                 lblPoint.Text = customer.Point.ToString();
                 lblMembership.Text = customer.Membership;
-
             }
             else
             {
-                string newID = customerBLL.GenerateCustomerID();
+                // KH chưa có -> khởi tạo dữ liệu tạm
+                lblPrevPhone.Text = phone;
+                lblPoint.Text = "0";
+                lblMembership.Text = "Member";
+            }
+        }
+        private string currentEmployeeID = null;
+        private void txtEmployee_Leave(object sender, EventArgs e)
+        {
+            string empName = txtEmployee.Text.Trim();
+            if (string.IsNullOrEmpty(empName))
+            {
+                currentEmployeeID = null;
+                return;
+            }
 
-                CustomerDTO newCustomer = new CustomerDTO
-                {
-                    idCustomer = newID,
-                    NameCustomer = txtCustomerName.Text.Trim(),
-                    PhoneNumberC = phone,
-                    AddressC = txtAddress.Text.Trim(),
-                    Point = 0,
-                    Membership = "Member"
-                };
+            currentEmployeeID = employeeBLL.GetEmployeeIDByName(empName);
 
-                bool added = customerBLL.AddCustomer(newCustomer);
-
-                if (added)
-                {
-                    MessageBox.Show($"New customer added: {newID}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (string.IsNullOrEmpty(currentEmployeeID))
+            {
+                MessageBox.Show($"Employee '{empName}' not found in database!",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                lblEm.Text = txtEmployee.Text;
             }
         }
         private void UpdatePreviewSummary()
@@ -330,10 +321,6 @@ namespace Jewelry
             lblPrevName.Text = txtCustomerName.Text.Trim();
         }
 
-        private void txtEmployee_TextChanged(object sender, EventArgs e)
-        {
-            lblEm.Text = txtEmployee.Text.Trim();
-        }
 
         private void btnContinueShopping_Paint(object sender, PaintEventArgs e)
         {

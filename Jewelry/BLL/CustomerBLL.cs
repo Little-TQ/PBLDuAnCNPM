@@ -28,10 +28,10 @@ namespace Jewelry.BLL
         {
             if (string.IsNullOrWhiteSpace(c.idCustomer))
                 throw new Exception("Customer ID cannot be empty.");
-            if (string.IsNullOrWhiteSpace(c.NameCustomer))
-                throw new Exception("Customer name cannot be empty.");
             if (string.IsNullOrWhiteSpace(c.PhoneNumberC))
                 throw new Exception("Customer phonenumber cannot be empty.");
+            if (string.IsNullOrWhiteSpace(c.NameCustomer))
+                throw new Exception("Customer name cannot be empty.");
             if (string.IsNullOrWhiteSpace(c.AddressC))
                 throw new Exception("Customer address cannot be empty.");
 

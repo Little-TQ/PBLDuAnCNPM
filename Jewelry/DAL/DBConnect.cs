@@ -9,7 +9,7 @@ namespace Jewelry.DAL
 {
    public class DBConnect
     {
-        private string connectionString = @"Data Source = LAPTOP-FKJ06BGM\SQLEXPRESS;Initial Catalog=JewelryStoreDB;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=LITTLE\SQLEXPRESS;Initial Catalog=Jewelry;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public SqlConnection GetConnection()
         {
