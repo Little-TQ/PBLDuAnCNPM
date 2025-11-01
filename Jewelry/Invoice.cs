@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Jewelry.Account;
+using Jewelry.FolderCustomer;
+using Jewelry.FolderImportInvoice;
 
 namespace Jewelry
 {
@@ -16,42 +19,15 @@ namespace Jewelry
         {
             InitializeComponent();
         }
-
-        private void btnReturnImportInvoice_Click(object sender, EventArgs e)
+        private void LoadUserControl(UserControl uc)
         {
-            DashBoard frm = new DashBoard();
-            this.Hide();
-            frm.ShowDialog();
+            pnlContainerInvoice.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            pnlContainerInvoice.Controls.Add(uc);
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Invoice_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void mstNCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            LoadUserControl(new General());
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -89,10 +65,6 @@ namespace Jewelry
             frm.ShowDialog();
         }
 
-        private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -107,26 +79,51 @@ namespace Jewelry
             this.Hide();
             frm.ShowDialog();
         }
-
-        private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SupplierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlContainerImportInvoice_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DashBoard frm = new DashBoard();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void ExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem item in mstNCustomer.Items)
+            {
+                item.BackColor = Color.Transparent;
+                item.ForeColor = Color.Black;
+            }
+
+            Export.BackColor = Color.Transparent;
+            Export.ForeColor = Color.Red;
+            LoadUserControl(new ExportInvoice());
+        }
+
+        private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem item in mstNCustomer.Items)
+            {
+                item.BackColor = Color.Transparent;
+                item.ForeColor = Color.Black;
+            }
+
+            Import.BackColor = Color.Transparent;
+            Import.ForeColor = Color.Red;
+            LoadUserControl(new ImportInvoice());
+        }
+
+        private void preOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem item in mstNCustomer.Items)
+            {
+                item.BackColor = Color.Transparent;
+                item.ForeColor = Color.Black;
+            }
+
+            preOrder.BackColor = Color.Transparent;
+            preOrder.ForeColor = Color.Red;
+            LoadUserControl(new FollowItems());
         }
     }
 }

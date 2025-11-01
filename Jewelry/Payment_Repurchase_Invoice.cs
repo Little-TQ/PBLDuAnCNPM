@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -152,7 +153,7 @@ namespace Jewelry
         private void UpdateInvoicePreview()
         {
             lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            lblInvoiceID.Text = "IVN-" + DateTime.Now.ToString("yyMMddHHmmss");
+            lblInvoiceID.Text = "RP-" + DateTime.Now.ToString("yyMMddHHmmss");
         }
 
         // Update totals
@@ -169,17 +170,12 @@ namespace Jewelry
                 }
             }
 
-            if (decimal.TryParse(txtDepreciation.Text.Replace("₫", "").Replace(",", "").Trim(), out decimal depreciationValue))
-                depreciation = depreciationValue;
-
             decimal total = subtotal - depreciation;
 
             labelSubTotal.Text = $"{subtotal:N0} ₫";
-            txtDepreciation.Text = $"{depreciation:N0} ₫";
-            lblTotal.Text = $"{total:N0} ₫";
+            lblTotalR.Text = $"{total:N0} ₫";
 
             lblPreSubTotal.Text = $"{subtotal:N0} ₫";
-            lblPrevDepreciation.Text = $"{depreciation:N0} ₫";
             labelPreviewTotal.Text = $"{total:N0} ₫";
         }
 
@@ -196,7 +192,49 @@ namespace Jewelry
             return decimal.TryParse(input, out decimal value) ? value : 0;
         }
 
-     
+        //Save PDF
+        private string SaveInvoicePreviewAsPDF(string followID)
+        {
+            try
+            {
+                string folder = Path.Combine(Application.StartupPath, "InvoicePreviews");
+                Directory.CreateDirectory(folder);
+
+                string fileName = $"{followID}.pdf"; // Ví dụ: FO-20251101191523.pdf
+                string filePath = Path.Combine(folder, fileName);
+
+                using (Bitmap bmp = new Bitmap(pnlInvoicePreviewR.Width, pnlInvoicePreviewR.Height))
+                {
+                    pnlInvoicePreviewR.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height));
+
+                    using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                    {
+                        iTextSharp.text.Document doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 25, 25, 25, 25);
+                        iTextSharp.text.pdf.PdfWriter.GetInstance(doc, fs);
+                        doc.Open();
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                            pdfImage.ScaleToFit(doc.PageSize.Width - 50, doc.PageSize.Height - 50);
+                            pdfImage.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                            doc.Add(pdfImage);
+                        }
+
+                        doc.Close();
+                    }
+                }
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving PDF: " + ex.Message);
+                return null;
+            }
+        }
+
+
         private void btnPayment_Click(object sender, EventArgs e)
         {
             try
@@ -265,8 +303,7 @@ namespace Jewelry
                 string status = "Done";
 
                 decimal subtotal = ParseMoney(labelSubTotal.Text);
-                decimal depreciation = ParseMoney(txtDepreciation.Text);
-                decimal total = subtotal - depreciation;
+                decimal total = subtotal ;
 
                 // Create Invoice and Details
                 InvoiceDTO invoice = new InvoiceDTO
@@ -291,9 +328,25 @@ namespace Jewelry
 
                 // Save Invoice
                 bool success = invoiceBLL.SaveInvoice(invoice, details);
-
+                
                 if (success)
                 {
+                    customerBLL.UpdateCustomerPointAndMembership(invoice.idCustomer, total);
+                    //Lưu pdf
+                    string pdfPath = SaveInvoicePreviewAsPDF(invoiceID);
+
+                    if (!string.IsNullOrEmpty(pdfPath))
+                    {
+                        var previewBLL = new InvoicePreviewBLL();
+                        InvoicePreviewDTO preview = new InvoicePreviewDTO
+                        {
+                            idInvoice = invoiceID,
+                            Type = "Repurchase",
+                            LinkInvoice = pdfPath  // DAL sẽ tự rút tên file
+                        };
+                        previewBLL.AddOrUpdatePreview(preview);
+                    }
+
                     DialogResult result = MessageBox.Show(
                                              $"Repurchase Invoice {invoiceID} saved successful!",
                                              "Successful",
@@ -335,21 +388,6 @@ namespace Jewelry
         private void txtEmployee_TextChanged(object sender, EventArgs e)
         {
             lblPreviewEmployee.Text = txtEmployee.Text;
-        }
-        private void txtDepreciation_TextChanged(object sender, EventArgs e)
-        {
-            CalculateTotals();
-        }
-
-        private void txtDepreciation_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtDepreciation.Text))
-            {
-                if (decimal.TryParse(txtDepreciation.Text.Replace("₫", "").Replace(",", "").Trim(), out decimal value))
-                {
-                    txtDepreciation.Text = $"{value:N0} ₫";
-                }
-            }
         }
         private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
         {

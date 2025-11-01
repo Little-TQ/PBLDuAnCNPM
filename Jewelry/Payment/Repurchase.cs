@@ -13,7 +13,6 @@ namespace Jewelry.Payment
     {
         private InvoiceBLL invoiceBLL = new InvoiceBLL();
         private UpdateBLL updateBLL = new UpdateBLL();
-        private ProductBLL productBLL = new ProductBLL();
         private string currentInvoiceId = "";
 
         public Repurchase()

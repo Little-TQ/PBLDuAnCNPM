@@ -32,9 +32,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnViewExportInvoice = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearchExportInvoice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dataGridViewExportInvoice = new System.Windows.Forms.DataGridView();
+            this.dgvExportInvoice = new System.Windows.Forms.DataGridView();
+            this.pnlInvoiceSale = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExportInvoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExportInvoice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -90,29 +91,40 @@
             this.txtSearchExportInvoice.SelectedText = "";
             this.txtSearchExportInvoice.Size = new System.Drawing.Size(468, 45);
             this.txtSearchExportInvoice.TabIndex = 0;
+            this.txtSearchExportInvoice.TextChanged += new System.EventHandler(this.txtSearchExportInvoice_TextChanged);
+            this.txtSearchExportInvoice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchExportInvoice_KeyDown);
             // 
-            // dataGridViewExportInvoice
+            // dgvExportInvoice
             // 
-            this.dataGridViewExportInvoice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewExportInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExportInvoice.Location = new System.Drawing.Point(163, 258);
-            this.dataGridViewExportInvoice.Name = "dataGridViewExportInvoice";
-            this.dataGridViewExportInvoice.RowHeadersWidth = 51;
-            this.dataGridViewExportInvoice.RowTemplate.Height = 24;
-            this.dataGridViewExportInvoice.Size = new System.Drawing.Size(1087, 365);
-            this.dataGridViewExportInvoice.TabIndex = 7;
+            this.dgvExportInvoice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvExportInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExportInvoice.Location = new System.Drawing.Point(24, 137);
+            this.dgvExportInvoice.Name = "dgvExportInvoice";
+            this.dgvExportInvoice.RowHeadersWidth = 51;
+            this.dgvExportInvoice.RowTemplate.Height = 24;
+            this.dgvExportInvoice.Size = new System.Drawing.Size(703, 593);
+            this.dgvExportInvoice.TabIndex = 7;
+            this.dgvExportInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExportInvoice_CellContentClick);
+            // 
+            // pnlInvoiceSale
+            // 
+            this.pnlInvoiceSale.Location = new System.Drawing.Point(901, 102);
+            this.pnlInvoiceSale.Name = "pnlInvoiceSale";
+            this.pnlInvoiceSale.Size = new System.Drawing.Size(479, 700);
+            this.pnlInvoiceSale.TabIndex = 8;
             // 
             // ExportInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridViewExportInvoice);
+            this.Controls.Add(this.pnlInvoiceSale);
+            this.Controls.Add(this.dgvExportInvoice);
             this.Controls.Add(this.panel3);
             this.Name = "ExportInvoice";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(1440, 805);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExportInvoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExportInvoice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,6 +134,7 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button btnViewExportInvoice;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchExportInvoice;
-        private System.Windows.Forms.DataGridView dataGridViewExportInvoice;
+        private System.Windows.Forms.DataGridView dgvExportInvoice;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlInvoiceSale;
     }
 }

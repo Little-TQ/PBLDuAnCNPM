@@ -59,17 +59,7 @@ namespace Jewelry.BLL
         {
             return customerDAL.GetCustomerByPhone(phone);
         }
-        //check if phone exists
-        public bool IsPhoneExists(string phone)
-        {
-            return customerDAL.IsPhoneExists(phone);
-        }
-        //get customer id by phone
-        public string GetCustomerIdByPhone(string phone)
-        {
-            return customerDAL.GetCustomerIdByPhone(phone);
-        }
-       
+ 
         //update customer point and membership
         public bool UpdateCustomerPointAndMembership(string idCustomer, decimal total)
         {
