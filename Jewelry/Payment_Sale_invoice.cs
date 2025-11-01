@@ -278,7 +278,7 @@ namespace Jewelry
                         InvoicePreviewDTO preview = new InvoicePreviewDTO
                         {
                             idInvoice = invoiceID,
-                            Type = "Pre-Order",
+                            Type = "Sale",
                             LinkInvoice = pdfPath  // DAL sẽ tự rút tên file
                         };
                         previewBLL.AddOrUpdatePreview(preview);

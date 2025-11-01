@@ -49,7 +49,7 @@ namespace Jewelry
         }
         private void btnEditProperty_Click(object sender, EventArgs e)
         {
-           products1.Visible = true;
+              products1.Visible = true;
               property1.Visible = true;
         }
         //Load cb
