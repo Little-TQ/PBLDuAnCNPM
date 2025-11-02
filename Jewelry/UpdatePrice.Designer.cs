@@ -487,10 +487,6 @@
             this.cbxMaterialUpdate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxMaterialUpdate.ForeColor = System.Drawing.Color.Silver;
             this.cbxMaterialUpdate.ItemHeight = 30;
-            this.cbxMaterialUpdate.Items.AddRange(new object[] {
-            "Gold18",
-            "Gold24",
-            "White Gold"});
             this.cbxMaterialUpdate.Location = new System.Drawing.Point(23, 168);
             this.cbxMaterialUpdate.Name = "cbxMaterialUpdate";
             this.cbxMaterialUpdate.Size = new System.Drawing.Size(271, 36);
