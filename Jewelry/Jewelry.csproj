@@ -207,18 +207,19 @@
     <Compile Include="Payment\PreOrder.Designer.cs">
       <DependentUpon>PreOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment\Repurchase.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Payment\Repurchase.Designer.cs">
-      <DependentUpon>Repurchase.cs</DependentUpon>
-    </Compile>
     <Compile Include="Payment\Sale.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Payment\Sale.Designer.cs">
       <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\Repurchase.cs" />
+    <Compile Include="Payment\Repurchase.Designer.cs">
+      <DependentUpon>Repurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\RepurchaseDetailBLL.cs" />
+    <Compile Include="DAL\RepurchaseDetailDAL.cs" />
+    <Compile Include="DTO\RepurchaseDetailDTO.cs" />
     <Compile Include="SalaryEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,11 +405,11 @@
     <EmbeddedResource Include="Payment\PreOrder.resx">
       <DependentUpon>PreOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment\Repurchase.resx">
-      <DependentUpon>Repurchase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Payment\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Repurchase.resx">
+      <DependentUpon>Repurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryEdit.resx">
       <DependentUpon>SalaryEdit.cs</DependentUpon>

@@ -13,13 +13,29 @@ namespace Jewelry.Payment
     {
         private InvoiceBLL invoiceBLL = new InvoiceBLL();
         private UpdateBLL updateBLL = new UpdateBLL();
-        private ProductBLL productBLL = new ProductBLL();
-        private string currentInvoiceId = "";
+        private string currentMaterialId = "";
 
         public Repurchase()
         {
             InitializeComponent();
             SetupDataGridView();
+            LoadMaterials();
+        }
+
+        private void LoadMaterials()
+        {
+            try
+            {
+                DataTable materials = updateBLL.GetAllMaterials();
+                cbxMaterialUpdate.DataSource = materials;
+                cbxMaterialUpdate.DisplayMember = "NameMaterial";
+                cbxMaterialUpdate.ValueMember = "idMaterial";
+                cbxMaterialUpdate.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading materials: {ex.Message}");
+            }
         }
 
         private void SetupDataGridView()
@@ -27,118 +43,95 @@ namespace Jewelry.Payment
             dgvProduct.Columns.Clear();
             dgvProduct.Columns.AddRange(new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { Name = "Product", HeaderText = "Product", ReadOnly = true },
-                new DataGridViewTextBoxColumn { Name = "Quantity", HeaderText = "Quantity" },
+                new DataGridViewTextBoxColumn { Name = "Material", HeaderText = "Material", ReadOnly = true },
                 new DataGridViewTextBoxColumn { Name = "Weight", HeaderText = "Weight", ReadOnly = true },
-                new DataGridViewTextBoxColumn { Name = "Wage", HeaderText = "Wage", ReadOnly = true },
-                new DataGridViewTextBoxColumn { Name = "BasePrice", HeaderText = "BasePrice", ReadOnly = true },
-                new DataGridViewTextBoxColumn { Name = "Price", HeaderText = "Price", ReadOnly = true },
                 new DataGridViewTextBoxColumn { Name = "RepurchasePrice", HeaderText = "RepurchasePrice", ReadOnly = true },
                 new DataGridViewTextBoxColumn { Name = "Amount", HeaderText = "Amount", ReadOnly = true },
-                new DataGridViewTextBoxColumn { Name = "idProduct", HeaderText = "idProduct", Visible = false },
                 new DataGridViewTextBoxColumn { Name = "idMaterial", HeaderText = "idMaterial", Visible = false }
             });
 
-            dgvProduct.CellEndEdit += dgvProduct_CellEndEdit;
             dgvProduct.AllowUserToAddRows = false;
+            dgvProduct.Columns["RepurchasePrice"].DefaultCellStyle.Format = "#,##0 ₫";
+            dgvProduct.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
         }
 
-        private void txbSearch_KeyDown(object sender, KeyEventArgs e)
+        private void cbxMaterialUpdate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string invoiceId = txbSearch.Text.Trim();
-                if (string.IsNullOrEmpty(invoiceId))
-                {
-                    MessageBox.Show("Please enter your ID invoice");
-                    return;
-                }
+            if (cbxMaterialUpdate.SelectedIndex == -1) return;
 
-                SearchInvoice(invoiceId);
+            // Chỉ lưu materialId, chưa thêm vào dgv
+            currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
+
+            // Focus để nhập weight
+            txtWeight.Focus();
+        }
+
+        private void txtWeight_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(currentMaterialId))
+            {
+                AddMaterialToGrid();
             }
         }
 
-        private void SearchInvoice(string invoiceId)
+        private void AddMaterialToGrid()
         {
             try
             {
-                var invoiceDetails = invoiceBLL.GetInvoiceDetails(invoiceId);
-
-                if (invoiceDetails == null || invoiceDetails.Rows.Count == 0)
+                if (string.IsNullOrWhiteSpace(txtWeight.Text) || !decimal.TryParse(txtWeight.Text, out decimal weight) || weight <= 0)
                 {
-                    MessageBox.Show("Search Unsuccessful!");
+                    MessageBox.Show("Please enter valid weight");
                     return;
                 }
 
-                currentInvoiceId = invoiceId;
-                dgvProduct.Rows.Clear();
+                string materialName = cbxMaterialUpdate.Text;
 
-                foreach (DataRow row in invoiceDetails.Rows)
+                // Kiểm tra trùng
+                foreach (DataGridViewRow row in dgvProduct.Rows)
                 {
-                    string productId = row["idProduct"].ToString();
-                    string materialId = row["idMaterial"].ToString();
-
-                    // Lấy giá mua lại từ UpdateBLL
-                    var repurchaseData = updateBLL.GetLatestRepurchasePriceAndChange(materialId);
-                    decimal repurchasePrice = repurchaseData.Repurchase;
-  
-                    decimal quantity = Convert.ToDecimal(row["Quantity"]);
-                    decimal weight = Convert.ToDecimal(row["Weight"]);
-                    decimal wage = Convert.ToDecimal(row["Wage"]);
-                    decimal basicprice = Convert.ToDecimal(row["Price"]);
-
-                    // Tính giá theo công thức: (BasicPrice * Weight) + Wage
-                    decimal price = (basicprice * weight) + wage;
-
-                    // Thêm dòng mới với đầy đủ thông tin
-                    int index = dgvProduct.Rows.Add();
-                    dgvProduct.Rows[index].Cells["Product"].Value = row["ProductName"];
-                    dgvProduct.Rows[index].Cells["Product"].Tag = productId; 
-                    dgvProduct.Rows[index].Cells["Quantity"].Value = quantity;
-                    dgvProduct.Rows[index].Cells["Weight"].Value = weight;
-                    dgvProduct.Rows[index].Cells["Wage"].Value = wage;
-                    dgvProduct.Rows[index].Cells["BasePrice"].Value = basicprice;
-                    dgvProduct.Rows[index].Cells["Price"].Value = price;
-                    dgvProduct.Rows[index].Cells["RepurchasePrice"].Value = repurchasePrice;
-                    dgvProduct.Rows[index].Cells["Amount"].Value = quantity * repurchasePrice;
-                    dgvProduct.Rows[index].Cells["idProduct"].Value = productId;
-                    dgvProduct.Rows[index].Cells["idMaterial"].Value = materialId;
-                    dgvProduct.Columns["Wage"].DefaultCellStyle.Format =
-                    dgvProduct.Columns["BasePrice"].DefaultCellStyle.Format =
-                    dgvProduct.Columns["Price"].DefaultCellStyle.Format =
-                    dgvProduct.Columns["RepurchasePrice"].DefaultCellStyle.Format =
-                    dgvProduct.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
+                    if (row.Cells["idMaterial"].Value?.ToString() == currentMaterialId)
+                    {
+                        MessageBox.Show("Material already exists");
+                        return;
+                    }
                 }
+
+                // Lấy giá và tính toán
+                var repurchaseData = updateBLL.GetLatestRepurchasePriceAndChange(currentMaterialId);
+                decimal repurchasePrice = repurchaseData.Repurchase;
+                decimal amount = weight * repurchasePrice;
+
+                // Thêm vào dgv
+                int index = dgvProduct.Rows.Add();
+                dgvProduct.Rows[index].Cells["Material"].Value = materialName;
+                dgvProduct.Rows[index].Cells["Weight"].Value = weight;
+                dgvProduct.Rows[index].Cells["RepurchasePrice"].Value = repurchasePrice;
+                dgvProduct.Rows[index].Cells["Amount"].Value = amount;
+                dgvProduct.Rows[index].Cells["idMaterial"].Value = currentMaterialId;
+
+                // Reset
+                cbxMaterialUpdate.SelectedIndex = -1;
+                txtWeight.Clear();
+                currentMaterialId = "";
 
                 UpdateTotal();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error Search Invoice: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
-        private void dgvProduct_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void UpdateTotal()
         {
-            if (e.ColumnIndex == dgvProduct.Columns["Quantity"].Index && e.RowIndex >= 0)
+            decimal subtotal = 0;
+            foreach (DataGridViewRow row in dgvProduct.Rows)
             {
-                DataGridViewRow row = dgvProduct.Rows[e.RowIndex];
-
-                if (row.Cells["Quantity"].Value != null &&
-                    decimal.TryParse(row.Cells["Quantity"].Value.ToString(), out decimal quantity))
-                {
-                    if (quantity == 0)
-                    {
-                        dgvProduct.Rows.RemoveAt(e.RowIndex);
-                    }
-                    else
-                    {
-                        decimal repurchasePrice = Convert.ToDecimal(row.Cells["RepurchasePrice"].Value);
-                        row.Cells["Amount"].Value = quantity * repurchasePrice;
-                    }
-                    UpdateTotal();
-                }
+                if (row.Cells["Amount"].Value != null)
+                    subtotal += Convert.ToDecimal(row.Cells["Amount"].Value);
             }
+            lblSubtotal.Text = $"{subtotal:N0} ₫";
+            lblTotal.Text = $"{subtotal:N0} ₫";
         }
 
         private void btnDeleteRepurchase_Click(object sender, EventArgs e)
@@ -150,54 +143,31 @@ namespace Jewelry.Payment
             }
         }
 
-        private void UpdateTotal()
-        {
-            decimal subtotal = 0;
-
-            foreach (DataGridViewRow row in dgvProduct.Rows)
-            {
-                if (row.Cells["Amount"].Value != null)
-                    subtotal += Convert.ToDecimal(row.Cells["Amount"].Value);
-            }
-
-            lblSubtotal.Text = $"{subtotal:N0} ₫";
-            lblTotal.Text = $"{subtotal:N0} ₫";
-        }
-
         private void btnPayment_Click(object sender, EventArgs e)
         {
             if (dgvProduct.Rows.Count == 0)
             {
-                MessageBox.Show("Don't have any product for payment");
+                MessageBox.Show("No products for payment");
                 return;
             }
 
-            // Tạo danh sách sản phẩm mua lại từ dgv - SỬA LẠI THEO CÁCH CỦA SALE.CS
             List<RepurchaseItem> repurchaseItems = new List<RepurchaseItem>();
             foreach (DataGridViewRow row in dgvProduct.Rows)
             {
-                if (row.IsNewRow) continue;
-
                 repurchaseItems.Add(new RepurchaseItem
                 {
-                    ID = row.Cells["idProduct"].Value?.ToString(),
-                    Name = row.Cells["Product"].Value?.ToString(),
-                    Quantity = Convert.ToInt32(row.Cells["Quantity"].Value),
+                    Name = row.Cells["Material"].Value?.ToString(),
                     Weight = row.Cells["Weight"].Value?.ToString(),
-                    Wage = Convert.ToDecimal(row.Cells["Wage"].Value ?? 0),
-                    BasePrice = Convert.ToDecimal(row.Cells["BasePrice"].Value ?? 0),
-                    Price = Convert.ToDecimal(row.Cells["Price"].Value ?? 0),
                     RepurchasePrice = Convert.ToDecimal(row.Cells["RepurchasePrice"].Value ?? 0),
-                    Amount = Convert.ToDecimal(row.Cells["Amount"].Value ?? 0)
+                    Amount = Convert.ToDecimal(row.Cells["Amount"].Value ?? 0),
+                    ID = row.Cells["idMaterial"].Value?.ToString()
                 });
             }
 
-            // Mở form hóa đơn mua lại và truyền cả originalInvoiceId
-            Payment_Repurchase_Invoice frmInvoice = new Payment_Repurchase_Invoice(repurchaseItems, currentInvoiceId);
+            Payment_Repurchase_Invoice frmInvoice = new Payment_Repurchase_Invoice(repurchaseItems, "");
             frmInvoice.InvoicePrinted += (s, ev) =>
-            { 
+            {
                 dgvProduct.Rows.Clear();
-                txbSearch.Clear();
                 UpdateTotal();
             };
             frmInvoice.ShowDialog();
