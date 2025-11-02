@@ -31,5 +31,13 @@ namespace Jewelry.BLL
         {
             return new InvoiceDAL().GetInvoiceById(invoiceId);
         }
+        public DataTable GetAllInvoicesWithPreview()
+        {
+            return new InvoiceDAL().GetAllInvoicesWithPreview();
+        }
+        public DataTable SearchInvoices(string keyword)
+        {
+            return new InvoiceDAL().SearchInvoices(keyword);
+        }
     }
 }

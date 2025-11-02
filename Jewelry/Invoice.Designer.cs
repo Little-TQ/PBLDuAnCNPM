@@ -44,11 +44,13 @@
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
             this.preOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContainerImportInvoice = new System.Windows.Forms.Panel();
+            this.exportInvoice1 = new Jewelry.FolderImportInvoice.ExportInvoice();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mstNCustomer.SuspendLayout();
+            this.pnlContainerImportInvoice.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -211,14 +213,6 @@
             this.SupplierToolStripMenuItem.Text = "Export";
             this.SupplierToolStripMenuItem.Click += new System.EventHandler(this.SupplierToolStripMenuItem_Click);
             // 
-            // pnlContainerImportInvoice
-            // 
-            this.pnlContainerImportInvoice.Location = new System.Drawing.Point(0, 208);
-            this.pnlContainerImportInvoice.Name = "pnlContainerImportInvoice";
-            this.pnlContainerImportInvoice.Size = new System.Drawing.Size(1440, 811);
-            this.pnlContainerImportInvoice.TabIndex = 7;
-            this.pnlContainerImportInvoice.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainerImportInvoice_Paint);
-            // 
             // preOrderToolStripMenuItem
             // 
             this.preOrderToolStripMenuItem.Font = new System.Drawing.Font("Sora", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,6 +220,23 @@
             this.preOrderToolStripMenuItem.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.preOrderToolStripMenuItem.Size = new System.Drawing.Size(337, 74);
             this.preOrderToolStripMenuItem.Text = "Pre-Order";
+            // 
+            // pnlContainerImportInvoice
+            // 
+            this.pnlContainerImportInvoice.Controls.Add(this.exportInvoice1);
+            this.pnlContainerImportInvoice.Location = new System.Drawing.Point(0, 208);
+            this.pnlContainerImportInvoice.Name = "pnlContainerImportInvoice";
+            this.pnlContainerImportInvoice.Size = new System.Drawing.Size(1440, 811);
+            this.pnlContainerImportInvoice.TabIndex = 7;
+            this.pnlContainerImportInvoice.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainerImportInvoice_Paint);
+            // 
+            // exportInvoice1
+            // 
+            this.exportInvoice1.Location = new System.Drawing.Point(-1, 0);
+            this.exportInvoice1.Name = "exportInvoice1";
+            this.exportInvoice1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.exportInvoice1.Size = new System.Drawing.Size(1440, 805);
+            this.exportInvoice1.TabIndex = 0;
             // 
             // Invoice
             // 
@@ -245,6 +256,7 @@
             this.panel3.PerformLayout();
             this.mstNCustomer.ResumeLayout(false);
             this.mstNCustomer.PerformLayout();
+            this.pnlContainerImportInvoice.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,5 +281,6 @@
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preOrderToolStripMenuItem;
+        private FolderImportInvoice.ExportInvoice exportInvoice1;
     }
 }

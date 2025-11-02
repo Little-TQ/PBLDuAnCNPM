@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,6 +62,7 @@
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Discount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SubTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -70,8 +71,10 @@
             this.lblSubtotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlInvoicePreview = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -102,7 +105,6 @@
             this.guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblPreviewEmployee = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.lblPrevTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPrevDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPreSubTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -118,8 +120,6 @@
             this.lblInvoiceID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SubTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderSummary)).BeginInit();
             this.btnContinueShopping.SuspendLayout();
@@ -326,16 +326,16 @@
             // 
             // dgvOrderSummary
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dgvOrderSummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvOrderSummary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("EB Garamond Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrderSummary.ColumnHeadersHeight = 30;
             this.dgvOrderSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvOrderSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -346,14 +346,14 @@
             this.BasePrice,
             this.Price,
             this.Amount});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrderSummary.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderSummary.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrderSummary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrderSummary.Location = new System.Drawing.Point(16, 69);
             this.dgvOrderSummary.Name = "dgvOrderSummary";
@@ -511,6 +511,17 @@
             this.Total.TabIndex = 68;
             this.Total.Text = "$";
             // 
+            // SubTotal
+            // 
+            this.SubTotal.BackColor = System.Drawing.Color.Transparent;
+            this.SubTotal.Font = new System.Drawing.Font("EB Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.SubTotal.Location = new System.Drawing.Point(573, 435);
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Size = new System.Drawing.Size(12, 31);
+            this.SubTotal.TabIndex = 67;
+            this.SubTotal.Text = "$";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
@@ -590,6 +601,17 @@
             this.guna2HtmlLabel8.TabIndex = 56;
             this.guna2HtmlLabel8.Text = "Discount";
             // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("EB Garamond Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(423, 435);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(83, 31);
+            this.guna2HtmlLabel9.TabIndex = 55;
+            this.guna2HtmlLabel9.Text = "Sub Total";
+            // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
@@ -604,6 +626,7 @@
             // pnlInvoicePreview
             // 
             this.pnlInvoicePreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInvoicePreview.Controls.Add(this.panel8);
             this.pnlInvoicePreview.Controls.Add(this.panel7);
             this.pnlInvoicePreview.Controls.Add(this.panel5);
             this.pnlInvoicePreview.Controls.Add(this.panel3);
@@ -627,7 +650,6 @@
             this.pnlInvoicePreview.Controls.Add(this.guna2HtmlLabel32);
             this.pnlInvoicePreview.Controls.Add(this.panel10);
             this.pnlInvoicePreview.Controls.Add(this.lblPreviewEmployee);
-            this.pnlInvoicePreview.Controls.Add(this.panel9);
             this.pnlInvoicePreview.Controls.Add(this.lblPrevTotal);
             this.pnlInvoicePreview.Controls.Add(this.lblPrevDiscount);
             this.pnlInvoicePreview.Controls.Add(this.lblPreSubTotal);
@@ -647,6 +669,14 @@
             this.pnlInvoicePreview.Size = new System.Drawing.Size(571, 892);
             this.pnlInvoicePreview.TabIndex = 64;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
+            this.panel8.Location = new System.Drawing.Point(18, 745);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(538, 1);
+            this.panel8.TabIndex = 110;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
@@ -658,7 +688,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
-            this.panel5.Location = new System.Drawing.Point(20, 312);
+            this.panel5.Location = new System.Drawing.Point(19, 322);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(538, 1);
             this.panel5.TabIndex = 71;
@@ -838,16 +868,16 @@
             // 
             // dgvPreview
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvPreview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("EB Garamond Medium", 7.799999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPreview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("EB Garamond Medium", 7.799999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPreview.ColumnHeadersHeight = 30;
             this.dgvPreview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPreview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -858,25 +888,25 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPreview.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPreview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPreview.Location = new System.Drawing.Point(3, 349);
             this.dgvPreview.Name = "dgvPreview";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("EB Garamond", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreview.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("EB Garamond", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreview.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPreview.RowHeadersVisible = false;
             this.dgvPreview.RowHeadersWidth = 51;
             this.dgvPreview.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -958,7 +988,7 @@
             this.guna2HtmlLabel33.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel33.Font = new System.Drawing.Font("EB Garamond", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.guna2HtmlLabel33.Location = new System.Drawing.Point(204, 852);
+            this.guna2HtmlLabel33.Location = new System.Drawing.Point(204, 863);
             this.guna2HtmlLabel33.Name = "guna2HtmlLabel33";
             this.guna2HtmlLabel33.Size = new System.Drawing.Size(159, 24);
             this.guna2HtmlLabel33.TabIndex = 91;
@@ -969,7 +999,7 @@
             this.guna2HtmlLabel32.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel32.Font = new System.Drawing.Font("EB Garamond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.guna2HtmlLabel32.Location = new System.Drawing.Point(193, 823);
+            this.guna2HtmlLabel32.Location = new System.Drawing.Point(193, 834);
             this.guna2HtmlLabel32.Name = "guna2HtmlLabel32";
             this.guna2HtmlLabel32.Size = new System.Drawing.Size(185, 27);
             this.guna2HtmlLabel32.TabIndex = 90;
@@ -978,7 +1008,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
-            this.panel10.Location = new System.Drawing.Point(173, 820);
+            this.panel10.Location = new System.Drawing.Point(173, 831);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(229, 1);
             this.panel10.TabIndex = 89;
@@ -993,14 +1023,6 @@
             this.lblPreviewEmployee.Size = new System.Drawing.Size(19, 27);
             this.lblPreviewEmployee.TabIndex = 87;
             this.lblPreviewEmployee.Text = "....";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
-            this.panel9.Location = new System.Drawing.Point(19, 747);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(345, 1);
-            this.panel9.TabIndex = 86;
             // 
             // lblPrevTotal
             // 
@@ -1147,7 +1169,7 @@
             this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel17.Font = new System.Drawing.Font("EB Garamond SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel17.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(134, 3);
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(226, 2);
             this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
             this.guna2HtmlLabel17.Size = new System.Drawing.Size(137, 35);
             this.guna2HtmlLabel17.TabIndex = 66;
@@ -1163,28 +1185,6 @@
             this.guna2HtmlLabel16.Size = new System.Drawing.Size(197, 45);
             this.guna2HtmlLabel16.TabIndex = 65;
             this.guna2HtmlLabel16.Text = "Invoice Preview";
-            // 
-            // guna2HtmlLabel9
-            // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("EB Garamond Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(423, 435);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(83, 31);
-            this.guna2HtmlLabel9.TabIndex = 55;
-            this.guna2HtmlLabel9.Text = "Sub Total";
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.BackColor = System.Drawing.Color.Transparent;
-            this.SubTotal.Font = new System.Drawing.Font("EB Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.SubTotal.Location = new System.Drawing.Point(573, 435);
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.Size = new System.Drawing.Size(12, 31);
-            this.SubTotal.TabIndex = 67;
-            this.SubTotal.Text = "$";
             // 
             // Payment_Sale_invoice
             // 
@@ -1269,7 +1269,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreSubTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSub;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreviewEmployee;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
@@ -1312,5 +1311,6 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel SubTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private System.Windows.Forms.Panel panel8;
     }
 }
