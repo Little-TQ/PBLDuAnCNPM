@@ -52,16 +52,17 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.repurchase1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.repurchase1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel3.SuspendLayout();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -310,6 +311,7 @@
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
+            this.Material,
             this.Quantity,
             this.Weight,
             this.Wage,
@@ -355,11 +357,43 @@
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProduct.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellEndEdit);
             // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("EB Garamond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(36, 60);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(273, 27);
+            this.guna2HtmlLabel13.TabIndex = 51;
+            this.guna2HtmlLabel13.Text = "Review your order details before payment";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("EB Garamond SemiBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 5);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(268, 60);
+            this.guna2HtmlLabel1.TabIndex = 50;
+            this.guna2HtmlLabel1.Text = "Order Summary";
+            // 
+            // repurchase1
+            // 
+            this.repurchase1.TargetControl = this;
+            // 
             // Product
             // 
             this.Product.HeaderText = "Product";
             this.Product.MinimumWidth = 6;
             this.Product.Name = "Product";
+            // 
+            // Material
+            // 
+            this.Material.HeaderText = "Material";
+            this.Material.MinimumWidth = 6;
+            this.Material.Name = "Material";
             // 
             // Quantity
             // 
@@ -396,32 +430,6 @@
             this.Amount.HeaderText = "Amount";
             this.Amount.MinimumWidth = 6;
             this.Amount.Name = "Amount";
-            // 
-            // guna2HtmlLabel13
-            // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("EB Garamond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(36, 60);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(273, 27);
-            this.guna2HtmlLabel13.TabIndex = 51;
-            this.guna2HtmlLabel13.Text = "Review your order details before payment";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("EB Garamond SemiBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 5);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(268, 60);
-            this.guna2HtmlLabel1.TabIndex = 50;
-            this.guna2HtmlLabel1.Text = "Order Summary";
-            // 
-            // repurchase1
-            // 
-            this.repurchase1.TargetControl = this;
             // 
             // Sale
             // 
@@ -471,6 +479,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Elipse repurchase1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Material;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Weight;
         private System.Windows.Forms.DataGridViewTextBoxColumn Wage;

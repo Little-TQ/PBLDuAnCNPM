@@ -137,6 +137,21 @@ namespace Jewelry.DAL
                 }
             }
         }
+        //Get Material Name by ID
+        public string GetMaterialNameByID(string idMaterial)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT NameMaterial FROM Material WHERE idMaterial = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", idMaterial);
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+                conn.Close();
+                return result?.ToString() ?? "";
+            }
+        }
+
 
     }
 }

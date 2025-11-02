@@ -49,5 +49,10 @@ namespace Jewelry.BLL
                 throw new Exception("Invalid data");
             return propertyDAL.UpdatePropertyItem(tableName, idColumn, id, nameColumn, newValue);
         }
+        public string GetMaterialNameByID(string idMaterial)
+        {
+            return propertyDAL.GetMaterialNameByID(idMaterial);
+        }
+
     }
 }

@@ -33,15 +33,14 @@ namespace Jewelry
             if (cbxMaterialUpdate.Items.Count > 0)
             {
                 cbxMaterialUpdate.SelectedIndex = 0;
-                currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
+                string selectedName = cbxMaterialUpdate.SelectedItem.ToString();
+                currentMaterialId = GetMaterialID(selectedName);
 
-                // Lúc này mới vẽ chart
                 DrawPriceChart(currentMaterialId, dtpUpdatePrice.Value);
-
-                // Load nốt phần còn lại
                 LoadPriceHistoryByMaterial(currentMaterialId);
                 UpdateStatistics(currentMaterialId);
             }
+
         }
 
         //Load danh sách chất liệu từ DB
@@ -49,12 +48,17 @@ namespace Jewelry
         {
             try
             {
-                DataTable materials = updateBLL.GetAllMaterials();
-                cbxMaterialUpdate.DataSource = materials;
-                cbxMaterialUpdate.DisplayMember = "NameMaterial";
-                cbxMaterialUpdate.ValueMember = "idMaterial";
+                cbxMaterialUpdate.Items.Clear();
 
-                cbxMaterialUpdate.SelectedIndex = -1; // chưa chọn gì ban đầu
+                // Thêm 3 chất liệu cố định
+                cbxMaterialUpdate.Items.Add("Gold18");
+                cbxMaterialUpdate.Items.Add("Gold24");
+                cbxMaterialUpdate.Items.Add("White Gold");
+
+                // Chưa chọn mặc định
+                cbxMaterialUpdate.SelectedIndex = -1;
+
+                // Reset các textbox giá trị
                 txtPricenow.Text = "0 VND";
                 txtChange.Text = "0";
                 txtRepurchaseNow.Text = "0 VND";
@@ -65,6 +69,7 @@ namespace Jewelry
                 MessageBox.Show($"Error loading materials: {ex.Message}");
             }
         }
+
         private void DrawPriceChart(string materialId, DateTime selectedDate)
         {
             try
@@ -237,10 +242,12 @@ namespace Jewelry
         {
             try
             {
-                if (cbxMaterialUpdate.SelectedValue == null || cbxMaterialUpdate.SelectedIndex < 0)
+                if (cbxMaterialUpdate.SelectedItem == null || cbxMaterialUpdate.SelectedIndex < 0)
                     return;
 
-                currentMaterialId = cbxMaterialUpdate.SelectedValue.ToString();
+                string selectedName = cbxMaterialUpdate.SelectedItem.ToString();
+                currentMaterialId = GetMaterialID(selectedName);
+
 
                 //Lấy tuple (Price, Change) cho giá bán
                 var saleInfo = updateBLL.GetLatestPriceAndChange(currentMaterialId);
@@ -329,6 +336,20 @@ namespace Jewelry
                 MessageBox.Show("Error loading statistics: " + ex.Message);
             }
         }
+        private string GetMaterialID(string materialName)
+        {
+            switch (materialName)
+            {
+                case "Gold18":
+                    return "Mat02";
+                case "Gold24":
+                    return "Mat03";
+                case "White Gold":
+                    return "Mat04";
+                default:
+                    return null;
+            }
+        }
 
         // Nút hoàn tất cập nhật giá
         private void btnCompleteUpdate_Click(object sender, EventArgs e)
@@ -346,10 +367,18 @@ namespace Jewelry
                 decimal newRepurchasePrice = decimal.Parse(txtEnterRepurchasePrice.Text);
                 DateTime updateTime = dtpUpdatePrice.Value;
 
+                string mappedId = currentMaterialId;
+
+                if (mappedId == null)
+                {
+                    MessageBox.Show("Invalid material selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 UpdateDTO updateDTO = new UpdateDTO
                 {
                     idUpdate = updateBLL.GenerateUpdateId(),
-                    idMaterial = currentMaterialId,
+                    idMaterial = mappedId,   
                     UpdateTime = updateTime,
                     Price = newPrice,
                     RepurchasePrice = newRepurchasePrice,

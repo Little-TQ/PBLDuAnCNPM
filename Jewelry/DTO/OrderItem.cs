@@ -11,6 +11,7 @@ namespace Jewelry.DTO
         public string ID { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
+        public string Material { get; set; }
         public string Weight { get; set; }
         public decimal Wage { get; set; }
         public decimal BasePrice { get; set; }
