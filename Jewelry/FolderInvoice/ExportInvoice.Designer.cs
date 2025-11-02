@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnViewExportInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearchExportInvoice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dgvExportInvoice = new System.Windows.Forms.DataGridView();
+            this.pnlInvoiceSale = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExportInvoice)).BeginInit();
             this.btnView = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvInvoice = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -76,10 +82,50 @@
             this.btnView.PressedColor = System.Drawing.Color.LightGreen;
             this.btnView.Size = new System.Drawing.Size(50, 50);
             this.btnView.TabIndex = 4;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            
             // 
             // txtSearch
             // 
+            this.txtSearchExportInvoice.BorderColor = System.Drawing.Color.Gray;
+            this.txtSearchExportInvoice.BorderRadius = 20;
+            this.txtSearchExportInvoice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchExportInvoice.DefaultText = "";
+            this.txtSearchExportInvoice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchExportInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchExportInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchExportInvoice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchExportInvoice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchExportInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearchExportInvoice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchExportInvoice.IconLeft = global::Jewelry.Properties.Resources.Search;
+            this.txtSearchExportInvoice.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSearchExportInvoice.Location = new System.Drawing.Point(53, 21);
+            this.txtSearchExportInvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchExportInvoice.Name = "txtSearchExportInvoice";
+            this.txtSearchExportInvoice.PlaceholderText = "";
+            this.txtSearchExportInvoice.SelectedText = "";
+            this.txtSearchExportInvoice.Size = new System.Drawing.Size(468, 45);
+            this.txtSearchExportInvoice.TabIndex = 0;
+            this.txtSearchExportInvoice.TextChanged += new System.EventHandler(this.txtSearchExportInvoice_TextChanged);
+ 
+            // 
+            // dgvExportInvoice
+            // 
+            this.dgvExportInvoice.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvExportInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExportInvoice.Location = new System.Drawing.Point(24, 137);
+            this.dgvExportInvoice.Name = "dgvExportInvoice";
+            this.dgvExportInvoice.RowHeadersWidth = 51;
+            this.dgvExportInvoice.RowTemplate.Height = 24;
+            this.dgvExportInvoice.Size = new System.Drawing.Size(703, 593);
+            this.dgvExportInvoice.TabIndex = 7;
+            // 
+            // pnlInvoiceSale
+            // 
+            this.pnlInvoiceSale.Location = new System.Drawing.Point(901, 102);
+            this.pnlInvoiceSale.Name = "pnlInvoiceSale";
+            this.pnlInvoiceSale.Size = new System.Drawing.Size(479, 700);
+            this.pnlInvoiceSale.TabIndex = 8;
             this.txtSearch.BorderColor = System.Drawing.Color.Gray;
             this.txtSearch.BorderRadius = 20;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -100,7 +146,6 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(468, 45);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvInvoice
             // 
@@ -159,7 +204,6 @@
             this.dgvInvoice.ThemeStyle.RowsStyle.Height = 40;
             this.dgvInvoice.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInvoice.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvInvoice.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvInvoice_CellFormatting);
             // 
             // guna2ShadowPanel1
             // 
@@ -195,6 +239,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlInvoiceSale);
+            this.Controls.Add(this.dgvExportInvoice);
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.details);
             this.Controls.Add(this.panel8);
@@ -203,8 +249,9 @@
             this.Name = "ExportInvoice";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(1440, 805);
-            this.Load += new System.EventHandler(this.ExportInvoice_Load);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExportInvoice)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -214,6 +261,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2Button btnViewExportInvoice;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchExportInvoice;
+        private System.Windows.Forms.DataGridView dgvExportInvoice;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlInvoiceSale;
         private Guna.UI2.WinForms.Guna2Button btnView;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dgvInvoice;

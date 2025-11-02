@@ -194,37 +194,6 @@ namespace Jewelry.DAL
             }
             return null;
         }
-
-        // Check if phone number exists
-        public bool IsPhoneExists(string phone)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM Customer WHERE PhoneNumberC = @phone";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@phone", phone);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0;
-                }
-            }
-        }
-        //get Customer ID by phone
-        public string GetCustomerIdByPhone(string phone)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT idCustomer FROM Customer WHERE PhoneNumberC = @phone";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@phone", phone);
-                    object result = cmd.ExecuteScalar();
-                    return result?.ToString();
-                }
-            }
-        }
         //Update Customer Point
         //Update Customer Membership
         public bool UpdateCustomerPointAndMembership(string idCustomer, decimal total)
@@ -233,7 +202,7 @@ namespace Jewelry.DAL
             {
                 conn.Open();
 
-                int addPoint = (int)Math.Floor(total / 200000);
+                int addPoint = (int)Math.Floor(total / 500000);
 
                 string getPointQuery = "SELECT Point FROM Customer WHERE idCustomer = @id";
                 SqlCommand getCmd = new SqlCommand(getPointQuery, conn);

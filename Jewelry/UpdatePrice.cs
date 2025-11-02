@@ -360,9 +360,9 @@ namespace Jewelry
         }
         private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Invoice frm = new Invoice();
+            //Invoice frm = new Invoice();
             this.Hide();
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
 
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)

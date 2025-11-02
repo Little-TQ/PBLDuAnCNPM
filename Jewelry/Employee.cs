@@ -86,9 +86,9 @@ namespace Jewelry
         //Transfer another form
         private void wareHouseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Invoice frm = new Invoice();
+            //Invoice frm = new Invoice();
             this.Hide();
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

@@ -68,6 +68,7 @@
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\PropertyBLL.cs" />
+    <Compile Include="BLL\RepurchaseDetailBLL.cs" />
     <Compile Include="BLL\SalaryBLL.cs" />
     <Compile Include="BLL\ScheduleBLL.cs" />
     <Compile Include="BLL\UpdateBLL.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="DAL\PermissionDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\PropertyDAL.cs" />
+    <Compile Include="DAL\RepurchaseDetailDAL.cs" />
     <Compile Include="DAL\RoleDAL.cs" />
     <Compile Include="DAL\SalaryDAL.cs" />
     <Compile Include="DAL\ScheduleDAL.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="DTO\OrderItem.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\RepurchaseDetailDTO.cs" />
     <Compile Include="DTO\RepurchaseItem.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\SalaryDTO.cs" />
@@ -152,24 +155,6 @@
     </Compile>
     <Compile Include="FolderEmployee\InformationEmployee.Designer.cs">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FolderInvoice\FollowItems.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FolderInvoice\FollowItems.Designer.cs">
-      <DependentUpon>FollowItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FolderInvoice\ImportInvoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FolderInvoice\ImportInvoice.Designer.cs">
-      <DependentUpon>ImportInvoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FolderInvoice\ExportInvoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FolderInvoice\ExportInvoice.Designer.cs">
-      <DependentUpon>ExportInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="FolderProduct\Products.cs">
       <SubType>UserControl</SubType>
@@ -348,12 +333,6 @@
     <Compile Include="FolderOverview\SoldProduct.Designer.cs">
       <DependentUpon>SoldProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invoice.Designer.cs">
-      <DependentUpon>Invoice.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FlowLayoutPanel\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,15 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FolderEmployee\InformationEmployee.resx">
       <DependentUpon>InformationEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FolderInvoice\FollowItems.resx">
-      <DependentUpon>FollowItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FolderInvoice\ImportInvoice.resx">
-      <DependentUpon>ImportInvoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FolderInvoice\ExportInvoice.resx">
-      <DependentUpon>ExportInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FolderProduct\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
@@ -478,9 +448,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FolderOverview\SoldProduct.resx">
       <DependentUpon>SoldProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Invoice.resx">
-      <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
