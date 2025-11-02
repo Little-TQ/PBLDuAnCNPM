@@ -77,7 +77,7 @@ namespace Jewelry.Payment
                     materialName = materialRows[0]["NameMaterial"].ToString();
 
                 ProductList productItem = new ProductList();
-                productItem.SetProductData(id, name, price, materialName, photo);
+                productItem.SetProductData(id, name, materialName, photo);
                 productItem.ProductAdded += ProductItem_ProductAdded;
 
                 productItem.Margin = new Padding(10);
@@ -95,10 +95,28 @@ namespace Jewelry.Payment
                     return;
                 }
 
-                var (basePrice, change) = updateBLL.GetLatestPriceAndChange(product.idMaterial);
-                decimal price = Convert.ToDecimal(product.PriceSilver ?? 0);
+                // Lấy thông tin vật liệu
+                string idMaterial = product.idMaterial;
+                string materialName = propertyBLL.GetMaterialNameByID(idMaterial); 
 
-                // So sánh theo Tag (idProduct)
+                decimal weight = Convert.ToDecimal(product.Weight ?? 0);
+                decimal wage = Convert.ToDecimal(product.Wage ?? 0);
+
+                var (basePrice, change) = updateBLL.GetLatestPriceAndChange(idMaterial);
+                decimal price = 0;
+
+                // Nếu chất liệu là Silver thì lấy giá cố định từ Product.PriceSilver
+                if (materialName.ToLower().Contains("silver") || idMaterial.ToLower().Contains("mat01"))
+                {
+                    price = Convert.ToDecimal(product.PriceSilver ?? 0);
+                }
+                else
+                {
+                    //Nếu là chất liệu khác, lấy giá vàng mới nhất từ bảng UpdatePrice
+                    price = Convert.ToDecimal(product.PriceSilver ?? 0) + wage;
+                }
+
+                // Kiểm tra sản phẩm đã tồn tại trong dgv chưa
                 foreach (DataGridViewRow row in dgvProduct.Rows)
                 {
                     var idInRow = row.Cells["Product"].Tag?.ToString();
@@ -112,13 +130,14 @@ namespace Jewelry.Payment
                     }
                 }
 
-                // Không có -> thêm mới
+                // Nếu chưa có -> thêm mới
                 int index = dgvProduct.Rows.Add();
                 dgvProduct.Rows[index].Cells["Product"].Value = product.NameProduct;
-                dgvProduct.Rows[index].Cells["Product"].Tag = product.idProduct; // giữ ID ở Tag
+                dgvProduct.Rows[index].Cells["Product"].Tag = product.idProduct;
+                dgvProduct.Rows[index].Cells["Material"].Value = materialName;
                 dgvProduct.Rows[index].Cells["Quantity"].Value = 1;
-                dgvProduct.Rows[index].Cells["Weight"].Value = product.Weight;
-                dgvProduct.Rows[index].Cells["Wage"].Value = product.Wage;
+                dgvProduct.Rows[index].Cells["Weight"].Value = weight;
+                dgvProduct.Rows[index].Cells["Wage"].Value = wage;
                 dgvProduct.Rows[index].Cells["BasePrice"].Value = basePrice;
                 dgvProduct.Rows[index].Cells["Price"].Value = price;
                 dgvProduct.Rows[index].Cells["Amount"].Value = price;
@@ -130,6 +149,7 @@ namespace Jewelry.Payment
                 MessageBox.Show("Error selecting product: " + ex.Message);
             }
         }
+
 
         private void SetUpDGVStyle()
         {
@@ -177,6 +197,7 @@ namespace Jewelry.Payment
                 {
                     ID = productBLL.GetProductIDByName(row.Cells["Product"].Value?.ToString()),
                     Name = row.Cells["Product"].Value?.ToString(),
+                    Material = row.Cells["Material"].Value?.ToString(),
                     Quantity = Convert.ToInt32(row.Cells["Quantity"].Value),
                     Weight = row.Cells["Weight"].Value?.ToString(),
                     Wage = Convert.ToDecimal(row.Cells["Wage"].Value ?? 0),

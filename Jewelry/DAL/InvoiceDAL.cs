@@ -12,7 +12,7 @@ namespace Jewelry.DAL
     internal class InvoiceDAL
     {
         private DBConnect db = new DBConnect();
-
+        //Insert Invoice
         public bool InsertInvoice(InvoiceDTO invoice)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -32,7 +32,7 @@ namespace Jewelry.DAL
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-
+        //Insert Invoice Details
         public bool InsertInvoiceDetails(List<InvoiceDetailDTO> details)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -54,6 +54,7 @@ namespace Jewelry.DAL
                 return true;
             }
         }
+        //Get Invoice Details by Invoice ID
         public DataTable GetInvoiceDetails(string invoiceId)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -75,6 +76,7 @@ namespace Jewelry.DAL
                 return dt;
             }
         }
+        //Get Invoice by ID
         public InvoiceDTO GetInvoiceById(string invoiceId)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -104,5 +106,70 @@ namespace Jewelry.DAL
                 return null;
             }
         }
+        //Get All Invoices with Preview Link
+            public DataTable GetAllInvoicesWithPreview()
+            {
+                using (SqlConnection conn = db.GetConnection())
+                {
+                    conn.Open();
+
+                    string query = @"
+                SELECT 
+                    i.idInvoice,
+                    c.NameCustomer AS CustomerName,
+                    e.NameEmployee AS EmployeeName,
+                    i.DateTimeCreateInvoice,
+                    i.Total,
+                    p.LinkInvoice AS LinkInvoice
+                FROM Invoice i
+                LEFT JOIN Customer c ON i.idCustomer = c.idCustomer
+                LEFT JOIN Employee e ON i.idEmployee = e.idEmployee
+                LEFT JOIN InvoicePreview p ON i.idInvoice = p.idInvoice
+                WHERE i.Type = 'Sale'
+                ORDER BY i.DateTimeCreateInvoice DESC";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    return dt;
+                }
+            }
+        //Searrch   Invoice
+        public DataTable SearchInvoices(string keyword)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+        SELECT i.idInvoice AS [Invoice ID],
+               c.NameCustomer AS [Customer],
+               e.NameEmployee AS [Employee],
+               i.DateTimeCreateInvoice AS [Date Created],
+               i.Total AS [Total (VND)],
+               p.LinkInvoice AS [Invoice File]
+        FROM Invoice i
+        LEFT JOIN Customer c ON i.idCustomer = c.idCustomer
+        LEFT JOIN Employee e ON i.idEmployee = e.idEmployee
+        LEFT JOIN InvoicePreview p ON i.idInvoice = p.idInvoice
+        WHERE (@keyword = '' OR 
+               i.idInvoice LIKE '%' + @keyword + '%' OR
+               c.NameCustomer LIKE '%' + @keyword + '%' OR
+               e.NameEmployee LIKE '%' + @keyword + '%' OR
+               CONVERT(VARCHAR, i.DateTimeCreateInvoice, 103) LIKE '%' + @keyword + '%')
+        ORDER BY i.DateTimeCreateInvoice DESC";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@keyword", keyword);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
     }
 }
+

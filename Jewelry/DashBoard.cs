@@ -172,9 +172,9 @@ namespace Jewelry
         {
             if (Session.CurrentUser?.Permissions.Contains("Invoice") == true)
             {
-                Invoice frm = new Invoice();
+                //Invoice frm = new Invoice();
                 this.Hide();
-                frm.ShowDialog();
+                //frm.ShowDialog();
             }
         }
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)

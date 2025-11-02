@@ -11,7 +11,6 @@ namespace Jewelry.FlowLayoutPanel
         public string ProductID { get; set; }
         public string ProductName { get; set; }
         public string MaterialName { get; set; }
-        public decimal Price { get; set; }
 
         public event EventHandler<ProductEventArgs> ProductAdded;
 
@@ -28,21 +27,18 @@ namespace Jewelry.FlowLayoutPanel
             ProductAdded?.Invoke(this, new ProductEventArgs(
                 ProductID,
                 lblName.Text,
-                lblMaterial.Text,
-                Convert.ToDecimal(lblPrice.Text.Replace(",", ""))
+                lblMaterial.Text
             ));
         }
-        public void SetProductData(string id, string name, decimal price, string mat, string photoPath)
+        public void SetProductData(string id, string name, string mat, string photoPath)
         {
             ProductID = id;
             ProductName = name;
-            Price = price;
             MaterialName = mat;
 
             lblID.Text = id;
             lblName.Text = name;
             lblMaterial.Text = mat;
-            lblPrice.Text = $"{price:N0}";
 
             try
             {
@@ -75,14 +71,11 @@ namespace Jewelry.FlowLayoutPanel
         public string ID { get; }
         public string Name { get; }
         public string Material { get; }
-        public decimal Price { get; }
-
-        public ProductEventArgs(string id, string name, string mat, decimal price)
+        public ProductEventArgs(string id, string name, string mat)
         {
             ID = id;
             Name = name;
             Material = mat;
-            Price = price;
         }
     }
 }

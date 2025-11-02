@@ -32,7 +32,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblMaterial = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Photo = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -45,7 +44,6 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.Controls.Add(this.lblMaterial);
             this.guna2Panel1.Controls.Add(this.btnAdd);
-            this.guna2Panel1.Controls.Add(this.lblPrice);
             this.guna2Panel1.Controls.Add(this.lblID);
             this.guna2Panel1.Controls.Add(this.lblName);
             this.guna2Panel1.Controls.Add(this.Photo);
@@ -59,7 +57,7 @@
             // 
             this.lblMaterial.BackColor = System.Drawing.Color.Transparent;
             this.lblMaterial.Font = new System.Drawing.Font("EB Garamond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterial.Location = new System.Drawing.Point(125, 48);
+            this.lblMaterial.Location = new System.Drawing.Point(125, 77);
             this.lblMaterial.Name = "lblMaterial";
             this.lblMaterial.Size = new System.Drawing.Size(28, 27);
             this.lblMaterial.TabIndex = 5;
@@ -82,16 +80,6 @@
             this.btnAdd.Size = new System.Drawing.Size(36, 35);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrice.Font = new System.Drawing.Font("EB Garamond Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(125, 81);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(42, 31);
-            this.lblPrice.TabIndex = 3;
-            this.lblPrice.Text = "price";
             // 
             // lblID
             // 
@@ -145,7 +133,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblName;
         private Guna.UI2.WinForms.Guna2PictureBox Photo;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblID;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMaterial;

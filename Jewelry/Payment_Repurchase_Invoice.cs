@@ -18,10 +18,12 @@ namespace Jewelry
         private InvoiceBLL invoiceBLL = new InvoiceBLL();
         private EmployeeBLL employeeBLL = new EmployeeBLL();
         private CustomerBLL customerBLL = new CustomerBLL();
+        private RepurchaseDetailBLL repurchaseBLL = new RepurchaseDetailBLL();
         public event EventHandler InvoicePrinted;
 
         private List<RepurchaseItem> _repurchaseItems;
         private string _originalInvoiceId;
+        private string currentEmployeeID = null;
 
         public Payment_Repurchase_Invoice(List<RepurchaseItem> repurchaseItems, string originalInvoiceId)
         {
@@ -29,50 +31,13 @@ namespace Jewelry
             _repurchaseItems = repurchaseItems;
             _originalInvoiceId = originalInvoiceId;
         }
+
         private void Payment_Repurchase_Invoice_Load(object sender, EventArgs e)
         {
             LoadOrderSummary();
             LoadPreviewSummary();
             UpdateInvoicePreview();
             CalculateTotals();
-            LoadCustomerInfoFromOriginalInvoice();
-        }
-
-        // Load thông tin khách hàng từ hóa đơn gốc
-        private void LoadCustomerInfoFromOriginalInvoice()
-        {
-            if (string.IsNullOrEmpty(_originalInvoiceId))
-            {
-                return;
-            }
-
-            try
-            {
-                var originalInvoice = invoiceBLL.GetInvoiceById(_originalInvoiceId);
-                if (originalInvoice != null && !string.IsNullOrEmpty(originalInvoice.idCustomer))
-                {
-                    var customer = customerBLL.GetCustomerById(originalInvoice.idCustomer);
-                    if (customer != null)
-                    {
-                        txbCusName.Text = customer.NameCustomer;
-                        txtPhone.Text = customer.PhoneNumberC;
-                        txtAddress.Text = customer.AddressC;
-
-                        // Cập nhật preview
-                        lblPrevName.Text = customer.NameCustomer;
-                        lblPrevPhone.Text = customer.PhoneNumberC;
-                        lblPrevAddress.Text = customer.AddressC;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Don't find origin invoice and customer");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error load information's customer: {ex.Message}");
-            }
         }
 
         // Load dgv Order Summary
@@ -81,12 +46,8 @@ namespace Jewelry
             dgvRepurchaseSummary.AutoGenerateColumns = false;
             dgvRepurchaseSummary.Columns.Clear();
 
-            dgvRepurchaseSummary.Columns.Add("Product", "Product");
-            dgvRepurchaseSummary.Columns.Add("Quantity", "Quantity");
+            dgvRepurchaseSummary.Columns.Add("Material", "Material");
             dgvRepurchaseSummary.Columns.Add("Weight", "Weight");
-            dgvRepurchaseSummary.Columns.Add("Wage", "Wage");
-            dgvRepurchaseSummary.Columns.Add("BasePrice", "Base Price");
-            dgvRepurchaseSummary.Columns.Add("Price", "Price");
             dgvRepurchaseSummary.Columns.Add("RepurchasePrice", "Repurchase Price");
             dgvRepurchaseSummary.Columns.Add("Amount", "Amount");
 
@@ -95,20 +56,15 @@ namespace Jewelry
             dgvRepurchaseSummary.RowTemplate.Height = 35;
             dgvRepurchaseSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            if (_repurchaseItems != null)
+            if (_repurchaseItems != null && _repurchaseItems.Count > 0)
             {
                 foreach (var item in _repurchaseItems)
                 {
-                    dgvRepurchaseSummary.Rows.Add(item.Name, item.Quantity, item.Weight,
-                                             item.Wage, item.BasePrice, item.Price,
-                                             item.RepurchasePrice, item.Amount);
+                    dgvRepurchaseSummary.Rows.Add(item.Name, item.Weight, item.RepurchasePrice, item.Amount);
                 }
             }
 
-            dgvRepurchaseSummary.Columns["Wage"].DefaultCellStyle.Format =
-            dgvRepurchaseSummary.Columns["BasePrice"].DefaultCellStyle.Format =
-            dgvRepurchaseSummary.Columns["Price"].DefaultCellStyle.Format =
-            dgvRepurchaseSummary.Columns["RepurchasePrice"].DefaultCellStyle.Format =
+            dgvRepurchaseSummary.Columns["RepurchasePrice"].DefaultCellStyle.Format = "#,##0 ₫";
             dgvRepurchaseSummary.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
         }
 
@@ -118,13 +74,9 @@ namespace Jewelry
             dgvPreview.AutoGenerateColumns = false;
             dgvPreview.Columns.Clear();
 
-            dgvPreview.Columns.Add("Product", "Product");
-            dgvPreview.Columns.Add("Quantity", "Quantity");
+            dgvPreview.Columns.Add("Material", "Material");
             dgvPreview.Columns.Add("Weight", "Weight");
-            dgvPreview.Columns.Add("Wage", "Wage");
-            dgvPreview.Columns.Add("BasePrice", "Base");
-            dgvPreview.Columns.Add("Price", "Price");
-            dgvPreview.Columns.Add("RepurchasePrice", "Repurchase");
+            dgvPreview.Columns.Add("RepurchasePrice", "Repurchase Price");
             dgvPreview.Columns.Add("Amount", "Amount");
 
             dgvPreview.AllowUserToAddRows = false;
@@ -132,20 +84,15 @@ namespace Jewelry
             dgvPreview.RowTemplate.Height = 35;
             dgvPreview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            if (_repurchaseItems != null)
+            if (_repurchaseItems != null && _repurchaseItems.Count > 0)
             {
                 foreach (var item in _repurchaseItems)
                 {
-                    dgvPreview.Rows.Add(item.Name, item.Quantity, item.Weight,
-                                        item.Wage, item.BasePrice, item.Price,
-                                        item.RepurchasePrice, item.Amount);
+                    dgvPreview.Rows.Add(item.Name, item.Weight, item.RepurchasePrice, item.Amount);
                 }
             }
 
-            dgvPreview.Columns["Wage"].DefaultCellStyle.Format =
-            dgvPreview.Columns["BasePrice"].DefaultCellStyle.Format =
-            dgvPreview.Columns["Price"].DefaultCellStyle.Format =
-            dgvPreview.Columns["RepurchasePrice"].DefaultCellStyle.Format =
+            dgvPreview.Columns["RepurchasePrice"].DefaultCellStyle.Format = "#,##0 ₫";
             dgvPreview.Columns["Amount"].DefaultCellStyle.Format = "#,##0 ₫";
         }
 
@@ -160,7 +107,6 @@ namespace Jewelry
         private void CalculateTotals()
         {
             decimal subtotal = 0;
-            decimal depreciation = 0;
 
             if (_repurchaseItems != null)
             {
@@ -170,7 +116,7 @@ namespace Jewelry
                 }
             }
 
-            decimal total = subtotal - depreciation;
+            decimal total = subtotal;
 
             labelSubTotal.Text = $"{subtotal:N0} ₫";
             lblTotalR.Text = $"{total:N0} ₫";
@@ -179,6 +125,7 @@ namespace Jewelry
             labelPreviewTotal.Text = $"{total:N0} ₫";
         }
 
+        // Parse money string
         private decimal ParseMoney(string input)
         {
             if (string.IsNullOrWhiteSpace(input)) return 0;
@@ -192,7 +139,7 @@ namespace Jewelry
             return decimal.TryParse(input, out decimal value) ? value : 0;
         }
 
-        //Save PDF
+        // Save PDF
         private string SaveInvoicePreviewAsPDF(string followID)
         {
             try
@@ -200,7 +147,7 @@ namespace Jewelry
                 string folder = Path.Combine(Application.StartupPath, "InvoicePreviews");
                 Directory.CreateDirectory(folder);
 
-                string fileName = $"{followID}.pdf"; // Ví dụ: FO-20251101191523.pdf
+                string fileName = $"{followID}.pdf";
                 string filePath = Path.Combine(folder, fileName);
 
                 using (Bitmap bmp = new Bitmap(pnlInvoicePreviewR.Width, pnlInvoicePreviewR.Height))
@@ -234,34 +181,34 @@ namespace Jewelry
             }
         }
 
-
+        // btn Print/Payment
         private void btnPayment_Click(object sender, EventArgs e)
         {
             try
             {
                 if (_repurchaseItems == null || _repurchaseItems.Count == 0)
                 {
-                    MessageBox.Show("Please select at least 1 product before printing",
+                    MessageBox.Show("Please add at least one product before printing.",
                                     "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                string invoiceID = lblInvoiceID.Text.Trim();
+                string invoiceID = lblInvoiceID.Text.Trim(); // ID hóa đơn chính
                 string customerName = txbCusName.Text.Trim();
                 string phone = txtPhone.Text.Trim();
                 string address = txtAddress.Text.Trim();
                 string employee = txtEmployee.Text.Trim();
+                string paymentMethod = cbPayment.Text.Trim();
 
-                // Check ID Employee
-                string empID = employeeBLL.GetEmployeeIDByName(employee);
+                // Check Employee
+                string empID = currentEmployeeID ?? employeeBLL.GetEmployeeIDByName(employee);
                 if (string.IsNullOrEmpty(empID))
                 {
-                    MessageBox.Show($"Search '{employee}' unsuccessful!",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Employee not found in database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // LẤY THÔNG TIN KHÁCH HÀNG TỪ HÓA ĐƠN GỐC
+                // Check or create Customer
                 string idCustomer = null;
                 if (!string.IsNullOrEmpty(_originalInvoiceId))
                 {
@@ -272,30 +219,34 @@ namespace Jewelry
                     }
                 }
 
-                // Nếu không có khách hàng từ hóa đơn gốc, tạo mới từ thông tin nhập
                 if (string.IsNullOrEmpty(idCustomer))
                 {
-                    if (!string.IsNullOrEmpty(phone))
+                    var existingCustomer = customerBLL.GetCustomerByPhone(phone);
+                    if (existingCustomer != null)
                     {
-                        var existingCustomer = customerBLL.GetCustomerByPhone(phone);
-                        if (existingCustomer != null)
+                        idCustomer = existingCustomer.idCustomer;
+                        // Update customer info if changed
+                        if (existingCustomer.NameCustomer != customerName || existingCustomer.AddressC != address)
                         {
-                            idCustomer = existingCustomer.idCustomer;
+                            existingCustomer.NameCustomer = customerName;
+                            existingCustomer.AddressC = address;
+                            customerBLL.UpdateCustomer(existingCustomer);
                         }
-                        else
+                    }
+                    else
+                    {
+                        // Create new customer
+                        idCustomer = customerBLL.GenerateCustomerID();
+                        CustomerDTO newCustomer = new CustomerDTO
                         {
-                            idCustomer = customerBLL.GenerateCustomerID();
-                            CustomerDTO newCustomer = new CustomerDTO
-                            {
-                                idCustomer = idCustomer,
-                                NameCustomer = customerName,
-                                PhoneNumberC = phone,
-                                AddressC = address,
-                                Point = 0,
-                                Membership = "Bronze"
-                            };
-                            customerBLL.AddCustomer(newCustomer);
-                        }
+                            idCustomer = idCustomer,
+                            NameCustomer = customerName,
+                            PhoneNumberC = phone,
+                            AddressC = address,
+                            Point = 0,
+                            Membership = "Bronze"
+                        };
+                        customerBLL.AddCustomer(newCustomer);
                     }
                 }
 
@@ -303,9 +254,9 @@ namespace Jewelry
                 string status = "Done";
 
                 decimal subtotal = ParseMoney(labelSubTotal.Text);
-                decimal total = subtotal ;
+                decimal total = subtotal;
 
-                // Create Invoice and Details
+                // TẠO HÓA ĐƠN CHÍNH TRONG BẢNG Invoice
                 InvoiceDTO invoice = new InvoiceDTO
                 {
                     idInvoice = invoiceID,
@@ -317,22 +268,33 @@ namespace Jewelry
                     Total = total
                 };
 
-                List<InvoiceDetailDTO> details = _repurchaseItems.Select(i => new InvoiceDetailDTO
-                {
-                    idInvoice = invoiceID,
-                    idProduct = i.ID,
-                    Quantity = i.Quantity,
-                    Price = i.RepurchasePrice,
-                    Amount = i.Amount
-                }).ToList();
+                //  TẠO DANH SÁCH REPURCHASE DETAILS
+                List<RepurchaseDetailDTO> repurchaseDetails = new List<RepurchaseDetailDTO>();
+                int detailCounter = 1;
 
-                // Save Invoice
-                bool success = invoiceBLL.SaveInvoice(invoice, details);
-                
-                if (success)
+                foreach (var item in _repurchaseItems)
+                {
+                    repurchaseDetails.Add(new RepurchaseDetailDTO
+                    {
+                        idRepurchaseDetail = $"{invoiceID}-{detailCounter:D3}", // RP-241101193012-001
+                        idInvoice = invoiceID,
+                        idMaterial = item.ID, // idMaterial từ RepurchaseItem
+                        Weight = Convert.ToDecimal(item.Weight),
+                        RepurchasePrice = item.RepurchasePrice,
+                        Amount = item.Amount
+                    });
+                    detailCounter++;
+                }
+
+                //  LƯU HÓA ĐƠN CHÍNH VÀ CHI TIẾT MUA LẠI
+                bool invoiceSuccess = invoiceBLL.SaveInvoice(invoice, new List<InvoiceDetailDTO>()); 
+                bool repurchaseSuccess = repurchaseBLL.SaveRepurchaseDetails(repurchaseDetails);
+
+                if (invoiceSuccess && repurchaseSuccess)
                 {
                     customerBLL.UpdateCustomerPointAndMembership(invoice.idCustomer, total);
-                    //Lưu pdf
+
+                    // Save PDF
                     string pdfPath = SaveInvoicePreviewAsPDF(invoiceID);
 
                     if (!string.IsNullOrEmpty(pdfPath))
@@ -342,14 +304,14 @@ namespace Jewelry
                         {
                             idInvoice = invoiceID,
                             Type = "Repurchase",
-                            LinkInvoice = pdfPath  // DAL sẽ tự rút tên file
+                            LinkInvoice = pdfPath
                         };
                         previewBLL.AddOrUpdatePreview(preview);
                     }
 
                     DialogResult result = MessageBox.Show(
-                                             $"Repurchase Invoice {invoiceID} saved successful!",
-                                             "Successful",
+                                             $"Repurchase Invoice {invoiceID} saved successfully!",
+                                             "Success",
                                              MessageBoxButtons.OK,
                                              MessageBoxIcon.Information
                                          );
@@ -362,14 +324,45 @@ namespace Jewelry
                 }
                 else
                 {
-                    MessageBox.Show("Error save invoice.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to save repurchase invoice.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error save invoice: " + ex.Message);
+                MessageBox.Show("Error saving repurchase invoice: " + ex.Message);
             }
         }
+
+     
+        private void txtPhone_Leave(object sender, EventArgs e)
+        {
+            string phone = txtPhone.Text.Trim();
+            if (string.IsNullOrEmpty(phone)) return;
+
+            var customer = customerBLL.GetCustomerByPhone(phone);
+
+            if (customer != null)
+            {
+                // If customer exists -> fill the form + preview
+                txbCusName.Text = customer.NameCustomer;
+                txtAddress.Text = customer.AddressC;
+
+                lblPrevName.Text = customer.NameCustomer;
+                lblPrevPhone.Text = customer.PhoneNumberC;
+                lblPrevAddress.Text = customer.AddressC;
+            }
+            else
+            {
+                // Customer doesn't exist -> clear name and address for new customer
+                txbCusName.Clear();
+                txtAddress.Clear();
+                lblPrevName.Text = "";
+                lblPrevAddress.Text = "";
+                lblPrevPhone.Text = phone;
+            }
+        }
+
+        // Text changed events for real-time preview update
         private void txbCusName_TextChanged(object sender, EventArgs e)
         {
             lblPrevName.Text = txbCusName.Text;
@@ -384,11 +377,11 @@ namespace Jewelry
         {
             lblPrevAddress.Text = txtAddress.Text;
         }
-
         private void txtEmployee_TextChanged(object sender, EventArgs e)
         {
             lblPreviewEmployee.Text = txtEmployee.Text;
         }
+
         private void cbPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblMethod.Text = cbPayment.Text;
