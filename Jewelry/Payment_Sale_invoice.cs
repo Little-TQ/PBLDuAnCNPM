@@ -59,7 +59,7 @@ namespace Jewelry
             dgvOrderSummary.AllowUserToAddRows = false;
             dgvOrderSummary.ReadOnly = true;
             dgvOrderSummary.RowTemplate.Height = 35;
-            dgvOrderSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+           // dgvOrderSummary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             foreach (var item in _orderItems)
             {
