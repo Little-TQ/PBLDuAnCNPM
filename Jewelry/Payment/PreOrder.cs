@@ -78,7 +78,7 @@ namespace Jewelry.Payment
                     materialName = materialRows[0]["NameMaterial"].ToString();
 
                 ProductList productItem = new ProductList();
-                productItem.SetProductData(id, name, price, materialName, photo);
+                productItem.SetProductData(id, name, materialName, photo);
                 productItem.ProductAdded += ProductItem_ProductAdded;
 
                 productItem.Margin = new Padding(10);
